@@ -51,7 +51,7 @@ export default function Hero() {
               href="#cta"
               className="rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors"
             >
-              Get Started - It's Free
+              Get Started - It&apos;s Free
             </Link>
             <Link
               href="#how-it-works"
