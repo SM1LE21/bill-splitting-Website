@@ -7,7 +7,7 @@ import {
   UserGroupIcon,
   ChartBarIcon,
   BellIcon,
-  CreditCardIcon,
+  CameraIcon,
 } from '@heroicons/react/24/outline';
 
 const features = [
@@ -17,9 +17,9 @@ const features = [
     icon: CalculatorIcon,
   },
   {
-    name: 'Multiple Payment Methods',
-    description: 'Support for various payment methods including cash, cards, and digital wallets.',
-    icon: CreditCardIcon,
+    name: 'Receipt Scanning',
+    description: 'Simply snap a photo of your receipt and let our app automatically identify items and calculate splits.',
+    icon: CameraIcon,
   },
   {
     name: 'Group Management',
@@ -84,7 +84,7 @@ export default function Features() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            Our app comes packed with all the tools you need to make bill splitting and expense tracking a breeze.
+            ExpenseMate comes packed with all the tools you need to make expense sharing and tracking effortless.
           </motion.p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

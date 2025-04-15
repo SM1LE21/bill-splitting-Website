@@ -14,7 +14,7 @@ const benefits = [
   },
   {
     title: 'Stay Organized',
-    description: 'All your shared expenses in one place, with detailed history and categorization.',
+    description: 'All your shared expenses in one place, with detailed history and expense breakdowns.',
   },
   {
     title: 'Peace of Mind',
@@ -46,7 +46,7 @@ export default function Benefits() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Why choose our bill splitting app?
+            Why choose ExpenseMate?
           </motion.p>
         </div>
 
@@ -58,17 +58,27 @@ export default function Benefits() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl bg-gray-800">
-              <Image 
-                src="/images/app/app-screenshot.svg" 
-                alt="Bill Splitting App Screenshot" 
-                fill
-                className="object-cover"
+            <div className="relative w-fit mx-auto">
+              {/* Main Phone - Group Summary */}
+              <Image
+                src="/images/GroupSummary.png"
+                alt="ExpenseMate Group Summary"
+                width={208}
+                height={450}
+                className="relative z-0"
+              />
+              {/* Secondary Phone - Expenses View */}
+              <Image
+                src="/images/ExpensesView.png"
+                alt="ExpenseMate Expenses View"
+                width={130}
+                height={280}
+                className="absolute -right-10 bottom-0 z-10"
               />
             </div>
           </motion.div>
 
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 lg:flex lg:items-center">
             <dl className="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2">
               {benefits.map((benefit, index) => (
                 <motion.div
@@ -81,7 +91,7 @@ export default function Benefits() {
                 >
                   <dt className="text-base font-semibold leading-7 text-white">
                     <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                      <div className="h-6 w-6 text-white">{index + 1}</div>
+                      <div className="h-6 w-2 text-white">{index + 1}</div>
                     </div>
                     {benefit.title}
                   </dt>

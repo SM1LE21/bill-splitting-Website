@@ -50,7 +50,7 @@ export default function HowItWorks() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            Get started in minutes with our easy-to-use bill splitting app.
+            Get started in minutes with ExpenseMate.
           </motion.p>
         </div>
 

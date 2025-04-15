@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Features', href: '#features' },
   { name: 'How it Works', href: '#how-it-works' },
   { name: 'Benefits', href: '#benefits' },
-  { name: 'Testimonials', href: '#testimonials' },
+  //{ name: 'Testimonials', href: '#testimonials' }, // TODO: Add testimonials section when we actually have some
 ];
 
 export default function Navbar() {
@@ -23,7 +23,7 @@ export default function Navbar() {
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-xl font-bold">Logo</span>
+            <span className="text-xl font-bold">ExpenseMate</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -76,7 +76,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between p-6">
                 <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                  <span className="text-xl font-bold">Logo</span>
+                  <span className="text-xl font-bold">ExpenseMate</span>
                 </Link>
                 <button
                   type="button"

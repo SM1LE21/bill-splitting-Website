@@ -8,9 +8,9 @@ const navigation = {
     { name: 'Features', href: '#features' },
     { name: 'How it Works', href: '#how-it-works' },
     { name: 'Benefits', href: '#benefits' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms', href: '/terms' },
+    // { name: 'Testimonials', href: '#testimonials' }, // TODO: Add these when we have them
+    // { name: 'Privacy Policy', href: '/privacy' }, // TODO: Add these when we have them
+    // { name: 'Terms', href: '/terms' }, // TODO: Add these when we have them
   ],
   social: [
     {
@@ -44,16 +44,17 @@ export default function Footer() {
             </div>
           ))}
         </nav>
-        <div className="mt-10 flex justify-center space-x-10">
+        {/* TODO: Add social links when we have them */}
+        {/*<div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
             <Link key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </Link>
           ))}
-        </div>
+        </div>*/}
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; {new Date().getFullYear()} Your Company, Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} ExpenseMate, All rights reserved.
         </p>
       </div>
     </footer>
