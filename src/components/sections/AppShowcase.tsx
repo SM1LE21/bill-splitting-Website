@@ -67,8 +67,8 @@ export default function AppShowcase() {
               Scan Receipts,<br />Split Instantly
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Just snap a photo of your receipt and watch as ExpenseMate automatically identifies items, 
-              calculates splits, and assigns expenses. No more manual entry or confusion about who owes what.
+              Just snap a photo of your receipt and watch as ExpenseMate automatically identifies items and
+              calculates splits. Easily assign expenses to group members with a few taps. No more manual entry or confusion about who owes what.
             </p>
 
             {/* Feature List */}
