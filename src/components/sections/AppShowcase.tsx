@@ -28,7 +28,7 @@ export default function AppShowcase() {
                     muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
-                    poster="/images/ExpensesView.png"
+                    poster="/images/videoCover.png"
                   >
                     <source src="/videos/receipt-scan-demo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -41,7 +41,7 @@ export default function AppShowcase() {
                 <div className="absolute left-[-14px] top-[140px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
               </div>
               {/* Mobile CTA Button */}
-              <div className="mt-8 flex justify-center lg:hidden">
+              <div className="mt-16 flex justify-center lg:hidden">
                 <a
                   href="#cta"
                   className="rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
