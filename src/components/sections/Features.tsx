@@ -18,7 +18,7 @@ const features = [
   },
   {
     name: 'Receipt Scanning',
-    description: 'Simply snap a photo of your receipt and let our app automatically identify items and calculate splits.',
+    description: 'Simply snap a photo of your receipt and let ExpenseMate automatically identify items and calculate splits.',
     icon: CameraIcon,
   },
   {

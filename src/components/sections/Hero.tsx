@@ -39,7 +39,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Say goodbye to awkward money conversations. Our app makes splitting bills with friends, roommates, or travel buddies simple and stress-free.
+            Say goodbye to awkward money conversations. ExpenseMate makes splitting bills with friends, roommates, or travel buddies simple and stress-free.
           </motion.p>
           <motion.div
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6"

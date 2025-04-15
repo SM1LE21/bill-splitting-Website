@@ -6,7 +6,7 @@ import Image from 'next/image';
 const benefits = [
   {
     title: 'Save Time',
-    description: 'No more manual calculations or spreadsheets. Our app handles all the math instantly.',
+    description: 'No more manual calculations or spreadsheets. ExpenseMate handles all the math instantly.',
   },
   {
     title: 'Avoid Conflicts',
