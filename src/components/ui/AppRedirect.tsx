@@ -44,7 +44,7 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
 
   // Render different content based on the redirect state
   return (
-    <div className="flex flex-col items-center justify-center p-6 max-w-md mx-auto text-center">
+    <div className="flex flex-col items-center justify-center p-6 max-w-md mx-auto text-center mt-12">
       {redirectState === 'attempting' && (
         <>
           <div className="animate-pulse mb-4">
