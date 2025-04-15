@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowDownIcon } from '@heroicons/react/24/outline';
+// import Link from 'next/link'; // TODO: Add this when we have iOS support
+// import { ArrowDownIcon } from '@heroicons/react/24/outline'; // TODO: Add this when we have Android support
 
 export default function CTA() {
   return (

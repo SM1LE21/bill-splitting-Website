@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function AppShowcase() {
   return (
@@ -11,33 +10,54 @@ export default function AppShowcase() {
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-12 lg:items-center">
           {/* App Screenshots */}
           <motion.div
-            className="relative"
+            className="relative order-last lg:order-first"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             <div className="relative mx-auto max-w-[280px] sm:max-w-[320px]">
-              {/* Video Demo in Phone Frame */}
-              <div className="relative rounded-[3rem] overflow-hidden bg-gray-900 aspect-[9/19.5] shadow-2xl">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                  poster="/images/ExpenseView.png"
+              {/* iPhone Frame */}
+              <div className="relative rounded-[3rem] overflow-hidden bg-[#1D1D1F] aspect-[9/19.5] shadow-2xl">
+                {/* Inner bezel */}
+                <div className="absolute inset-[3px] rounded-[2.85rem] overflow-hidden border-[6px] border-[#1D1D1F] z-10">
+                  {/* Video */}
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                    poster="/images/ExpensesView.png"
+                  >
+                    <source src="/videos/receipt-scan-demo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                {/* Side button */}
+                <div className="absolute right-[-14px] top-[120px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
+                {/* Volume buttons */}
+                <div className="absolute left-[-14px] top-[100px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
+                <div className="absolute left-[-14px] top-[140px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
+              </div>
+              {/* Mobile CTA Button */}
+              <div className="mt-8 flex justify-center lg:hidden">
+                <a
+                  href="#cta"
+                  className="rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
                 >
-                  <source src="/videos/receipt-scan-demo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  Try Receipt Scanning
+                  <svg className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
               </div>
             </div>
           </motion.div>
 
           {/* Description */}
           <motion.div
-            className="relative px-4 sm:px-0"
+            className="relative px-4 sm:px-0 order-first lg:order-last"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -80,8 +100,8 @@ export default function AppShowcase() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="mt-10">
+            {/* Desktop CTA Button */}
+            <div className="mt-10 hidden lg:block">
               <a
                 href="#cta"
                 className="rounded-full bg-primary px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
