@@ -17,7 +17,7 @@ export default function Contact() {
             Have Questions?
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            We&apos;re here to help! Reach out to our team for support or inquiries.
+            We&apos;re here to help! Reach out for support or inquiries.
           </p>
           <div className="mt-6">
             <a
