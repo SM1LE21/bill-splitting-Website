@@ -6,21 +6,26 @@ export const metadata: Metadata = {
   description: 'Join an ExpenseMate group to start splitting bills with friends',
 };
 
-type PageProps = {
-  params?: Record<string, string>;
-  searchParams?: {
-    groupId?: string | string[];
-    // This allows any other additional query parameter without using `any` directly.
-    [key: string]: string | string[] | undefined;
-  };
+type SearchParamsType = {
+  groupId?: string | string[];
+  // Allows additional query parameters without using `any`
+  [key: string]: string | string[] | undefined;
 };
 
-export default function JoinPage({ searchParams }: PageProps) {
+type PageProps = {
+  params?: Promise<Record<string, string>>;
+  searchParams?: Promise<SearchParamsType>;
+};
+
+export default async function JoinPage({ searchParams }: PageProps) {
+  // Wait for the searchParams promise to resolve (if provided)
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
   let groupId: string | null = null;
-  if (typeof searchParams?.groupId === 'string') {
-    groupId = searchParams.groupId;
-  } else if (Array.isArray(searchParams?.groupId)) {
-    groupId = searchParams.groupId[0];
+  
+  if (typeof resolvedSearchParams?.groupId === 'string') {
+    groupId = resolvedSearchParams.groupId;
+  } else if (Array.isArray(resolvedSearchParams?.groupId)) {
+    groupId = resolvedSearchParams.groupId[0];
   }
   
   return <JoinGroup groupId={groupId} />;
