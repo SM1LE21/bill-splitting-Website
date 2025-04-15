@@ -1,4 +1,3 @@
-import React from 'react';
 import { Metadata } from 'next';
 import JoinGroup from '@/components/sections/JoinGroup';
 
@@ -8,15 +7,14 @@ export const metadata: Metadata = {
   description: 'Join an ExpenseMate group to start splitting bills with friends',
 };
 
-// In Next.js App Router, searchParams are correctly typed with this interface
-interface PageProps {
-  params: Record<string, string>;
-  searchParams: Record<string, string | string[] | undefined>;
-}
-
-export default function JoinPage({ searchParams }: PageProps) {
+// Simple server component that extracts query parameters
+export default function JoinPage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   // Extract the groupId from query parameters
-  const groupId = typeof searchParams.groupId === 'string' 
+  const groupId = typeof searchParams?.groupId === 'string' 
     ? searchParams.groupId 
     : null;
 
