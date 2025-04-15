@@ -6,6 +6,7 @@ import Benefits from '@/components/sections/Benefits';
 import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
 import AppShowcase from '@/components/sections/AppShowcase';
+import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Benefits />
       {/*<Testimonials /> TODO: Add testimonials when we have some*/}
       <CTA />
+      <Contact />
     </Layout>
   );
 }
