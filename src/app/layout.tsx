@@ -14,11 +14,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
-  title: "Bill Splitting App - Split Expenses with Friends Easily",
-  description: "The easiest way to split bills and track expenses with friends, roommates, and groups. No more awkward money conversations.",
-  keywords: "bill splitting, expense tracking, shared expenses, roommate expenses, group payments",
-  authors: [{ name: "Your Company" }],
+  metadataBase: new URL('https://expense.app'),
+  title: "ExpenseMate - Smart Receipt Scanning & Bill Splitting App",
+  description: "Snap a photo of your receipt and let ExpenseMate automatically itemize and split expenses with friends. The smartest way to handle group expenses with receipt scanning technology.",
+  keywords: "bill splitting, receipt scanning, expense tracking, itemized receipts, shared expenses, roommate expenses, group payments, receipt OCR",
+  authors: [{ name: "TK Media" }],
   robots: "index, follow",
   icons: {
     icon: '/favicon.ico',
@@ -27,23 +27,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
-    siteName: "Bill Splitting App",
-    title: "Bill Splitting App - Split Expenses with Friends Easily",
-    description: "The easiest way to split bills and track expenses with friends, roommates, and groups.",
+    url: "https://expense.app/",
+    siteName: "ExpenseMate",
+    title: "ExpenseMate - Smart Receipt Scanning & Bill Splitting App",
+    description: "Just snap a photo of your receipt and let ExpenseMate automatically itemize and split expenses with friends. The smartest way to handle group expenses.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Bill Splitting App Preview",
+        alt: "ExpenseMate App Preview - Smart Receipt Scanning & Splitting",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bill Splitting App - Split Expenses with Friends Easily",
-    description: "The easiest way to split bills and track expenses with friends, roommates, and groups.",
+    title: "ExpenseMate - Smart Receipt Scanning & Bill Splitting App",
+    description: "Just snap a photo of your receipt and let ExpenseMate automatically itemize and split expenses with friends. The smartest way to handle group expenses.",
     images: ["/images/twitter-image.jpg"],
   },
 };
