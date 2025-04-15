@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function AppShowcase() {
   return (
-    <div className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="relative py-24 sm:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-12 lg:items-center">
           {/* App Screenshots */}
@@ -17,7 +17,7 @@ export default function AppShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative mx-auto max-w-[320px]">
+            <div className="relative mx-auto max-w-[280px] sm:max-w-[320px]">
               {/* Phone Mockup - Main screenshot */}
               <Image
                 src="/images/GroupSummary.png"
@@ -27,7 +27,7 @@ export default function AppShowcase() {
                 className="drop-shadow-2xl"
               />
               {/* Floating second screenshot */}
-              <div className="absolute -right-20 -bottom-12 w-48">
+              <div className="absolute -right-12 sm:-right-20 -bottom-12 w-40 sm:w-48">
                 <Image
                   src="/images/ExpensesView.png"
                   alt="ExpenseMate Receipt Scanning"
@@ -41,7 +41,7 @@ export default function AppShowcase() {
 
           {/* Video and Description */}
           <motion.div
-            className="relative"
+            className="relative px-4 sm:px-0"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -51,8 +51,8 @@ export default function AppShowcase() {
               Scan Receipts,<br />Split Instantly
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Just snap a photo of your receipt and watch as ExpenseMate automatically identifies items, 
-              calculates splits, and assigns expenses. No more manual entry or confusion about who owes what.
+              Just snap a photo of your receipt and watch as ExpenseMate automatically identifies items and 
+              makes splitting expenses simple and straightforward. No more confusion about who owes what.
             </p>
             
             {/* Video Demo */}
@@ -74,7 +74,7 @@ export default function AppShowcase() {
             <div className="mt-10">
               <a
                 href="#cta"
-                className="rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
+                className="rounded-full bg-primary px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
               >
                 Try Receipt Scanning
                 <svg className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
