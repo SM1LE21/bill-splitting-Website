@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
+// Component layout: Page structure wrapper
 interface LayoutProps {
   children: ReactNode;
 }

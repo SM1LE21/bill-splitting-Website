@@ -42,20 +42,20 @@ export default function Hero() {
             Say goodbye to awkward money conversations. Our app makes splitting bills with friends, roommates, or travel buddies simple and stress-free.
           </motion.p>
           <motion.div
-            className="mt-10 flex items-center justify-center gap-x-6"
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Link
               href="#cta"
-              className="rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors"
+              className="rounded-full bg-primary w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors text-center"
             >
               Get Started - It&apos;s Free
             </Link>
             <Link
               href="#how-it-works"
-              className="text-lg font-semibold leading-6 text-gray-900 hover:text-primary transition-colors"
+              className="text-base sm:text-lg font-semibold leading-6 text-gray-900 hover:text-primary transition-colors"
             >
               Learn more <span aria-hidden="true">→</span>
             </Link>

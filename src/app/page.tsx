@@ -5,17 +5,13 @@ import Benefits from '@/components/sections/Benefits';
 import Testimonials from '@/components/sections/Testimonials';
 import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
-
-export const metadata = {
-  title: 'Bill Splitting App - Split Expenses with Friends Easily',
-  description: 'The easiest way to split bills and track expenses with friends, roommates, and groups. No more awkward money conversations.',
-  keywords: 'bill splitting, expense tracking, shared expenses, roommate expenses, group payments',
-};
+import AppShowcase from '@/components/sections/AppShowcase';
 
 export default function Home() {
   return (
     <Layout>
       <Hero />
+      <AppShowcase />
       <Features />
       <HowItWorks />
       <Benefits />
