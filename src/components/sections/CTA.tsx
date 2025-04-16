@@ -25,7 +25,7 @@ export default function CTA() {
               <span className="text-primary">No More Awkward Money Talks</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-              Join thousands of happy users who have simplified their shared expenses. Download the app now and experience stress-free bill splitting.
+              Join a growing community of users who are simplifying their shared expenses. Download the app now and experience stress-free bill splitting.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6">
               <motion.div

@@ -9,11 +9,33 @@ const navigation = [
   { name: 'Features', href: '#features' },
   { name: 'How it Works', href: '#how-it-works' },
   { name: 'Benefits', href: '#benefits' },
+  { name: 'Developer Story', href: '#developer-story' },
+  // { name: 'Contact', href: '#contact' },
   //{ name: 'Testimonials', href: '#testimonials' }, // TODO: Add testimonials section when we actually have some
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const navbarHeight = 80; // Approximate height of the navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+
+    // Close mobile menu if open
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -38,22 +60,24 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link
+            <a
               key={item.name}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600"
             >
               {item.name}
-            </Link>
+            </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
+          <a
             href="#cta"
+            onClick={(e) => handleNavClick(e, '#cta')}
             className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
           >
             Get Started
-          </Link>
+          </a>
         </div>
       </nav>
 
@@ -91,24 +115,24 @@ export default function Navbar() {
                 <div className="divide-y divide-gray-500/10">
                   <div className="space-y-2 px-6 pb-6">
                     {navigation.map((item) => (
-                      <Link
+                      <a
                         key={item.name}
                         href={item.href}
                         className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={(e) => handleNavClick(e, item.href)}
                       >
                         {item.name}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                   <div className="px-6 py-6">
-                    <Link
+                    <a
                       href="#cta"
                       className="block w-full rounded-full bg-primary px-4 py-2 text-center text-base font-semibold text-white shadow-sm hover:bg-primary/90"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, '#cta')}
                     >
                       Get Started
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

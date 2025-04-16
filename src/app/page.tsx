@@ -7,6 +7,7 @@ import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
 import AppShowcase from '@/components/sections/AppShowcase';
 import Contact from '@/components/sections/Contact';
+import DeveloperStory from '@/components/sections/DeveloperStory';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <HowItWorks />
       <Benefits />
       {/*<Testimonials /> TODO: Add testimonials when we have some*/}
+      <DeveloperStory />
       <CTA />
       <Contact />
     </Layout>
