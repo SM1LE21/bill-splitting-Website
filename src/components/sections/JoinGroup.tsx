@@ -12,7 +12,7 @@ const JoinGroup: React.FC<JoinGroupProps> = ({ groupId }) => {
   // Handle invalid or missing group ID
   if (!groupId || !isValidUUID(groupId)) {
     return (
-      <Layout>
+      <Layout minimal={true}>
         <div className="container mx-auto py-12 px-4">
           <div className="max-w-md mx-auto text-center">
             <h1 className="text-2xl font-bold mb-4">Invalid Group Link</h1>
@@ -33,7 +33,7 @@ const JoinGroup: React.FC<JoinGroupProps> = ({ groupId }) => {
 
   // Valid group ID, show the app redirect
   return (
-    <Layout>
+    <Layout minimal={true}>
       <div className="container mx-auto py-12 px-4">
         <AppRedirect groupId={groupId} />
       </div>

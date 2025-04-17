@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
+interface FooterProps {
+  minimal?: boolean; // Add minimal prop
+}
+
 const navigation = {
   main: [
     { name: 'Features', href: '#features' },
@@ -33,19 +37,21 @@ const navigation = {
   ],
 };
 
-export default function Footer() {
+export default function Footer({ minimal = false }: FooterProps) {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav className="flex flex-col items-center sm:flex-row sm:justify-center sm:space-x-12" aria-label="Footer">
-          {navigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
-              <Link href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                {item.name}
-              </Link>
-            </div>
-          ))}
-        </nav>
+        {!minimal && (
+          <nav className="flex flex-col items-center sm:flex-row sm:justify-center sm:space-x-12" aria-label="Footer">
+            {navigation.main.map((item) => (
+              <div key={item.name} className="pb-6">
+                <Link href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                  {item.name}
+                </Link>
+              </div>
+            ))}
+          </nav>
+        )}
         {/* TODO: Add social links when we have them */}
         {/*<div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
@@ -55,7 +61,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>*/}
-        <p className="mt-10 text-center text-xs leading-5 text-gray-500">
+        <p className={`${!minimal ? 'mt-10' : ''} text-center text-xs leading-5 text-gray-500`}>
           &copy; {new Date().getFullYear()} ExpenseMate, All rights reserved.
         </p>
       </div>

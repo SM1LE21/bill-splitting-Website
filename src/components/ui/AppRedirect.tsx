@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import QRCode from 'react-qr-code';
 import { 
   isIOS, 
   isAndroid, 
@@ -98,10 +99,25 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
               <p className="text-gray-700 mb-4">
                 ExpenseMate is available on iOS. Scan this QR code on your iOS device to join the group.
               </p>
-              {/* Placeholder for QR code - would need QR code generation library */}
-              <div className="w-48 h-48 bg-gray-200 mx-auto mb-4 flex items-center justify-center">
-                <p className="text-sm text-gray-500">QR Code Placeholder</p>
+              <div className="w-48 h-48 mx-auto mb-4 p-4 bg-white rounded-lg shadow">
+                <QRCode
+                  value={`https://www.expensemate.app/join?groupId=${groupId}`}
+                  size={160}
+                  level="H"
+                  style={{ width: '100%', height: '100%' }}
+                />
               </div>
+              <p className="text-sm text-gray-500">
+                Or open this link on your iOS device:
+              </p>
+              <a 
+                href={`https://www.expensemate.app/join?groupId=${groupId}`}
+                className="text-blue-600 hover:underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                expensemate.app/join?groupId={groupId}
+              </a>
             </div>
           )}
           
