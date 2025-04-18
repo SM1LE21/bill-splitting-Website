@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CookieConsentWrapper from "@/components/ui/CookieConsentWrapper";
 
 // Root layout: App-wide HTML structure
 const inter = Inter({
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen bg-white font-sans antialiased">
         {children}
+        <CookieConsentWrapper />
       </body>
     </html>
   );
