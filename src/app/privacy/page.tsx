@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
             <p className="mt-6">
-              Welcome to ExpenseMate (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website at expense.app (regardless of where you visit it from) or use our mobile application, and tell you about your privacy rights and how the law protects you.
+              Welcome to ExpenseMate (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website at expensemate.app (regardless of where you visit it from) or use our mobile application, and tell you about your privacy rights and how the law protects you.
             </p>
             <p className="mt-6">
               This privacy policy applies to both our website and mobile application (collectively referred to as &quot;Services&quot;).
@@ -36,10 +36,13 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">2. Data Controller</h2>
             <p className="mt-6">
-              TK Media is the controller and responsible for your personal data.
+              Tun Keltesch is the controller and responsible for your personal data.
             </p>
             <p className="mt-6">
-              If you have any questions about this privacy policy, including any requests to exercise your legal rights, please contact us at: privacy@expense.app
+              We do not share your personal data with any third parties. Your data remains accessible only by you and is essential for the operation of the Services.
+            </p>
+            <p className="mt-6">
+              If you have any questions about this privacy policy, including any requests to exercise your legal rights, please contact us at: tun.keltesch@expensemate.app
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">3. The Data We Collect</h2>
@@ -61,9 +64,9 @@ export default function PrivacyPolicy() {
               We use different methods to collect data from and about you including through:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>Direct interactions.</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
-              <li><strong>Automated technologies or interactions.</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
-              <li><strong>Third parties or publicly available sources.</strong> We may receive Technical Data about you from analytics providers such as Google.</li>
+              <li><strong>Direct interactions:</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
+              <li><strong>Automated technologies or interactions:</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
+              <li><strong>Third parties or publicly available sources:</strong> We may receive Technical Data about you from analytics providers such as Google.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data</h2>
@@ -110,7 +113,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. Data Security</h2>
             <p className="mt-6">
-              We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality.
+              We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality.
             </p>
             <p className="mt-6">
               We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so.
@@ -137,7 +140,7 @@ export default function PrivacyPolicy() {
               <li><strong>Object:</strong> You have the right to object to the processing of your personal data in certain circumstances.</li>
             </ul>
             <p className="mt-6">
-              You can exercise any of these rights by contacting us at privacy@expense.app. We will respond to all legitimate requests within one month.
+              You can exercise any of these rights by contacting us at tun.keltesch@expensemate.app. We will respond to all legitimate requests within one month.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10. Cookies and Tracking</h2>
@@ -158,11 +161,11 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Contact Us</h2>
             <p className="mt-6">
-              If you have any questions about this Privacy Policy, please contact us at privacy@expense.app.
+              If you have any questions about this Privacy Policy, please contact us at tun.keltesch@expensemate.app.
             </p>
           </div>
         </div>
       </div>
     </Layout>
   );
-} 
+}

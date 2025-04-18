@@ -28,10 +28,13 @@ export default function CookiePolicy() {
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
             <p className="mt-6">
-              This Cookie Policy explains how ExpenseMate (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website at expense.app. This policy should be read alongside our <Link href="/privacy" className="text-primary hover:text-primary-dark">Privacy Policy</Link>, which explains how we use personal information.
+              This Cookie Policy explains how ExpenseMate (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website at expensemate.app. This policy should be read alongside our <Link href="/privacy" className="text-primary hover:text-primary-dark">Privacy Policy</Link>, which explains how we use personal information.
             </p>
             <p className="mt-6">
               By using our website, you consent to the use of cookies in accordance with this Cookie Policy. If you do not accept the use of cookies, please disable them as explained below or refrain from using our website.
+            </p>
+            <p className="mt-6">
+              We do not share cookie-related data with any third parties; cookies are used solely to provide and improve the Services for you.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">2. What Are Cookies?</h2>
@@ -140,11 +143,11 @@ export default function CookiePolicy() {
               If you have any questions or concerns about our use of cookies, please contact us at:
             </p>
             <p className="mt-4">
-              Email: privacy@expense.app
+              Email: tun.keltesch@expensemate.app
             </p>
           </div>
         </div>
       </div>
     </Layout>
   );
-} 
+}
