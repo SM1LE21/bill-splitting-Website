@@ -22,10 +22,6 @@ export const metadata: Metadata = {
   keywords: "bill splitting, receipt scanning, expense tracking, itemized receipts, shared expenses, roommate expenses, group payments, receipt OCR",
   authors: [{ name: "TK Media" }],
   robots: "index, follow",
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
