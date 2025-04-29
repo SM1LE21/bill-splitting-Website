@@ -9,7 +9,7 @@ const roadmapData = [
     date: "Live by July 2025",
     features: [
       "One-tap sign-in with Google & Apple",
-      "Item-level categories + single-expense items",
+      "Expense Categories + Item-level categories",
       "Offline mode for planes & bad Wi-Fi",
       "Sleeker UI/UX polish"
     ]
