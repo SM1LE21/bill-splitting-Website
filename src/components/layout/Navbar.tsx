@@ -45,11 +45,11 @@ export default function Navbar() {
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-            <img 
+            {/* <img 
               src="/images/expensemate1024_light.png" 
               alt="ExpenseMate Logo" 
-              className="h-8 w-8 rounded-lg opacity-80" 
-            />
+              className="h-8 w-8 rounded-lg" 
+            /> */}
             <span className="text-xl font-bold">ExpenseMate</span>
           </Link>
         </div>
@@ -105,11 +105,11 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between p-6">
                 <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                  <img 
+                  {/* <img 
                     src="/images/expensemate1024_light.png" 
                     alt="ExpenseMate Logo" 
                     className="h-8 w-8 rounded-lg opacity-80" 
-                  />
+                  /> */}
                   <span className="text-xl font-bold">ExpenseMate</span>
                 </Link>
                 <button
