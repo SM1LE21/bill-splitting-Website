@@ -14,6 +14,7 @@ const navigation = {
     { name: 'Features', href: '#features' },
     { name: 'How it Works', href: '#how-it-works' },
     { name: 'Benefits', href: '#benefits' },
+    { name: 'Roadmap', href: '#roadmap' },
     { name: 'Developer Story', href: '#developer-story' },
     // { name: 'Contact', href: '#contact' },
     // { name: 'Testimonials', href: '#testimonials' }, // TODO: Add these when we have them
