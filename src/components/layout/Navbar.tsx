@@ -48,7 +48,7 @@ export default function Navbar() {
             <img 
               src="/images/expensemate1024_light.png" 
               alt="ExpenseMate Logo" 
-              className="h-8 w-8" 
+              className="h-8 w-8 rounded-lg bg-white/50 backdrop-blur-sm" 
             />
             <span className="text-xl font-bold">ExpenseMate</span>
           </Link>
@@ -106,9 +106,9 @@ export default function Navbar() {
               <div className="flex items-center justify-between p-6">
                 <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                   <img 
-                    src="/images/expensemate1024_light" 
+                    src="/images/expensemate1024_light.png" 
                     alt="ExpenseMate Logo" 
-                    className="h-8 w-8" 
+                    className="h-8 w-8 rounded-lg bg-white/50 backdrop-blur-sm" 
                   />
                   <span className="text-xl font-bold">ExpenseMate</span>
                 </Link>
