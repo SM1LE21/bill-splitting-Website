@@ -48,7 +48,7 @@ export default function Navbar() {
             <img 
               src="/images/expensemate1024_light.png" 
               alt="ExpenseMate Logo" 
-              className="h-8 w-8 rounded-lg bg-white/50 backdrop-blur-sm" 
+              className="h-8 w-8 rounded-lg opacity-80" 
             />
             <span className="text-xl font-bold">ExpenseMate</span>
           </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
                   <img 
                     src="/images/expensemate1024_light.png" 
                     alt="ExpenseMate Logo" 
-                    className="h-8 w-8 rounded-lg bg-white/50 backdrop-blur-sm" 
+                    className="h-8 w-8 rounded-lg opacity-80" 
                   />
                   <span className="text-xl font-bold">ExpenseMate</span>
                 </Link>
