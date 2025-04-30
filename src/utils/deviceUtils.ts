@@ -49,8 +49,7 @@ export const createAppSchemeLink = (groupId: string): string => {
  * Returns the App Store URL for ExpenseMate
  */
 export const getAppStoreURL = (): string => {
-  // Replace with actual App Store URL when available
-  return 'https://apps.apple.com/app/expensemate/id123456789';
+  return 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
 };
 
 /**

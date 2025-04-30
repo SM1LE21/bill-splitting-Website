@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-// import Link from 'next/link'; // TODO: Add this when we have iOS support
+import Link from 'next/link';
 // import { ArrowDownIcon } from '@heroicons/react/24/outline'; // TODO: Add this when we have Android support
 
 export default function CTA() {
@@ -29,28 +29,17 @@ export default function CTA() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6">
               <motion.div
-                whileHover={{ scale: 1 }}
+                whileHover={{ scale: 1.05 }}
                 className="w-full sm:w-auto"
               >
-                {/* Original iOS button - uncomment when available */}
-                {/*
                 <Link
-                  href="#"
+                  href="https://apps.apple.com/lu/app/exepensemate/id6745098337"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-100 transition-colors block text-center"
                 >
                   Download for iOS
                 </Link>
-                */}
-                
-                {/* Coming Soon version */}
-                <div
-                  className="rounded-full bg-gray-600 px-8 py-4 text-lg font-semibold text-white shadow-sm cursor-not-allowed relative overflow-hidden group block text-center"
-                >
-                  <span className="opacity-50">Download for iOS</span>
-                  <span className="absolute inset-0 flex items-center justify-center text-white bg-gray-700/80 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Coming Soon
-                  </span>
-                </div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1 }}
