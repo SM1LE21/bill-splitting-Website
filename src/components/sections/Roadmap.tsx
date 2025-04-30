@@ -11,6 +11,7 @@ const roadmapData = [
       "One-tap sign-in with Google & Apple",
       "Expense Categories + Item-level categories",
       "Offline mode for planes & bad Wi-Fi",
+      "Multi-language support (German & French)",
       "Sleeker UI/UX polish"
     ]
   },
@@ -40,6 +41,7 @@ const roadmapData = [
       "Generate PDF/CSV reports for your groups",
       "Customize your groups with photos and categories",
       "Seamless Excel data import for easy transition",
+      "Extended language support (Spanish & Portuguese)",
       "Various UI improvements and bug fixes"
     ]
   },
