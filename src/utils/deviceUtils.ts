@@ -72,10 +72,13 @@ export const attemptAppRedirect = (
   // Try universal link first
   window.location.href = universalLink;
   
-  // If universal link fails, try app scheme after a short delay
+  // If universal link fails, try app scheme after a longer delay
   setTimeout(() => {
-    window.location.href = appSchemeLink;
-  }, 100);
+    // Only try app scheme if the page is still visible (app didn't open)
+    if (!document.hidden) {
+      window.location.href = appSchemeLink;
+    }
+  }, 500);
   
   // Add a listener for visibility change (if app opens, page will be hidden)
   document.addEventListener('visibilitychange', () => {
