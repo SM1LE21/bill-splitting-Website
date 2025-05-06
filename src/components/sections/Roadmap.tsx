@@ -10,9 +10,8 @@ const roadmapData = [
     features: [
       "One-tap sign-in with Google & Apple",
       "Expense Categories + Item-level categories",
-      "Offline mode for planes & bad Wi-Fi",
       "Multi-language support (German & French)",
-      "Sleeker UI/UX polish"
+      "Various UI/UX improvements and bug fixes"
     ]
   },
   {
@@ -42,7 +41,7 @@ const roadmapData = [
       "Customize your groups with photos and categories",
       "Seamless Excel data import for easy transition",
       "Extended language support (Spanish & Portuguese)",
-      "Various UI improvements and bug fixes"
+      "Offline mode for planes & bad Wi-Fi"
     ]
   },
   {

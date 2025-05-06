@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: 'Is there offline support?',
-    answer: 'Offline support is currently in development and will be released alongside the Android version. When launched, both iOS and Android apps will have full offline capabilities in a major update.'
+    answer: 'Offline support will be available in version 1.2 of ExpenseMate. This update will bring full offline capabilities to both iOS and Android versions of the app.'
   }
 ];
 
