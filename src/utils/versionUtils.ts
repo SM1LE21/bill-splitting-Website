@@ -41,16 +41,17 @@ export async function getAvailableVersions(): Promise<Version[]> {
         const versionPath = join(downloadsPath, entry.name);
         const files = await readdir(versionPath);
         
-        // Filter out hidden files and metadata.json
+        // Filter out hidden files and metadata.json for downloadable files
         const validFiles = files.filter(file => !file.startsWith('.') && file !== 'metadata.json');
-        
-        if (validFiles.length > 0) {
-          // Read metadata if available
-          const metadata = await readVersionMetadata(versionPath);
-          
+
+        // Read metadata if available
+        const metadata = await readVersionMetadata(versionPath);
+
+        // Include version if it has metadata (for GitHub Releases) or actual files
+        if (metadata || validFiles.length > 0) {
           versions.push({
             version: entry.name,
-            files: validFiles,
+            files: validFiles.length > 0 ? validFiles : ['app-release.apk'], // Show APK as available even if not local
             path: `/downloads/${entry.name}`,
             metadata
           });
