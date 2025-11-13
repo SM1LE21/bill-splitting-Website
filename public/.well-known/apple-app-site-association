@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "87U8WV4Q3F.app.expensemate",
+        "paths": ["/join*"]
+      }
+    ]
+  }
+} 

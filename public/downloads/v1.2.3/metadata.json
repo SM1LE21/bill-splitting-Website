@@ -1,0 +1,14 @@
+{
+  "version": "v1.2.3",
+  "releaseDate": "2025-09-13",
+  "releaseNotes": "Native Google Sign-In, Placeholders System, Group Management, and AI Enhancements",
+  "fileSize": "96,4MB",
+  "downloadUrl": "https://github.com/SM1LE21/bill-splitting-Website/releases/download/v1.2.3/app-release.apk",
+  "changelog": [
+    "Google Sign-In: Native Authentication Implementation",
+    "Placeholders: Setup, Manage, Claim",
+    "Join/Create Screens: Layout unification & headerless modals",
+    "Remove Group Feature: Hide Groups from Your View",
+    "AI Category Suggestions: Smart Receipt Categorization"
+  ]
+}

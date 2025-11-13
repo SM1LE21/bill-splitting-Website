@@ -1,0 +1,12 @@
+{
+  "version": "v1.2.4",
+  "releaseDate": "2025-11-13",
+  "releaseNotes": "ALPHA v1.2.4",
+  "fileSize": "113.7MB",
+  "downloadUrl": "https://github.com/SM1LE21/bill-splitting-Website/releases/download/v1.2.4/app-release.apk",
+  "changelog": [
+    "Receipt Scan Quality: Camera vs Gallery Consistency Fix",
+    "Android Safe Area: Bottom Button Visibility Fix",
+    "ScanReceiptResultScreen: Header Title Centering Fix"
+  ]
+}

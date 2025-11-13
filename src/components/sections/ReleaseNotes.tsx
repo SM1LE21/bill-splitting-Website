@@ -1,0 +1,296 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+
+interface VersionNote {
+  version: string;
+  date?: string;
+  platform?: 'iOS' | 'Android' | 'Web';
+  changes: {
+    type: 'feature' | 'bugfix' | 'improvement';
+    description: string;
+  }[];
+}
+
+const releaseNotes: VersionNote[] = [
+  {
+    version: '1.2.2',
+    date: '8th November 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Group Balance Indicators'
+      },
+      {
+        type: 'improvement',
+        description: 'Localization - Action Center Renamed'
+      },
+      {
+        type: 'improvement',
+        description: 'Localization - German Translation Improvements'
+      },
+      {
+        type: 'bugfix',
+        description: 'User Personalization - Session-Based Trigger Fix'
+      },
+      {
+        type: 'feature',
+        description: 'User Personalization System ( only available for Premium Beta users)'
+      }
+    ]
+  },
+  {
+    version: '1.2.1',
+    date: 'September 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'improvement',
+        description: 'Edit Expense – Save Button Loading State'
+      },
+      {
+        type: 'bugfix',
+        description: 'Edit Expense – Default Currency Fix'
+      },
+      {
+        type: 'improvement',
+        description: 'AI Receipt Extraction – Backend Fallback'
+      },
+      {
+        type: 'improvement',
+        description: 'AI Receipt Parsing - Numeric Formatting'
+      },
+      {
+        type: 'bugfix',
+        description: 'Receipt Editing – Amount Formatting Fix'
+      },
+      {
+        type: 'improvement',
+        description: 'Category Picker Haptics'
+      },
+      {
+        type: 'improvement',
+        description: 'Group Creation – Placeholder Info'
+      },
+      {
+        type: 'feature',
+        description: 'Placeholder Management & Claiming Flow Added'
+      }
+    ]
+  },
+  {
+    version: '1.2.0',
+    date: '26 August 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Multi-currency expenses with automatic conversion to the group base currency and currency detection in receipt scanning'
+      },
+      {
+        type: 'feature',
+        description: 'Editable receipt items with live total recalculation and clear edited indicators'
+      },
+      {
+        type: 'improvement',
+        description: 'Unified currency and category pickers using sheets with search'
+      },
+      {
+        type: 'improvement',
+        description: 'Redesigned category picker (grid, emoji icons) plus recently used suggestions'
+      },
+      {
+        type: 'improvement',
+        description: 'Consistent category colors and localization updates (EN, DE, FR, ES, PT)'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed incorrect totals after editing receipt items and improved number formatting'
+      },
+      {
+        type: 'bugfix',
+        description: 'More reliable AI category suggestions during receipt scanning'
+      }
+    ]
+  },
+  {
+    version: '1.1.5',
+    date: '29 July 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'improvement',
+        description: 'Enhanced settlement display — shows both payer and recipient (e.g., "Settlement: John → Daniel")'
+      },
+      {
+        type: 'improvement',
+        description: 'Improved zero amount formatting — no more confusing "-0.00" in red, now displays as neutral "0.00"'
+      },
+      {
+        type: 'improvement',
+        description: 'Improved receipt processing reliability — added automatic fallback chain (Gemini → OpenAI → Server) when AI services are overloaded or fail'
+      },
+      {
+        type: 'feature',
+        description: 'Added drag-to-reorder functionality for groups (long press and drag)'
+      },
+      {
+        type: 'bugfix',
+        description: 'Added missing language localization keys for the language selection screen (settings.language.title, settings.language.description) across English, German, French'
+      },
+      {
+        type: 'bugfix',
+        description: 'Corrected net balance display to accurately reflect financial exposure'
+      }
+    ]
+  },
+  {
+    version: '1.1.4',
+    date: '2 July 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Added comprehensive expense statistics including personal totals, group averages, and weekly spending summaries'
+      }
+    ]
+  },
+  {
+    version: '1.1.3',
+    date: '15 June 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'bugfix',
+        description: 'Fixed authentication flow when email is not verified'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed image picker not opening scan receipt view'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed incorrect notification recipients for edited expenses'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed group sharing link for users without ExpenseMate installed'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed date and time editing functionality'
+      }
+    ]
+  },
+  {
+    version: '1.1.2',
+    date: '6 June 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'bugfix',
+        description: 'Fixed wrong labels'
+      }
+    ]
+  },
+  {
+    version: '1.1.1',
+    date: '2 June 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'bugfix',
+        description: 'Fixed "Paid by" information now correctly displays the payer\'s name in the expense list view across all supported languages'
+      }
+    ]
+  },
+  {
+    version: '1.1.0',
+    date: '29 May 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Added one-tap sign-in with Google and Apple'
+      },
+      {
+        type: 'feature',
+        description: 'Added multi-language support in German and French'
+      },
+      {
+        type: 'improvement',
+        description: 'New default and compact view for Expenses'
+      },
+      {
+        type: 'improvement',
+        description: 'Redesigned sharing group view when pressing the group name'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed dark mode bug'
+      },
+      {
+        type: 'improvement',
+        description: 'Improved onboarding experience for new users'
+      },
+      {
+        type: 'improvement',
+        description: 'Optimized data handling with image caching to reduce unnecessary refetching'
+      }
+    ]
+  }
+];
+
+const ReleaseNotes: React.FC = () => {
+  return (
+    <>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Release Notes</h1>
+      <p className="mt-6 text-base leading-8">
+        Track the evolution of ExpenseMate with our detailed release notes. See what&apos;s new, what&apos;s improved, and what&apos;s been fixed in each version.
+      </p>
+
+      <div className="mt-10 max-w-2xl">
+        {releaseNotes.map((release) => (
+          <motion.div
+            key={release.version}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-16"
+          >
+            <div className="flex items-center gap-x-4">
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                Version {release.version}
+              </h2>
+              {release.date && (
+                <span className="text-sm text-gray-500">
+                  Released {release.date}
+                </span>
+              )}
+              {release.platform && (
+                <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary whitespace-nowrap">
+                  {release.platform} only
+                </span>
+              )}
+            </div>
+            
+            <div className="mt-6 space-y-4">
+              {release.changes.map((change, changeIndex) => (
+                <div key={changeIndex} className="flex gap-x-3">
+                  <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-primary" />
+                  <p className="text-base leading-7 text-gray-600">
+                    {change.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default ReleaseNotes; 
