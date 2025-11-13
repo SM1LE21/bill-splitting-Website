@@ -48,7 +48,7 @@ export async function GET(
         status: 200,
         headers,
       });
-    } catch (fileError) {
+    } catch {
       // File not found locally
       return NextResponse.json(
         { error: 'File not available for download' },
