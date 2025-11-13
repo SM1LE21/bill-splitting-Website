@@ -1,0 +1,10 @@
+{
+  "version": "v1.2.5",
+  "releaseDate": "2025-11-13",
+  "releaseNotes": "ALPHA v1.2.5",
+  "fileSize": "109MB",
+  "downloadUrl": "https://github.com/SM1LE21/bill-splitting-Website/releases/download/v1.2.5/app-release.apk",
+  "changelog": [
+    "Android Spacing and Safe Area Fixes"
+  ]
+}
