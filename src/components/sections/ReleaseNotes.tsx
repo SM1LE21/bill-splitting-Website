@@ -15,6 +15,17 @@ interface VersionNote {
 
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.2.3',
+    date: '16th November 2025',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Receipt Item Management - Add & Delete'
+      }
+    ]
+  },
+  {
     version: '1.2.2',
     date: '8th November 2025',
     platform: 'iOS',
