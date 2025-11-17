@@ -43,7 +43,8 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
 
   const handleManualOpen = () => {
     if (isAndroid()) {
-      window.location.href = createAndroidSchemeLink(groupId);
+      // Android uses App Links (HTTPS) for seamless deep linking
+      window.location.href = `https://expensemate.app/join?groupId=${groupId}`;
     } else {
       window.location.href = createAppSchemeLink(groupId);
     }

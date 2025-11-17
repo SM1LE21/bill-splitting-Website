@@ -1,0 +1,11 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.expensemate",
+    "sha256_cert_fingerprints": [
+      "EC:26:1D:8D:E4:70:13:16:11:F9:BF:81:D3:D2:9E:4A:3D:6A:15:7E:9C:06:DD:AC:4A:9B:2A:C4:4B:93:B9:83"
+    ]
+  }
+}]
+
