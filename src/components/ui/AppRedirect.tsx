@@ -9,8 +9,7 @@ import {
   attemptAppRedirect, 
   getAppStoreURL,
   getPlayStoreURL,
-  createAppSchemeLink,
-  createAndroidSchemeLink
+  createAppSchemeLink
 } from '@/utils/deviceUtils';
 
 interface AppRedirectProps {
