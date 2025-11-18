@@ -97,8 +97,8 @@ export const attemptAppRedirect = (
   // Choose redirect method based on device
   let redirectUrl: string;
   if (isAndroid()) {
-    // Android uses App Links (HTTPS) for seamless deep linking
-    redirectUrl = `https://expensemate.app/join?groupId=${groupId}`;
+    // Android uses custom scheme as fallback (App Links work automatically when verified)
+    redirectUrl = createAndroidSchemeLink(groupId);
   } else {
     // iOS uses custom scheme
     redirectUrl = createAppSchemeLink(groupId);

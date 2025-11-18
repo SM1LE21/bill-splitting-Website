@@ -9,7 +9,8 @@ import {
   attemptAppRedirect, 
   getAppStoreURL,
   getPlayStoreURL,
-  createAppSchemeLink
+  createAppSchemeLink,
+  createAndroidSchemeLink
 } from '@/utils/deviceUtils';
 
 interface AppRedirectProps {
@@ -42,8 +43,8 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
 
   const handleManualOpen = () => {
     if (isAndroid()) {
-      // Android uses App Links (HTTPS) for seamless deep linking
-      window.location.href = `https://expensemate.app/join?groupId=${groupId}`;
+      // Android uses custom scheme as fallback (App Links work automatically when verified)
+      window.location.href = createAndroidSchemeLink(groupId);
     } else {
       window.location.href = createAppSchemeLink(groupId);
     }
