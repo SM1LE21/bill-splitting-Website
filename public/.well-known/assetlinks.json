@@ -1,11 +1,17 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "app.expensemate",
-    "sha256_cert_fingerprints": [
-      "EC:26:1D:8D:E4:70:13:16:11:F9:BF:81:D3:D2:9E:4A:3D:6A:15:7E:9C:06:DD:AC:4A:9B:2A:C4:4B:93:B9:83"
-    ]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.expensemate",
+      "sha256_cert_fingerprints": [
+        "EC:26:1D:8D:E4:70:13:16:11:F9:BF:81:D3:D2:9E:4A:3D:6A:15:7E:9C:06:DD:AC:4A:9B:2A:C4:4B:93:B9:83",
+        "B9:71:DF:95:6D:3E:27:C1:96:A4:15:B0:14:27:FA:39:95:C7:FE:01:03:2E:BC:13:3D:99:19:30:2D:FF:59:49"
+      ]
+    }
   }
-}]
+]
 
