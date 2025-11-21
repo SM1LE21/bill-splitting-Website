@@ -14,6 +14,16 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Match the Android assetlinks.json file
+        source: '/.well-known/assetlinks.json',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/json',
+          },
+        ],
+      },
     ];
   },
 };
