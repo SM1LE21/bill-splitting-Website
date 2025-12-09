@@ -30,18 +30,20 @@ const roadmapData = [
     status: "completed"
   },
   {
-    phase: "Q3 2025",
+    phase: "Q1 2026",
     milestone: "Android App v 1.0",
-    date: "Live by end of September 2025",
+    date: "Target: February 2026",
     features: [
       "Opens the full ExpenseMate experience to Android",
       "Feature-parity with current iOS"
-    ]
+    ],
+    status: "delayed",
+    note: "Delayed due to Play Store publication process. Want early access? Join our closed testing team!"
   },
   {
-    phase: "Q3 2025",
+    phase: "Q1 2026",
     milestone: "Version 1.2 for Android",
-    date: "Live by end of September 2025",
+    date: "Target: March 2026",
     features: [
       "Language support for French, German, Spanish, Portuguese",
       "UX/UI improvements to get close to the iOS app",
@@ -50,9 +52,9 @@ const roadmapData = [
     ]
   },
   {
-    phase: "Q4 2025",
+    phase: "Q1 2026",
     milestone: "Version 1.3 Launch",
-    date: "Live by December 2025",
+    date: "Target: February 2026",
     features: [
       "Group categories",
       "Excel data import for easy transition",
@@ -61,9 +63,9 @@ const roadmapData = [
     ]
   },
   {
-    phase: "Q4 2025",
+    phase: "Q2 2026",
     milestone: "ExpenseMate Web",
-    date: "Live by December 2025",
+    date: "Target: April 2026",
     features: [
       "Desktop-optimized version with full expense management",
       "Custom dashboards for better overview",
@@ -71,9 +73,9 @@ const roadmapData = [
     ]
   },
   {
-    phase: "Q4 2025",
+    phase: "Q2 2026",
     milestone: "Personal Space",
-    date: "Live by December 2025",
+    date: "Target: May 2026",
     features: [
       "Keep track of your personal expenses",
       "Scan feature for quick adding expenses",
@@ -84,7 +86,7 @@ const roadmapData = [
   {
     phase: "Q3 2026",
     milestone: "Work Space",
-    date: "Live by September 2026",
+    date: "Target: July 2026",
     features: [
       "Business-trip tracker with company-card vs personal-money toggle",
       "One-click PDF/CSV expense reports",
@@ -122,7 +124,7 @@ export default function Roadmap() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            All your expenses, one home. 2025 focuses on universal access and friction-free log-ins.
+            All your expenses, one home. 2026 brings Android support, web access, and powerful new features.
           </motion.p>
           <motion.div
             className="mt-4"
@@ -148,6 +150,8 @@ export default function Roadmap() {
                 className={`relative flex flex-col rounded-2xl border p-8 shadow-sm hover:shadow-md transition-shadow ${
                   item.status === "completed" 
                     ? "border-green-200 bg-green-50/50" 
+                    : item.status === "delayed"
+                    ? "border-amber-200 bg-amber-50/50"
                     : "border-gray-200"
                 }`}
                 initial={{ opacity: 0, y: 20 }}
@@ -155,7 +159,7 @@ export default function Roadmap() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * index }}
               >
-                <div className="flex items-center gap-x-4">
+                <div className="flex items-center gap-x-4 flex-wrap">
                   <div className="flex items-center gap-x-2">
                     <h3 className="text-lg font-semibold leading-8 text-gray-900">
                       {item.milestone}
@@ -165,12 +169,30 @@ export default function Roadmap() {
                         Completed
                       </span>
                     )}
+                    {item.status === "delayed" && (
+                      <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 whitespace-nowrap">
+                        Delayed
+                      </span>
+                    )}
                   </div>
                   <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary whitespace-nowrap">
                     {item.phase}
                   </span>
                 </div>
                 <p className="mt-2 text-sm text-gray-600">{item.date}</p>
+                {item.note && (
+                  <div className="mt-3 rounded-lg bg-blue-50 border border-blue-200 p-3">
+                    <p className="text-sm text-blue-800">
+                      <span className="font-semibold">Note:</span> {item.note}
+                    </p>
+                    <Link 
+                      href="#contact" 
+                      className="mt-2 inline-block text-sm font-semibold text-blue-600 hover:text-blue-800"
+                    >
+                      Contact me to join →
+                    </Link>
+                  </div>
+                )}
                 <ul className="mt-4 space-y-2">
                   {item.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-x-2 text-sm text-gray-600">
