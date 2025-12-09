@@ -30,9 +30,9 @@ const roadmapData = [
     status: "completed"
   },
   {
-    phase: "Q1 2026",
+    phase: "Q4 2025",
     milestone: "Android App v 1.0",
-    date: "Target: February 2026",
+    date: "Target: December 2025",
     features: [
       "Opens the full ExpenseMate experience to Android",
       "Feature-parity with current iOS"
@@ -43,7 +43,7 @@ const roadmapData = [
   {
     phase: "Q1 2026",
     milestone: "Version 1.2 for Android",
-    date: "Target: March 2026",
+    date: "Target: January 2026",
     features: [
       "Language support for French, German, Spanish, Portuguese",
       "UX/UI improvements to get close to the iOS app",
