@@ -42,30 +42,28 @@ const roadmapData = [
   },
   {
     phase: "Q1 2026",
-    milestone: "Version 1.2 for Android",
-    date: "Target: January 2026",
+    milestone: "Version 1.3 Launch (iOS only)",
+    date: "Target: February 2026",
     features: [
-      "Language support for French, German, Spanish, Portuguese",
-      "UX/UI improvements to get close to the iOS app",
-      "Improved Group creation and sharing",  
-      "Expense categories"
+      "Advanced Expense Summary based on categories",
+      "Placeholder members, invite friends later, claim spots anytime",
+      "Personaliued features for selected Beta users"
     ]
   },
   {
-    phase: "Q1 2026",
-    milestone: "Version 1.3 Launch",
-    date: "Target: February 2026",
+    phase: "Q2 2026",
+    milestone: "Version 1.4 Launch (iOS only)",
+    date: "Target: April 2026",
     features: [
       "Group categories",
       "Excel data import for easy transition",
       "Generate PDF/CSV reports for your groups",
-      "Placeholder members, invite friends later, claim spots anytime"
     ]
   },
   {
     phase: "Q2 2026",
     milestone: "ExpenseMate Web",
-    date: "Target: April 2026",
+    date: "Target: May 2026",
     features: [
       "Desktop-optimized version with full expense management",
       "Custom dashboards for better overview",

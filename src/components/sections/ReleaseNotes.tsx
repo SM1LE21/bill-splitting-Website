@@ -15,6 +15,17 @@ interface VersionNote {
 
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.2.4',
+    date: '3rd January 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'improvement',
+        description: 'This update focuses on improvements under the hood to ensure a smoother and more stable experience. Thank you for your continued feedback, and enjoy using the app with even more reliability!'
+      }
+    ]
+  },
+  {
     version: '1.2.3',
     date: '16th November 2025',
     platform: 'iOS',
