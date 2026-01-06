@@ -46,9 +46,12 @@ const roadmapData = [
     date: "Target: February 2026",
     features: [
       "Advanced Expense Summary based on categories",
-      "Placeholder members, invite friends later, claim spots anytime",
-      "Personaliued features for selected Beta users"
-    ]
+      "Placeholder members (invite friends later, claim spots anytime)",
+      "Personalized features for selected Beta users",
+      "Bug fixes and performance improvements",
+      "Minor UI/UX improvements"
+    ],
+    status: "completed"
   },
   {
     phase: "Q2 2026",
