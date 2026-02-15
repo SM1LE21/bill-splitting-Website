@@ -106,6 +106,12 @@ export default function Footer({ minimal = false }: FooterProps) {
         <p className="mt-6 text-center text-xs leading-5 text-gray-500">
           &copy; {new Date().getFullYear()} ExpenseMate, All rights reserved.
         </p>
+        <p className="mt-2 text-center text-xs leading-5 text-gray-400">
+          Built by{' '}
+          <a href="https://www.tkmedia.lu/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 underline">
+            TK Media
+          </a>
+        </p>
       </div>
     </footer>
   );
