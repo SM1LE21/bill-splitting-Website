@@ -15,6 +15,37 @@ interface VersionNote {
 
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.3.0',
+    date: '27th February 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Spending Insights — Explore your spending patterns by week, month, quarter, or year in the new Insights tab'
+      },
+      {
+        type: 'improvement',
+        description: 'Redesigned Summary with Overview and Insights tabs for a cleaner experience'
+      },
+      {
+        type: 'improvement',
+        description: 'Improved empty states and helpful prompts when getting started with groups and expenses'
+      },
+      {
+        type: 'improvement',
+        description: 'Smoother forms — refined Add Expense, Join Group, and Profile screens for easier use'
+      },
+      {
+        type: 'improvement',
+        description: 'Completed translations across all screens in all 5 supported languages'
+      },
+      {
+        type: 'improvement',
+        description: 'Bug fixes and performance improvements'
+      }
+    ]
+  },
+  {
     version: '1.2.4',
     date: '3rd January 2026',
     platform: 'iOS',
