@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CookieConsentWrapper from "@/components/ui/CookieConsentWrapper";
-import Script from 'next/script';
+import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
+import { Analytics } from '@vercel/analytics/next';
 
 // Root layout: App-wide HTML structure
 const inter = Inter({
@@ -54,23 +55,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-DQMZ01NG9Q"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-DQMZ01NG9Q');
-          `}
-        </Script>
-      </head>
       <body className="min-h-screen bg-white font-sans antialiased">
+        <GoogleAnalytics />
         {children}
         <CookieConsentWrapper />
+        <Analytics />
       </body>
     </html>
   );

@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Direct interactions:</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
               <li><strong>Automated technologies or interactions:</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
-              <li><strong>Third parties or publicly available sources:</strong> We may receive Technical Data about you from analytics providers such as Google.</li>
+              <li><strong>Third-party analytics providers:</strong> We use Google Analytics (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies — it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data</h2>
@@ -107,6 +107,9 @@ export default function PrivacyPolicy() {
             </ul>
             <p className="mt-6">
               Additionally, receipt images may be processed by Google Gemini and/or OpenAI services to extract data and analyze receipt content. This processing is essential for the core functionality of our application.
+            </p>
+            <p className="mt-6">
+              Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Vercel&apos;s Privacy Policy</a>.
             </p>
             <p className="mt-6">
               All data processing and storage is necessary for the functioning of the application and providing the services you request.

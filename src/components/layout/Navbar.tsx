@@ -5,21 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
-
-// Add gtag type definition with proper types
-declare global {
-  interface Window {
-    gtag: (
-      command: 'event' | 'config' | 'js',
-      action: string,
-      params?: {
-        event_category?: string;
-        event_label?: string;
-        [key: string]: string | number | boolean | undefined;
-      }
-    ) => void;
-  }
-}
+import { hasConsent } from '@/utils/cookieConsent';
 
 const navigation = [
   { name: 'Features', href: '#features' },
@@ -35,7 +21,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const trackClick = (elementName: string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag && hasConsent('analytics')) {
       window.gtag('event', 'click', {
         'event_category': 'Navigation',
         'event_label': elementName

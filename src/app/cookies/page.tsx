@@ -52,15 +52,12 @@ export default function CookiePolicy() {
                 <strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and account access. You may disable these by changing your browser settings, but this will affect how the website functions.
               </li>
               <li>
-                <strong>Analytics Cookies:</strong> These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our website. They help us know which pages are the most and least popular and see how visitors move around the website.
-              </li>
-              <li>
-                <strong>Functionality Cookies:</strong> These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages.
-              </li>
-              <li>
-                <strong>Targeting Cookies:</strong> These cookies may be set through our website by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisements on other websites.
+                <strong>Analytics Cookies:</strong> These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our website. They help us know which pages are the most and least popular and see how visitors move around the website. These require your consent under GDPR.
               </li>
             </ul>
+            <p className="mt-6">
+              We also use <strong>Vercel Analytics</strong>, a cookieless analytics tool that does not set any cookies or store personal identifiers. It collects only aggregated, anonymized data such as page views, referrer, device type, and country (derived transiently from your IP address, which is never stored). Because Vercel Analytics uses no cookies and retains no personal data, it does not require your consent and is always active.
+            </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. Specific Cookies We Use</h2>
             <p className="mt-6">
@@ -79,40 +76,39 @@ export default function CookiePolicy() {
                 <tbody className="divide-y divide-gray-200">
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">cookieConsent</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Stores your cookie consent preference</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Stores your cookie consent preference (localStorage)</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">1 year</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Essential</td>
                   </tr>
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">_ga</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Used by Google Analytics to distinguish users</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Used by Google Analytics to distinguish users (only set with analytics consent)</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">2 years</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Analytics</td>
                   </tr>
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">_ga_[ID]</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Used by Google Analytics to persist session state</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Used by Google Analytics to persist session state (only set with analytics consent)</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">2 years</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Analytics</td>
                   </tr>
                   <tr>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">_fbp</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Used by Facebook to deliver advertisements</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">3 months</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Targeting</td>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">Vercel Analytics</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Cookieless analytics — collects aggregated page view data with no personal identifiers</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">No cookie set</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Cookieless / Always active</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. Third-Party Cookies</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. Third-Party Analytics</h2>
             <p className="mt-6">
-              In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website, deliver advertisements, and so on. These cookies may include:
+              We use the following third-party analytics services:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li>Google Analytics cookies to analyze website usage</li>
-              <li>Google AdSense cookies for advertising purposes</li>
-              <li>Facebook Pixel for advertising and retargeting</li>
+              <li><strong>Google Analytics (GA4)</strong> — cookie-based analytics active only with your consent. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">policies.google.com/privacy</a></li>
+              <li><strong>Vercel Analytics</strong> — cookieless, privacy-first analytics that collects only aggregated, anonymized data. No cookies are set and no personal data is stored. Vercel&apos;s privacy policy applies: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">vercel.com/legal/privacy-policy</a></li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Managing Cookies</h2>

@@ -7,6 +7,7 @@ import { getCookieConsent, setCookieConsent } from '@/utils/cookieConsent';
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
+  const [analyticsChecked, setAnalyticsChecked] = useState(true);
 
   useEffect(() => {
     // Check if user has already given consent
@@ -31,13 +32,16 @@ export default function CookieConsent() {
   const acceptAll = () => {
     setCookieConsent('all');
     setShowBanner(false);
-    // Analytics and marketing cookies would be initialized here
   };
 
   const acceptEssential = () => {
     setCookieConsent('essential');
     setShowBanner(false);
-    // Only essential cookies would be initialized here
+  };
+
+  const savePreferences = () => {
+    setCookieConsent(analyticsChecked ? 'all' : 'essential');
+    setShowBanner(false);
   };
 
   const openSettings = () => {
@@ -55,7 +59,7 @@ export default function CookieConsent() {
           <div className="flex-1">
             <h3 className="text-base font-semibold text-gray-900">Cookie Consent</h3>
             <p className="mt-1 text-sm text-gray-600">
-              We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our{' '}
+              We use cookies to analyze our traffic and improve your experience. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Vercel Analytics is always active and cookieless. Read our{' '}
               <Link href="/privacy" className="font-medium text-primary hover:text-primary-dark">
                 Privacy Policy
               </Link>{' '}
@@ -115,32 +119,18 @@ export default function CookieConsent() {
                     name="analytics"
                     type="checkbox"
                     className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
-                    defaultChecked
+                    checked={analyticsChecked}
+                    onChange={(e) => setAnalyticsChecked(e.target.checked)}
                   />
                 </div>
                 <div className="ml-3 text-sm">
-                  <label htmlFor="analytics" className="font-medium text-gray-700">Analytics Cookies</label>
-                  <p className="text-gray-500">Help us understand how visitors interact with our website.</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input
-                    id="marketing"
-                    name="marketing"
-                    type="checkbox"
-                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
-                    defaultChecked
-                  />
-                </div>
-                <div className="ml-3 text-sm">
-                  <label htmlFor="marketing" className="font-medium text-gray-700">Marketing Cookies</label>
-                  <p className="text-gray-500">Used to track visitors across websites for advertising purposes.</p>
+                  <label htmlFor="analytics" className="font-medium text-gray-700">Analytics Cookies (Google Analytics)</label>
+                  <p className="text-gray-500">Help us understand how visitors interact with our website. Vercel Analytics is always active and does not use cookies.</p>
                 </div>
               </div>
               <div className="flex justify-end">
                 <button
-                  onClick={acceptEssential}
+                  onClick={savePreferences}
                   className="mr-3 inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
                 >
                   Save Preferences
