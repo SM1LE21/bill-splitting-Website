@@ -202,10 +202,18 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10. Data Retention</h2>
             <p className="mt-6">
-              We will only retain your personal data for as long as reasonably necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.
+              We keep your personal data only for as long as reasonably necessary for the purposes set out in section 5, including to meet any legal, regulatory, tax, accounting or reporting requirements. Concretely:
             </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2">
+              <li><strong>Account data (Identity, Contact, Profile):</strong> kept for as long as your account exists. On deletion, identifying fields are removed within 30 days.</li>
+              <li><strong>Expense and group data (Financial):</strong> kept while your account is active. When you delete your account, data that is strictly tied to you is deleted, and data that remains linked to shared groups or expenses of other users is <strong>anonymised</strong> (your identity is removed) rather than deleted, so that the expense history of other group members stays intact and the app continues to function correctly.</li>
+              <li><strong>Receipt images (Image):</strong> kept while linked to an expense; deleted when you delete the expense, the group, or your account.</li>
+              <li><strong>Technical and server logs:</strong> typically kept for up to 90 days for security, debugging, and abuse-prevention purposes.</li>
+              <li><strong>Google Analytics data:</strong> retained for 14 months by default at the GA4 level.</li>
+              <li><strong>Accounting and tax records:</strong> retained for 10 years in accordance with Luxembourg accounting law where applicable.</li>
+            </ul>
             <p className="mt-6">
-              To determine the appropriate retention period for personal data, we consider the amount, nature and sensitivity of the personal data, the potential risk of harm from unauthorized use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal, regulatory, tax, accounting or other requirements.
+              Once anonymised, data is no longer considered personal data under the GDPR and may be retained for statistical and operational purposes.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. Your Legal Rights</h2>
