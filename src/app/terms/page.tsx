@@ -165,10 +165,19 @@ export default function TermsOfService() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Governing Law</h2>
             <p className="mt-6">
-              These Terms shall be governed by and construed in accordance with the laws of Luxembourg, without regard to its conflict of law provisions.
+              These Terms shall be governed by and construed in accordance with the laws of Luxembourg, without regard to its conflict of law provisions. If you use the Services as a consumer, this does not deprive you of the mandatory protections granted to you by the law of the EU Member State in which you habitually reside.
             </p>
             <p className="mt-6">
               Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.
+            </p>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12a. Online Dispute Resolution</h2>
+            <p className="mt-6">
+              In accordance with Regulation (EU) No 524/2013, the European Commission provides a platform for online dispute resolution (ODR), available at{' '}
+              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+                https://ec.europa.eu/consumers/odr
+              </a>
+              . We are not obliged and not willing to participate in dispute-resolution proceedings before a consumer arbitration board, but consumers may still use the ODR platform to raise a complaint.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Contact Information</h2>
