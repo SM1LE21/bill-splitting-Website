@@ -248,7 +248,17 @@ export default function PrivacyPolicy() {
               </p>
             </div>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Cookies and Tracking</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Children</h2>
+            <p className="mt-6">
+              Our Services are not directed at children under 16. Under Luxembourg law, the age of digital consent under GDPR Art. 8 is 16. We do not knowingly collect personal data from children under 16. If you believe a child has provided us with personal data, please contact us and we will take steps to delete it.
+            </p>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">14. Automated Decision-Making</h2>
+            <p className="mt-6">
+              Receipt OCR uses AI models to extract items and amounts from images. This is purely a data-extraction step; it does not produce decisions that have legal effects on you or similarly significantly affect you within the meaning of GDPR Art. 22. You remain in control of every expense you save in the app.
+            </p>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">15. Cookies and Tracking</h2>
             <p className="mt-6">
               Our website uses cookies and similar tracking technologies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.
             </p>
@@ -256,7 +266,7 @@ export default function PrivacyPolicy() {
               You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">14. Changes to the Privacy Policy</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">16. Changes to the Privacy Policy</h2>
             <p className="mt-6">
               We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date at the top of this Privacy Policy.
             </p>
@@ -264,7 +274,7 @@ export default function PrivacyPolicy() {
               You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">15. Contact Us</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">17. Contact Us</h2>
             <p className="mt-6">
               If you have any questions about this Privacy Policy, please contact us at tun.keltesch@tkmedia.lu.
             </p>
