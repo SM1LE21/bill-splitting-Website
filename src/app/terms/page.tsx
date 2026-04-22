@@ -140,6 +140,21 @@ export default function TermsOfService() {
               IN NO EVENT SHALL EXPENSEMATE, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES, BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (i) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICES; (ii) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE SERVICES; (iii) ANY CONTENT OBTAINED FROM THE SERVICES; AND (iv) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE) OR ANY OTHER LEGAL THEORY, WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.
             </p>
 
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10a. EU Consumer Rights (Mandatory Law)</h2>
+            <p className="mt-6">
+              Nothing in sections 9 or 10 shall exclude or limit our liability:
+            </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2">
+              <li>for death or personal injury caused by our negligence;</li>
+              <li>for fraud or fraudulent misrepresentation;</li>
+              <li>for gross negligence or wilful misconduct;</li>
+              <li>for the breach of any essential obligation of this agreement;</li>
+              <li>or for any liability that cannot be excluded or limited under the mandatory law applicable to you, including applicable consumer-protection law in Luxembourg and your country of residence in the EU/EEA.</li>
+            </ul>
+            <p className="mt-6">
+              If you use the Services as a consumer, you benefit from the mandatory protections granted to you by the law of the EU Member State in which you habitually reside, and nothing in these Terms deprives you of those rights.
+            </p>
+
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. Changes to Terms</h2>
             <p className="mt-6">
               We may revise and update these Terms from time to time in our sole discretion. All changes are effective immediately when we post them, and apply to all access to and use of the Services thereafter.
