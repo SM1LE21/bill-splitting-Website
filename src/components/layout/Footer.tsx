@@ -18,7 +18,6 @@ const productLinks: FooterLink[] = [
 
 const resourceLinks: FooterLink[] = [
   { name: 'Release Notes', href: '/release-notes' },
-  { name: 'Downloads', href: '/downloads' },
 ];
 
 const legalLinks: FooterLink[] = [
