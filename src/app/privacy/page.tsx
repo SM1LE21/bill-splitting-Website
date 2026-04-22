@@ -37,13 +37,20 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">2. Data Controller</h2>
             <p className="mt-6">
-              Tun Keltesch is the controller and responsible for your personal data.
+              The controller responsible for your personal data is:
+            </p>
+            <div className="mt-4 pl-4 space-y-1">
+              <p className="font-semibold text-gray-900">TK MEDIA S.à r.l.-S</p>
+              <p>13, In Bedigen</p>
+              <p>L-9283 Diekirch, Luxembourg</p>
+              <p>RCS Luxembourg: B306819</p>
+              <p>Email: <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a></p>
+            </div>
+            <p className="mt-6">
+              For full company details, see our <Link href="/legal" className="text-primary hover:text-primary-dark">Legal Notice</Link>.
             </p>
             <p className="mt-6">
-              We do not share your personal data with any third parties. Your data remains accessible only by you and is essential for the operation of the Services.
-            </p>
-            <p className="mt-6">
-              If you have any questions about this privacy policy, including any requests to exercise your legal rights, please contact us at: tun.keltesch@gmail.com
+              If you have any questions about this privacy policy, or if you wish to exercise any of your legal rights, please contact us at the email address above.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">3. The Data We Collect</h2>
@@ -144,7 +151,7 @@ export default function PrivacyPolicy() {
               <li><strong>Object:</strong> You have the right to object to the processing of your personal data in certain circumstances.</li>
             </ul>
             <p className="mt-6">
-              You can exercise any of these rights by contacting us at tun.keltesch@gmail.com We will respond to all legitimate requests within one month.
+              You can exercise any of these rights by contacting us at tun.keltesch@tkmedia.lu. We will respond within one month of receiving your request.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10. Cookies and Tracking</h2>
@@ -165,7 +172,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Contact Us</h2>
             <p className="mt-6">
-              If you have any questions about this Privacy Policy, please contact us at tun.keltesch@gmail.com.
+              If you have any questions about this Privacy Policy, please contact us at tun.keltesch@tkmedia.lu.
             </p>
           </div>
         </div>
