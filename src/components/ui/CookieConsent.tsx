@@ -7,7 +7,7 @@ import { getCookieConsent, setCookieConsent } from '@/utils/cookieConsent';
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
-  const [analyticsChecked, setAnalyticsChecked] = useState(true);
+  const [analyticsChecked, setAnalyticsChecked] = useState(false);
 
   useEffect(() => {
     // Check if user has already given consent
