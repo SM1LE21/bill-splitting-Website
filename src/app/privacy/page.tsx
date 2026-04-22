@@ -77,30 +77,58 @@ export default function PrivacyPolicy() {
               <li><strong>Third-party analytics providers:</strong> We use Google Analytics (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies — it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
             </ul>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data &amp; Legal Basis</h2>
             <p className="mt-6">
-              We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
+              We only process your personal data where we have a valid legal basis under the GDPR (Regulation (EU) 2016/679). The table below sets out the purposes for which we process your data and the legal basis we rely on for each.
             </p>
-            <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
-              <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
-              <li>Where we need to comply with a legal obligation.</li>
-            </ul>
-            <p className="mt-6">
-              We use your data for the following purposes:
-            </p>
-            <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li>To register you as a new user</li>
-              <li>To provide and maintain our Services</li>
-              <li>To process and analyze your receipts and expenses</li>
-              <li>To improve our Services</li>
-              <li>To notify you about changes to our Services</li>
-              <li>To allow you to participate in interactive features of our Services</li>
-              <li>To provide customer support</li>
-              <li>To gather analysis or valuable information so that we can improve our Services</li>
-              <li>To monitor the usage of our Services</li>
-              <li>To detect, prevent and address technical issues</li>
-            </ul>
+            <div className="mt-4 overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-300">
+                <thead>
+                  <tr>
+                    <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Purpose</th>
+                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Data categories</th>
+                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Legal basis (GDPR Art. 6)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 text-sm text-gray-600">
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Creating your account and providing the Services (receipt scanning, expense tracking, group splitting)</td>
+                    <td className="px-3 py-4">Identity, Contact, Financial, Image, Profile</td>
+                    <td className="px-3 py-4">Performance of a contract — Art. 6(1)(b)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Processing receipt images to extract items and amounts (AI-assisted OCR)</td>
+                    <td className="px-3 py-4">Image, Financial</td>
+                    <td className="px-3 py-4">Performance of a contract — Art. 6(1)(b)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Securing the Services, detecting fraud and abuse, and maintaining system integrity</td>
+                    <td className="px-3 py-4">Technical, Usage</td>
+                    <td className="px-3 py-4">Legitimate interests — Art. 6(1)(f) (running a secure service)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Analytics and product improvement (Google Analytics)</td>
+                    <td className="px-3 py-4">Technical, Usage</td>
+                    <td className="px-3 py-4">Consent — Art. 6(1)(a)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Aggregated, cookieless audience measurement (Vercel Analytics)</td>
+                    <td className="px-3 py-4">Technical (transient)</td>
+                    <td className="px-3 py-4">Legitimate interests — Art. 6(1)(f) (measuring website reach without identifying visitors)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Responding to support requests and legal-rights requests</td>
+                    <td className="px-3 py-4">Identity, Contact, any other relevant data</td>
+                    <td className="px-3 py-4">Legal obligation — Art. 6(1)(c) and legitimate interests — Art. 6(1)(f)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Complying with accounting, tax and other legal obligations</td>
+                    <td className="px-3 py-4">Identity, Contact, Financial (to the extent applicable)</td>
+                    <td className="px-3 py-4">Legal obligation — Art. 6(1)(c)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Recipients and Sub-Processors</h2>
             <p className="mt-6">
