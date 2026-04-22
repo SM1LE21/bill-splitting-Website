@@ -218,21 +218,37 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. Your Legal Rights</h2>
             <p className="mt-6">
-              Under the GDPR, you have various rights with respect to our use of your personal data:
+              Under the GDPR, you have the following rights in relation to your personal data:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>Access:</strong> You have the right to request a copy of your personal data that we hold.</li>
-              <li><strong>Rectification:</strong> You have the right to request that we correct any inaccurate or incomplete personal data.</li>
-              <li><strong>Erasure:</strong> You have the right to request that we delete your personal data in certain circumstances.</li>
-              <li><strong>Restrict processing:</strong> You have the right to request that we restrict the processing of your personal data in certain circumstances.</li>
-              <li><strong>Data portability:</strong> You have the right to request that we provide you with your personal data in a structured, commonly used and machine-readable format.</li>
-              <li><strong>Object:</strong> You have the right to object to the processing of your personal data in certain circumstances.</li>
+              <li><strong>Access</strong> (Art. 15): request a copy of the personal data we hold about you.</li>
+              <li><strong>Rectification</strong> (Art. 16): ask us to correct inaccurate or incomplete data.</li>
+              <li><strong>Erasure</strong> (Art. 17): ask us to delete your personal data, subject to the anonymisation approach explained in section 10.</li>
+              <li><strong>Restriction</strong> (Art. 18): ask us to limit the processing of your data in certain circumstances.</li>
+              <li><strong>Portability</strong> (Art. 20): receive your data in a structured, commonly used, machine-readable format.</li>
+              <li><strong>Objection</strong> (Art. 21): object to processing based on legitimate interests.</li>
+              <li><strong>Withdraw consent</strong> (Art. 7(3)): where processing is based on consent, withdraw it at any time — without affecting the lawfulness of processing carried out before the withdrawal.</li>
             </ul>
             <p className="mt-6">
-              You can exercise any of these rights by contacting us at tun.keltesch@tkmedia.lu. We will respond within one month of receiving your request.
+              To exercise any of these rights, contact us at <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a>. We will respond within one month of receiving your request.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Cookies and Tracking</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Right to Lodge a Complaint</h2>
+            <p className="mt-6">
+              You have the right to lodge a complaint with a data protection supervisory authority, in particular in the EU Member State of your habitual residence, place of work, or place of the alleged infringement. In Luxembourg, the competent authority is the <strong>Commission nationale pour la protection des données (CNPD)</strong>:
+            </p>
+            <div className="mt-4 pl-4 space-y-1">
+              <p>15, Boulevard du Jazz</p>
+              <p>L-4370 Belvaux, Luxembourg</p>
+              <p>
+                Website:{' '}
+                <a href="https://cnpd.public.lu" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+                  cnpd.public.lu
+                </a>
+              </p>
+            </div>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Cookies and Tracking</h2>
             <p className="mt-6">
               Our website uses cookies and similar tracking technologies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.
             </p>
@@ -240,7 +256,7 @@ export default function PrivacyPolicy() {
               You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Changes to the Privacy Policy</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">14. Changes to the Privacy Policy</h2>
             <p className="mt-6">
               We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date at the top of this Privacy Policy.
             </p>
@@ -248,7 +264,7 @@ export default function PrivacyPolicy() {
               You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">14. Contact Us</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">15. Contact Us</h2>
             <p className="mt-6">
               If you have any questions about this Privacy Policy, please contact us at tun.keltesch@tkmedia.lu.
             </p>
