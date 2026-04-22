@@ -76,9 +76,9 @@ export default function CookiePolicy() {
                 <tbody className="divide-y divide-gray-200">
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">cookieConsent</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Stores your cookie consent preference (localStorage)</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">1 year</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Essential</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Stores your consent preference — stored in browser localStorage, not as a cookie</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Until you clear site data</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Essential (local storage)</td>
                   </tr>
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">_ga</td>
@@ -140,7 +140,7 @@ export default function CookiePolicy() {
               If you have any questions or concerns about our use of cookies, please contact us at:
             </p>
             <p className="mt-4">
-              Email: tun.keltesch@gmail.com
+              Email: <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a>
             </p>
           </div>
         </div>
