@@ -89,7 +89,10 @@ export default function TermsOfService() {
               Our Services may allow you to upload, submit, store, send or receive content, including receipt images, expense data, and user information (&quot;User Content&quot;). You retain ownership of any intellectual property rights that you hold in that User Content.
             </p>
             <p className="mt-6">
-              When you upload, submit, store, send or receive User Content to or through our Services, you give ExpenseMate a worldwide license to use, host, store, reproduce, modify, create derivative works, communicate, publish, publicly perform, publicly display, and distribute such User Content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones.
+              You grant us a limited, non-exclusive, royalty-free, worldwide licence to <strong>host, store, reproduce, transmit, display and process</strong> your User Content <strong>solely to the extent necessary to operate, secure, maintain and provide the Services to you and to the other users you choose to share it with</strong> (for example, the other members of a group you create or join). We also need this licence to carry out technical operations such as backups, replication between data centres, receipt OCR, and compliance with legal obligations.
+            </p>
+            <p className="mt-6">
+              This licence does not grant us any right to use your User Content for advertising, for training third-party AI models, or to publicly display it outside the Services. It ends when you delete the relevant User Content or your account, subject to the retention and anonymisation rules described in our <Link href="/privacy" className="text-primary hover:text-primary-dark">Privacy Policy</Link>, and subject to copies that may remain in backups for a limited period before being overwritten.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. Prohibited Uses</h2>
