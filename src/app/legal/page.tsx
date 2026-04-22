@@ -58,8 +58,8 @@ export default function LegalNotice() {
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Contact</h2>
             <p className="mt-6">
               Email:{' '}
-              <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">
-                tun.keltesch@tkmedia.lu
+              <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">
+                contact@tkmedia.lu
               </a>
             </p>
 

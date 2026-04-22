@@ -40,7 +40,7 @@ export default function TermsOfService() {
               ExpenseMate is operated by <strong>TK MEDIA S.à r.l.-S</strong> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), a Luxembourg simplified limited liability company with its registered office at 13, In Bedigen, L-9283 Diekirch, Luxembourg, registered with the Luxembourg Trade and Companies Register (RCS) under number B306819.
             </p>
             <p className="mt-6">
-              You can reach us at <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a>. Full company information is available in our <Link href="/legal" className="text-primary hover:text-primary-dark">Legal Notice</Link>.
+              You can reach us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>. Full company information is available in our <Link href="/legal" className="text-primary hover:text-primary-dark">Legal Notice</Link>.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">3. Services Description</h2>
@@ -185,7 +185,7 @@ export default function TermsOfService() {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p className="mt-4 pl-4">
-              Email: <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a>
+              Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>
             </p>
           </div>
         </div>

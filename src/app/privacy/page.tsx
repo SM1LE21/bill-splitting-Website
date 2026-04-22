@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
               <p>13, In Bedigen</p>
               <p>L-9283 Diekirch, Luxembourg</p>
               <p>RCS Luxembourg: B306819</p>
-              <p>Email: <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a></p>
+              <p>Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a></p>
             </div>
             <p className="mt-6">
               For full company details, see our <Link href="/legal" className="text-primary hover:text-primary-dark">Legal Notice</Link>.
@@ -230,7 +230,7 @@ export default function PrivacyPolicy() {
               <li><strong>Withdraw consent</strong> (Art. 7(3)): where processing is based on consent, withdraw it at any time — without affecting the lawfulness of processing carried out before the withdrawal.</li>
             </ul>
             <p className="mt-6">
-              To exercise any of these rights, contact us at <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a>. We will respond within one month of receiving your request.
+              To exercise any of these rights, contact us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>. We will respond within one month of receiving your request.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Right to Lodge a Complaint</h2>
@@ -276,7 +276,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">17. Contact Us</h2>
             <p className="mt-6">
-              If you have any questions about this Privacy Policy, please contact us at tun.keltesch@tkmedia.lu.
+              If you have any questions about this Privacy Policy, please contact us at contact@tkmedia.lu.
             </p>
           </div>
         </div>

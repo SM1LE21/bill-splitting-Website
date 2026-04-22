@@ -140,7 +140,7 @@ export default function CookiePolicy() {
               If you have any questions or concerns about our use of cookies, please contact us at:
             </p>
             <p className="mt-4">
-              Email: <a href="mailto:tun.keltesch@tkmedia.lu" className="text-primary hover:text-primary-dark">tun.keltesch@tkmedia.lu</a>
+              Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>
             </p>
           </div>
         </div>

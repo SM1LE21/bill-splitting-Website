@@ -21,7 +21,7 @@ export default function Contact() {
           </p>
           <div className="mt-6">
             <a
-              href="mailto:tun.keltesch@tkmedia.lu"
+              href="mailto:contact@tkmedia.lu"
               className="inline-flex items-center gap-x-2 rounded-full bg-white px-6 py-3 text-lg font-semibold text-primary ring-1 ring-primary hover:ring-2 transition-all"
             >
               <EnvelopeIcon className="h-5 w-5" />
