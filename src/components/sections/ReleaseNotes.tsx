@@ -15,6 +15,33 @@ interface VersionNote {
 
 const releaseNotes: VersionNote[] = [
   {
+    version: 'Website — 22 April 2026',
+    date: '22 April 2026',
+    platform: 'Web',
+    changes: [
+      {
+        type: 'improvement',
+        description: 'Compliance & legal update for the TK MEDIA S.à r.l.-S takeover: added a Legal Notice page (imprint) with full company details, updated the data controller and all contact points across the Privacy Policy, Terms of Service and Cookie Policy.'
+      },
+      {
+        type: 'improvement',
+        description: 'Privacy Policy rewritten to meet GDPR Art. 13 in full — sub-processor list (Google, OpenAI, Vercel), international transfer safeguards, per-purpose legal bases, concrete retention periods (including the anonymisation rule on account deletion), right to lodge a complaint with the CNPD, Art. 8 children statement, Art. 22 automated-decision clarification.'
+      },
+      {
+        type: 'improvement',
+        description: 'Terms of Service tightened for EU consumers — narrowed User Content licence to operational necessity (no AI training, no public display), added EU consumer carve-outs on warranty/liability disclaimers, and added a link to the EU Online Dispute Resolution platform.'
+      },
+      {
+        type: 'improvement',
+        description: 'Cookie banner reworked for valid consent: the analytics checkbox is no longer pre-ticked, and the refusal option is now a prominent "Reject All" button with equal visual weight to "Accept All".'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed broken metadataBase pointing at a non-existent domain, which was breaking social-media previews and absolute URL generation.'
+      }
+    ]
+  },
+  {
     version: '1.3.0',
     date: '27th February 2026',
     platform: 'iOS',
