@@ -102,27 +102,69 @@ export default function PrivacyPolicy() {
               <li>To detect, prevent and address technical issues</li>
             </ul>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Data Processing and Storage</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Recipients and Sub-Processors</h2>
             <p className="mt-6">
-              Your data is processed and stored on Google Cloud infrastructure, which provides robust security measures. We specifically use:
+              We do not sell your personal data. We share it only with a limited number of service providers (processors under GDPR Art. 28) who process it on our behalf and under our instructions in order to operate the Services:
+            </p>
+            <div className="mt-4 overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-300">
+                <thead>
+                  <tr>
+                    <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Provider</th>
+                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Purpose</th>
+                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Location</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 text-sm text-gray-600">
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Google LLC (Firebase Authentication, Cloud Storage, Cloud Run, Cloud SQL)</td>
+                    <td className="px-3 py-4">Authentication, file storage, API hosting, database</td>
+                    <td className="px-3 py-4">EU / United States</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Google LLC (Gemini API)</td>
+                    <td className="px-3 py-4">Receipt OCR / item extraction</td>
+                    <td className="px-3 py-4">United States</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">OpenAI, L.L.C.</td>
+                    <td className="px-3 py-4">Receipt OCR / item extraction (fallback)</td>
+                    <td className="px-3 py-4">United States</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Vercel Inc.</td>
+                    <td className="px-3 py-4">Website hosting and cookieless analytics</td>
+                    <td className="px-3 py-4">United States (global edge)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-6">
+              Receipt image content is sent to OCR providers only for the time needed to extract the data; we do not authorise them to use your content to train their models. We may additionally disclose personal data where required by law, court order, or a legitimate request from a public authority, or where necessary to protect our rights, the safety of our users, or the integrity of the Services.
+            </p>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. International Data Transfers</h2>
+            <p className="mt-6">
+              Some of our sub-processors are established outside the European Economic Area (EEA), notably in the United States. When we transfer your personal data outside the EEA, we ensure an adequate level of protection using one or more of the following safeguards:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>Google Cloud Storage (Buckets)</strong> for storing receipt images and other files</li>
-              <li><strong>Firebase Authentication</strong> for secure user authentication</li>
-              <li><strong>Google Cloud Run</strong> for hosting our API services</li>
-              <li><strong>Google Cloud SQL</strong> for database hosting and management</li>
+              <li>Transfer to providers certified under the <strong>EU–US Data Privacy Framework</strong> (where applicable).</li>
+              <li>Standard Contractual Clauses (SCCs) adopted by the European Commission (Decision (EU) 2021/914), supplemented with technical and organisational measures where required.</li>
+              <li>For Google services, Google&apos;s published cross-border transfer mechanisms.</li>
             </ul>
             <p className="mt-6">
-              Additionally, receipt images may be processed by Google Gemini and/or OpenAI services to extract data and analyze receipt content. This processing is essential for the core functionality of our application.
+              You may request a copy of the safeguards in place for a given transfer by contacting us at the email address listed in section 2.
+            </p>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. Infrastructure</h2>
+            <p className="mt-6">
+              Your data is processed and stored on Google Cloud infrastructure. We specifically use <strong>Google Cloud Storage</strong> for receipt images and files, <strong>Firebase Authentication</strong> for sign-in, <strong>Google Cloud Run</strong> for our API services, and <strong>Google Cloud SQL</strong> for the database.
             </p>
             <p className="mt-6">
               Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Vercel&apos;s Privacy Policy</a>.
             </p>
-            <p className="mt-6">
-              All data processing and storage is necessary for the functioning of the application and providing the services you request.
-            </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. Data Security</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Data Security</h2>
             <p className="mt-6">
               We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality.
             </p>
@@ -130,7 +172,7 @@ export default function PrivacyPolicy() {
               We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. Data Retention</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10. Data Retention</h2>
             <p className="mt-6">
               We will only retain your personal data for as long as reasonably necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.
             </p>
@@ -138,7 +180,7 @@ export default function PrivacyPolicy() {
               To determine the appropriate retention period for personal data, we consider the amount, nature and sensitivity of the personal data, the potential risk of harm from unauthorized use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal, regulatory, tax, accounting or other requirements.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Your Legal Rights</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. Your Legal Rights</h2>
             <p className="mt-6">
               Under the GDPR, you have various rights with respect to our use of your personal data:
             </p>
@@ -154,7 +196,7 @@ export default function PrivacyPolicy() {
               You can exercise any of these rights by contacting us at tun.keltesch@tkmedia.lu. We will respond within one month of receiving your request.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10. Cookies and Tracking</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Cookies and Tracking</h2>
             <p className="mt-6">
               Our website uses cookies and similar tracking technologies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.
             </p>
@@ -162,7 +204,7 @@ export default function PrivacyPolicy() {
               You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. Changes to the Privacy Policy</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Changes to the Privacy Policy</h2>
             <p className="mt-6">
               We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date at the top of this Privacy Policy.
             </p>
@@ -170,7 +212,7 @@ export default function PrivacyPolicy() {
               You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Contact Us</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">14. Contact Us</h2>
             <p className="mt-6">
               If you have any questions about this Privacy Policy, please contact us at tun.keltesch@tkmedia.lu.
             </p>
