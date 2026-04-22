@@ -21,6 +21,7 @@ const navigation = {
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
+    { name: 'Legal Notice', href: '/legal' },
   ],
   social: [
     {
@@ -85,6 +86,11 @@ export default function Footer({ minimal = false }: FooterProps) {
             <div className="pb-4">
               <Link href="/cookies" className="text-xs leading-5 text-gray-500 hover:text-gray-900">
                 Cookie Policy
+              </Link>
+            </div>
+            <div className="pb-4">
+              <Link href="/legal" className="text-xs leading-5 text-gray-500 hover:text-gray-900">
+                Legal Notice
               </Link>
             </div>
             <div className="pb-4">
