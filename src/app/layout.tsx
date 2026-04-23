@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import CookieConsentWrapper from "@/components/ui/CookieConsentWrapper";
 import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
+import StructuredData from "@/components/ui/StructuredData";
 import { Analytics } from '@vercel/analytics/next';
 
 // Root layout: App-wide HTML structure
@@ -56,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen bg-white font-sans antialiased">
+        <StructuredData />
         <GoogleAnalytics />
         {children}
         <CookieConsentWrapper />
