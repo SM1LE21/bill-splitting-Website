@@ -19,9 +19,9 @@ const JoinGroup: React.FC<JoinGroupProps> = ({ groupId }) => {
             <p className="text-gray-700 mb-6">
               The group link you followed is invalid or has expired.
             </p>
-            <Link 
+            <Link
               href="/"
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition"
+              className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition"
             >
               Return to Homepage
             </Link>

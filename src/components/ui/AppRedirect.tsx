@@ -76,7 +76,7 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
               <div className="flex flex-col gap-4">
                 <Link 
                   href={getAppStoreURL()} 
-                  className="px-6 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition"
+                  className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -101,7 +101,7 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
               <div className="flex flex-col gap-4">
                 <Link 
                   href={getPlayStoreURL()} 
-                  className="px-6 py-2 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition"
+                  className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -136,7 +136,7 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
               </p>
               <a 
                 href={`https://www.expensemate.app/join?groupId=${groupId}`}
-                className="text-blue-600 hover:underline break-all"
+                className="text-primary hover:text-primary/80 hover:underline break-all"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -148,7 +148,7 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
           <div className="mt-6">
             <Link
               href="/"
-              className="text-blue-600 hover:underline"
+              className="text-primary hover:text-primary/80 hover:underline"
             >
               Return to Homepage
             </Link>
