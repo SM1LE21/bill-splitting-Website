@@ -21,17 +21,18 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id="benefits">
-      <div className="absolute inset-0 -z-10 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary" />
-      </div>
+    <div className="relative isolate overflow-hidden bg-gray-50 py-24 sm:py-32" id="benefits">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"
+      />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-base font-semibold leading-7 text-primary">
             Benefits
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Why choose ExpenseMate?
           </p>
         </div>
@@ -62,13 +63,13 @@ export default function Benefits() {
             <dl className="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2">
               {benefits.map((benefit, index) => (
                 <div key={benefit.title} className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-white">
+                  <dt className="text-base font-semibold leading-7 text-gray-900">
                     <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                       <span className="text-base font-semibold text-white">{index + 1}</span>
                     </div>
                     {benefit.title}
                   </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-300">{benefit.description}</dd>
+                  <dd className="mt-2 text-base leading-7 text-gray-600">{benefit.description}</dd>
                 </div>
               ))}
             </dl>
