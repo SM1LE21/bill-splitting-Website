@@ -42,7 +42,7 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="bg-white py-24 sm:py-32" id="features">
+    <div className="bg-gray-50 py-24 sm:py-32 lg:py-40" id="features">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
@@ -55,23 +55,24 @@ export default function Features() {
             ExpenseMate comes packed with all the tools you need to make expense sharing and tracking effortless.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-primary/10">
-                    <feature.icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                  </span>
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
+          {features.map((feature) => (
+            <li
+              key={feature.name}
+              className="group relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
+                <feature.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+              </span>
+              <h3 className="mt-6 text-lg font-semibold leading-7 text-gray-900">
+                {feature.name}
+              </h3>
+              <p className="mt-2 text-base leading-7 text-gray-600">
+                {feature.description}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
