@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const benefits = [
@@ -28,36 +25,19 @@ export default function Benefits() {
       <div className="absolute inset-0 -z-10 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary" />
       </div>
-      
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <motion.h2
-            className="text-base font-semibold leading-7 text-primary"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-base font-semibold leading-7 text-primary">
             Benefits
-          </motion.h2>
-          <motion.p
-            className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Why choose ExpenseMate?
-          </motion.p>
+          </p>
         </div>
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:grid-cols-12">
-          <motion.div
-            className="lg:col-span-5 lg:w-full"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
+          <div className="lg:col-span-5 lg:w-full">
             <div className="relative w-fit mx-auto">
               {/* Main Phone - Group Summary */}
               <Image
@@ -76,19 +56,12 @@ export default function Benefits() {
                 className="absolute -right-10 bottom-0 z-10"
               />
             </div>
-          </motion.div>
+          </div>
 
           <div className="lg:col-span-7 lg:flex lg:items-center">
             <dl className="grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2">
               {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  className="relative pl-16"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 * index }}
-                >
+                <div key={benefit.title} className="relative pl-16">
                   <dt className="text-base font-semibold leading-7 text-white">
                     <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                       <span className="text-base font-semibold text-white">{index + 1}</span>
@@ -96,7 +69,7 @@ export default function Benefits() {
                     {benefit.title}
                   </dt>
                   <dd className="mt-2 text-base leading-7 text-gray-300">{benefit.description}</dd>
-                </motion.div>
+                </div>
               ))}
             </dl>
           </div>
@@ -104,4 +77,4 @@ export default function Benefits() {
       </div>
     </div>
   );
-} 
+}

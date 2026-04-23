@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import {
   CalculatorIcon,
   CurrencyDollarIcon,
@@ -43,62 +40,25 @@ const features = [
   },
 ];
 
-const fadeInUpVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.1 * index,
-      duration: 0.5,
-    },
-  }),
-};
-
 export default function Features() {
   return (
     <div className="bg-white py-24 sm:py-32" id="features">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <motion.h2
-            className="text-base font-semibold leading-7 text-primary"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-base font-semibold leading-7 text-primary">
             Features
-          </motion.h2>
-          <motion.p
-            className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Everything you need to manage shared expenses
-          </motion.p>
-          <motion.p
-            className="mt-6 text-lg leading-8 text-gray-600"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             ExpenseMate comes packed with all the tools you need to make expense sharing and tracking effortless.
-          </motion.p>
+          </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.name}
-                className="flex flex-col"
-                variants={fadeInUpVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                custom={index}
-              >
+            {features.map((feature) => (
+              <div key={feature.name} className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
                   <feature.icon className="h-5 w-5 flex-none text-primary" aria-hidden="true" />
                   {feature.name}
@@ -106,11 +66,11 @@ export default function Features() {
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
                   <p className="flex-auto">{feature.description}</p>
                 </dd>
-              </motion.div>
+              </div>
             ))}
           </dl>
         </div>
       </div>
     </div>
   );
-} 
+}
