@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
       <div className="bg-white px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark">
+            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
               <HomeIcon className="h-5 w-5 mr-1" aria-hidden="true" />
               Back to ExpenseMate
             </Link>
@@ -44,10 +44,10 @@ export default function PrivacyPolicy() {
               <p>13, In Bedigen</p>
               <p>L-9283 Diekirch, Luxembourg</p>
               <p>RCS Luxembourg: B306819</p>
-              <p>Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a></p>
+              <p>Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a></p>
             </div>
             <p className="mt-6">
-              For full company details, see our <Link href="/legal" className="text-primary hover:text-primary-dark">Legal Notice</Link>.
+              For full company details, see our <Link href="/legal" className="text-primary hover:text-primary/80">Legal Notice</Link>.
             </p>
             <p className="mt-6">
               If you have any questions about this privacy policy, or if you wish to exercise any of your legal rights, please contact us at the email address above.
@@ -189,7 +189,7 @@ export default function PrivacyPolicy() {
               Your data is processed and stored on Google Cloud infrastructure. We specifically use <strong>Google Cloud Storage</strong> for receipt images and files, <strong>Firebase Authentication</strong> for sign-in, <strong>Google Cloud Run</strong> for our API services, and <strong>Google Cloud SQL</strong> for the database.
             </p>
             <p className="mt-6">
-              Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Vercel&apos;s Privacy Policy</a>.
+              Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Vercel&apos;s Privacy Policy</a>.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Data Security</h2>
@@ -230,7 +230,7 @@ export default function PrivacyPolicy() {
               <li><strong>Withdraw consent</strong> (Art. 7(3)): where processing is based on consent, withdraw it at any time — without affecting the lawfulness of processing carried out before the withdrawal.</li>
             </ul>
             <p className="mt-6">
-              To exercise any of these rights, contact us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>. We will respond within one month of receiving your request.
+              To exercise any of these rights, contact us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>. We will respond within one month of receiving your request.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Right to Lodge a Complaint</h2>
@@ -242,7 +242,7 @@ export default function PrivacyPolicy() {
               <p>L-4370 Belvaux, Luxembourg</p>
               <p>
                 Website:{' '}
-                <a href="https://cnpd.public.lu" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+                <a href="https://cnpd.public.lu" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                   cnpd.public.lu
                 </a>
               </p>

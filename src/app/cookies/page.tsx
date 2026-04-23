@@ -15,7 +15,7 @@ export default function CookiePolicy() {
       <div className="bg-white px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark">
+            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
               <HomeIcon className="h-5 w-5 mr-1" aria-hidden="true" />
               Back to ExpenseMate
             </Link>
@@ -29,7 +29,7 @@ export default function CookiePolicy() {
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
             <p className="mt-6">
-              This Cookie Policy explains how ExpenseMate (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website at expensemate.app. This policy should be read alongside our <Link href="/privacy" className="text-primary hover:text-primary-dark">Privacy Policy</Link>, which explains how we use personal information.
+              This Cookie Policy explains how ExpenseMate (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website at expensemate.app. This policy should be read alongside our <Link href="/privacy" className="text-primary hover:text-primary/80">Privacy Policy</Link>, which explains how we use personal information.
             </p>
             <p className="mt-6">
               By using our website, you consent to the use of cookies in accordance with this Cookie Policy. If you do not accept the use of cookies, please disable them as explained below or refrain from using our website.
@@ -107,8 +107,8 @@ export default function CookiePolicy() {
               We use the following third-party analytics services:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>Google Analytics (GA4)</strong> — cookie-based analytics active only with your consent. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">policies.google.com/privacy</a></li>
-              <li><strong>Vercel Analytics</strong> — cookieless, privacy-first analytics that collects only aggregated, anonymized data. No cookies are set and no personal data is stored. Vercel&apos;s privacy policy applies: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">vercel.com/legal/privacy-policy</a></li>
+              <li><strong>Google Analytics (GA4)</strong> — cookie-based analytics active only with your consent. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">policies.google.com/privacy</a></li>
+              <li><strong>Vercel Analytics</strong> — cookieless, privacy-first analytics that collects only aggregated, anonymized data. No cookies are set and no personal data is stored. Vercel&apos;s privacy policy applies: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">vercel.com/legal/privacy-policy</a></li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Managing Cookies</h2>
@@ -116,10 +116,10 @@ export default function CookiePolicy() {
               Most web browsers allow you to manage your cookie preferences. You can set your browser to refuse cookies, or to alert you when cookies are being sent. The methods for doing so vary from browser to browser, and from version to version. You can however obtain up-to-date information about blocking and deleting cookies via these links:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Google Chrome</a></li>
-              <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Mozilla Firefox</a></li>
-              <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Safari</a></li>
-              <li><a href="https://support.microsoft.com/en-us/windows/microsoft-edge-browsing-data-and-privacy-bb8174ba-9d73-dcf2-9b4a-c582b4e640dd" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">Microsoft Edge</a></li>
+              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Google Chrome</a></li>
+              <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Mozilla Firefox</a></li>
+              <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Safari</a></li>
+              <li><a href="https://support.microsoft.com/en-us/windows/microsoft-edge-browsing-data-and-privacy-bb8174ba-9d73-dcf2-9b4a-c582b4e640dd" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Microsoft Edge</a></li>
             </ul>
             <p className="mt-6">
               Please note that restricting cookies may impact the functionality of our website. For example, you may not be able to access certain areas or features of the site, or your user experience may be diminished.
@@ -140,7 +140,7 @@ export default function CookiePolicy() {
               If you have any questions or concerns about our use of cookies, please contact us at:
             </p>
             <p className="mt-4">
-              Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>
+              Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>
             </p>
           </div>
         </div>

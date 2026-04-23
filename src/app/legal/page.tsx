@@ -14,7 +14,7 @@ export default function LegalNotice() {
       <div className="bg-white px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark">
+            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
               <HomeIcon className="h-5 w-5 mr-1" aria-hidden="true" />
               Back to ExpenseMate
             </Link>
@@ -58,7 +58,7 @@ export default function LegalNotice() {
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Contact</h2>
             <p className="mt-6">
               Email:{' '}
-              <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">
+              <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">
                 contact@tkmedia.lu
               </a>
             </p>
@@ -71,7 +71,7 @@ export default function LegalNotice() {
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Hosting</h2>
             <p className="mt-6">
               This website is hosted by <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, United States. See{' '}
-              <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+              <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                 Vercel&apos;s Privacy Policy
               </a>{' '}
               for details.
@@ -80,7 +80,7 @@ export default function LegalNotice() {
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Supervisory Authority (Data Protection)</h2>
             <p className="mt-6">
               Commission nationale pour la protection des données (CNPD), 15, Boulevard du Jazz, L-4370 Belvaux, Luxembourg —{' '}
-              <a href="https://cnpd.public.lu" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+              <a href="https://cnpd.public.lu" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                 cnpd.public.lu
               </a>
             </p>

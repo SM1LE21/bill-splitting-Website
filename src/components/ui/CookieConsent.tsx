@@ -60,11 +60,11 @@ export default function CookieConsent() {
             <h3 className="text-base font-semibold text-gray-900">Cookie Consent</h3>
             <p className="mt-1 text-sm text-gray-600">
               We use cookies to analyze our traffic and improve your experience. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Vercel Analytics is always active and cookieless. Read our{' '}
-              <Link href="/privacy" className="font-medium text-primary hover:text-primary-dark">
+              <Link href="/privacy" className="font-medium text-primary hover:text-primary/80">
                 Privacy Policy
               </Link>{' '}
               and{' '}
-              <Link href="/cookies" className="font-medium text-primary hover:text-primary-dark">
+              <Link href="/cookies" className="font-medium text-primary hover:text-primary/80">
                 Cookie Policy
               </Link>{' '}
               to learn more.
@@ -85,7 +85,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={acceptAll}
-              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             >
               Accept All
             </button>

@@ -15,7 +15,7 @@ export default function TermsOfService() {
       <div className="bg-white px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark">
+            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
               <HomeIcon className="h-5 w-5 mr-1" aria-hidden="true" />
               Back to ExpenseMate
             </Link>
@@ -40,7 +40,7 @@ export default function TermsOfService() {
               ExpenseMate is operated by <strong>TK MEDIA S.à r.l.-S</strong> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), a Luxembourg simplified limited liability company with its registered office at 13, In Bedigen, L-9283 Diekirch, Luxembourg, registered with the Luxembourg Trade and Companies Register (RCS) under number B306819.
             </p>
             <p className="mt-6">
-              You can reach us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>. Full company information is available in our <Link href="/legal" className="text-primary hover:text-primary-dark">Legal Notice</Link>.
+              You can reach us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>. Full company information is available in our <Link href="/legal" className="text-primary hover:text-primary/80">Legal Notice</Link>.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">3. Services Description</h2>
@@ -92,7 +92,7 @@ export default function TermsOfService() {
               You grant us a limited, non-exclusive, royalty-free, worldwide licence to <strong>host, store, reproduce, transmit, display and process</strong> your User Content <strong>solely to the extent necessary to operate, secure, maintain and provide the Services to you and to the other users you choose to share it with</strong> (for example, the other members of a group you create or join). We also need this licence to carry out technical operations such as backups, replication between data centres, receipt OCR, and compliance with legal obligations.
             </p>
             <p className="mt-6">
-              This licence does not grant us any right to use your User Content for advertising, for training third-party AI models, or to publicly display it outside the Services. It ends when you delete the relevant User Content or your account, subject to the retention and anonymisation rules described in our <Link href="/privacy" className="text-primary hover:text-primary-dark">Privacy Policy</Link>, and subject to copies that may remain in backups for a limited period before being overwritten.
+              This licence does not grant us any right to use your User Content for advertising, for training third-party AI models, or to publicly display it outside the Services. It ends when you delete the relevant User Content or your account, subject to the retention and anonymisation rules described in our <Link href="/privacy" className="text-primary hover:text-primary/80">Privacy Policy</Link>, and subject to copies that may remain in backups for a limited period before being overwritten.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. Prohibited Uses</h2>
@@ -174,7 +174,7 @@ export default function TermsOfService() {
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12a. Online Dispute Resolution</h2>
             <p className="mt-6">
               In accordance with Regulation (EU) No 524/2013, the European Commission provides a platform for online dispute resolution (ODR), available at{' '}
-              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark">
+              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                 https://ec.europa.eu/consumers/odr
               </a>
               . We are not obliged and not willing to participate in dispute-resolution proceedings before a consumer arbitration board, but consumers may still use the ODR platform to raise a complaint.
@@ -185,7 +185,7 @@ export default function TermsOfService() {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p className="mt-4 pl-4">
-              Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary-dark">contact@tkmedia.lu</a>
+              Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>
             </p>
           </div>
         </div>

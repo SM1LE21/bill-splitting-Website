@@ -36,7 +36,7 @@ export default async function DownloadsPage() {
       <div className="bg-white px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark">
+            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
               <HomeIcon className="h-5 w-5 mr-1" aria-hidden="true" />
               Back to ExpenseMate
             </Link>
