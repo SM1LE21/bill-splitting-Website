@@ -63,9 +63,9 @@ export default function DeveloperStory() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            Hi! I&apos;m Tun, and I&apos;m building ExpenseMate as the expense tracking app I&apos;ve always wanted to use myself. 
-            As a developer relatively new to app development, this project is my way of creating something 
-            truly useful while learning and growing.
+            Hi! I&apos;m Tun, and I&apos;m building ExpenseMate as the expense tracking app I&apos;ve always wanted to use myself.
+            Every feature grows out of a real-world need — driven by how people actually split money in everyday life,
+            and shaped by feedback from the people who use it.
           </motion.p>
         </div>
 
