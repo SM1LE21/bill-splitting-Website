@@ -19,7 +19,7 @@ export default function CTA() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mx-auto max-w-2xl px-6 sm:px-12"
+            className="mx-auto max-w-2xl px-8 sm:px-12"
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Start Splitting Bills Today
