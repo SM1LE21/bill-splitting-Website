@@ -35,10 +35,15 @@ export default function HowItWorks() {
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24">
-          <dl className="grid grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-3">
+          <dl className="relative grid grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-3">
+            {/* Connector line — only on lg where steps sit in one row */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-5 hidden h-px bg-gradient-to-r from-primary/40 via-primary/40 to-primary/40 lg:block"
+            />
             {steps.map((step) => (
-              <div key={step.id} className="flex flex-col items-start">
-                <div className="rounded-full bg-primary/10 p-2">
+              <div key={step.id} className="relative flex flex-col items-start">
+                <div className="relative z-10 rounded-full bg-primary/10 p-2 ring-8 ring-white">
                   <CheckCircleIcon className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
                 <dt className="mt-4 font-semibold text-gray-900">
