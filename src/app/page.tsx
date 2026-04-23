@@ -6,7 +6,6 @@ import Roadmap from '@/components/sections/Roadmap';
 // import Testimonials from '@/components/sections/Testimonials'; TODO: Add testimonials when we have some
 import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
-import AppShowcase from '@/components/sections/AppShowcase';
 import DeveloperStory from '@/components/sections/DeveloperStory';
 import HomeScrollSnap from '@/components/ui/HomeScrollSnap';
 
@@ -15,7 +14,6 @@ export default function Home() {
     <Layout>
       <HomeScrollSnap />
       <Hero />
-      <AppShowcase />
       <Features />
       <HowItWorks />
       <Benefits />

@@ -2,6 +2,29 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import {
+  CameraIcon,
+  SparklesIcon,
+  CurrencyDollarIcon,
+} from '@heroicons/react/24/outline';
+
+const scanSteps = [
+  {
+    title: 'Snap a photo',
+    description: 'Any receipt — restaurant, grocery store, road-trip stop.',
+    icon: CameraIcon,
+  },
+  {
+    title: 'Automatic itemisation',
+    description: 'Every line is recognised and totalled without manual entry.',
+    icon: SparklesIcon,
+  },
+  {
+    title: 'Split instantly',
+    description: 'Assign items to group members with a few taps.',
+    icon: CurrencyDollarIcon,
+  },
+];
 
 export default function Hero() {
   return (
@@ -107,6 +130,34 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+
+        {/* Receipt-scan three-step strip — tightens the narrative instead of a standalone section */}
+        <motion.dl
+          className="mx-auto mt-20 grid max-w-4xl grid-cols-1 gap-6 sm:mt-24 sm:grid-cols-3 lg:mt-28"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          {scanSteps.map((step) => (
+            <div
+              key={step.title}
+              className="flex items-start gap-4 rounded-2xl border border-gray-200/70 bg-white/70 p-5 backdrop-blur"
+            >
+              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-primary/10">
+                <step.icon className="h-5 w-5 text-primary" aria-hidden="true" />
+              </span>
+              <div>
+                <dt className="text-base font-semibold leading-6 text-gray-900">
+                  {step.title}
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-600">
+                  {step.description}
+                </dd>
+              </div>
+            </div>
+          ))}
+        </motion.dl>
       </div>
     </div>
   );
