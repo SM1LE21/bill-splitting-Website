@@ -40,18 +40,6 @@ export default function AppShowcase() {
                 <div className="absolute left-[-14px] top-[100px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
                 <div className="absolute left-[-14px] top-[140px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
               </div>
-              {/* Mobile CTA Button */}
-              <div className="mt-16 flex justify-center lg:hidden">
-                <a
-                  href="#cta"
-                  className="rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
-                >
-                  Try Receipt Scanning
-                  <svg className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </div>
             </div>
           </motion.div>
 
@@ -100,18 +88,6 @@ export default function AppShowcase() {
               </div>
             </div>
 
-            {/* Desktop CTA Button */}
-            <div className="mt-10 hidden lg:block">
-              <a
-                href="#cta"
-                className="rounded-full bg-primary px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors inline-flex items-center"
-              >
-                Try Receipt Scanning
-                <svg className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
           </motion.div>
         </div>
       </div>
