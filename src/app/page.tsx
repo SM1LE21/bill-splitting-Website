@@ -8,10 +8,12 @@ import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
 import AppShowcase from '@/components/sections/AppShowcase';
 import DeveloperStory from '@/components/sections/DeveloperStory';
+import HomeScrollSnap from '@/components/ui/HomeScrollSnap';
 
 export default function Home() {
   return (
     <Layout>
+      <HomeScrollSnap />
       <Hero />
       <AppShowcase />
       <Features />
