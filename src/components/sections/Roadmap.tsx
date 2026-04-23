@@ -105,7 +105,7 @@ export default function Roadmap() {
     : roadmapData.filter((item) => item.status !== 'completed');
 
   return (
-    <div className="bg-white py-24 sm:py-32" id="roadmap">
+    <div className="bg-white py-24 sm:py-32 lg:py-40" id="roadmap">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <motion.h2
