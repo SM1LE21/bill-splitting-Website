@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-// import { ArrowDownIcon } from '@heroicons/react/24/outline'; // TODO: Add this when we have Android support
+import { FaApple, FaGooglePlay } from 'react-icons/fa';
+
+const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
 
 export default function CTA() {
   return (
@@ -12,12 +14,12 @@ export default function CTA() {
           <div className="absolute inset-0 -z-10 opacity-20">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary" />
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mx-auto max-w-2xl px-12" 
+            className="mx-auto max-w-2xl px-6 sm:px-12"
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Start Splitting Bills Today
@@ -27,66 +29,36 @@ export default function CTA() {
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
               Join a growing community of users who are simplifying their shared expenses. Download the app now and experience stress-free bill splitting.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="w-full sm:w-auto"
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+              <Link
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-[220px] items-center justify-center gap-3 rounded-xl bg-white px-5 py-3 text-gray-900 shadow-sm transition-transform hover:scale-[1.02]"
+                aria-label="Download ExpenseMate on the App Store"
               >
-                <Link
-                  href="https://apps.apple.com/lu/app/exepensemate/id6745098337"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-100 transition-colors block text-center"
-                >
-                  Download for iOS
-                </Link>
-              </motion.div>
-              <div className="w-full sm:w-auto">
-                <div
-                  aria-disabled="true"
-                  className="rounded-full bg-gray-600 px-8 py-4 text-lg font-semibold text-white shadow-sm cursor-not-allowed text-center flex items-center justify-center gap-3"
-                >
-                  <span className="opacity-80">Download for Android</span>
-                  <span className="inline-flex items-center rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
-                    Coming Soon
-                  </span>
-                </div>
+                <FaApple className="h-7 w-7" aria-hidden="true" />
+                <span className="flex flex-col items-start leading-tight text-left">
+                  <span className="text-[10px] uppercase tracking-wide opacity-70">Download on the</span>
+                  <span className="text-lg font-semibold">App Store</span>
+                </span>
+              </Link>
+
+              <div
+                aria-disabled="true"
+                className="inline-flex w-full sm:w-[220px] items-center justify-center gap-3 rounded-xl border border-white/30 bg-transparent px-5 py-3 text-white/70 cursor-not-allowed"
+                title="Android version coming soon"
+              >
+                <FaGooglePlay className="h-7 w-7" aria-hidden="true" />
+                <span className="flex flex-col items-start leading-tight text-left">
+                  <span className="text-[10px] uppercase tracking-wide opacity-80">Coming soon on</span>
+                  <span className="text-lg font-semibold">Google Play</span>
+                </span>
               </div>
             </div>
-            
-            {/* TODO: Add this back when we have Android support */}
-            {/*<div className="mt-8 flex items-center justify-center gap-x-2 text-gray-300">
-              <ArrowDownIcon className="h-5 w-5" />
-              <span className="text-sm">Available on all major platforms</span>
-            </div>*/}
-
-            {/*<motion.div
-              className="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="flex flex-col items-center gap-y-2">
-                <div className="text-3xl font-bold text-white">100K+</div>
-                <div className="text-sm text-gray-300">Active Users</div>
-              </div>
-              <div className="flex flex-col items-center gap-y-2">
-                <div className="text-3xl font-bold text-white">4.8/5</div>
-                <div className="text-sm text-gray-300">App Store Rating</div>
-              </div>
-              <div className="flex flex-col items-center gap-y-2">
-                <div className="text-3xl font-bold text-white">1M+</div>
-                <div className="text-sm text-gray-300">Bills Split</div>
-              </div>
-              <div className="flex flex-col items-center gap-y-2">
-                <div className="text-3xl font-bold text-white">50+</div>
-                <div className="text-sm text-gray-300">Countries</div>
-              </div>
-            </motion.div>*/}
           </motion.div>
         </div>
       </div>
     </div>
   );
-} 
+}
