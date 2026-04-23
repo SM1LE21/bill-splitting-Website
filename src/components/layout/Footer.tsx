@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { FaApple } from 'react-icons/fa';
 import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
+
+const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
 
 interface FooterProps {
   minimal?: boolean;
@@ -67,6 +70,28 @@ export default function Footer({ minimal = false }: FooterProps) {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
         {!minimal ? (
           <>
+            <div className="mb-12 flex flex-col gap-6 border-b border-gray-200 pb-12 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Get the app</p>
+                <p className="mt-1 text-sm text-gray-600">
+                  ExpenseMate is available on iOS. Android is coming soon.
+                </p>
+              </div>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-xl bg-gray-900 px-5 py-3 text-white shadow-sm transition-colors hover:bg-gray-800"
+                aria-label="Download ExpenseMate on the App Store"
+              >
+                <FaApple className="h-7 w-7" aria-hidden="true" />
+                <span className="flex flex-col items-start leading-tight">
+                  <span className="text-[10px] uppercase tracking-wide opacity-80">Download on the</span>
+                  <span className="text-lg font-semibold">App Store</span>
+                </span>
+              </a>
+            </div>
+
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:gap-12">
               <FooterColumn title="Product" links={productLinks} />
               <FooterColumn title="Resources" links={resourceLinks} />
