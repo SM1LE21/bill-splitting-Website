@@ -134,8 +134,26 @@ export default function Footer({ minimal = false }: FooterProps) {
           </>
         ) : (
           <>
+            <div className="flex flex-col items-center gap-4 border-b border-gray-200 pb-8">
+              <p className="text-sm font-semibold text-gray-900">Get the app</p>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-xl bg-gray-900 px-5 py-2.5 text-white shadow-sm transition-colors hover:bg-gray-800"
+                aria-label="Download ExpenseMate on the App Store"
+              >
+                <FaApple className="h-6 w-6" aria-hidden="true" />
+                <span className="flex flex-col items-start leading-tight">
+                  <span className="text-[10px] uppercase tracking-wide opacity-80">Download on the</span>
+                  <span className="text-base font-semibold">App Store</span>
+                </span>
+              </a>
+              <p className="text-xs text-gray-500">Android coming soon.</p>
+            </div>
+
             <nav
-              className="flex flex-wrap justify-center gap-x-6 gap-y-3"
+              className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3"
               aria-label="Footer compact"
             >
               {minimalLinks.map((link) => (
