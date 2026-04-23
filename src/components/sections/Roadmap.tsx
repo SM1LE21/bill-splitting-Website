@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -97,6 +98,12 @@ const roadmapData = [
 ];
 
 export default function Roadmap() {
+  const [showCompleted, setShowCompleted] = useState(false);
+  const completedCount = roadmapData.filter((item) => item.status === 'completed').length;
+  const visibleItems = showCompleted
+    ? roadmapData
+    : roadmapData.filter((item) => item.status !== 'completed');
+
   return (
     <div className="bg-white py-24 sm:py-32" id="roadmap">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -143,9 +150,36 @@ export default function Roadmap() {
           </motion.div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl lg:max-w-none">
+        {completedCount > 0 && (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowCompleted((v) => !v)}
+              className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80"
+              aria-expanded={showCompleted}
+            >
+              {showCompleted
+                ? 'Hide completed milestones'
+                : `Show ${completedCount} completed milestones`}
+              <svg
+                className={`h-4 w-4 transition-transform ${showCompleted ? 'rotate-180' : ''}`}
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
+
+        <div className="mx-auto mt-10 max-w-2xl lg:max-w-none">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {roadmapData.map((item, index) => (
+            {visibleItems.map((item, index) => (
               <motion.div
                 key={index}
                 className={`relative flex flex-col rounded-2xl border p-8 shadow-sm hover:shadow-md transition-shadow ${
