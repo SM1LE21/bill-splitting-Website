@@ -1,87 +1,107 @@
-import { EnvelopeIcon, QuestionMarkCircleIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import {
+  ChevronDownIcon,
+  EnvelopeIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline';
 
 const faqs = [
   {
     question: 'When is the Android version coming?',
-    answer: 'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time.'
+    answer:
+      'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time.',
   },
   {
     question: 'Are there any new features planned?',
-    answer: 'Absolutely! I\'m constantly working on new features based on user feedback and personal experience. The app evolves with the needs of its users.'
+    answer:
+      'Absolutely! I\'m constantly working on new features based on user feedback and personal experience. The app evolves with the needs of its users.',
   },
   {
     question: 'Where is my data stored?',
-    answer: 'Your data is securely stored on Google Cloud infrastructure. I prioritize data security and privacy in every development decision, utilizing Google Cloud\'s enterprise-grade security features to protect your information.'
+    answer:
+      'Your data is securely stored on Google Cloud infrastructure. I prioritise data security and privacy in every development decision, utilising Google Cloud\'s enterprise-grade security features to protect your information.',
   },
   {
     question: 'Can I contribute to this project?',
-    answer: 'Absolutely! I\'d love your help. Please reach out via the contact section.'
-  }
+    answer:
+      'Absolutely! I\'d love your help. Please reach out via the contact section.',
+  },
 ];
 
 export default function DeveloperStory() {
   return (
-    <div className="bg-white py-24 sm:py-32" id="developer-story">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+    <div className="bg-gray-50 py-24 sm:py-32 lg:py-40" id="developer-story">
+      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <div className="text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
-            Behind The App
+            Behind the app
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            A Developer&apos;s Journey
+            A developer&apos;s journey
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Hi! I&apos;m Tun, and I&apos;m building ExpenseMate as the expense tracking app I&apos;ve always wanted to use myself.
-            Every feature grows out of a real-world need — driven by how people actually split money in everyday life,
-            and shaped by feedback from the people who use it.
+        </div>
+
+        <div className="mt-12 space-y-6 text-lg leading-8 text-gray-700">
+          <p>
+            Hi — I&apos;m Tun. ExpenseMate is the expense-tracking app I always
+            wanted to use myself. Every feature grows out of a real need: how
+            people actually split money in everyday life, and the friction that
+            shows up when the numbers stop being round.
+          </p>
+          <p>
+            It&apos;s built in the open, shipped in the open, and shaped by the
+            people who use it. If something feels off, if something is missing,
+            or if there&apos;s a bill you can&apos;t split the way you want —
+            tell me. That&apos;s how the next version gets written.
           </p>
         </div>
 
         <div
           id="contact"
-          className="mx-auto mt-16 max-w-2xl rounded-3xl bg-white/5 ring-1 ring-primary/10 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none scroll-mt-24"
+          className="mt-12 flex flex-col items-start gap-4 rounded-2xl border border-gray-200 bg-white p-6 scroll-mt-24 sm:flex-row sm:items-center sm:justify-between"
         >
-          <div className="p-8 sm:p-10 lg:flex-auto">
-            <div className="flex items-center gap-x-4">
-              <UserCircleIcon className="h-8 w-8 flex-none text-primary" />
-              <h4 className="flex-auto text-lg font-semibold leading-8 text-gray-900">
-                A Personal Project
-              </h4>
-            </div>
-            <p className="mt-4 text-base leading-7 text-gray-600">
-              This is an ongoing project that I&apos;m constantly improving. I welcome all feedback and
-              criticism - every bug report and design suggestion helps make ExpenseMate better.
-              Your input directly shapes the future of this app.
-            </p>
-            <div className="mt-6">
-              <a
-                href="mailto:contact@tkmedia.lu"
-                className="inline-flex items-center gap-x-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-primary ring-1 ring-primary hover:ring-2 transition-all"
-              >
-                <EnvelopeIcon className="h-5 w-5" />
-                Get in Touch
-              </a>
+          <div className="flex items-center gap-3">
+            <UserCircleIcon className="h-8 w-8 flex-none text-primary" />
+            <div>
+              <p className="text-base font-semibold text-gray-900">
+                Questions, bugs, ideas?
+              </p>
+              <p className="text-sm text-gray-600">
+                Your input directly shapes the roadmap.
+              </p>
             </div>
           </div>
+          <a
+            href="mailto:contact@tkmedia.lu"
+            className="inline-flex items-center gap-x-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors"
+          >
+            <EnvelopeIcon className="h-5 w-5" />
+            Get in touch
+          </a>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
-            Common Questions
+        <div className="mt-16">
+          <h3 className="text-center text-xl font-semibold text-gray-900">
+            Common questions
           </h3>
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-            {faqs.map((faq, index) => (
-              <div key={index} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <QuestionMarkCircleIcon className="h-5 w-5 flex-none text-primary" />
-                  {faq.question}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{faq.answer}</p>
-                </dd>
-              </div>
+          <div className="mt-6 divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group px-5 py-4 open:bg-gray-50/60"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-gray-900 marker:hidden">
+                  <span>{faq.question}</span>
+                  <ChevronDownIcon
+                    className="h-5 w-5 flex-none text-gray-500 transition-transform group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  {faq.answer}
+                </p>
+              </details>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
     </div>
