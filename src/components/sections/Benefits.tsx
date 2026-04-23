@@ -39,7 +39,7 @@ export default function Benefits() {
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:grid-cols-12">
           <div className="lg:col-span-5 lg:w-full">
-            <div className="relative w-fit mx-auto">
+            <div className="relative mx-auto w-[208px] pr-[56px]">
               {/* Main Phone - Group Summary */}
               <Image
                 src="/images/GroupSummary.png"
@@ -54,7 +54,7 @@ export default function Benefits() {
                 alt="ExpenseMate Expenses View"
                 width={130}
                 height={280}
-                className="absolute -right-10 bottom-0 z-10"
+                className="absolute right-0 bottom-0 z-10"
               />
             </div>
           </div>
