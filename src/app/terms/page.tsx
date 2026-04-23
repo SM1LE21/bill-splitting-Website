@@ -29,7 +29,7 @@ export default function TermsOfService() {
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
             <p className="mt-6">
-              Welcome to ExpenseMate. These Terms of Service (&quot;Terms&quot;) govern your use of our website located at expensemate.app (the &quot;Website&quot;) and our mobile application (the &quot;App&quot;)—together referred to as our &quot;Services.&quot;
+              Welcome to ExpenseMate. These Terms of Service (&quot;Terms&quot;) govern your use of our website located at expensemate.app (the &quot;Website&quot;) and our mobile application (the &quot;App&quot;), together referred to as our &quot;Services.&quot;
             </p>
             <p className="mt-6">
               Please read these Terms carefully before using our Services. By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Services.

@@ -42,7 +42,7 @@ export default function DeveloperStory() {
 
         <div className="mt-12 space-y-6 text-lg leading-8 text-gray-700">
           <p>
-            Hi — I&apos;m Tun. ExpenseMate is the expense-tracking app I always
+            Hi, I&apos;m Tun. ExpenseMate is the expense-tracking app I always
             wanted to use myself. Every feature grows out of a real need: how
             people actually split money in everyday life, and the friction that
             shows up when the numbers stop being round.
@@ -50,7 +50,7 @@ export default function DeveloperStory() {
           <p>
             It&apos;s built in the open, shipped in the open, and shaped by the
             people who use it. If something feels off, if something is missing,
-            or if there&apos;s a bill you can&apos;t split the way you want —
+            or if there&apos;s a bill you can&apos;t split the way you want,
             tell me. That&apos;s how the next version gets written.
           </p>
         </div>

@@ -14,7 +14,7 @@ const steps = [
   {
     id: '02',
     name: 'Add expenses',
-    description: 'Log bills as they happen — choose who paid and who pitches in.',
+    description: 'Log bills as they happen, choose who paid and who pitches in.',
     icon: ReceiptPercentIcon,
   },
   {

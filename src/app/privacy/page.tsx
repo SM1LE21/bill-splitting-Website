@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Direct interactions:</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
               <li><strong>Automated technologies or interactions:</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
-              <li><strong>Third-party analytics providers:</strong> We use Google Analytics (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies — it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
+              <li><strong>Third-party analytics providers:</strong> We use Google Analytics (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data &amp; Legal Basis</h2>
@@ -94,37 +94,37 @@ export default function PrivacyPolicy() {
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Creating your account and providing the Services (receipt scanning, expense tracking, group splitting)</td>
                     <td className="px-3 py-4">Identity, Contact, Financial, Image, Profile</td>
-                    <td className="px-3 py-4">Performance of a contract — Art. 6(1)(b)</td>
+                    <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Processing receipt images to extract items and amounts (AI-assisted OCR)</td>
                     <td className="px-3 py-4">Image, Financial</td>
-                    <td className="px-3 py-4">Performance of a contract — Art. 6(1)(b)</td>
+                    <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Securing the Services, detecting fraud and abuse, and maintaining system integrity</td>
                     <td className="px-3 py-4">Technical, Usage</td>
-                    <td className="px-3 py-4">Legitimate interests — Art. 6(1)(f) (running a secure service)</td>
+                    <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (running a secure service)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Analytics and product improvement (Google Analytics)</td>
                     <td className="px-3 py-4">Technical, Usage</td>
-                    <td className="px-3 py-4">Consent — Art. 6(1)(a)</td>
+                    <td className="px-3 py-4">Consent, Art. 6(1)(a)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Aggregated, cookieless audience measurement (Vercel Analytics)</td>
                     <td className="px-3 py-4">Technical (transient)</td>
-                    <td className="px-3 py-4">Legitimate interests — Art. 6(1)(f) (measuring website reach without identifying visitors)</td>
+                    <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (measuring website reach without identifying visitors)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Responding to support requests and legal-rights requests</td>
                     <td className="px-3 py-4">Identity, Contact, any other relevant data</td>
-                    <td className="px-3 py-4">Legal obligation — Art. 6(1)(c) and legitimate interests — Art. 6(1)(f)</td>
+                    <td className="px-3 py-4">Legal obligation, Art. 6(1)(c) and legitimate interests, Art. 6(1)(f)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Complying with accounting, tax and other legal obligations</td>
                     <td className="px-3 py-4">Identity, Contact, Financial (to the extent applicable)</td>
-                    <td className="px-3 py-4">Legal obligation — Art. 6(1)(c)</td>
+                    <td className="px-3 py-4">Legal obligation, Art. 6(1)(c)</td>
                   </tr>
                 </tbody>
               </table>
@@ -227,7 +227,7 @@ export default function PrivacyPolicy() {
               <li><strong>Restriction</strong> (Art. 18): ask us to limit the processing of your data in certain circumstances.</li>
               <li><strong>Portability</strong> (Art. 20): receive your data in a structured, commonly used, machine-readable format.</li>
               <li><strong>Objection</strong> (Art. 21): object to processing based on legitimate interests.</li>
-              <li><strong>Withdraw consent</strong> (Art. 7(3)): where processing is based on consent, withdraw it at any time — without affecting the lawfulness of processing carried out before the withdrawal.</li>
+              <li><strong>Withdraw consent</strong> (Art. 7(3)): where processing is based on consent, withdraw it at any time, without affecting the lawfulness of processing carried out before the withdrawal.</li>
             </ul>
             <p className="mt-6">
               To exercise any of these rights, contact us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>. We will respond within one month of receiving your request.

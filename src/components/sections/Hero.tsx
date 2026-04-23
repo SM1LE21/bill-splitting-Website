@@ -11,7 +11,7 @@ import {
 const scanSteps = [
   {
     title: 'Snap a photo',
-    description: 'Any receipt — restaurant, grocery store, road-trip stop.',
+    description: 'Any receipt, restaurant, grocery store, road-trip stop.',
     icon: CameraIcon,
   },
   {
@@ -69,7 +69,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              ExpenseMate scans your receipt, recognises every item, and does the math — so you can stop having awkward money conversations with friends, roommates, and travel buddies.
+              ExpenseMate scans your receipt, recognises every item, and does the math, so you can stop having awkward money conversations with friends, roommates, and travel buddies.
             </motion.p>
             <motion.div
               className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6 lg:justify-start"
@@ -132,7 +132,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Receipt-scan three-step strip — tightens the narrative instead of a standalone section */}
+        {/* Receipt-scan three-step strip, tightens the narrative instead of a standalone section */}
         <motion.dl
           className="mx-auto mt-20 grid max-w-4xl grid-cols-1 gap-6 sm:mt-24 sm:grid-cols-3 lg:mt-28"
           initial={{ opacity: 0, y: 20 }}

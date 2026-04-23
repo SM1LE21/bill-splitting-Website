@@ -76,7 +76,7 @@ export default function CookiePolicy() {
                 <tbody className="divide-y divide-gray-200">
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">cookieConsent</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Stores your consent preference — stored in browser localStorage, not as a cookie</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Stores your consent preference, stored in browser localStorage, not as a cookie</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Until you clear site data</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Essential (local storage)</td>
                   </tr>
@@ -94,7 +94,7 @@ export default function CookiePolicy() {
                   </tr>
                   <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">Vercel Analytics</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Cookieless analytics — collects aggregated page view data with no personal identifiers</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Cookieless analytics, collects aggregated page view data with no personal identifiers</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">No cookie set</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Cookieless / Always active</td>
                   </tr>
@@ -107,8 +107,8 @@ export default function CookiePolicy() {
               We use the following third-party analytics services:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>Google Analytics (GA4)</strong> — cookie-based analytics active only with your consent. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">policies.google.com/privacy</a></li>
-              <li><strong>Vercel Analytics</strong> — cookieless, privacy-first analytics that collects only aggregated, anonymized data. No cookies are set and no personal data is stored. Vercel&apos;s privacy policy applies: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">vercel.com/legal/privacy-policy</a></li>
+              <li><strong>Google Analytics (GA4)</strong>, cookie-based analytics active only with your consent. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">policies.google.com/privacy</a></li>
+              <li><strong>Vercel Analytics</strong>, cookieless, privacy-first analytics that collects only aggregated, anonymized data. No cookies are set and no personal data is stored. Vercel&apos;s privacy policy applies: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">vercel.com/legal/privacy-policy</a></li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Managing Cookies</h2>

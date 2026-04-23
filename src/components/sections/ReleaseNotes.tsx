@@ -16,7 +16,7 @@ interface VersionNote {
 // NOTE FOR FUTURE MAINTAINERS / AGENTS:
 // This list is for mobile (iOS/Android) product releases only.
 // Do NOT add entries for website changes, legal/policy updates, footer
-// tweaks, etc. — those are internal to the site and not a "release" that
+// tweaks, etc., those are internal to the site and not a "release" that
 // users of the ExpenseMate app should see. If you need to communicate a
 // website change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
@@ -27,7 +27,7 @@ const releaseNotes: VersionNote[] = [
     changes: [
       {
         type: 'feature',
-        description: 'Spending Insights — Explore your spending patterns by week, month, quarter, or year in the new Insights tab'
+        description: 'Spending Insights, Explore your spending patterns by week, month, quarter, or year in the new Insights tab'
       },
       {
         type: 'improvement',
@@ -39,7 +39,7 @@ const releaseNotes: VersionNote[] = [
       },
       {
         type: 'improvement',
-        description: 'Smoother forms — refined Add Expense, Join Group, and Profile screens for easier use'
+        description: 'Smoother forms, refined Add Expense, Join Group, and Profile screens for easier use'
       },
       {
         type: 'improvement',
@@ -181,15 +181,15 @@ const releaseNotes: VersionNote[] = [
     changes: [
       {
         type: 'improvement',
-        description: 'Enhanced settlement display — shows both payer and recipient (e.g., "Settlement: John → Daniel")'
+        description: 'Enhanced settlement display, shows both payer and recipient (e.g., "Settlement: John → Daniel")'
       },
       {
         type: 'improvement',
-        description: 'Improved zero amount formatting — no more confusing "-0.00" in red, now displays as neutral "0.00"'
+        description: 'Improved zero amount formatting, no more confusing "-0.00" in red, now displays as neutral "0.00"'
       },
       {
         type: 'improvement',
-        description: 'Improved receipt processing reliability — added automatic fallback chain (Gemini → OpenAI → Server) when AI services are overloaded or fail'
+        description: 'Improved receipt processing reliability, added automatic fallback chain (Gemini → OpenAI → Server) when AI services are overloaded or fail'
       },
       {
         type: 'feature',

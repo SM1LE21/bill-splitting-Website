@@ -51,7 +51,7 @@ export default function LegalNotice() {
 
               <dt className="font-medium text-gray-900">VAT</dt>
               <dd className="sm:col-span-2">
-                Franchise de TVA regime (Art. 57 Loi TVA, Luxembourg) — no VAT is charged. VAT identification number pending attribution.
+                Franchise de TVA regime (Art. 57 Loi TVA, Luxembourg), no VAT is charged. VAT identification number pending attribution.
               </dd>
             </dl>
 
@@ -79,7 +79,7 @@ export default function LegalNotice() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Supervisory Authority (Data Protection)</h2>
             <p className="mt-6">
-              Commission nationale pour la protection des données (CNPD), 15, Boulevard du Jazz, L-4370 Belvaux, Luxembourg —{' '}
+              Commission nationale pour la protection des données (CNPD), 15, Boulevard du Jazz, L-4370 Belvaux, Luxembourg. Website:{' '}
               <a href="https://cnpd.public.lu" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                 cnpd.public.lu
               </a>
