@@ -7,7 +7,6 @@ import Roadmap from '@/components/sections/Roadmap';
 import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
 import AppShowcase from '@/components/sections/AppShowcase';
-import Contact from '@/components/sections/Contact';
 import DeveloperStory from '@/components/sections/DeveloperStory';
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
       {/*<Testimonials /> TODO: Add testimonials when we have some*/}
       <DeveloperStory />
       <CTA />
-      <Contact />
     </Layout>
   );
 }

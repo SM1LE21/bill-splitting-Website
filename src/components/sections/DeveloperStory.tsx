@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { QuestionMarkCircleIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, QuestionMarkCircleIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 const faqs = [
   {
@@ -69,8 +69,9 @@ export default function DeveloperStory() {
           </motion.p>
         </div>
 
-        <motion.div 
-          className="mx-auto mt-16 max-w-2xl rounded-3xl bg-white/5 ring-1 ring-primary/10 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none"
+        <motion.div
+          id="contact"
+          className="mx-auto mt-16 max-w-2xl rounded-3xl bg-white/5 ring-1 ring-primary/10 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none scroll-mt-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -84,10 +85,19 @@ export default function DeveloperStory() {
               </h4>
             </div>
             <p className="mt-4 text-base leading-7 text-gray-600">
-              This is an ongoing project that I&apos;m constantly improving. I welcome all feedback and 
-              criticism - every bug report and design suggestion helps make ExpenseMate better. 
+              This is an ongoing project that I&apos;m constantly improving. I welcome all feedback and
+              criticism - every bug report and design suggestion helps make ExpenseMate better.
               Your input directly shapes the future of this app.
             </p>
+            <div className="mt-6">
+              <a
+                href="mailto:contact@tkmedia.lu"
+                className="inline-flex items-center gap-x-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-primary ring-1 ring-primary hover:ring-2 transition-all"
+              >
+                <EnvelopeIcon className="h-5 w-5" />
+                Get in Touch
+              </a>
+            </div>
           </div>
         </motion.div>
 
