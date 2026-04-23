@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -19,6 +19,14 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const trackClick = (elementName: string) => {
     if (typeof window !== 'undefined' && window.gtag && hasConsent('analytics')) {
@@ -54,8 +62,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* Background with fade effect */}
-      <div className="absolute inset-x-0 h-full bg-gradient-to-r from-white/80 via-white/80 to-white/80 backdrop-blur-sm" />
+      {/* Background: transparent-ish at the top, solid once the user scrolls */}
+      <div
+        className={`absolute inset-x-0 h-full transition-[background-color,border-color,box-shadow] duration-200 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm'
+            : 'bg-white/70 backdrop-blur-sm'
+        }`}
+      />
       
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
