@@ -91,7 +91,7 @@ export default function Benefits() {
                 >
                   <dt className="text-base font-semibold leading-7 text-white">
                     <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                      <div className="h-6 w-2 text-white">{index + 1}</div>
+                      <span className="text-base font-semibold text-white">{index + 1}</span>
                     </div>
                     {benefit.title}
                   </dt>
