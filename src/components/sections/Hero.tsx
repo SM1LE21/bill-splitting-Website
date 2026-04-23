@@ -29,9 +29,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Split Bills Effortlessly
+            Snap the receipt.
             <br />
-            <span className="text-primary">Track Expenses Together</span>
+            <span className="text-primary">We&apos;ll split the rest.</span>
           </motion.h1>
           <motion.p
             className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto"
@@ -39,7 +39,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Say goodbye to awkward money conversations. ExpenseMate makes splitting bills with friends, roommates, or travel buddies simple and stress-free.
+            ExpenseMate scans your receipt, recognises every item, and does the math — so you can stop having awkward money conversations with friends, roommates, and travel buddies.
           </motion.p>
           <motion.div
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6"
