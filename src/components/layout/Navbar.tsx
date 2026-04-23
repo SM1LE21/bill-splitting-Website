@@ -13,8 +13,6 @@ const navigation = [
   { name: 'Benefits', href: '#benefits' },
   { name: 'Roadmap', href: '#roadmap' },
   { name: 'About', href: '#developer-story' },
-  // { name: 'Contact', href: '#contact' },
-  //{ name: 'Testimonials', href: '#testimonials' }, // TODO: Add testimonials section when we actually have some
 ];
 
 export default function Navbar() {
