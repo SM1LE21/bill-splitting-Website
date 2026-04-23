@@ -41,19 +41,17 @@ export default function CTA() {
                   Download for iOS
                 </Link>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1 }}
-                className="w-full sm:w-auto"
-              >
+              <div className="w-full sm:w-auto">
                 <div
-                  className="rounded-full bg-gray-600 px-8 py-4 text-lg font-semibold text-white shadow-sm cursor-not-allowed relative overflow-hidden group block text-center"
+                  aria-disabled="true"
+                  className="rounded-full bg-gray-600 px-8 py-4 text-lg font-semibold text-white shadow-sm cursor-not-allowed text-center flex items-center justify-center gap-3"
                 >
-                  <span className="opacity-50">Download for Android</span>
-                  <span className="absolute inset-0 flex items-center justify-center text-white bg-gray-700/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="opacity-80">Download for Android</span>
+                  <span className="inline-flex items-center rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
                     Coming Soon
                   </span>
                 </div>
-              </motion.div>
+              </div>
             </div>
             
             {/* TODO: Add this back when we have Android support */}
