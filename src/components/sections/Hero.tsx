@@ -5,73 +5,109 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <div className="relative isolate pt-14">
-      <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-        <div
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-secondary opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-        />
-      </div>
-      
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Snap the receipt.
-            <br />
-            <span className="text-primary">We&apos;ll split the rest.</span>
-          </motion.h1>
-          <motion.p
-            className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            ExpenseMate scans your receipt, recognises every item, and does the math — so you can stop having awkward money conversations with friends, roommates, and travel buddies.
-          </motion.p>
-          <motion.div
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <Link
-              href="#cta"
-              className="rounded-full bg-primary w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors text-center"
-            >
-              Get Started - It&apos;s Free
-            </Link>
-            <Link
-              href="#how-it-works"
-              className="text-base sm:text-lg font-semibold leading-6 text-gray-900 hover:text-primary transition-colors"
-            >
-              Learn more <span aria-hidden="true">→</span>
-            </Link>
-          </motion.div>
-        </motion.div>
-      </div>
+    <div className="relative isolate overflow-hidden pt-14">
+      {/* Background: soft primary-tinted gradient + subtle horizontal receipt-line pattern */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 bg-gradient-to-b from-primary/5 via-white to-white"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(0deg, currentColor 0px, currentColor 1px, transparent 1px, transparent 28px)',
+          color: '#1f2937',
+        }}
+      />
 
-      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
-        <div
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary to-secondary opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-        />
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8 lg:py-28">
+        <div className="grid grid-cols-1 items-center gap-y-16 lg:grid-cols-2 lg:gap-x-16">
+          {/* Left: headline + copy + CTAs */}
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.h1
+              className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Snap the receipt.
+              <br />
+              <span className="text-primary">We&apos;ll split the rest.</span>
+            </motion.h1>
+            <motion.p
+              className="mt-6 text-lg leading-8 text-gray-600 max-w-xl mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              ExpenseMate scans your receipt, recognises every item, and does the math — so you can stop having awkward money conversations with friends, roommates, and travel buddies.
+            </motion.p>
+            <motion.div
+              className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6 lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Link
+                href="#cta"
+                className="rounded-full bg-primary w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors text-center"
+              >
+                Get Started - It&apos;s Free
+              </Link>
+              <Link
+                href="#how-it-works"
+                className="text-base sm:text-lg font-semibold leading-6 text-gray-900 hover:text-primary transition-colors"
+              >
+                Learn more <span aria-hidden="true">→</span>
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Right: phone + looping receipt-scan demo */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            {/* Decorative scan beam behind the phone */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-24 -translate-y-1/2 bg-gradient-to-r from-transparent via-primary/20 to-transparent blur-2xl"
+            />
+
+            <div className="relative mx-auto max-w-[240px] sm:max-w-[280px]">
+              {/* iPhone Frame */}
+              <div className="relative rounded-[3rem] overflow-hidden bg-[#1D1D1F] aspect-[9/19.5] shadow-2xl">
+                <div className="absolute inset-[3px] rounded-[2.85rem] overflow-hidden border-[6px] border-[#1D1D1F] z-10">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                    poster="/images/videoCover.png"
+                  >
+                    <source src="/videos/receipt-scan-demo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                {/* Side button */}
+                <div className="absolute right-[-14px] top-[120px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
+                {/* Volume buttons */}
+                <div className="absolute left-[-14px] top-[100px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
+                <div className="absolute left-[-14px] top-[140px] w-[3px] h-[30px] bg-[#2A2A2C] rounded-full" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
-} 
+}
