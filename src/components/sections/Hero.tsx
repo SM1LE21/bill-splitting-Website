@@ -114,6 +114,7 @@ export default function Hero() {
                     loop
                     muted
                     playsInline
+                    aria-label="Animated demo: scanning a paper receipt with the ExpenseMate app and splitting the items between group members."
                     className="absolute inset-0 w-full h-full object-cover"
                     poster="/images/videoCover.png"
                   >
