@@ -21,6 +21,21 @@ interface VersionNote {
 // website change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.3.1',
+    date: '25th April 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'improvement',
+        description: 'Clearer maintenance and service unavailable screens with retry, so you always know what\'s happening if the app can\'t reach our servers'
+      },
+      {
+        type: 'improvement',
+        description: 'Performance and reliability improvements'
+      }
+    ]
+  },
+  {
     version: '1.3.0',
     date: '27th February 2026',
     platform: 'iOS',
