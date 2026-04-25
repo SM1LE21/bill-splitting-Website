@@ -1,9 +1,9 @@
 import React from 'react';
 import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from 'remotion';
 
-export const SCENE_DURATION = 90;
-export const SHORT_SCENE_DURATION = 60;
-export const FADE = 8;
+export const SCENE_DURATION = 120;
+export const SHORT_SCENE_DURATION = 90;
+export const FADE = 12;
 
 export const ACCENT = '#2563EB';
 export const ACCENT_SOFT = '#EFF6FF';
