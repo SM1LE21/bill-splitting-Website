@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-25 — FeaturesShowcase iteration
+
+- Slowed scene tempo from 2s to 3s each (60→90 frames). Composition now ~18s.
+- Replaced the bell and check emojis with inline SVG icons so the visuals stop drifting between OS / browser emoji fonts.
+- Made GroupScene feel populated: each avatar arrives with a name pill (Tun, Sarah, Pablo, Marie), connection lines draw from every avatar to the central hub, and a "Family trip · 4 members" status pill drops in at the bottom.
+- Dropped the marketing copy from the section heading; it now just reads "How it works."
+
 ## 2026-04-25 — Release notes: iOS 1.3.1
 
 - Added iOS 1.3.1 entry to `src/components/sections/ReleaseNotes.tsx`. Public-facing copy only: clearer maintenance/unavailable screens with retry, plus performance and reliability improvements. Underlying production-API cutover and debug diagnostics intentionally not surfaced.
