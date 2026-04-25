@@ -1,36 +1,40 @@
 import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
-import { SCENE_DURATION } from './scenes/_shared';
-import { SplittingScene } from './scenes/SplittingScene';
+import { SCENE_DURATION, SHORT_SCENE_DURATION } from './scenes/_shared';
+import { OpeningScene } from './scenes/OpeningScene';
 import { ScanningScene } from './scenes/ScanningScene';
+import { SplittingScene } from './scenes/SplittingScene';
 import { GroupScene } from './scenes/GroupScene';
-import { TrackingScene } from './scenes/TrackingScene';
-import { UpdatesScene } from './scenes/UpdatesScene';
 import { SettlementScene } from './scenes/SettlementScene';
+import { ResolutionScene } from './scenes/ResolutionScene';
 
-export const FEATURES_SHOWCASE_DURATION_FRAMES = SCENE_DURATION * 6;
+const acts = [
+  { Component: OpeningScene, duration: SHORT_SCENE_DURATION },
+  { Component: ScanningScene, duration: SCENE_DURATION },
+  { Component: SplittingScene, duration: SCENE_DURATION },
+  { Component: GroupScene, duration: SCENE_DURATION },
+  { Component: SettlementScene, duration: SCENE_DURATION },
+  { Component: ResolutionScene, duration: SHORT_SCENE_DURATION },
+];
+
+export const FEATURES_SHOWCASE_DURATION_FRAMES = acts.reduce(
+  (sum, act) => sum + act.duration,
+  0
+);
 
 export const FeaturesShowcase: React.FC = () => {
+  let cursor = 0;
   return (
     <AbsoluteFill style={{ background: '#FFFFFF' }}>
-      <Sequence from={0} durationInFrames={SCENE_DURATION}>
-        <SplittingScene />
-      </Sequence>
-      <Sequence from={SCENE_DURATION} durationInFrames={SCENE_DURATION}>
-        <ScanningScene />
-      </Sequence>
-      <Sequence from={SCENE_DURATION * 2} durationInFrames={SCENE_DURATION}>
-        <GroupScene />
-      </Sequence>
-      <Sequence from={SCENE_DURATION * 3} durationInFrames={SCENE_DURATION}>
-        <TrackingScene />
-      </Sequence>
-      <Sequence from={SCENE_DURATION * 4} durationInFrames={SCENE_DURATION}>
-        <UpdatesScene />
-      </Sequence>
-      <Sequence from={SCENE_DURATION * 5} durationInFrames={SCENE_DURATION}>
-        <SettlementScene />
-      </Sequence>
+      {acts.map(({ Component, duration }, i) => {
+        const from = cursor;
+        cursor += duration;
+        return (
+          <Sequence key={i} from={from} durationInFrames={duration}>
+            <Component />
+          </Sequence>
+        );
+      })}
     </AbsoluteFill>
   );
 };
