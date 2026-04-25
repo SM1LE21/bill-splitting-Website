@@ -2,6 +2,11 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-25 — Roadmap: v1.4 rescoped to Group Reports
+
+- Replaced the v1.4 card scope (group categories / Excel import / PDF+CSV reports) with the new Group Reports scope: CSV export, PDF reports, period selection, report sections (summary, member totals, balances, settlements, expenses, categories), and native iOS share-sheet handoff. Bullets condensed so the card stays in line with neighbouring milestones.
+- Milestone renamed to "Version 1.4 Launch — Group Reports (iOS only)" and target slipped from April to May 2026 since work is still in progress.
+
 ## 2026-04-25 — FeaturesShowcase iteration
 
 - Slowed scene tempo from 2s to 3s each (60→90 frames). Composition now ~18s.

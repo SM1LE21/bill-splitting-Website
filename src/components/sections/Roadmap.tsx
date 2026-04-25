@@ -56,12 +56,14 @@ const roadmapData = [
   },
   {
     phase: "Q2 2026",
-    milestone: "Version 1.4 Launch (iOS only)",
-    date: "Target: April 2026",
+    milestone: "Version 1.4 Launch — Group Reports (iOS only)",
+    date: "Target: May 2026",
     features: [
-      "Group categories",
-      "Excel data import for easy transition",
-      "Generate PDF/CSV reports for your groups",
+      "Export group expenses as CSV",
+      "Generate clean PDF group reports",
+      "Pick a period: all time, this month, last month, or custom range",
+      "Includes summary, member totals, balances, settlements, expenses, and category breakdown",
+      "Share via the native iOS share sheet",
     ]
   },
   {
