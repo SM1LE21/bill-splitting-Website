@@ -1,24 +1,29 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
-import { ACCENT, Avatar, SceneFrame, SECONDARY, SUBTEXT, TEAL, TEXT, easeOut } from './_shared';
+import { SceneFrame, SUBTEXT, TEXT, easeOut } from './_shared';
+import { CharacterAvatar, type CharacterId } from './_characters';
+
+const people: { id: CharacterId }[] = [
+  { id: 'tun' },
+  { id: 'sarah' },
+  { id: 'pablo' },
+];
 
 export const SplittingScene: React.FC = () => {
   const frame = useCurrentFrame();
-  const billY = interpolate(frame, [0, 16], [40, 0], {
+  const billY = interpolate(frame, [0, 18], [40, 0], {
     extrapolateRight: 'clamp',
     easing: easeOut,
   });
-  const billOp = interpolate(frame, [0, 16], [0, 1], { extrapolateRight: 'clamp' });
-  const splitOp = interpolate(frame, [22, 36], [0, 1], {
+  const billOp = interpolate(frame, [0, 18], [0, 1], { extrapolateRight: 'clamp' });
+  const splitOp = interpolate(frame, [28, 50], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-
-  const people = [
-    { initial: 'T', color: ACCENT },
-    { initial: 'S', color: SECONDARY },
-    { initial: 'P', color: TEAL },
-  ];
+  const numberPulse = interpolate(frame, [60, 70, 80], [1, 1.08, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
 
   return (
     <SceneFrame label="Smart Bill Splitting">
@@ -30,7 +35,7 @@ export const SplittingScene: React.FC = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 36,
+          gap: 40,
         }}
       >
         <div
@@ -60,10 +65,10 @@ export const SplittingScene: React.FC = () => {
             €120.00
           </div>
         </div>
-        <div style={{ display: 'flex', gap: 28, opacity: splitOp }}>
+        <div style={{ display: 'flex', gap: 36, opacity: splitOp }}>
           {people.map((p) => (
             <div
-              key={p.initial}
+              key={p.id}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -71,13 +76,14 @@ export const SplittingScene: React.FC = () => {
                 gap: 12,
               }}
             >
-              <Avatar initial={p.initial} color={p.color} />
+              <CharacterAvatar id={p.id} size={72} />
               <div
                 style={{
                   fontSize: 22,
                   fontWeight: 700,
                   color: TEXT,
                   fontVariantNumeric: 'tabular-nums',
+                  transform: `scale(${numberPulse})`,
                 }}
               >
                 €40

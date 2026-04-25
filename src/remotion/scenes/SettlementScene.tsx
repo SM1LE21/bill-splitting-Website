@@ -1,6 +1,7 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
-import { ACCENT, Avatar, SECONDARY, SceneFrame, easeOut } from './_shared';
+import { ACCENT, SceneFrame, easeOut } from './_shared';
+import { CharacterAvatar } from './_characters';
 
 export const SettlementScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -25,7 +26,7 @@ export const SettlementScene: React.FC = () => {
           justifyContent: 'center',
         }}
       >
-        <Avatar initial="T" color={ACCENT} size={96} />
+        <CharacterAvatar id="tun" size={96} />
         <div
           style={{
             width: 280,
@@ -76,7 +77,7 @@ export const SettlementScene: React.FC = () => {
             €50.00
           </div>
         </div>
-        <Avatar initial="S" color={SECONDARY} size={96} />
+        <CharacterAvatar id="sarah" size={96} />
         <div
           style={{
             position: 'absolute',

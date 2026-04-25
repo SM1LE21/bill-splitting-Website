@@ -1,27 +1,23 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
 import {
-  ACCENT,
-  Avatar,
   CORAL,
   CREAM,
-  PURPLE,
-  SECONDARY,
   SHORT_SCENE_DURATION,
   SceneFrame,
-  TEAL,
   TEXT,
   WARM,
   easeOut,
 } from './_shared';
+import { CharacterAvatar, type CharacterId } from './_characters';
 
 const TABLE_RADIUS = 200;
 
-const seats = [
-  { angle: -Math.PI / 2, initial: 'T', color: ACCENT },
-  { angle: 0, initial: 'S', color: SECONDARY },
-  { angle: Math.PI / 2, initial: 'P', color: TEAL },
-  { angle: Math.PI, initial: 'M', color: PURPLE },
+const seats: { angle: number; id: CharacterId }[] = [
+  { angle: -Math.PI / 2, id: 'tun' },
+  { angle: 0, id: 'sarah' },
+  { angle: Math.PI / 2, id: 'pablo' },
+  { angle: Math.PI, id: 'marie' },
 ];
 
 export const OpeningScene: React.FC = () => {
@@ -142,7 +138,7 @@ export const OpeningScene: React.FC = () => {
             );
             return (
               <div
-                key={s.initial}
+                key={s.id}
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -151,15 +147,15 @@ export const OpeningScene: React.FC = () => {
                   opacity: seatOp,
                 }}
               >
-                <Avatar initial={s.initial} color={s.color} size={56} />
+                <CharacterAvatar id={s.id} size={64} />
                 <div
                   style={{
                     position: 'absolute',
-                    top: -42,
+                    top: -46,
                     left: '50%',
                     transform: `translate(-50%, 0) scale(${qScale})`,
                     opacity: qOp,
-                    fontSize: 36,
+                    fontSize: 40,
                     fontWeight: 800,
                     color: CORAL,
                     textShadow: '0 2px 4px rgba(0,0,0,0.08)',

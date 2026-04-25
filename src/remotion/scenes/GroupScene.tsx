@@ -1,25 +1,17 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
-import {
-  ACCENT,
-  ACCENT_SOFT,
-  Avatar,
-  PURPLE,
-  SECONDARY,
-  SceneFrame,
-  TEAL,
-  TEXT,
-} from './_shared';
+import { ACCENT, ACCENT_SOFT, SceneFrame, TEXT } from './_shared';
+import { CharacterAvatar, CHARACTER_NAMES, type CharacterId } from './_characters';
 
 const SIZE = 360;
 const CENTER = SIZE / 2;
 const RING_RADIUS = 150;
 
-const people = [
-  { x: 0, y: -RING_RADIUS, initial: 'T', name: 'Tun', color: ACCENT, fadeStart: 14 },
-  { x: 140, y: -50, initial: 'S', name: 'Sarah', color: SECONDARY, fadeStart: 22 },
-  { x: 90, y: 120, initial: 'P', name: 'Pablo', color: TEAL, fadeStart: 30 },
-  { x: -130, y: 80, initial: 'M', name: 'Marie', color: PURPLE, fadeStart: 38 },
+const people: { x: number; y: number; id: CharacterId; fadeStart: number }[] = [
+  { x: 0, y: -RING_RADIUS, id: 'tun', fadeStart: 14 },
+  { x: 140, y: -50, id: 'sarah', fadeStart: 22 },
+  { x: 90, y: 120, id: 'pablo', fadeStart: 30 },
+  { x: -130, y: 80, id: 'marie', fadeStart: 38 },
 ];
 
 export const GroupScene: React.FC = () => {
@@ -139,7 +131,7 @@ export const GroupScene: React.FC = () => {
                     gap: 6,
                   }}
                 >
-                  <Avatar initial={p.initial} color={p.color} size={64} />
+                  <CharacterAvatar id={p.id} size={64} />
                   <div
                     style={{
                       fontSize: 13,
@@ -152,7 +144,7 @@ export const GroupScene: React.FC = () => {
                       boxShadow: '0 2px 6px rgba(0,0,0,0.08)',
                     }}
                   >
-                    {p.name}
+                    {CHARACTER_NAMES[p.id]}
                   </div>
                 </div>
               </div>

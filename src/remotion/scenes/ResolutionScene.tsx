@@ -2,47 +2,40 @@ import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
 import {
   ACCENT,
-  Avatar,
-  PURPLE,
-  SECONDARY,
   SHORT_SCENE_DURATION,
   Sparkles,
   SUCCESS,
   SUBTEXT,
   SceneFrame,
-  TEAL,
+  TEXT,
   WARM,
   easeOut,
 } from './_shared';
+import { CharacterAvatar, type CharacterId } from './_characters';
 
-const people = [
-  { initial: 'T', color: ACCENT },
-  { initial: 'S', color: SECONDARY },
-  { initial: 'P', color: TEAL },
-  { initial: 'M', color: PURPLE },
-];
+const people: CharacterId[] = ['tun', 'sarah', 'pablo', 'marie'];
 
 export const ResolutionScene: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const settledOp = interpolate(frame, [0, 14], [0, 1], {
+  const settledOp = interpolate(frame, [0, 16], [0, 1], {
     extrapolateRight: 'clamp',
     easing: easeOut,
   });
-  const settledScale = interpolate(frame, [0, 12, 18], [0.8, 1.1, 1], {
+  const settledScale = interpolate(frame, [0, 14, 22], [0.8, 1.12, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const sparkleOp = interpolate(frame, [10, 22, 36], [0, 0.9, 0], {
+  const sparkleOp = interpolate(frame, [12, 26, 50], [0, 0.9, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const wordmarkOp = interpolate(frame, [22, 34], [0, 1], {
+  const wordmarkOp = interpolate(frame, [30, 46], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const wordmarkY = interpolate(frame, [22, 34], [10, 0], {
+  const wordmarkY = interpolate(frame, [30, 46], [10, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
     easing: easeOut,
@@ -65,22 +58,22 @@ export const ResolutionScene: React.FC = () => {
           gap: 36,
         }}
       >
-        <div style={{ display: 'flex', gap: 20 }}>
-          {people.map((p, i) => {
-            const bob = Math.sin((frame - i * 4) / 6) * 4;
-            const op = interpolate(frame, [4 + i * 2, 14 + i * 2], [0, 1], {
+        <div style={{ display: 'flex', gap: 24 }}>
+          {people.map((id, i) => {
+            const bob = Math.sin((frame - i * 4) / 8) * 4;
+            const op = interpolate(frame, [4 + i * 2, 18 + i * 2], [0, 1], {
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
             return (
               <div
-                key={p.initial}
+                key={id}
                 style={{
                   opacity: op,
                   transform: `translateY(${bob}px)`,
                 }}
               >
-                <Avatar initial={p.initial} color={p.color} size={68} />
+                <CharacterAvatar id={id} size={72} />
               </div>
             );
           })}
@@ -135,21 +128,37 @@ export const ResolutionScene: React.FC = () => {
             flexDirection: 'column',
             alignItems: 'center',
             gap: 6,
-            marginTop: 16,
+            marginTop: 12,
           }}
         >
           <div
             style={{
-              fontSize: 36,
-              fontWeight: 800,
-              letterSpacing: -0.5,
-              background: `linear-gradient(135deg, ${ACCENT} 0%, ${WARM} 100%)`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
             }}
           >
-            ExpenseMate
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/expensemate1024_light_aalt.png"
+              alt=""
+              width={48}
+              height={48}
+              style={{
+                borderRadius: 12,
+                display: 'block',
+              }}
+            />
+            <span
+              style={{
+                fontSize: 36,
+                fontWeight: 800,
+                letterSpacing: -0.5,
+                color: TEXT,
+              }}
+            >
+              ExpenseMate
+            </span>
           </div>
           <div
             style={{
@@ -163,7 +172,6 @@ export const ResolutionScene: React.FC = () => {
           </div>
         </div>
 
-        {/* Floating sparkles around the whole composition */}
         <Sparkles
           cx={200}
           cy={140}
