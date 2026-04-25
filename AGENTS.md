@@ -71,3 +71,43 @@ Production checks:
 npm run lint
 npm run build
 ```
+
+## Conventions
+
+See full conventions in `CLAUDE.md`.
+
+## Commit Convention
+
+```
+<type>(<scope>): <short description>
+
+Types: feat | fix | refactor | chore | docs
+Scope: optional, e.g. session, feedback, ui, db
+```
+
+Examples:
+- `feat(session): add phase transition logging`
+- `fix(feedback): handle empty transcript gracefully`
+- `chore: update Config API endpoint`
+
+**Micro-commits encouraged** — commit each logical unit of work. One changelog entry per feature/fix, regardless of commit count.
+
+## Changelog
+
+After each significant change, append an entry to `CHANGELOG.md`:
+
+```
+## YYYY-MM-DD HH:MM — <Title>
+- bullet (1–4 max)
+```
+
+Commit the changelog alongside or right after the work.
+
+## Code Rules
+
+- **Max ~300 lines per file** — split consciously if growing beyond this
+- **One responsibility per file** — no god classes
+- **Comments only on major functions** — keep them one-line max
+- **No dead code** — remove rather than comment out
+- **Lean over clever** — prefer readable over terse
+
