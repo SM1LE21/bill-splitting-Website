@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-25 — FeaturesShowcase v3: story arc rebuild
+
+- Reworked the video as a six-act narrative (Opening → Scanning → Splitting → Group → Settlement → Resolution) instead of a feature reel. 16s total at 30fps.
+- New `OpeningScene` opens on a top-down dinner table with four seated avatars and a receipt dropping in, plus coral question marks above each head — a relatable hook in the first 2s.
+- New `ResolutionScene` closes on four bobbing avatars, an "Everyone's squared up" success pill with sparkles, and the ExpenseMate wordmark in a primary→warm gradient with the tagline "Snap. Split. Done."
+- Expanded the shared palette with warm/coral/cream/yellow accents (60-30-10 rule from the motion-design research). Tracking and Updates scenes dropped from the video — chip row beneath keeps them visible on the home page.
+
 ## 2026-04-25 — Roadmap: v1.4 rescoped to Group Reports
 
 - Replaced the v1.4 card scope (group categories / Excel import / PDF+CSV reports) with the new Group Reports scope: CSV export, PDF reports, period selection, report sections (summary, member totals, balances, settlements, expenses, categories), and native iOS share-sheet handoff. Bullets condensed so the card stays in line with neighbouring milestones.
