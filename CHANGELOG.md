@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-25 — FeaturesShowcase v4: characters, slower flow, real brand mark
+
+- Replaced the abstract letter-circle avatars with four illustrated SVG characters (Tun with glasses, Sarah with brown hair, Pablo with a beard, Marie with long blonde hair + earrings). Used in every scene that previously had letter-circle people.
+- Slowed scene tempo: action scenes 3s → 4s, opening/resolution 2s → 3s. Total ~20s after sequence overlap.
+- Cross-fade between scenes via overlapping Sequences (12-frame overlap) so beats flow instead of hard-cut.
+- Resolution scene now uses the real ExpenseMate logo image and renders "ExpenseMate" in the site's dark text colour, matching the navbar treatment instead of the previous primary→warm gradient.
+
 ## 2026-04-25 — FeaturesShowcase v3: story arc rebuild
 
 - Reworked the video as a six-act narrative (Opening → Scanning → Splitting → Group → Settlement → Resolution) instead of a feature reel. 16s total at 30fps.
