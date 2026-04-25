@@ -1,43 +1,29 @@
+'use client';
+
+import { Player } from '@remotion/player';
 import {
   CalculatorIcon,
-  CurrencyDollarIcon,
+  CameraIcon,
   UserGroupIcon,
   ChartBarIcon,
   BellIcon,
-  CameraIcon,
+  CurrencyDollarIcon,
 } from '@heroicons/react/24/outline';
+import { FeaturesShowcase } from '@/remotion/FeaturesShowcase';
+import {
+  FEATURES_SHOWCASE_DURATION_FRAMES,
+  FEATURES_SHOWCASE_FPS,
+  FEATURES_SHOWCASE_HEIGHT,
+  FEATURES_SHOWCASE_WIDTH,
+} from '@/remotion/Root';
 
-const features = [
-  {
-    name: 'Smart Bill Splitting',
-    description: 'Automatically calculate each person\'s share based on custom rules and percentages.',
-    icon: CalculatorIcon,
-  },
-  {
-    name: 'Receipt Scanning',
-    description: 'Simply snap a photo of your receipt and let ExpenseMate automatically identify items and calculate splits.',
-    icon: CameraIcon,
-  },
-  {
-    name: 'Group Management',
-    description: 'Create and manage multiple groups for different occasions or living situations.',
-    icon: UserGroupIcon,
-  },
-  {
-    name: 'Expense Tracking',
-    description: 'Keep track of all expenses and settlements in one place with detailed history.',
-    icon: ChartBarIcon,
-  },
-  {
-    name: 'Real-time Updates',
-    description: 'Get instant notifications when expenses are added or bills are settled.',
-    icon: BellIcon,
-  },
-  {
-    name: 'Debt Settlement',
-    description: 'Simplify debt settlement with automated calculations and payment tracking.',
-    icon: CurrencyDollarIcon,
-  },
+const featureChips = [
+  { name: 'Smart Bill Splitting', icon: CalculatorIcon },
+  { name: 'Receipt Scanning', icon: CameraIcon },
+  { name: 'Group Management', icon: UserGroupIcon },
+  { name: 'Expense Tracking', icon: ChartBarIcon },
+  { name: 'Real-time Updates', icon: BellIcon },
+  { name: 'Debt Settlement', icon: CurrencyDollarIcon },
 ];
 
 export default function Features() {
@@ -49,27 +35,35 @@ export default function Features() {
             Features
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to manage shared expenses
+            Everything you need, in twelve seconds
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            ExpenseMate comes packed with all the tools you need to make expense sharing and tracking effortless.
+            A video tells more than a thousand words.
           </p>
         </div>
-        <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
-          {features.map((feature) => (
+
+        <div className="mx-auto mt-16 max-w-5xl overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
+          <Player
+            component={FeaturesShowcase}
+            durationInFrames={FEATURES_SHOWCASE_DURATION_FRAMES}
+            fps={FEATURES_SHOWCASE_FPS}
+            compositionWidth={FEATURES_SHOWCASE_WIDTH}
+            compositionHeight={FEATURES_SHOWCASE_HEIGHT}
+            autoPlay
+            loop
+            controls={false}
+            style={{ width: '100%', aspectRatio: '16 / 9' }}
+          />
+        </div>
+
+        <ul className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
+          {featureChips.map((chip) => (
             <li
-              key={feature.name}
-              className="group relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              key={chip.name}
+              className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
-                <feature.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-              </span>
-              <h3 className="mt-6 text-lg font-semibold leading-7 text-gray-900">
-                {feature.name}
-              </h3>
-              <p className="mt-2 text-base leading-7 text-gray-600">
-                {feature.description}
-              </p>
+              <chip.icon className="h-4 w-4 text-primary" aria-hidden="true" />
+              {chip.name}
             </li>
           ))}
         </ul>
