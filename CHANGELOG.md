@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-25 — Three ambient Remotion backgrounds (desktop)
+
+- New `CTAParticles` composition: 28 drifting gold euros, coins, and white stars layered behind the dark CTA panel for ambient motion at the conversion moment.
+- New `BenefitsReceipts` composition: replaces the two static decorative receipt SVGs with slowly rotating, drifting versions and flowing dashed lines. Mobile still gets the static SVGs.
+- New `ProcessFlow` composition: replaces the HowItWorks static gradient connector with a thin line carrying a travelling primary-blue glow pulse.
+- All three are gated to `lg:block` so mobile keeps the existing static fallbacks (no extra render loops on touch devices). Home First Load JS goes from ~217 kB to ~222 kB — three small compositions on top of the already-loaded Player runtime.
+
 ## 2026-04-25 — FeaturesShowcase v4: characters, slower flow, real brand mark
 
 - Replaced the abstract letter-circle avatars with four illustrated SVG characters (Tun with glasses, Sarah with brown hair, Pablo with a beard, Marie with long blonde hair + earrings). Used in every scene that previously had letter-circle people.
