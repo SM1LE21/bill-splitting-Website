@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@remotion/player": "^4.0.451",
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.5",
@@ -18,7 +19,8 @@
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
     "react-icons": "^5.5.0",
-    "react-qr-code": "^2.0.15"
+    "react-qr-code": "^2.0.15",
+    "remotion": "^4.0.451"
   },
   "devDependencies": {
     "@types/node": "^20",
