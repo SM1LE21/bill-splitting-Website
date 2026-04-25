@@ -42,3 +42,8 @@ next-env.d.ts
 
 # APK files (hosted on GitHub Releases)
 *.apk
+
+# Claude Code: track shared skills and project config, ignore local-only state
+.claude/settings.local.json
+.claude/sessions/
+.claude/cache/
