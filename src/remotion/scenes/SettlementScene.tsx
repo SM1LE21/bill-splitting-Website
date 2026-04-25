@@ -96,7 +96,20 @@ export const SettlementScene: React.FC = () => {
             boxShadow: '0 10px 30px rgba(16,185,129,0.3)',
           }}
         >
-          ✓ Settled
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={3}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+          Settled
         </div>
       </div>
     </SceneFrame>
