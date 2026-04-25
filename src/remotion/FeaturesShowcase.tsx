@@ -1,6 +1,6 @@
 import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
-import { SCENE_DURATION, SHORT_SCENE_DURATION } from './scenes/_shared';
+import { FADE, SCENE_DURATION, SHORT_SCENE_DURATION } from './scenes/_shared';
 import { OpeningScene } from './scenes/OpeningScene';
 import { ScanningScene } from './scenes/ScanningScene';
 import { SplittingScene } from './scenes/SplittingScene';
@@ -17,24 +17,33 @@ const acts = [
   { Component: ResolutionScene, duration: SHORT_SCENE_DURATION },
 ];
 
-export const FEATURES_SHOWCASE_DURATION_FRAMES = acts.reduce(
-  (sum, act) => sum + act.duration,
-  0
-);
+// Each scene starts FADE frames before the previous ends, so the trailing
+// fade-out of one scene cross-fades with the leading fade-in of the next.
+const sequenceStarts: number[] = (() => {
+  const starts: number[] = [];
+  let cursor = 0;
+  for (const act of acts) {
+    starts.push(cursor);
+    cursor += act.duration - FADE;
+  }
+  return starts;
+})();
+
+export const FEATURES_SHOWCASE_DURATION_FRAMES =
+  sequenceStarts[sequenceStarts.length - 1] + acts[acts.length - 1].duration;
 
 export const FeaturesShowcase: React.FC = () => {
-  let cursor = 0;
   return (
     <AbsoluteFill style={{ background: '#FFFFFF' }}>
-      {acts.map(({ Component, duration }, i) => {
-        const from = cursor;
-        cursor += duration;
-        return (
-          <Sequence key={i} from={from} durationInFrames={duration}>
-            <Component />
-          </Sequence>
-        );
-      })}
+      {acts.map(({ Component, duration }, i) => (
+        <Sequence
+          key={i}
+          from={sequenceStarts[i]}
+          durationInFrames={duration}
+        >
+          <Component />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 };
