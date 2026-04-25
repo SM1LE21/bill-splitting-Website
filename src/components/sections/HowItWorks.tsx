@@ -1,8 +1,18 @@
+'use client';
+
 import {
   UsersIcon,
   ReceiptPercentIcon,
   CheckBadgeIcon,
 } from '@heroicons/react/24/outline';
+import { Player } from '@remotion/player';
+import { ProcessFlow } from '@/remotion/ambient/ProcessFlow';
+import {
+  PROCESS_FLOW_DURATION_FRAMES,
+  PROCESS_FLOW_FPS,
+  PROCESS_FLOW_HEIGHT,
+  PROCESS_FLOW_WIDTH,
+} from '@/remotion/Root';
 
 const steps = [
   {
@@ -42,11 +52,25 @@ export default function HowItWorks() {
         </div>
 
         <ol className="relative mx-auto mt-20 grid max-w-5xl grid-cols-1 gap-x-8 gap-y-14 lg:grid-cols-3">
-          {/* Connector line: only on lg, behind the step numbers */}
+          {/* Connector line: only on lg, behind the step numbers.
+              Static gradient on lg-only without the Player (mobile already hides this).
+              Desktop layers the ProcessFlow Player on top with a moving glow pulse. */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-8 hidden h-px bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30 lg:block"
-          />
+            className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-[26px] hidden h-3 lg:block"
+          >
+            <Player
+              component={ProcessFlow}
+              durationInFrames={PROCESS_FLOW_DURATION_FRAMES}
+              fps={PROCESS_FLOW_FPS}
+              compositionWidth={PROCESS_FLOW_WIDTH}
+              compositionHeight={PROCESS_FLOW_HEIGHT}
+              autoPlay
+              loop
+              controls={false}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
 
           {steps.map((step) => (
             <li key={step.id} className="relative flex flex-col items-center text-center">
