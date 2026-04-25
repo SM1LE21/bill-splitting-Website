@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-25 — Features section: Remotion-driven showcase
+
+- New `FeaturesShowcase` composition (12s @ 30fps, 1280×720): six 2-second scenes walking through Splitting, Scanning, Group, Tracking, Updates, Settlement. Each scene in its own file under `src/remotion/scenes/`, sharing primitives via `_shared.tsx`.
+- Features section now leads with the Player and keeps a chip row of six feature names below as a static fallback. Heading trimmed.
+- Home First Load JS goes from ~215 kB to ~217 kB — the Player runtime was already loaded for ReceiptDemo, so this is just the composition code.
+
 ## 2026-04-25 — First Remotion section: ReceiptDemo
 
 - Installed `remotion` + `@remotion/player`; added `src/remotion/ReceiptScan.tsx` (1280×720 @ 30fps, ~7s loop) and `src/remotion/Root.tsx` registry.
