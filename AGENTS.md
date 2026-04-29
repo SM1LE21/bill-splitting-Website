@@ -148,6 +148,23 @@ Any durable knowledge — decisions, open questions, project state, deployment f
 
 The vault is agent-maintained: humans can read or review it, but agents keep it current. Read it at the start of any non-trivial session; update it as a byproduct of meaningful work.
 
+### Changelog vs vault
+
+The changelog records history: what changed, when it changed, and what was shipped or fixed.
+
+The vault records current operating context: what is true now, what is blocked, what questions remain open, and why important decisions were made.
+
+Use the changelog for completed work. Use `.vault/` for durable context future agents need before making more changes.
+
+A significant change may require both:
+
+- update `CHANGELOG.md` with what changed
+- update `.vault/STATUS.md` if project state, blockers, next steps, runtime facts, or risks changed
+- update `.vault/QUESTIONS.md` if human/product input is needed
+- create an ADR if a meaningful technical decision was made
+
+Do not use the vault as a second changelog. Do not use the changelog for unresolved questions, current blockers, or decision rationale.
+
 ## Conventions
 
 See full conventions in `CLAUDE.md`.
