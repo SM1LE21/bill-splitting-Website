@@ -132,10 +132,6 @@ npm run lint
 npm run build
 ```
 
-## Remotion
-
-Animations and any future per-user / per-group videos are built with Remotion. Compositions live in `src/remotion/` and are embedded into the marketing site via `@remotion/player`; rendered MP4s (when needed) come from the same code through the Remotion CLI or server renderer. Best-practice guidance for editing Remotion code is shipped as an Agent Skill under `.claude/skills/remotion-best-practices/` — Claude Code and other compatible agents load it on demand. When a rule is missing, the full system prompt at <https://www.remotion.dev/docs/ai/system-prompt> is a useful escape hatch.
-
 ## Knowledge base
 
 The canonical knowledge base for this repo lives in `.vault/` at the repo root.

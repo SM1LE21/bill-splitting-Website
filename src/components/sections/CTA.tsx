@@ -2,15 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Player } from '@remotion/player';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
-import { CTAParticles } from '@/remotion/ambient/CTAParticles';
-import {
-  CTA_PARTICLES_DURATION_FRAMES,
-  CTA_PARTICLES_FPS,
-  CTA_PARTICLES_HEIGHT,
-  CTA_PARTICLES_WIDTH,
-} from '@/remotion/Root';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
 
@@ -21,22 +13,6 @@ export default function CTA() {
         <div className="relative isolate overflow-hidden bg-gray-900 py-24 text-center shadow-2xl sm:rounded-3xl -mx-4 sm:mx-0">
           <div className="absolute inset-0 -z-10 opacity-20">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary" />
-          </div>
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-[5] hidden lg:block"
-          >
-            <Player
-              component={CTAParticles}
-              durationInFrames={CTA_PARTICLES_DURATION_FRAMES}
-              fps={CTA_PARTICLES_FPS}
-              compositionWidth={CTA_PARTICLES_WIDTH}
-              compositionHeight={CTA_PARTICLES_HEIGHT}
-              autoPlay
-              loop
-              controls={false}
-              style={{ width: '100%', height: '100%' }}
-            />
           </div>
 
           <motion.div

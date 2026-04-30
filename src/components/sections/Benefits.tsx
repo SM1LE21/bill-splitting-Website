@@ -6,14 +6,6 @@ import {
   ArchiveBoxIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
-import { Player } from '@remotion/player';
-import { BenefitsReceipts } from '@/remotion/ambient/BenefitsReceipts';
-import {
-  BENEFITS_RECEIPTS_DURATION_FRAMES,
-  BENEFITS_RECEIPTS_FPS,
-  BENEFITS_RECEIPTS_HEIGHT,
-  BENEFITS_RECEIPTS_WIDTH,
-} from '@/remotion/Root';
 
 const benefits = [
   {
@@ -48,10 +40,9 @@ export default function Benefits() {
       className="relative isolate overflow-hidden bg-white py-24 sm:py-32 lg:py-40"
       id="benefits"
     >
-      {/* Mobile: static decorative receipts at the edges */}
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute -left-16 top-10 -z-10 h-[320px] w-[220px] opacity-[0.06] text-gray-900 lg:hidden"
+        className="pointer-events-none absolute -left-16 top-10 -z-10 h-[320px] w-[220px] opacity-[0.06] text-gray-900"
         viewBox="0 0 220 320"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +58,7 @@ export default function Benefits() {
       </svg>
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 bottom-10 -z-10 h-[320px] w-[220px] rotate-6 opacity-[0.06] text-gray-900 lg:hidden"
+        className="pointer-events-none absolute -right-16 bottom-10 -z-10 h-[320px] w-[220px] rotate-6 opacity-[0.06] text-gray-900"
         viewBox="0 0 220 320"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -81,24 +72,6 @@ export default function Benefits() {
           <line key={y} x1="40" x2="180" y1={y} y2={y} stroke="currentColor" strokeWidth="2" strokeDasharray="4 6" />
         ))}
       </svg>
-      {/* Desktop: animated receipts via Remotion Player */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 hidden lg:block"
-      >
-        <Player
-          component={BenefitsReceipts}
-          durationInFrames={BENEFITS_RECEIPTS_DURATION_FRAMES}
-          fps={BENEFITS_RECEIPTS_FPS}
-          compositionWidth={BENEFITS_RECEIPTS_WIDTH}
-          compositionHeight={BENEFITS_RECEIPTS_HEIGHT}
-          autoPlay
-          loop
-          controls={false}
-          style={{ width: '100%', height: '100%' }}
-        />
-      </div>
-      {/* Soft radial tint on top of the pattern */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/[0.04] via-transparent to-secondary/[0.04]"
