@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-30 12:54 — PostHog live verification
+
+- Verified production PostHog ingestion is working after analytics consent; a fresh incognito session with "Accept All" sends events to the PostHog US Cloud project.
+- Recorded PostHog as the main website product/funnel analytics source. Vercel Analytics remains the cookieless traffic baseline and Google Analytics remains consent-gated legacy analytics for now.
+- Updated vault/ADR context so future agents know the production host must use `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`; the project token stays in Vercel env vars, not in repo docs.
+
 ## 2026-04-30 16:30 — Benefits section becomes an animated reel
 
 - Replaced the static four-card Benefits layout with an auto-cycling framer-motion reel covering the same four messages (Save time, Avoid conflicts, Stay organised, Peace of mind) on a ~28-second loop.
