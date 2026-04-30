@@ -1,7 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
 import HowItWorks from '@/components/sections/HowItWorks';
-import ReceiptDemo from '@/components/sections/ReceiptDemo';
+import AppScreenshots from '@/components/sections/AppScreenshots';
 import Benefits from '@/components/sections/Benefits';
 import Roadmap from '@/components/sections/Roadmap';
 import CTA from '@/components/sections/CTA';
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
-      <ReceiptDemo />
+      <AppScreenshots />
       <Benefits />
       <Roadmap />
       <DeveloperStory />
