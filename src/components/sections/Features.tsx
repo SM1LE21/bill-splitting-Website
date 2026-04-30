@@ -1,29 +1,51 @@
 'use client';
 
-import { Player } from '@remotion/player';
 import {
-  CalculatorIcon,
   CameraIcon,
-  UserGroupIcon,
-  ChartBarIcon,
-  BellIcon,
-  CurrencyDollarIcon,
+  ArrowsRightLeftIcon,
+  GlobeEuropeAfricaIcon,
+  UserPlusIcon,
+  DocumentArrowDownIcon,
+  ChartPieIcon,
 } from '@heroicons/react/24/outline';
-import { FeaturesShowcase } from '@/remotion/FeaturesShowcase';
-import {
-  FEATURES_SHOWCASE_DURATION_FRAMES,
-  FEATURES_SHOWCASE_FPS,
-  FEATURES_SHOWCASE_HEIGHT,
-  FEATURES_SHOWCASE_WIDTH,
-} from '@/remotion/Root';
 
-const featureChips = [
-  { name: 'Smart Bill Splitting', icon: CalculatorIcon },
-  { name: 'Receipt Scanning', icon: CameraIcon },
-  { name: 'Group Management', icon: UserGroupIcon },
-  { name: 'Expense Tracking', icon: ChartBarIcon },
-  { name: 'Real-time Updates', icon: BellIcon },
-  { name: 'Debt Settlement', icon: CurrencyDollarIcon },
+const features = [
+  {
+    title: 'AI receipt scanning',
+    description:
+      'Snap any receipt and ExpenseMate reads each line, total, and currency. Edit anything before you save.',
+    icon: CameraIcon,
+  },
+  {
+    title: 'Smart settlement',
+    description:
+      'Balances simplify into the fewest payments needed to settle up. No spreadsheet maths required.',
+    icon: ArrowsRightLeftIcon,
+  },
+  {
+    title: 'Multi-currency',
+    description:
+      'Mix euros, dollars, pounds, and more in one trip. Original amounts stay visible after conversion.',
+    icon: GlobeEuropeAfricaIcon,
+  },
+  {
+    title: 'Placeholder invites',
+    description:
+      'Add a friend to a group before they sign up. They claim their seat when they join.',
+    icon: UserPlusIcon,
+  },
+  {
+    title: 'Group reports',
+    description:
+      'Export a clean PDF or CSV of any group, for any period. Share straight from your phone.',
+    icon: DocumentArrowDownIcon,
+  },
+  {
+    title: 'Spending insights',
+    description:
+      'See where the money goes by week, month, quarter, or year, broken down by category and member.',
+    icon: ChartPieIcon,
+  },
 ];
 
 export default function Features() {
@@ -35,35 +57,35 @@ export default function Features() {
             Features
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            How it works
+            What ExpenseMate does
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Everything you need to share expenses without the spreadsheet.
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-5xl overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
-          <Player
-            component={FeaturesShowcase}
-            durationInFrames={FEATURES_SHOWCASE_DURATION_FRAMES}
-            fps={FEATURES_SHOWCASE_FPS}
-            compositionWidth={FEATURES_SHOWCASE_WIDTH}
-            compositionHeight={FEATURES_SHOWCASE_HEIGHT}
-            autoPlay
-            loop
-            controls={false}
-            style={{ width: '100%', aspectRatio: '16 / 9' }}
-          />
-        </div>
-
-        <ul className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
-          {featureChips.map((chip) => (
-            <li
-              key={chip.name}
-              className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm"
+        <dl className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
             >
-              <chip.icon className="h-4 w-4 text-primary" aria-hidden="true" />
-              {chip.name}
-            </li>
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                <feature.icon className="h-5 w-5 text-primary" aria-hidden="true" />
+              </span>
+              <dt className="mt-4 text-base font-semibold leading-7 text-gray-900">
+                {feature.title}
+              </dt>
+              <dd className="mt-2 text-sm leading-6 text-gray-600">
+                {feature.description}
+              </dd>
+            </div>
           ))}
-        </ul>
+        </dl>
+
+        <p className="mt-10 text-center text-sm text-gray-500">
+          Available in English, German, French, Spanish, and Portuguese.
+        </p>
       </div>
     </div>
   );
