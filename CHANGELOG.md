@@ -2,6 +2,15 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-30 14:00 — ProductFlow narrative replaces App Store screenshots
+
+- New `PhoneFrame` shell under `src/components/ui/` (iPhone bezel, status bar with 9:41 time, dynamic island, signal/wifi/battery glyphs).
+- Three iOS screens recreated as React/Tailwind components: `ProductFlowScan` (Scanned Receipt detail with looping AI scan beam), `ProductFlowSplit` (Receipt-items split with cycling avatar to suggest reassignment), `ProductFlowSettle` (Group balances + Action Center with count-up balances and a pulsing Settle button).
+- New `ProductFlow` home-page section between HowItWorks and Benefits, three phones with numbered beats (1. Snap → 2. Split → 3. Settle).
+- Deleted `AppScreenshots.tsx` and `public/images/screenshots/*.png`. The App Store assets carried burnt-in marketing headlines and were designed as a horizontal App Store reel that did not tile cleanly on the web.
+- Decision recorded in [ADR 0005](.vault/adr/0005-build-product-screens-as-react-components.md), which supersedes ADR 0001 (Remotion for marketing animations) and ADR 0003 (ambient Remotion desktop-only).
+- Home First Load JS ~166 kB (was 161 kB after the Remotion strip — the ProductFlow components add ~5 kB).
+
 ## 2026-04-30 11:48 — PostHog website analytics
 
 - Added consent-gated PostHog instrumentation with lazy loading, EU host default, page-view tracking, and URL query scrubbing so join `groupId` values are not sent to analytics.
