@@ -33,13 +33,13 @@ const roadmapData = [
   {
     phase: "Q4 2025",
     milestone: "Android App v 1.0",
-    date: "Target: December 2025",
+    date: "Beta — Play Store soon",
     features: [
       "Opens the full ExpenseMate experience to Android",
       "Feature-parity with current iOS"
     ],
     status: "delayed",
-    note: "Delayed due to Play Store publication process. Want early access? Join our closed testing team!"
+    note: "Currently in closed beta. Want to test it early? Get in touch."
   },
   {
     phase: "Q1 2026",
@@ -56,15 +56,16 @@ const roadmapData = [
   },
   {
     phase: "Q2 2026",
-    milestone: "Version 1.4 Launch — Group Reports (iOS only)",
-    date: "Target: May 2026",
+    milestone: "Version 1.4 Launch — Group Reports (iOS)",
+    date: "Shipping",
     features: [
       "Export group expenses as CSV",
       "Generate clean PDF group reports",
       "Pick a period: all time, this month, last month, or custom range",
       "Includes summary, member totals, balances, settlements, expenses, and category breakdown",
       "Share via the native iOS share sheet",
-    ]
+    ],
+    status: "shipping"
   },
   {
     phase: "Q2 2026",
@@ -185,10 +186,12 @@ export default function Roadmap() {
               <motion.div
                 key={index}
                 className={`relative flex flex-col rounded-2xl border p-8 shadow-sm hover:shadow-md transition-shadow ${
-                  item.status === "completed" 
-                    ? "border-green-200 bg-green-50/50" 
+                  item.status === "completed"
+                    ? "border-green-200 bg-green-50/50"
                     : item.status === "delayed"
                     ? "border-amber-200 bg-amber-50/50"
+                    : item.status === "shipping"
+                    ? "border-primary/30 bg-primary/5"
                     : "border-gray-200"
                 }`}
                 initial={{ opacity: 0, y: 20 }}
@@ -209,6 +212,11 @@ export default function Roadmap() {
                     {item.status === "delayed" && (
                       <span className="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 whitespace-nowrap">
                         Delayed
+                      </span>
+                    )}
+                    {item.status === "shipping" && (
+                      <span className="inline-flex items-center rounded-full bg-primary/15 px-2 py-0.5 text-xs font-medium text-primary whitespace-nowrap">
+                        Shipping
                       </span>
                     )}
                   </div>
