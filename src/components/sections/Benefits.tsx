@@ -9,7 +9,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-const SCENE_DURATION = 7000;
+const SCENE_DURATION = 5000;
 
 type Scene = {
   title: string;
@@ -56,9 +56,9 @@ const scenes: Scene[] = [
 
 export default function Benefits() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const inViewRef = useRef(true);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -77,12 +77,12 @@ export default function Benefits() {
     if (mq.matches) return;
 
     const id = setInterval(() => {
-      if (inViewRef.current && !paused) {
+      if (inViewRef.current && !pausedRef.current) {
         setActiveIndex((i) => (i + 1) % scenes.length);
       }
     }, SCENE_DURATION);
     return () => clearInterval(id);
-  }, [paused]);
+  }, []);
 
   const active = scenes[activeIndex];
   const Visual = active.Visual;
@@ -105,8 +105,12 @@ export default function Benefits() {
 
         <div
           ref={containerRef}
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          onMouseEnter={() => {
+            pausedRef.current = true;
+          }}
+          onMouseLeave={() => {
+            pausedRef.current = false;
+          }}
           className="mx-auto mt-16 max-w-4xl"
         >
           <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 via-white to-gray-50 sm:aspect-[4/3] lg:aspect-[16/9]">
