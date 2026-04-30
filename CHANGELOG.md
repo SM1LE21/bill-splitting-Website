@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-30 — Marketing pass: real screens, social proof, no Remotion
+
+- Rebuilt the Features section with real copy and stroke icons (AI receipt scanning, smart settlement, multi-currency, placeholder invites, group reports, spending insights). New AppScreenshots gallery with six iOS App Store screenshots between HowItWorks and Benefits. New SocialProof strip under the Hero (400+ accounts created, 500+ receipts split, five filled App Store stars).
+- Hero primary CTA now sends iOS visitors straight to the App Store after hydration; Android/desktop keeps the existing #cta anchor. FAQ leads with a new "How accurate is the receipt scanning?" entry.
+- Roadmap refresh: Group Reports v1.4 reads "Shipping" with a new primary-tinted "shipping" status (no exact date). Android v1.0 keeps the delayed badge but the date shifts to "Beta — Play Store soon" with a closed-beta invite note.
+- Stripped Remotion entirely: removed ReceiptDemo + the three ambient embeds, deleted `src/remotion/`, dropped `remotion` and `@remotion/player` from `package.json`, removed the `remotion-best-practices` skill, and trimmed the Remotion section out of `AGENTS.md`. Home First Load JS goes from ~222 kB to 161 kB.
+
 ## 2026-04-25 — Three ambient Remotion backgrounds (desktop)
 
 - New `CTAParticles` composition: 28 drifting gold euros, coins, and white stars layered behind the dark CTA panel for ambient motion at the conversion moment.

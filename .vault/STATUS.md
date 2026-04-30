@@ -6,21 +6,19 @@ type: project
 
 # Website — STATUS
 
-Last reviewed: 2026-04-29
+Last reviewed: 2026-04-30
 
 ## Current focus
 
-- Marketing site polish via Remotion-driven motion. Three ambient compositions (`CTAParticles`, `BenefitsReceipts`, `ProcessFlow`) and one foreground showcase (`FeaturesShowcase`) plus `ReceiptScan` are live on the home page.
-- Roadmap card for v1.4 (iOS) reflects the rescoped Group Reports milestone (CSV/PDF export, period selection, native iOS share sheet) targeting May 2026.
-- Public-facing release notes track iOS through 1.3.1; Android downloads page tracks `v1.2.3`, `v1.2.4`, `v1.2.5` (latest, 2025-11-14).
+- Marketing reset shipped: real iOS screenshots replace Remotion-driven motion, Features section rebuilt with real copy and stroke icons, SocialProof strip under the Hero, iOS-only Hero CTA shortcut to the App Store, FAQ leads with the receipt-accuracy question.
+- Roadmap: Group Reports v1.4 marked "Shipping" (new primary-tinted status), Android v1.0 reads "Beta — Play Store soon" with the delayed badge retained. Web / Personal Space / Work Space milestones unchanged.
+- Public-facing release notes track iOS through 1.3.1; v1.4 ships within ~7 days (Group Reports). The `/downloads` Android APK route is intentionally not advertised on the home page — closed-beta only until the Play Store launch.
 
 ## Recent changes
 
-- 2026-04-25 — Three ambient Remotion backgrounds shipped, all gated `lg:block` so mobile keeps static fallbacks. Home First Load JS ~217 kB → ~222 kB.
-- 2026-04-25 — `FeaturesShowcase` rebuilt as a six-act narrative (~16–20s) with illustrated SVG characters and the real ExpenseMate wordmark in the resolution scene.
-- 2026-04-25 — `ReceiptDemo` section embeds the in-browser `@remotion/player` (auto-play, loop, no controls). Player runtime added ~57 kB to home First Load JS (158 → 215 kB before ambient pieces).
-- 2026-04-25 — Remotion + skill setup: installed `remotion` and `@remotion/player`, scaffolded `src/remotion/`, pinned `remotion-best-practices` skill via `skills-lock.json`, added commit/changelog/code conventions to `AGENTS.md`.
-- 2026-04-25 — Roadmap v1.4 card rescoped to Group Reports (iOS), target slipped April → May 2026.
+- 2026-04-30 — Marketing pass landed (single session, eight micro-commits): Features rebuild, AppScreenshots gallery (six App Store screenshots under `public/images/screenshots/`), SocialProof strip, Hero CTA device routing, FAQ accuracy entry, Roadmap refresh, full Remotion strip.
+- 2026-04-30 — Remotion gone: removed `@remotion/player` embeds from HowItWorks/Benefits/CTA, deleted `ReceiptDemo.tsx` and `src/remotion/`, dropped `remotion` + `@remotion/player` from `package.json`, removed the `remotion-best-practices` skill (gone from `.claude/skills/` and `skills-lock.json`). Home First Load JS down from ~222 kB to 161 kB.
+- 2026-04-25 — Three ambient Remotion backgrounds, FeaturesShowcase v3/v4, ReceiptDemo, Roadmap v1.4 rescope, ReleaseNotes 1.3.1, Remotion setup. (See `CHANGELOG.md` for detail; all of this was reverted on 2026-04-30 except the rescoped v1.4 card and the 1.3.1 release-notes entry.)
 
 ## Blockers
 
@@ -28,16 +26,16 @@ Last reviewed: 2026-04-29
 
 ## Next steps
 
-- After the current ambient/Remotion pass, candidates worth picking up:
-  - Defer Remotion Player runtime via dynamic import + intersection observer if home First Load JS becomes an issue (currently ~222 kB and accepted).
-  - Keep release notes and `public/downloads/v*/metadata.json` in sync with each iOS/Android cut. Latest Android entry is `v1.2.5` (2025-11-14); confirm whether `v1.3.x` Android needs a downloads entry next.
-  - When v1.4 (Group Reports, iOS) ships, update `Roadmap.tsx`, `ReleaseNotes.tsx`, and add a downloads entry only if a binary is hosted (iOS rides the App Store, not this site).
+- When Group Reports v1.4 ships (within ~7 days): flip the Roadmap card from "shipping" to "completed", add an iOS 1.4 entry to `ReleaseNotes.tsx`, and consider adding a Group Reports screenshot to the `AppScreenshots` gallery (currently six iOS screens, no reports).
+- When Android hits the Play Store: swap the Roadmap card status off "delayed", re-enable the Google Play CTA in `CTA.tsx` (currently a disabled visual), and decide whether `ReleaseNotes.tsx` should track Android entries (currently iOS-only by convention — see `feedback_release_notes_scope` memory).
+- App Store screenshots include burnt-in headlines from the Apple submission; if those start fighting the section copy, regenerate the assets without headlines or crop them via CSS `object-position`.
 
 ## Runtime / deployment
 
 - Framework: Next.js 15.3.6, App Router, React 19, TypeScript, Tailwind 3.4. Dev script runs `next lint` before `next dev --turbopack`.
-- Hosting: Vercel (the repo carries the standard Vercel/Next conventions; `.vercel` in `.gitignore`). Domain assumed `https://expensemate.app` based on AGENTS guidance for deep-link compatibility.
+- Hosting: Vercel. Canonical production domain confirmed as `https://expensemate.app` (2026-04-30).
 - Analytics: `@vercel/analytics` plus a `GoogleAnalytics` UI component gated by cookie consent.
-- Downloads: Android APKs hosted on GitHub Releases under `SM1LE21/bill-splitting-Website` (see `public/downloads/v*/metadata.json`). Local APKs are git-ignored (`*.apk`); each version directory holds only `metadata.json` and the route handler resolves to the GitHub release URL.
-- Deep links: `/.well-known/assetlinks.json` (Android) served via a route handler that reads `public/.well-known/assetlinks.json`; Apple App Site Association served from the same `.well-known` path with `Content-Type: application/json` headers wired in `next.config.ts`. App schemes `expensemate://` and universal links on `https://expensemate.app` must keep working — the join flow at `/join?groupId=<uuid>` is the integration point with mobile.
+- Downloads: Android APKs hosted on GitHub Releases under `SM1LE21/bill-splitting-Website` (see `public/downloads/v*/metadata.json`). Local APKs are git-ignored (`*.apk`). Closed-beta route only — not advertised in marketing.
+- Deep links: `/.well-known/assetlinks.json` (Android) served via a route handler that reads `public/.well-known/assetlinks.json`. Apple App Site Association content-type wired in `next.config.ts`; iOS app is in production. App schemes `expensemate://` and universal links on `https://expensemate.app` must keep working — the join flow at `/join?groupId=<uuid>` is the integration point with mobile.
+- Bundle: Home First Load JS ~161 kB after the Remotion strip (was ~222 kB).
 - This folder is a Git submodule of `Bill-Splitting-App`. Commit website changes here first, then update the parent repo pointer if needed.
