@@ -2,7 +2,7 @@ import Hero from '@/components/sections/Hero';
 import SocialProof from '@/components/sections/SocialProof';
 import Features from '@/components/sections/Features';
 import HowItWorks from '@/components/sections/HowItWorks';
-import AppScreenshots from '@/components/sections/AppScreenshots';
+import ProductFlow from '@/components/sections/ProductFlow';
 import Benefits from '@/components/sections/Benefits';
 import Roadmap from '@/components/sections/Roadmap';
 import CTA from '@/components/sections/CTA';
@@ -18,7 +18,7 @@ export default function Home() {
       <SocialProof />
       <Features />
       <HowItWorks />
-      <AppScreenshots />
+      <ProductFlow />
       <Benefits />
       <Roadmap />
       <DeveloperStory />
