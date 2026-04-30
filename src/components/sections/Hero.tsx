@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
@@ -7,6 +8,7 @@ import {
   SparklesIcon,
   CurrencyDollarIcon,
 } from '@heroicons/react/24/outline';
+import { isIOS, getAppStoreURL } from '@/utils/deviceUtils';
 
 const scanSteps = [
   {
@@ -27,6 +29,26 @@ const scanSteps = [
 ];
 
 export default function Hero() {
+  const [primaryCta, setPrimaryCta] = useState<{
+    href: string;
+    label: string;
+    external: boolean;
+  }>({
+    href: '#cta',
+    label: "Get Started - It's Free",
+    external: false,
+  });
+
+  useEffect(() => {
+    if (isIOS()) {
+      setPrimaryCta({
+        href: getAppStoreURL(),
+        label: 'Get the App',
+        external: true,
+      });
+    }
+  }, []);
+
   return (
     <div className="relative isolate overflow-hidden pt-14">
       {/* Background: soft primary-tinted gradient + subtle horizontal receipt-line pattern */}
@@ -78,10 +100,12 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <Link
-                href="#cta"
+                href={primaryCta.href}
+                target={primaryCta.external ? '_blank' : undefined}
+                rel={primaryCta.external ? 'noopener noreferrer' : undefined}
                 className="rounded-full bg-primary w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors text-center"
               >
-                Get Started - It&apos;s Free
+                {primaryCta.label}
               </Link>
               <Link
                 href="#how-it-works"
