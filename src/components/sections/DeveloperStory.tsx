@@ -6,6 +6,11 @@ import {
 
 const faqs = [
   {
+    question: 'How accurate is the receipt scanning?',
+    answer:
+      'Very accurate in normal conditions, with fallbacks behind the first extraction so you almost always get a result, even with poor lighting or faded paper. If something is off, you can edit, add, or remove items right in the app before you save.',
+  },
+  {
     question: 'When is the Android version coming?',
     answer:
       'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time.',
