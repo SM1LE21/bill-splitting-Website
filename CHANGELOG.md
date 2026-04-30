@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-30 16:30 — Benefits section becomes an animated reel
+
+- Replaced the static four-card Benefits layout with an auto-cycling framer-motion reel covering the same four messages (Save time, Avoid conflicts, Stay organised, Peace of mind) on a ~28-second loop.
+- Each scene has its own animated visual: receipt items checking off + "0:08" timer badge, three-avatar equal-split connector, four colour-coded category chips with running totals, "Everyone's squared up" pill with a 463.92 € → 0.00 € balance counter.
+- Auto-pause when the section scrolls off-screen (IntersectionObserver) and on hover (desktop). prefers-reduced-motion users land on scene 1 and never advance, so screen readers and accessibility users see the same message without surprise motion. Dot navigation lets anyone jump between scenes manually.
+- Aspect ratio adapts (3/4 mobile → 4/3 sm → 16/9 lg). Home First Load JS goes from ~166 kB to ~168 kB.
+
 ## 2026-04-30 14:00 — ProductFlow narrative replaces App Store screenshots
 
 - New `PhoneFrame` shell under `src/components/ui/` (iPhone bezel, status bar with 9:41 time, dynamic island, signal/wifi/battery glyphs).
