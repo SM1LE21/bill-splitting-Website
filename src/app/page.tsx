@@ -1,4 +1,5 @@
 import Hero from '@/components/sections/Hero';
+import SocialProof from '@/components/sections/SocialProof';
 import Features from '@/components/sections/Features';
 import HowItWorks from '@/components/sections/HowItWorks';
 import AppScreenshots from '@/components/sections/AppScreenshots';
@@ -14,6 +15,7 @@ export default function Home() {
     <Layout>
       <HomeScrollSnap />
       <Hero />
+      <SocialProof />
       <Features />
       <HowItWorks />
       <AppScreenshots />
