@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { FaApple } from 'react-icons/fa';
 import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
+import { trackEvent } from '@/utils/analytics';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
 
@@ -61,6 +62,11 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
 
 export default function Footer({ minimal = false }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const trackAppStoreClick = (location: string) => {
+    trackEvent('app_store_clicked', {
+      location,
+    });
+  };
 
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
@@ -81,6 +87,7 @@ export default function Footer({ minimal = false }: FooterProps) {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackAppStoreClick('footer')}
                 className="inline-flex items-center gap-3 rounded-xl bg-gray-900 px-5 py-3 text-white shadow-sm transition-colors hover:bg-gray-800"
                 aria-label="Download ExpenseMate on the App Store"
               >
@@ -140,6 +147,7 @@ export default function Footer({ minimal = false }: FooterProps) {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackAppStoreClick('minimal_footer')}
                 className="inline-flex items-center gap-3 rounded-xl bg-gray-900 px-5 py-2.5 text-white shadow-sm transition-colors hover:bg-gray-800"
                 aria-label="Download ExpenseMate on the App Store"
               >
@@ -188,4 +196,3 @@ export default function Footer({ minimal = false }: FooterProps) {
     </footer>
   );
 }
-

@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-04-30 11:48 — PostHog website analytics
+
+- Added consent-gated PostHog instrumentation with lazy loading, EU host default, page-view tracking, and URL query scrubbing so join `groupId` values are not sent to analytics.
+- Tracked core website funnels: navigation clicks, hero/CTA App Store clicks, download clicks, join-link validity, app-open attempts/fallbacks, and desktop QR display.
+- Updated privacy/cookie copy and policy dates for PostHog as an analytics processor; PostHog stays dormant until Vercel environment variables are configured.
+
 ## 2026-04-30 — Marketing pass: real screens, social proof, no Remotion
 
 - Rebuilt the Features section with real copy and stroke icons (AI receipt scanning, smart settlement, multi-currency, placeholder invites, group reports, spending insights). New AppScreenshots gallery with six iOS App Store screenshots between HowItWorks and Benefits. New SocialProof strip under the Hero (400+ accounts created, 500+ receipts split, five filled App Store stars).

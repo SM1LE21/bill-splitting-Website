@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Direct interactions:</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
               <li><strong>Automated technologies or interactions:</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
-              <li><strong>Third-party analytics providers:</strong> We use Google Analytics (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
+              <li><strong>Third-party analytics providers:</strong> We use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data &amp; Legal Basis</h2>
@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (running a secure service)</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Analytics and product improvement (Google Analytics)</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Analytics and product improvement (Google Analytics and PostHog)</td>
                     <td className="px-3 py-4">Technical, Usage</td>
                     <td className="px-3 py-4">Consent, Art. 6(1)(a)</td>
                   </tr>
@@ -164,6 +164,11 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">Website hosting and cookieless analytics</td>
                     <td className="px-3 py-4">United States (global edge)</td>
                   </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">PostHog Inc.</td>
+                    <td className="px-3 py-4">Website product analytics and optional session replay, only after analytics consent</td>
+                    <td className="px-3 py-4">EU Cloud (Frankfurt) / United States company</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -191,6 +196,9 @@ export default function PrivacyPolicy() {
             <p className="mt-6">
               Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Vercel&apos;s Privacy Policy</a>.
             </p>
+            <p className="mt-6">
+              With your analytics consent, we also use <strong>PostHog</strong> on the website to measure product funnels such as app-store clicks, downloads, and join-link outcomes. We configure PostHog to avoid sending invite group IDs and to disable session replay unless explicitly enabled in deployment settings.
+            </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Data Security</h2>
             <p className="mt-6">
@@ -210,6 +218,7 @@ export default function PrivacyPolicy() {
               <li><strong>Receipt images (Image):</strong> kept while linked to an expense; deleted when you delete the expense, the group, or your account.</li>
               <li><strong>Technical and server logs:</strong> typically kept for up to 90 days for security, debugging, and abuse-prevention purposes.</li>
               <li><strong>Google Analytics data:</strong> retained for 14 months by default at the GA4 level.</li>
+              <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings and only collected after analytics consent.</li>
               <li><strong>Accounting and tax records:</strong> retained for 10 years in accordance with Luxembourg accounting law where applicable.</li>
             </ul>
             <p className="mt-6">

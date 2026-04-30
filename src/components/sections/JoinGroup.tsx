@@ -1,16 +1,28 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import AppRedirect from '@/components/ui/AppRedirect';
 import { isValidUUID } from '@/utils/deviceUtils';
 import Layout from '@/components/layout/Layout';
+import { trackEvent } from '@/utils/analytics';
 
 interface JoinGroupProps {
   groupId: string | null;
 }
 
 const JoinGroup: React.FC<JoinGroupProps> = ({ groupId }) => {
+  const isValidGroupLink = Boolean(groupId && isValidUUID(groupId));
+
+  React.useEffect(() => {
+    trackEvent('join_page_viewed', {
+      has_group_id: Boolean(groupId),
+      is_valid_group_id: isValidGroupLink,
+    });
+  }, [groupId, isValidGroupLink]);
+
   // Handle invalid or missing group ID
-  if (!groupId || !isValidUUID(groupId)) {
+  if (!isValidGroupLink || !groupId) {
     return (
       <Layout minimal={true}>
         <div className="container mx-auto py-12 px-4">
@@ -41,4 +53,4 @@ const JoinGroup: React.FC<JoinGroupProps> = ({ groupId }) => {
   );
 };
 
-export default JoinGroup; 
+export default JoinGroup;

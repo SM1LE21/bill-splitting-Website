@@ -52,7 +52,7 @@ export default function CookiePolicy() {
                 <strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and account access. You may disable these by changing your browser settings, but this will affect how the website functions.
               </li>
               <li>
-                <strong>Analytics Cookies:</strong> These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our website. They help us know which pages are the most and least popular and see how visitors move around the website. These require your consent under GDPR.
+                <strong>Analytics Cookies:</strong> These cookies allow us to count visits, understand product funnels, and improve the performance of our website. Google Analytics and PostHog analytics cookies require your consent under GDPR.
               </li>
             </ul>
             <p className="mt-6">
@@ -93,6 +93,12 @@ export default function CookiePolicy() {
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Analytics</td>
                   </tr>
                   <tr>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">ph_*</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Used by PostHog to understand website funnels and session continuity (only set with analytics consent)</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">According to PostHog project settings</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Analytics</td>
+                  </tr>
+                  <tr>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">Vercel Analytics</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Cookieless analytics, collects aggregated page view data with no personal identifiers</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">No cookie set</td>
@@ -108,6 +114,7 @@ export default function CookiePolicy() {
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Google Analytics (GA4)</strong>, cookie-based analytics active only with your consent. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">policies.google.com/privacy</a></li>
+              <li><strong>PostHog</strong>, product analytics and optional session replay active only with your consent. PostHog&apos;s privacy policy applies: <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">posthog.com/privacy</a></li>
               <li><strong>Vercel Analytics</strong>, cookieless, privacy-first analytics that collects only aggregated, anonymized data. No cookies are set and no personal data is stored. Vercel&apos;s privacy policy applies: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">vercel.com/legal/privacy-policy</a></li>
             </ul>
 

@@ -12,6 +12,7 @@ import {
   createAppSchemeLink,
   createAndroidSchemeLink
 } from '@/utils/deviceUtils';
+import { trackEvent } from '@/utils/analytics';
 
 interface AppRedirectProps {
   groupId: string;
@@ -24,24 +25,45 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
 
   useEffect(() => {
     // Check device type on client side
-    setIsIOSDevice(isIOS());
-    setIsAndroidDevice(isAndroid());
+    const iosDevice = isIOS();
+    const androidDevice = isAndroid();
+    setIsIOSDevice(iosDevice);
+    setIsAndroidDevice(androidDevice);
 
     // Start redirect attempt
     setRedirectState('attempting');
     
-    if (isIOS() || isAndroid()) {
+    if (iosDevice || androidDevice) {
+      const platform = iosDevice ? 'ios' : 'android';
+      trackEvent('app_open_attempted', {
+        platform,
+        method: 'auto',
+      });
+
       attemptAppRedirect(groupId, () => {
         // Fallback if the app doesn't open
+        trackEvent('app_open_failed', {
+          platform,
+          method: 'auto',
+          reason: 'timeout',
+        });
         setRedirectState('failed');
       });
     } else {
       // For non-mobile devices, go straight to the failed state (show download options)
+      trackEvent('qr_displayed', {
+        platform: 'desktop',
+      });
       setRedirectState('failed');
     }
   }, [groupId]);
 
   const handleManualOpen = () => {
+    trackEvent('app_open_attempted', {
+      platform: isAndroid() ? 'android' : 'ios',
+      method: 'manual_retry',
+    });
+
     if (isAndroid()) {
       // Android uses custom scheme as fallback (App Links work automatically when verified)
       window.location.href = createAndroidSchemeLink(groupId);
@@ -159,4 +181,4 @@ const AppRedirect: React.FC<AppRedirectProps> = ({ groupId }) => {
   );
 };
 
-export default AppRedirect; 
+export default AppRedirect;

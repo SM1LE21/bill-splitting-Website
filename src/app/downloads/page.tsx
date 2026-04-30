@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { HomeIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { getAvailableVersions, getLatestVersion, Version } from '@/utils/versionUtils';
 import Layout from '@/components/layout/Layout';
+import TrackedDownloadLink from '@/components/ui/TrackedDownloadLink';
 
 export const metadata: Metadata = {
   title: 'Downloads - ExpenseMate',
@@ -108,12 +109,15 @@ export default async function DownloadsPage() {
                             <p className="text-sm text-gray-500">{formatFileSize(latestVersion)}</p>
                           </div>
                         </div>
-                        <Link
+                        <TrackedDownloadLink
                           href={`/downloads/${latestVersion.version}/${file}`}
+                          version={latestVersion.version}
+                          filename={file}
+                          isLatest
                           className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         >
                           Download
-                        </Link>
+                        </TrackedDownloadLink>
                       </div>
                     ))}
                   </div>
@@ -172,12 +176,15 @@ export default async function DownloadsPage() {
                                 <p className="text-sm text-gray-500">{formatFileSize(version)}</p>
                               </div>
                             </div>
-                            <Link
+                            <TrackedDownloadLink
                               href={`/downloads/${version.version}/${file}`}
+                              version={version.version}
+                              filename={file}
+                              isLatest={version.version === latestVersion?.version}
                               className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                             >
                               Download
-                            </Link>
+                            </TrackedDownloadLink>
                           </div>
                         ))}
                       </div>
@@ -212,4 +219,4 @@ export default async function DownloadsPage() {
       </div>
     </Layout>
   );
-} 
+}

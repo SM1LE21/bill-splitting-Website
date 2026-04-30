@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { trackEvent } from '@/utils/analytics';
 
 interface DownloadButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
@@ -39,6 +42,11 @@ export default function DownloadButton({
   return (
     <Link
       href="/downloads"
+      onClick={() => trackEvent('cta_clicked', {
+        location: 'download_button',
+        destination: 'downloads',
+        label: typeof children === 'string' ? children : 'Download',
+      })}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
     >
       {showIcon && (
@@ -47,4 +55,4 @@ export default function DownloadButton({
       {children}
     </Link>
   );
-} 
+}

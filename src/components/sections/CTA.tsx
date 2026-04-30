@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
+import { trackEvent } from '@/utils/analytics';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
 
@@ -34,6 +35,16 @@ export default function CTA() {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent('cta_clicked', {
+                    location: 'footer_cta',
+                    destination: 'app_store',
+                    label: 'Download on the App Store',
+                  });
+                  trackEvent('app_store_clicked', {
+                    location: 'footer_cta',
+                  });
+                }}
                 className="inline-flex w-full sm:w-[220px] items-center justify-center gap-3 rounded-xl bg-white px-5 py-3 text-gray-900 shadow-sm transition-transform hover:scale-[1.02]"
                 aria-label="Download ExpenseMate on the App Store"
               >

@@ -59,7 +59,7 @@ export default function CookieConsent() {
           <div className="flex-1">
             <h3 className="text-base font-semibold text-gray-900">Cookie Consent</h3>
             <p className="mt-1 text-sm text-gray-600">
-              We use cookies to analyze our traffic and improve your experience. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Vercel Analytics is always active and cookieless. Read our{' '}
+              We use Google Analytics and PostHog cookies to analyze our traffic and improve your experience. By clicking &quot;Accept All&quot;, you consent to those analytics cookies. Vercel Analytics is always active and cookieless. Read our{' '}
               <Link href="/privacy" className="font-medium text-primary hover:text-primary/80">
                 Privacy Policy
               </Link>{' '}
@@ -124,7 +124,7 @@ export default function CookieConsent() {
                   />
                 </div>
                 <div className="ml-3 text-sm">
-                  <label htmlFor="analytics" className="font-medium text-gray-700">Analytics Cookies (Google Analytics)</label>
+                  <label htmlFor="analytics" className="font-medium text-gray-700">Analytics Cookies (Google Analytics and PostHog)</label>
                   <p className="text-gray-500">Help us understand how visitors interact with our website. Vercel Analytics is always active and does not use cookies.</p>
                 </div>
               </div>
@@ -142,4 +142,4 @@ export default function CookieConsent() {
       </div>
     </div>
   );
-} 
+}

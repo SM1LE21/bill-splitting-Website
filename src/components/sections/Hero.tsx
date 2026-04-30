@@ -9,6 +9,7 @@ import {
   CurrencyDollarIcon,
 } from '@heroicons/react/24/outline';
 import { isIOS, getAppStoreURL } from '@/utils/deviceUtils';
+import { trackEvent } from '@/utils/analytics';
 
 const scanSteps = [
   {
@@ -48,6 +49,20 @@ export default function Hero() {
       });
     }
   }, []);
+
+  const trackPrimaryCta = () => {
+    trackEvent('cta_clicked', {
+      location: 'hero_primary',
+      destination: primaryCta.external ? 'app_store' : 'home_cta',
+      label: primaryCta.label,
+    });
+
+    if (primaryCta.external) {
+      trackEvent('app_store_clicked', {
+        location: 'hero_primary',
+      });
+    }
+  };
 
   return (
     <div className="relative isolate overflow-hidden pt-14">
@@ -103,12 +118,18 @@ export default function Hero() {
                 href={primaryCta.href}
                 target={primaryCta.external ? '_blank' : undefined}
                 rel={primaryCta.external ? 'noopener noreferrer' : undefined}
+                onClick={trackPrimaryCta}
                 className="rounded-full bg-primary w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors text-center"
               >
                 {primaryCta.label}
               </Link>
               <Link
                 href="#how-it-works"
+                onClick={() => trackEvent('cta_clicked', {
+                  location: 'hero_secondary',
+                  destination: 'how_it_works',
+                  label: 'Learn more',
+                })}
                 className="text-base sm:text-lg font-semibold leading-6 text-gray-900 hover:text-primary transition-colors"
               >
                 Learn more <span aria-hidden="true">→</span>

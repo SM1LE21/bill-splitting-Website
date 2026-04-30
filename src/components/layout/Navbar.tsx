@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
 import { hasConsent } from '@/utils/cookieConsent';
+import { trackEvent } from '@/utils/analytics';
 
 const navigation = [
   { name: 'Features', href: '#features' },
@@ -27,6 +28,10 @@ export default function Navbar() {
   }, []);
 
   const trackClick = (elementName: string) => {
+    trackEvent('nav_clicked', {
+      item: elementName,
+    });
+
     if (typeof window !== 'undefined' && window.gtag && hasConsent('analytics')) {
       window.gtag('event', 'click', {
         'event_category': 'Navigation',
@@ -189,4 +194,4 @@ export default function Navbar() {
       </AnimatePresence>
     </header>
   );
-} 
+}
