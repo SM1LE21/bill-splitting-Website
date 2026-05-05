@@ -21,6 +21,41 @@ interface VersionNote {
 // website change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.4.0',
+    date: '5th May 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Group Reports — export any group as a clean PDF or CSV. Pick all-time, this month, last month, or a custom date range. Includes summary, member totals, balances, settlement suggestions, expense list, and category breakdown. Share via the native iOS share sheet.'
+      },
+      {
+        type: 'improvement',
+        description: 'Reports button is now in the Summary tab toolbar, so totals and exports are one tap away'
+      },
+      {
+        type: 'feature',
+        description: 'Insights, now centred on you — see Your share, You paid, and Net at a glance, each with period-over-period trends. New Highlights card surfaces your top category, your share trend, and your biggest expense in the period. The category donut now reflects your share, not group totals'
+      },
+      {
+        type: 'feature',
+        description: 'Back-date expenses — pick a past date and time when adding an expense, perfect for catching up after a trip'
+      },
+      {
+        type: 'improvement',
+        description: 'Pull-to-refresh on Groups, plus smooth skeleton placeholders while Groups and Expenses load'
+      },
+      {
+        type: 'improvement',
+        description: 'iOS Passwords / iCloud Keychain autofill on Login and Sign-up; Return advances email → password → submit'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed reports occasionally rendering gray-on-white or white-on-white in some appearance modes'
+      }
+    ]
+  },
+  {
     version: '1.3.1',
     date: '25th April 2026',
     platform: 'iOS',
