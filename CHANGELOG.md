@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-05-05 — iOS 1.4.0 release notes + roadmap completion
+
+- Added the iOS 1.4.0 entry to `src/components/sections/ReleaseNotes.tsx` (released 5th May 2026): Group Reports (PDF/CSV export with period selection and share-sheet handoff), Reports toolbar shortcut on the Summary tab, Insights pivoted to a personal "Your share / You paid / Net" view with Highlights, back-date support on Add Expense, pull-to-refresh + skeleton loading on Groups/Expenses, iOS Passwords / iCloud Keychain autofill on Login + Sign-up, and the PDF gray-on-white / white-on-white rendering fix.
+- Flipped the Roadmap "Q2 2026 — Version 1.4 Launch — Group Reports (iOS)" card from `shipping` to `completed` and updated its date to "Released May 2026". The card now sits behind the "Show completed milestones" toggle.
+- No content changes to other roadmap milestones (Android beta, ExpenseMate Web, Personal Space, Work Space stay as they were).
+
 ## 2026-04-30 12:54 — PostHog live verification
 
 - Verified production PostHog ingestion is working after analytics consent; a fresh incognito session with "Accept All" sends events to the PostHog US Cloud project.
