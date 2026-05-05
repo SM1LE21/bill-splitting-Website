@@ -57,7 +57,7 @@ const roadmapData = [
   {
     phase: "Q2 2026",
     milestone: "Version 1.4 Launch — Group Reports (iOS)",
-    date: "Shipping",
+    date: "Released May 2026",
     features: [
       "Export group expenses as CSV",
       "Generate clean PDF group reports",
@@ -65,7 +65,7 @@ const roadmapData = [
       "Includes summary, member totals, balances, settlements, expenses, and category breakdown",
       "Share via the native iOS share sheet",
     ],
-    status: "shipping"
+    status: "completed"
   },
   {
     phase: "Q2 2026",
