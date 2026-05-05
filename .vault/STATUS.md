@@ -6,17 +6,18 @@ type: project
 
 # Website — STATUS
 
-Last reviewed: 2026-04-30
+Last reviewed: 2026-05-05
 
 ## Current focus
 
 - Marketing reset shipped: a new `ProductFlow` section now anchors the home page with three React-built iOS screens (Snap → Split → Settle) running framer-motion-driven animation, Features section rebuilt with real copy and stroke icons, SocialProof strip under the Hero, iOS-only Hero CTA shortcut to the App Store, FAQ leads with the receipt-accuracy question.
 - Analytics: PostHog is live on production and is now the primary website product/funnel analytics source. Vercel Analytics remains the always-on cookieless traffic baseline; Google Analytics remains consent-gated legacy analytics until product decides whether to remove it.
-- Roadmap: Group Reports v1.4 marked "Shipping" (new primary-tinted status), Android v1.0 reads "Beta — Play Store soon" with the delayed badge retained. Web / Personal Space / Work Space milestones unchanged.
-- Public-facing release notes track iOS through 1.3.1; v1.4 ships within ~7 days (Group Reports). The `/downloads` Android APK route is intentionally not advertised on the home page — closed-beta only until the Play Store launch.
+- Roadmap: Group Reports v1.4 flipped to "Completed" (Released May 2026), now lives behind the "Show completed milestones" toggle. Android v1.0 still reads "Beta — Play Store soon" with the delayed badge retained. Web / Personal Space / Work Space milestones unchanged.
+- Public-facing release notes track iOS through 1.4.0 (released 5th May 2026, Group Reports + 2026-05-05 UI/UX wave). The `/downloads` Android APK route is intentionally not advertised on the home page — closed-beta only until the Play Store launch.
 
 ## Recent changes
 
+- 2026-05-05 — iOS 1.4.0 published on the website. Added the 1.4.0 entry to `ReleaseNotes.tsx` (Group Reports PDF/CSV with period selection and share-sheet handoff, Reports toolbar shortcut on the Summary tab, Insights pivoted to a personal "Your share / You paid / Net" view with Highlights, back-date on Add Expense, pull-to-refresh + skeleton loading, iOS Passwords / iCloud Keychain autofill on Login + Sign-up, plus the PDF gray-on-white rendering fix). Flipped the "Q2 2026 — Version 1.4 Launch — Group Reports (iOS)" Roadmap card from `shipping` to `completed` with date "Released May 2026".
 - 2026-04-30 — PostHog production ingestion verified: a fresh incognito session accepting analytics cookies sends events into the PostHog US Cloud project. Production/preview Vercel env must use `NEXT_PUBLIC_POSTHOG_KEY` plus `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`; keep the `phc_...` token out of repo docs. PostHog is the main website product analytics layer for funnels such as `page_viewed -> cta_clicked -> app_store_clicked`, join-link health, download clicks, and app-open fallbacks.
 - 2026-04-30 — Benefits section rebuilt as an auto-cycling four-scene framer-motion reel. Same four messages (Save time / Avoid conflicts / Stay organised / Peace of mind) on a ~28-second loop with cross-fades, per-scene animated visuals, IntersectionObserver-driven auto-pause when off-screen, hover-pause on desktop, dot navigation, and a `prefers-reduced-motion` fallback that locks scene 1 in place. No new dependencies. Home First Load JS ~168 kB.
 - 2026-04-30 — Product flow narrative replaces the App Store screenshot gallery. Built `PhoneFrame` shell + three React/Tailwind iOS screens (Scan, Split, Settle) under `src/components/sections/ProductFlow*.tsx` with continuous in-screen motion (scan beam, avatar cycle, count-up balances, settle-button pulse). Deleted `AppScreenshots.tsx` and the six App Store PNGs. Decision recorded in [ADR 0005](adr/0005-build-product-screens-as-react-components.md), which supersedes 0001 and 0003.
@@ -34,7 +35,7 @@ Last reviewed: 2026-04-30
 - Build the first PostHog dashboard: traffic by path/referrer/device, App Store click funnel, download clicks by version, join-link validity, app-open fallback rate, and top UTM sources.
 - Create saved PostHog funnels for `page_viewed -> cta_clicked -> app_store_clicked`, `/downloads page_viewed -> download_clicked`, and `join_page_viewed -> app_open_attempted -> app_open_failed`, with breakdowns by `device_type`, `referrer_host`, and UTM properties.
 - Confirm whether production session replay should remain enabled. The website masks text/attributes, but replay should still be treated as an explicit privacy/product decision.
-- When Group Reports v1.4 ships (within ~7 days): flip the Roadmap card from "shipping" to "completed", add an iOS 1.4 entry to `ReleaseNotes.tsx`, and consider whether `ProductFlow` should grow a fourth phone for Group Reports (per ADR 0005, this is a single-file extension).
+- Roadmap card flip + 1.4.0 release notes done on 2026-05-05. Still open: consider whether `ProductFlow` should grow a fourth phone for Group Reports (per ADR 0005, this is a single-file extension).
 - When Android hits the Play Store: swap the Roadmap card status off "delayed", re-enable the Google Play CTA in `CTA.tsx` (currently a disabled visual), and decide whether `ReleaseNotes.tsx` should track Android entries (currently iOS-only by convention — see `feedback_release_notes_scope` memory).
 
 ## Runtime / deployment
