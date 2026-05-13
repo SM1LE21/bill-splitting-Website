@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-05-13 17:04 — Docs and analytics decisions
+
+- Added `CLAUDE.md` as a compatibility pointer to `AGENTS.md`.
+- Resolved the Apple App Site Association question after verifying `public/.well-known/apple-app-site-association` exists.
+- Recorded the decision to keep Google Analytics alongside PostHog for now and clarified that PostHog session replay stays env-gated.
+
 ## 2026-05-05 — iOS 1.4.0 release notes + roadmap completion
 
 - Added the iOS 1.4.0 entry to `src/components/sections/ReleaseNotes.tsx` (released 5th May 2026): Group Reports (PDF/CSV export with period selection and share-sheet handoff), Reports toolbar shortcut on the Summary tab, Insights pivoted to a personal "Your share / You paid / Net" view with Highlights, back-date support on Add Expense, pull-to-refresh + skeleton loading on Groups/Expenses, iOS Passwords / iCloud Keychain autofill on Login + Sign-up, and the PDF gray-on-white / white-on-white rendering fix.

@@ -6,17 +6,18 @@ type: project
 
 # Website — STATUS
 
-Last reviewed: 2026-05-05
+Last reviewed: 2026-05-13
 
 ## Current focus
 
 - Marketing reset shipped: a new `ProductFlow` section now anchors the home page with three React-built iOS screens (Snap → Split → Settle) running framer-motion-driven animation, Features section rebuilt with real copy and stroke icons, SocialProof strip under the Hero, iOS-only Hero CTA shortcut to the App Store, FAQ leads with the receipt-accuracy question.
-- Analytics: PostHog is live on production and is now the primary website product/funnel analytics source. Vercel Analytics remains the always-on cookieless traffic baseline; Google Analytics remains consent-gated legacy analytics until product decides whether to remove it.
+- Analytics: PostHog is live on production and is now the primary website product/funnel analytics source. Vercel Analytics remains the always-on cookieless traffic baseline; Google Analytics remains consent-gated legacy analytics by owner decision on 2026-05-13.
 - Roadmap: Group Reports v1.4 flipped to "Completed" (Released May 2026), now lives behind the "Show completed milestones" toggle. Android v1.0 still reads "Beta — Play Store soon" with the delayed badge retained. Web / Personal Space / Work Space milestones unchanged.
 - Public-facing release notes track iOS through 1.4.0 (released 5th May 2026, Group Reports + 2026-05-05 UI/UX wave). The `/downloads` Android APK route is intentionally not advertised on the home page — closed-beta only until the Play Store launch.
 
 ## Recent changes
 
+- 2026-05-13 — Documentation triage: confirmed `public/.well-known/apple-app-site-association` exists and is served as a static public file with `next.config.ts` content-type headers; no route-handler fix needed. Google Analytics remains alongside PostHog for legacy comparison.
 - 2026-05-05 — iOS 1.4.0 published on the website. Added the 1.4.0 entry to `ReleaseNotes.tsx` (Group Reports PDF/CSV with period selection and share-sheet handoff, Reports toolbar shortcut on the Summary tab, Insights pivoted to a personal "Your share / You paid / Net" view with Highlights, back-date on Add Expense, pull-to-refresh + skeleton loading, iOS Passwords / iCloud Keychain autofill on Login + Sign-up, plus the PDF gray-on-white rendering fix). Flipped the "Q2 2026 — Version 1.4 Launch — Group Reports (iOS)" Roadmap card from `shipping` to `completed` with date "Released May 2026".
 - 2026-04-30 — PostHog production ingestion verified: a fresh incognito session accepting analytics cookies sends events into the PostHog US Cloud project. Production/preview Vercel env must use `NEXT_PUBLIC_POSTHOG_KEY` plus `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`; keep the `phc_...` token out of repo docs. PostHog is the main website product analytics layer for funnels such as `page_viewed -> cta_clicked -> app_store_clicked`, join-link health, download clicks, and app-open fallbacks.
 - 2026-04-30 — Benefits section rebuilt as an auto-cycling four-scene framer-motion reel. Same four messages (Save time / Avoid conflicts / Stay organised / Peace of mind) on a ~28-second loop with cross-fades, per-scene animated visuals, IntersectionObserver-driven auto-pause when off-screen, hover-pause on desktop, dot navigation, and a `prefers-reduced-motion` fallback that locks scene 1 in place. No new dependencies. Home First Load JS ~168 kB.
@@ -34,7 +35,7 @@ Last reviewed: 2026-05-05
 
 - Build the first PostHog dashboard: traffic by path/referrer/device, App Store click funnel, download clicks by version, join-link validity, app-open fallback rate, and top UTM sources.
 - Create saved PostHog funnels for `page_viewed -> cta_clicked -> app_store_clicked`, `/downloads page_viewed -> download_clicked`, and `join_page_viewed -> app_open_attempted -> app_open_failed`, with breakdowns by `device_type`, `referrer_host`, and UTM properties.
-- Confirm whether production session replay should remain enabled. The website masks text/attributes, but replay should still be treated as an explicit privacy/product decision.
+- Keep PostHog session replay disabled by default unless `NEXT_PUBLIC_POSTHOG_SESSION_REPLAY=true` is intentionally set in deployment. If replay is enabled, treat it as a privacy/product decision even though text/attributes are masked.
 - Roadmap card flip + 1.4.0 release notes done on 2026-05-05. Still open: consider whether `ProductFlow` should grow a fourth phone for Group Reports (per ADR 0005, this is a single-file extension).
 - When Android hits the Play Store: swap the Roadmap card status off "delayed", re-enable the Google Play CTA in `CTA.tsx` (currently a disabled visual), and decide whether `ReleaseNotes.tsx` should track Android entries (currently iOS-only by convention — see `feedback_release_notes_scope` memory).
 
@@ -42,7 +43,7 @@ Last reviewed: 2026-05-05
 
 - Framework: Next.js 15.3.6, App Router, React 19, TypeScript, Tailwind 3.4. Dev script runs `next lint` before `next dev --turbopack`.
 - Hosting: Vercel. Canonical production domain confirmed as `https://expensemate.app` (2026-04-30).
-- Analytics: `@vercel/analytics` remains always-on/cookieless. Google Analytics remains consent-gated legacy analytics. PostHog is the primary consent-gated website product/funnel analytics layer (`src/utils/analytics.ts`, `src/components/ui/PostHogAnalytics.tsx`), lazy-loaded after consent and Vercel env config; the live project is US Cloud, so Vercel must set `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`. Event properties intentionally avoid raw join `groupId` values and scrub URL query strings via `before_send`.
+- Analytics: `@vercel/analytics` remains always-on/cookieless. Google Analytics remains consent-gated legacy analytics by owner decision on 2026-05-13. PostHog is the primary consent-gated website product/funnel analytics layer (`src/utils/analytics.ts`, `src/components/ui/PostHogAnalytics.tsx`), lazy-loaded after consent and Vercel env config; the live project is US Cloud, so Vercel must set `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`. Event properties intentionally avoid raw join `groupId` values and scrub URL query strings via `before_send`. Session replay is disabled by default in code unless `NEXT_PUBLIC_POSTHOG_SESSION_REPLAY=true` is set.
 - Downloads: Android APKs hosted on GitHub Releases under `SM1LE21/bill-splitting-Website` (see `public/downloads/v*/metadata.json`). Local APKs are git-ignored (`*.apk`). Closed-beta route only — not advertised in marketing.
 - Deep links: `/.well-known/assetlinks.json` (Android) served via a route handler that reads `public/.well-known/assetlinks.json`. Apple App Site Association content-type wired in `next.config.ts`; iOS app is in production. App schemes `expensemate://` and universal links on `https://expensemate.app` must keep working — the join flow at `/join?groupId=<uuid>` is the integration point with mobile.
 - Bundle: Home First Load JS ~168 kB after the Benefits reel; was ~166 kB after the PostHog wrapper + ProductFlow section, ~161 kB right after the Remotion strip, ~222 kB before the Remotion strip. PostHog itself lazy-loads after consent.

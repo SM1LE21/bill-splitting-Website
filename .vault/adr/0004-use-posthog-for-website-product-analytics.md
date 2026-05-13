@@ -25,7 +25,7 @@ Use PostHog as the website's primary product/funnel analytics layer.
 - Disable PostHog autocapture and automatic pageview capture; send explicit events from known funnel points.
 - Use `before_send` to scrub query strings from PostHog URL properties, preserving only UTM/ref parameters.
 - Keep session replay disabled by default; enable only with `NEXT_PUBLIC_POSTHOG_SESSION_REPLAY=true` after a separate privacy decision.
-- Keep Vercel Analytics and Google Analytics in place for now: Vercel as cookieless traffic baseline, GA as consent-gated legacy comparison until product decides whether it is still needed.
+- Keep Vercel Analytics and Google Analytics in place: Vercel as cookieless traffic baseline, GA as consent-gated legacy comparison. Owner reconfirmed this on 2026-05-13.
 
 ## Consequences
 
