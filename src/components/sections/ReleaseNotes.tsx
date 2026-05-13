@@ -21,6 +21,21 @@ interface VersionNote {
 // website change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.4.1',
+    date: '13th May 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'New: Home Screen shortcuts. Long-press ExpenseMate to scan a receipt or add an expense in two taps — never open the app first.'
+      },
+      {
+        type: 'feature',
+        description: 'Scanned receipts now know their own date — the expense date is filled in automatically from what\'s printed on the receipt, so back-dated expenses just work.'
+      }
+    ]
+  },
+  {
     version: '1.4.0',
     date: '5th May 2026',
     platform: 'iOS',

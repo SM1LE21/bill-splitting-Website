@@ -2,6 +2,11 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-05-13 — iOS 1.4.1 release notes entry
+
+- Added the iOS 1.4.1 entry to `src/components/sections/ReleaseNotes.tsx` (released 13th May 2026): Home Screen quick actions (long-press the app icon → Scan Receipt or Add Expense, with a group picker) and auto-detected transaction date from scanned receipts.
+- No roadmap changes; 1.4.1 is a feature follow-up to the v1.4 release already marked Completed.
+
 ## 2026-05-13 17:04 — Docs and analytics decisions
 
 - Added `CLAUDE.md` as a compatibility pointer to `AGENTS.md`.
