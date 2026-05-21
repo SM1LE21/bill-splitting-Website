@@ -1,0 +1,10 @@
+{
+  "version": "v1.2.6",
+  "releaseDate": "2026-05-22",
+  "releaseNotes": "ALPHA v1.2.6",
+  "fileSize": "124MB",
+  "downloadUrl": "https://github.com/SM1LE21/bill-splitting-Website/releases/download/v1.2.6/app-release.apk",
+  "changelog": [
+    "Internal test build — Expo SDK 54, React Native 0.81.4"
+  ]
+}
