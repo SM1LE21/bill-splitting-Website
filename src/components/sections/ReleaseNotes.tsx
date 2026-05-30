@@ -21,6 +21,21 @@ interface VersionNote {
 // website change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.4.2',
+    date: '30th May 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Copy a group\'s ID straight from the share menu or group settings — paste it into Join Group to add someone in seconds, no link needed.'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed group invite links opening the app but not taking you to the join screen — shared links now go straight to joining the group.'
+      }
+    ]
+  },
+  {
     version: '1.4.1',
     date: '13th May 2026',
     platform: 'iOS',

@@ -2,6 +2,11 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-05-30 — iOS 1.4.2 release notes entry
+
+- Added the iOS 1.4.2 entry to `src/components/sections/ReleaseNotes.tsx` (released 30th May 2026): Copy Group ID (share a group by its raw ID from the share menu / settings) and a bugfix for group invite links opening the app without taking the user to the join screen.
+- No roadmap changes; 1.4.2 is a small feature + fix on top of the v1.4 line.
+
 ## 2026-05-13 — iOS 1.4.1 release notes entry
 
 - Added the iOS 1.4.1 entry to `src/components/sections/ReleaseNotes.tsx` (released 13th May 2026): Home Screen quick actions (long-press the app icon → Scan Receipt or Add Expense, with a group picker) and auto-detected transaction date from scanned receipts.
