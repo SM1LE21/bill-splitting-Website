@@ -65,6 +65,7 @@ export default function PrivacyPolicy() {
               <li><strong>Profile Data</strong> includes your username and password, your preferences, feedback, and survey responses.</li>
               <li><strong>Usage Data</strong> includes information about how you use our Services.</li>
               <li><strong>Image Data</strong> includes photographs of receipts you upload to the application.</li>
+              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with the anonymised purchase identifiers we receive from the App Store. We never receive or store your card or payment details.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. How We Collect Your Data</h2>
@@ -74,7 +75,8 @@ export default function PrivacyPolicy() {
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Direct interactions:</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
               <li><strong>Automated technologies or interactions:</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
-              <li><strong>Third-party analytics providers:</strong> We use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country.</li>
+              <li><strong>Third-party analytics providers:</strong> On our website we use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country. In the mobile app we use PostHog to collect product-usage events (for example app opens, receipt scans, and which features you use), linked to your account identifier, so we can understand how the app is used and improve it. This is first-party analytics and is not used to track you across other apps or services.</li>
+              <li><strong>App Store:</strong> When you buy or manage an ExpenseMate Premium subscription, Apple processes the payment and, via RevenueCat, provides us with your subscription status so we can unlock Premium features for your account.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data &amp; Legal Basis</h2>
@@ -97,6 +99,11 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
                   </tr>
                   <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Managing your ExpenseMate Premium subscription and unlocking paid features</td>
+                    <td className="px-3 py-4">Subscription, Identity</td>
+                    <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
+                  </tr>
+                  <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Processing receipt images to extract items and amounts (AI-assisted OCR)</td>
                     <td className="px-3 py-4">Image, Financial</td>
                     <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
@@ -107,9 +114,14 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (running a secure service)</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Analytics and product improvement (Google Analytics and PostHog)</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Website analytics and product improvement (Google Analytics and PostHog)</td>
                     <td className="px-3 py-4">Technical, Usage</td>
                     <td className="px-3 py-4">Consent, Art. 6(1)(a)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">In-app product analytics to understand usage and improve the app (PostHog)</td>
+                    <td className="px-3 py-4">Usage, Technical</td>
+                    <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (improving our app)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Aggregated, cookieless audience measurement (Vercel Analytics)</td>
@@ -166,8 +178,18 @@ export default function PrivacyPolicy() {
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">PostHog Inc.</td>
-                    <td className="px-3 py-4">Website product analytics and optional session replay, only after analytics consent</td>
+                    <td className="px-3 py-4">Website and mobile-app product analytics; optional website session replay only after analytics consent</td>
                     <td className="px-3 py-4">EU Cloud (Frankfurt) / United States company</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Apple Inc.</td>
+                    <td className="px-3 py-4">App Store subscription billing and management</td>
+                    <td className="px-3 py-4">United States / Ireland</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">RevenueCat, Inc.</td>
+                    <td className="px-3 py-4">Subscription status and entitlement management</td>
+                    <td className="px-3 py-4">United States</td>
                   </tr>
                 </tbody>
               </table>
@@ -197,7 +219,10 @@ export default function PrivacyPolicy() {
               Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Vercel&apos;s Privacy Policy</a>.
             </p>
             <p className="mt-6">
-              With your analytics consent, we also use <strong>PostHog</strong> on the website to measure product funnels such as app-store clicks, downloads, and join-link outcomes. We configure PostHog to avoid sending invite group IDs and to disable session replay unless explicitly enabled in deployment settings.
+              With your analytics consent, we also use <strong>PostHog</strong> on the website to measure product funnels such as app-store clicks, downloads, and join-link outcomes. We configure PostHog to avoid sending invite group IDs and to disable session replay unless explicitly enabled in deployment settings. In the mobile app, PostHog is used to collect product-usage events tied to your account identifier so we can understand how the app is used and improve it.
+            </p>
+            <p className="mt-6">
+              ExpenseMate Premium subscriptions are sold and billed by <strong>Apple</strong> through the App Store. We use <strong>RevenueCat</strong> to receive and manage your subscription status so the app can unlock Premium features for your account. We do not receive or store your payment-card details; payment is handled entirely by Apple under its own terms.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Data Security</h2>
@@ -218,7 +243,8 @@ export default function PrivacyPolicy() {
               <li><strong>Receipt images (Image):</strong> kept while linked to an expense; deleted when you delete the expense, the group, or your account.</li>
               <li><strong>Technical and server logs:</strong> typically kept for up to 90 days for security, debugging, and abuse-prevention purposes.</li>
               <li><strong>Google Analytics data:</strong> retained for 14 months by default at the GA4 level.</li>
-              <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings and only collected after analytics consent.</li>
+              <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings. Website analytics is only collected after analytics consent; in-app product analytics is collected to operate and improve the app.</li>
+              <li><strong>Subscription data:</strong> kept while your account exists and for any period required to meet accounting and tax obligations. Payment and card data are handled by Apple, not by us.</li>
               <li><strong>Accounting and tax records:</strong> retained for 10 years in accordance with Luxembourg accounting law where applicable.</li>
             </ul>
             <p className="mt-6">
