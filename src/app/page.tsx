@@ -4,6 +4,7 @@ import Features from '@/components/sections/Features';
 import HowItWorks from '@/components/sections/HowItWorks';
 import ProductFlow from '@/components/sections/ProductFlow';
 import Benefits from '@/components/sections/Benefits';
+import Premium from '@/components/sections/Premium';
 import Roadmap from '@/components/sections/Roadmap';
 import CTA from '@/components/sections/CTA';
 import Layout from '@/components/layout/Layout';
@@ -20,6 +21,7 @@ export default function Home() {
       <HowItWorks />
       <ProductFlow />
       <Benefits />
+      <Premium />
       <Roadmap />
       <DeveloperStory />
       <CTA />
