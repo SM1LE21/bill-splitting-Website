@@ -6,7 +6,7 @@ type: project
 
 # Website — STATUS
 
-Last reviewed: 2026-05-30
+Last reviewed: 2026-06-24
 
 ## Current focus
 
@@ -17,6 +17,7 @@ Last reviewed: 2026-05-30
 
 ## Recent changes
 
+- 2026-06-24 — **Premium launch website prep** (part of the cross-repo monetization launch; see parent `.vault/briefs/BATCH-B-go-live-handoff.md`). Added a `Premium` homepage section (`src/components/sections/Premium.tsx`, placed after `Benefits`) with the free-vs-Premium comparison + €2.99/mo & €24.99/yr cards. Added the iOS 1.5.0 release-notes entry (Premium; early users keep Premium free). Updated the Privacy Policy for in-app PostHog product analytics + Apple/RevenueCat subscription sub-processors (new Subscription Data category, legal-basis + retention rows, "Last updated" → June 24 2026). Lint + build verified. **Lockstep note:** the Premium section + 1.5.0 release notes should go live with the App Store release; the privacy-policy update is fine to be live earlier (App Review checks it). Privacy text must stay consistent with the ASC App Privacy answers.
 - 2026-05-30 — iOS 1.4.2 entry added to `src/components/sections/ReleaseNotes.tsx` (released 30th May 2026): Copy Group ID (share a group by its raw ID from the share menu / settings) and a bugfix for group-invite links opening the app without landing on the join screen. No roadmap changes — 1.4.2 is a small feature + fix on the v1.4 line.
 - 2026-05-13 — iOS 1.4.1 entry added to `src/components/sections/ReleaseNotes.tsx` (released 13th May 2026): Home Screen quick actions (long-press → Scan Receipt or Add Expense with a group picker) and auto-detected transaction date from scanned receipts. No roadmap changes — 1.4.1 is a feature follow-up to the v1.4 card already marked Completed.
 - 2026-05-13 — Documentation triage: confirmed `public/.well-known/apple-app-site-association` exists and is served as a static public file with `next.config.ts` content-type headers; no route-handler fix needed. Google Analytics remains alongside PostHog for legacy comparison.

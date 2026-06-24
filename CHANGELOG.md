@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-06-24 — Premium launch: pricing section, release notes, privacy policy
+
+- Added a Premium section to the homepage (`src/components/sections/Premium.tsx`): free-vs-Premium comparison + €2.99/mo & €24.99/yr pricing cards, matching the site's visual language.
+- Added the iOS **1.5.0** release-notes entry (Premium launch; early users keep Premium features free; manage/cancel in-app). Version + date are placeholders to confirm and deploy in lockstep with the App Store release.
+- Updated the Privacy Policy for in-app product analytics (PostHog) and Premium subscriptions (Apple + RevenueCat added as sub-processors; new Subscription Data category, legal-basis rows, retention); bumped the "Last updated" date to June 24, 2026. Must stay consistent with the App Store App Privacy answers.
+- Verified with `npm run lint` (clean) and `npm run build` (all 14 routes built).
+
 ## 2026-05-30 — iOS 1.4.2 release notes entry
 
 - Added the iOS 1.4.2 entry to `src/components/sections/ReleaseNotes.tsx` (released 30th May 2026): Copy Group ID (share a group by its raw ID from the share menu / settings) and a bugfix for group invite links opening the app without taking the user to the join screen.
