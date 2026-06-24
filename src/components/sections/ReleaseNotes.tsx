@@ -21,6 +21,25 @@ interface VersionNote {
 // website change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.5.0',
+    date: 'June 2026',
+    platform: 'iOS',
+    changes: [
+      {
+        type: 'feature',
+        description: 'ExpenseMate Premium is here — unlock unlimited groups, unlimited receipt scans, your full expense history, report exports for any period, and multi-currency conversion. €2.99/month or €24.99/year.'
+      },
+      {
+        type: 'feature',
+        description: 'A thank-you to our early users: if you already had an account, you keep full Premium features for free — only the 30 receipt scans per month limit applies.'
+      },
+      {
+        type: 'improvement',
+        description: 'Manage or cancel your subscription anytime right inside the app, from Settings or your Profile.'
+      }
+    ]
+  },
+  {
     version: '1.4.2',
     date: '30th May 2026',
     platform: 'iOS',
