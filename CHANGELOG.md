@@ -2,6 +2,15 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-07-31 — Draft comparison pages: /vs-splitwise and /export-expenses-excel
+
+- Added `/vs-splitwise`: direct answer, feature table, what Splitwise does better, who each app suits, where ExpenseMate falls short, FAQ (`FAQPage` schema), sources. Splitwise claims cite Splitwise-owned pages or Apple only; three App Store review quotes are verbatim from Apple's public review feed, attributed, with the sampling method stated and Splitwise's own reasoning quoted alongside.
+- Added `/export-expenses-excel`: how to export, what the CSV contains, CSV vs PDF, FAQ (`FAQPage` schema). Columns and period presets read from `GroupReportCSVGenerator` / `GroupReportPeriodPreset` in `Frontend`, not invented. Makes no claim about Splitwise export, which could not be verified from first-party sources.
+- **Both are `noindex, nofollow`, absent from `sitemap.ts`, and have no nav or footer link.** They do not publish until Apple approves iOS 1.5.0 — see `.vault/STATUS.md` for the two-step flip.
+- Removed the site-wide `<meta name="keywords">` from the root layout.
+- No rating, download or testimonial claims are made about ExpenseMate anywhere on either page.
+- Verified with `npm run lint` (clean) and `npm run build` (18 routes); noindex, canonicals, `FAQPage` and sitemap absence checked in the emitted output.
+
 ## 2026-07-31 — Retrieval foundation: robots, sitemap, structured data, OG cards
 
 - Added `src/app/robots.ts` (first robots.txt on the site) allowing GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended and CCBot; `/downloads` and `/join` disallowed for assistant crawlers only.
