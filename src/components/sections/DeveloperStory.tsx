@@ -32,9 +32,25 @@ const faqs = [
   },
 ];
 
+// Derived from the same array the section renders, so the markup can never drift
+// from the visible answers.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+
 export default function DeveloperStory() {
   return (
     <div className="bg-gray-50 py-24 sm:py-32 lg:py-40" id="developer-story">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">
