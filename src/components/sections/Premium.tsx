@@ -82,7 +82,8 @@ export default function Premium() {
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-6 text-gray-500">
           Premium is an in-app purchase, billed through the App Store — cancel anytime. Already using
-          ExpenseMate? As a thank-you, early users keep Premium features free.
+          ExpenseMate? As a thank-you, early users keep Premium free — unlimited groups, full
+          history, report exports and multi-currency. Receipt scans stay at 30 a month.
         </p>
       </div>
     </div>
