@@ -8,6 +8,9 @@ import TrackedDownloadLink from '@/components/ui/TrackedDownloadLink';
 export const metadata: Metadata = {
   title: 'Downloads - ExpenseMate',
   description: 'Download different versions of ExpenseMate for Android and other platforms.',
+  // Android builds here are internal test artifacts; the shipping product is iOS-only.
+  // Kept crawlable so search engines can read the noindex and drop the page.
+  robots: { index: false, follow: true },
 };
 
 export default async function DownloadsPage() {
