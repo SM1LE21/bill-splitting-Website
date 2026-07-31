@@ -24,8 +24,11 @@ export const metadata: Metadata = {
   title: "ExpenseMate - Smart Receipt Scanning & Bill Splitting App",
   description: "Snap a photo of your receipt and let ExpenseMate automatically itemize and split expenses with friends. The smartest way to handle group expenses with receipt scanning technology.",
   keywords: "bill splitting, receipt scanning, expense tracking, itemized receipts, shared expenses, roommate expenses, group payments, receipt OCR",
-  authors: [{ name: "TK Media" }],
+  authors: [{ name: "TK MEDIA S.à r.l.-S" }],
   robots: "index, follow",
+  // Relative canonical resolves per-route against metadataBase, so every page gets a
+  // self-referencing canonical instead of all of them inheriting the homepage URL.
+  alternates: { canonical: './' },
   openGraph: {
     type: "website",
     locale: "en_US",
