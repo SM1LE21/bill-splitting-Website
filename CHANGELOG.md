@@ -2,6 +2,15 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-07-31 — Retrieval foundation: robots, sitemap, structured data, OG cards
+
+- Added `src/app/robots.ts` (first robots.txt on the site) allowing GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended and CCBot; `/downloads` and `/join` disallowed for assistant crawlers only.
+- Added `src/app/sitemap.ts` (first sitemap) covering `/`, `/release-notes` and the four policy pages; `lastmod` from `POLICY_DATES`, parsed as UTC.
+- `/downloads` is now `noindex, follow` — it advertises Android alpha APKs while the shipping product is iOS-only.
+- Created `public/images/og-image.jpg` and `twitter-image.jpg` (1200×630, from the wordmark). Both paths had been referenced since launch but never existed, so every social and assistant preview card 404'd.
+- Structured data: fixed a typo'd App Store slug, added `WebSite` + `Organization.sameAs`, added `FAQPage` for the homepage FAQ, and gave every route a self-referencing canonical.
+- Verified with `npm run lint` (clean) and `npm run build` (16 routes); robots.txt, sitemap.xml, canonicals and all four JSON-LD types checked in the emitted output.
+
 ## 2026-06-24 — Premium launch: pricing section, release notes, privacy policy
 
 - Added a Premium section to the homepage (`src/components/sections/Premium.tsx`): free-vs-Premium comparison + €2.99/mo & €24.99/yr pricing cards, matching the site's visual language.
