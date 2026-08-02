@@ -81,9 +81,9 @@ const roadmapData = [
     status: "completed"
   },
   {
-    phase: "Q2 2026",
+    phase: "Q3 2026",
     milestone: "ExpenseMate Web",
-    date: "Planned",
+    date: "Target: August 2026",
     features: [
       "Desktop-optimized version with full expense management",
       "Custom dashboards for better overview",
@@ -91,9 +91,9 @@ const roadmapData = [
     ]
   },
   {
-    phase: "Q2 2026",
+    phase: "Q3 2026",
     milestone: "Personal Space",
-    date: "Planned",
+    date: "Target: August 2026",
     features: [
       "Keep track of your personal expenses",
       "Scan feature for quick adding expenses",
@@ -102,9 +102,9 @@ const roadmapData = [
     ]
   },
   {
-    phase: "Q3 2026",
+    phase: "Q4 2026",
     milestone: "Work Space",
-    date: "Planned",
+    date: "Target: October 2026",
     features: [
       "Business-trip tracker with company-card vs personal-money toggle",
       "One-click PDF/CSV expense reports",
