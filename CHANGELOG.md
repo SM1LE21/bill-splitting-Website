@@ -2,6 +2,15 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-02 — Fix: navbar and footer section links were dead off the homepage
+
+- `Navbar.handleNavClick` called `e.preventDefault()` unconditionally and only scrolled when `getElementById` found the section, so on any page without those sections the click was swallowed entirely — no scroll and no navigation. Default is now only prevented when the target exists.
+- Navbar and footer Product links now resolve to `/#section` when off the homepage, so they navigate home and land on the section. Homepage smooth-scroll behaviour is unchanged.
+- `nav_clicked` now fires on both paths; it was previously lost whenever the section was not on the page.
+- Footer Resources and Legal links were always absolute paths and were never affected.
+- Reported on `/vs-splitwise`, which with `/export-expenses-excel` are the first pages outside the homepage to use the full `Layout` and therefore render the navbar.
+- Verified in the built output: homepage keeps bare `#anchors`, both new pages emit `/#anchors`, and no dead bare anchors remain.
+
 ## 2026-07-31 — Draft comparison pages: /vs-splitwise and /export-expenses-excel
 
 - Added `/vs-splitwise`: direct answer, feature table, what Splitwise does better, who each app suits, where ExpenseMate falls short, FAQ (`FAQPage` schema), sources. Splitwise claims cite Splitwise-owned pages or Apple only; three App Store review quotes are verbatim from Apple's public review feed, attributed, with the sampling method stated and Splitwise's own reasoning quoted alongside.
