@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -19,6 +20,12 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  // The nav points at homepage sections. Off the homepage those anchors do not exist,
+  // so link back to the homepage anchor instead of a dead in-page one.
+  const sectionHref = (href: string) => (isHome ? href : `/${href}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -41,26 +48,26 @@ export default function Navbar() {
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
-    
-    if (element) {
-      const navbarHeight = 80; // Approximate height of the navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-
-      // Track the navigation click
-      trackClick(targetId);
-    }
-
-    // Close mobile menu if open
+    trackClick(targetId);
     setMobileMenuOpen(false);
+
+    // No such section on this page — leave the click alone so the browser follows the
+    // href back to the homepage anchor. Swallowing it here is what made the nav dead
+    // on every page that is not the homepage.
+    if (!element) return;
+
+    e.preventDefault();
+    const navbarHeight = 80; // Approximate height of the navbar
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -104,7 +111,7 @@ export default function Navbar() {
           {navigation.map((item) => (
             <a
               key={item.name}
-              href={item.href}
+              href={sectionHref(item.href)}
               onClick={(e) => handleNavClick(e, item.href)}
               className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600"
             >
@@ -114,7 +121,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#cta"
+            href={sectionHref('#cta')}
             onClick={(e) => {
               handleNavClick(e, '#cta');
               trackClick('get_started_cta');
@@ -169,7 +176,7 @@ export default function Navbar() {
                     {navigation.map((item) => (
                       <a
                         key={item.name}
-                        href={item.href}
+                        href={sectionHref(item.href)}
                         className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                         onClick={(e) => handleNavClick(e, item.href)}
                       >
@@ -179,7 +186,7 @@ export default function Navbar() {
                   </div>
                   <div className="px-6 py-6">
                     <a
-                      href="#cta"
+                      href={sectionHref('#cta')}
                       className="block w-full rounded-full bg-primary px-4 py-2 text-center text-base font-semibold text-white shadow-sm hover:bg-primary/90"
                       onClick={(e) => handleNavClick(e, '#cta')}
                     >
