@@ -22,7 +22,7 @@ interface VersionNote {
 const releaseNotes: VersionNote[] = [
   {
     version: '1.5.0',
-    date: 'June 2026',
+    date: '5th August 2026',
     platform: 'iOS',
     changes: [
       {
@@ -36,6 +36,14 @@ const releaseNotes: VersionNote[] = [
       {
         type: 'improvement',
         description: 'Manage or cancel your subscription anytime right inside the app, from Settings or your Profile.'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed: report export failed on devices set to some regions.'
+      },
+      {
+        type: 'bugfix',
+        description: 'Fixed: scanned receipts could pick up an implausible date.'
       }
     ]
   },
