@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FaApple } from 'react-icons/fa';
 import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
 import { trackEvent } from '@/utils/analytics';
@@ -62,6 +63,13 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
 
 export default function Footer({ minimal = false }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const isHome = usePathname() === '/';
+
+  // Product links point at homepage sections. Off the homepage a bare "#features"
+  // resolves against the current path and goes nowhere, so send it home instead.
+  const resolvedProductLinks = productLinks.map((link) =>
+    isHome ? link : { ...link, href: `/${link.href}` }
+  );
   const trackAppStoreClick = (location: string) => {
     trackEvent('app_store_clicked', {
       location,
@@ -100,7 +108,7 @@ export default function Footer({ minimal = false }: FooterProps) {
             </div>
 
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:gap-12">
-              <FooterColumn title="Product" links={productLinks} />
+              <FooterColumn title="Product" links={resolvedProductLinks} />
               <FooterColumn title="Resources" links={resourceLinks} />
               <div className="col-span-2 sm:col-span-1">
                 <h3 className="text-sm font-semibold text-gray-900">Legal</h3>
