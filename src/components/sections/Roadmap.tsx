@@ -68,9 +68,22 @@ const roadmapData = [
     status: "completed"
   },
   {
+    phase: "Q3 2026",
+    milestone: "Version 1.5 Launch — ExpenseMate Premium (iOS)",
+    date: "Released August 2026",
+    features: [
+      "Premium: unlimited groups, unlimited receipt scans, and your full expense history",
+      "PDF and CSV report exports for any period",
+      "Expenses in multiple currencies",
+      "Early users keep Premium features free — receipt scans stay at 30 a month",
+      "Manage or cancel your subscription from Settings or your Profile",
+    ],
+    status: "completed"
+  },
+  {
     phase: "Q2 2026",
     milestone: "ExpenseMate Web",
-    date: "Target: May 2026",
+    date: "Planned",
     features: [
       "Desktop-optimized version with full expense management",
       "Custom dashboards for better overview",
@@ -80,7 +93,7 @@ const roadmapData = [
   {
     phase: "Q2 2026",
     milestone: "Personal Space",
-    date: "Target: May 2026",
+    date: "Planned",
     features: [
       "Keep track of your personal expenses",
       "Scan feature for quick adding expenses",
@@ -91,7 +104,7 @@ const roadmapData = [
   {
     phase: "Q3 2026",
     milestone: "Work Space",
-    date: "Target: July 2026",
+    date: "Planned",
     features: [
       "Business-trip tracker with company-card vs personal-money toggle",
       "One-click PDF/CSV expense reports",
