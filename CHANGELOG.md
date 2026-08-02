@@ -2,6 +2,15 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-03 — iOS 1.5.0 lockstep: release notes date, missing fixes, Premium roadmap card
+
+- 1.5.0 release-notes date was still the `June 2026` placeholder staged back in June; set to `5th August 2026` per owner.
+- Added the two bugfix lines the App Store What's New carries but the website omitted — region-dependent report export failure, and implausible dates on scanned receipts. Source of truth: `Frontend/.vault/proposals/2026-08-1-5-0-release-metadata.md`.
+- Added the `Version 1.5 Launch — ExpenseMate Premium (iOS)` roadmap card, marked completed. Every prior release had one; the Premium launch did not.
+- Replaced expired roadmap targets on ExpenseMate Web, Personal Space and Work Space (May 2026, May 2026, July 2026 — all past) with `Planned`. Real dates are an owner decision and were not invented.
+- **`/vs-splitwise` and `/export-expenses-excel` remain `noindex`.** 1.5.0 is submitted, not approved — the App Store still serves 1.4.2 with no in-app purchases. The publish flip waits for actual approval.
+- Verified with `npm run lint` (clean) and `npm run build` (18 routes); release-notes date and bugfix lines present in the emitted HTML, completed-milestone count 4 → 5, no expired targets remaining.
+
 ## 2026-08-02 — Fix: navbar and footer section links were dead off the homepage
 
 - `Navbar.handleNavClick` called `e.preventDefault()` unconditionally and only scrolled when `getElementById` found the section, so on any page without those sections the click was swallowed entirely — no scroll and no navigation. Default is now only prevented when the target exists.
