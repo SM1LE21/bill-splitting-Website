@@ -93,7 +93,7 @@ const roadmapData = [
   {
     phase: "Q3 2026",
     milestone: "Personal Space",
-    date: "Target: August 2026",
+    date: "Target: September 2026",
     features: [
       "Keep track of your personal expenses",
       "Scan feature for quick adding expenses",

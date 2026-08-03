@@ -7,7 +7,7 @@ Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 - 1.5.0 release-notes date was still the `June 2026` placeholder staged back in June; set to `5th August 2026` per owner.
 - Added the two bugfix lines the App Store What's New carries but the website omitted — region-dependent report export failure, and implausible dates on scanned receipts. Source of truth: `Frontend/.vault/proposals/2026-08-1-5-0-release-metadata.md`.
 - Added the `Version 1.5 Launch — ExpenseMate Premium (iOS)` roadmap card, marked completed. Every prior release had one; the Premium launch did not.
-- Refreshed the expired roadmap targets, which had all passed: ExpenseMate Web and Personal Space May 2026 → **August 2026**, Work Space July 2026 → **October 2026** (owner decision: push back roughly three months). Phase labels moved with them — Web and Personal Space to Q3 2026, Work Space to Q4 2026 — so the quarter no longer contradicts the date.
+- Refreshed the expired roadmap targets, which had all passed: ExpenseMate Web May 2026 → **August 2026**, Personal Space May 2026 → **September 2026**, Work Space July 2026 → **October 2026**. Phase labels moved with them — Web and Personal Space to Q3 2026, Work Space to Q4 2026 — so the quarter no longer contradicts the date.
 - **`/vs-splitwise` and `/export-expenses-excel` remain `noindex`.** 1.5.0 is submitted, not approved — the App Store still serves 1.4.2 with no in-app purchases. The publish flip waits for actual approval.
 - Verified with `npm run lint` (clean) and `npm run build` (18 routes); release-notes date and bugfix lines present in the emitted HTML, completed-milestone count 4 → 5, no expired targets remaining.
 
