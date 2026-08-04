@@ -17,6 +17,10 @@ const navigation = [
   { name: 'About', href: '#developer-story' },
 ];
 
+// The web app is a separate host. These two entries are permanent: without them a
+// visitor who does not own an iPhone has no way to reach the product at all.
+const WEB_APP_URL = 'https://app.expensemate.app';
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -107,7 +111,7 @@ export default function Navbar() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-12">
           {navigation.map((item) => (
             <a
               key={item.name}
@@ -119,14 +123,28 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-4 xl:gap-x-6">
+          <a
+            href={`${WEB_APP_URL}/login`}
+            onClick={() => trackClick('web_app_login')}
+            className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-600"
+          >
+            Log in
+          </a>
+          <a
+            href={WEB_APP_URL}
+            onClick={() => trackClick('web_app_open')}
+            className="whitespace-nowrap rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+          >
+            Open web app
+          </a>
           <a
             href={sectionHref('#cta')}
             onClick={(e) => {
               handleNavClick(e, '#cta');
               trackClick('get_started_cta');
             }}
-            className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
+            className="whitespace-nowrap rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
           >
             Get Started
           </a>
@@ -191,6 +209,28 @@ export default function Navbar() {
                       onClick={(e) => handleNavClick(e, '#cta')}
                     >
                       Get Started
+                    </a>
+                  </div>
+                  <div className="space-y-3 px-6 py-6">
+                    <a
+                      href={WEB_APP_URL}
+                      className="block w-full rounded-full border border-gray-300 px-4 py-2 text-center text-base font-semibold text-gray-900 hover:bg-gray-50"
+                      onClick={() => {
+                        trackClick('web_app_open');
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      Open web app
+                    </a>
+                    <a
+                      href={`${WEB_APP_URL}/login`}
+                      className="block rounded-lg px-3 py-2 text-center text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      onClick={() => {
+                        trackClick('web_app_login');
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      Log in
                     </a>
                   </div>
                 </div>
