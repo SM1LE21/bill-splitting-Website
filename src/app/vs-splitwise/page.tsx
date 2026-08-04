@@ -16,7 +16,11 @@ export const metadata: Metadata = {
 type Row = { feature: string; mate: string; splitwise: string };
 
 const rows: Row[] = [
-  { feature: 'Platforms', mate: 'iPhone only', splitwise: 'iPhone, Android and web' },
+  {
+    feature: 'Platforms',
+    mate: 'iPhone, plus a companion web app',
+    splitwise: 'iPhone, Android and web',
+  },
   { feature: 'Adding expenses on the free plan', mate: 'No daily limit', splitwise: 'Up to 4 per day' },
   { feature: 'Ads', mate: 'None', splitwise: 'Pro removes ads' },
   { feature: 'Receipt scanning', mate: 'Free — 30 per month', splitwise: 'Pro only' },
@@ -36,7 +40,7 @@ const rows: Row[] = [
 ];
 
 const splitwiseStrengths = [
-  'It runs on Android and the web. ExpenseMate does not. For a group where even one person is not on an iPhone, that decides it.',
+  'It has a full Android app. ExpenseMate does not — there is an iPhone app and a companion web app, and nothing on Android. For a group where even one person is not on an iPhone, that decides it.',
   'It imports transactions from a connected credit or debit card, so expenses can be split from real purchases rather than typed in. ExpenseMate has nothing like it.',
   'It settles up through payment rails — Venmo since 2013, and bank transfers through a Tink/Visa partnership since 2024.',
   'It has expense search, charts and default splits, plus offline mode, recurring expenses and 100+ currencies.',
@@ -44,7 +48,7 @@ const splitwiseStrengths = [
 ];
 
 const limitations = [
-  'ExpenseMate is iPhone only. There is no Android app and no web version.',
+  'The only ExpenseMate app is on iPhone. There is no Android app. There is a web app at app.expensemate.app, but it is a companion to the iPhone app rather than a replacement: it cannot scan receipts, and Premium can only be bought on iPhone.',
   'There is no bank or card import. Expense search works inside a group, but there is no search across all your groups at once.',
   'It is small and young. It is built by one developer, and it has nowhere near the track record Splitwise has.',
   'The free plan lets you create two groups and shows the last 90 days. Joining groups you are invited to is unlimited, but if you organise a lot of separate trips you will hit the group limit.',
@@ -92,7 +96,7 @@ const faqs = [
   {
     question: 'Can I use ExpenseMate on Android?',
     answer:
-      'Not today. ExpenseMate is iPhone only. Splitwise runs on iPhone, Android and the web, so for a mixed group it is the practical choice.',
+      'There is no Android app. There is a web app at app.expensemate.app that works in any browser, including on Android, but it is a companion to the iPhone app rather than a replacement: it cannot scan receipts, and Premium can only be bought on iPhone. Splitwise has a full Android app, so for a mixed group it is still the practical choice.',
   },
   {
     question: 'Can I export shared expenses to Excel?',
@@ -127,8 +131,9 @@ export default function VsSplitwise() {
           <div className="mt-8 rounded-2xl border-l-4 border-primary bg-primary/5 p-6">
             <p className="text-lg font-semibold text-gray-900">The short answer</p>
             <p className="mt-3">
-              If anyone in your group uses Android, use Splitwise. ExpenseMate is iPhone
-              only, and for most groups that settles it on its own.
+              If anyone in your group uses Android, use Splitwise. The only ExpenseMate
+              app is on iPhone — there is a companion web app, but nothing on Android —
+              and for most groups that settles it on its own.
             </p>
             <p className="mt-3">
               If everyone is on an iPhone and what you actually split is itemised receipts
@@ -222,7 +227,7 @@ export default function VsSplitwise() {
               <h3 className="text-lg font-semibold text-gray-900">Choose Splitwise</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
                 <li>Anyone in the group is on Android</li>
-                <li>You want to check balances on a computer</li>
+                <li>You want recurring expenses or offline access</li>
                 <li>You want expenses pulled in from a card</li>
                 <li>You settle up through Venmo or bank transfer</li>
                 <li>Your friends already use it and have history there</li>
