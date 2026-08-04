@@ -1,10 +1,7 @@
-import { Metadata } from 'next';
-import JoinGroup from '@/components/sections/JoinGroup';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Join Group - ExpenseMate',
-  description: 'Join an ExpenseMate group to start splitting bills with friends',
-};
+// The join experience is implemented once, in the web app — not split across two codebases.
+const WEB_APP_JOIN_URL = 'https://app.expensemate.app/join';
 
 type SearchParamsType = {
   groupId?: string | string[];
@@ -17,16 +14,31 @@ type PageProps = {
   searchParams?: Promise<SearchParamsType>;
 };
 
+/**
+ * Server-side 307 to the web app, carrying the query string through untouched.
+ *
+ * On iOS with the app installed this never runs: Universal Links resolve the AASA
+ * association for the tapped URL and open the app without issuing the request. The
+ * redirect is the path for Android, desktop, and iPhones without the app.
+ *
+ * Nothing is validated here. An absent or malformed `groupId` still redirects, and the
+ * web app renders the "this invite link isn't valid" state — one implementation of that
+ * message, not two.
+ */
 export default async function JoinPage({ searchParams }: PageProps) {
-  // Wait for the searchParams promise to resolve (if provided)
   const resolvedSearchParams = searchParams ? await searchParams : undefined;
-  let groupId: string | null = null;
-  
-  if (typeof resolvedSearchParams?.groupId === 'string') {
-    groupId = resolvedSearchParams.groupId;
-  } else if (Array.isArray(resolvedSearchParams?.groupId)) {
-    groupId = resolvedSearchParams.groupId[0];
+  const query = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(resolvedSearchParams ?? {})) {
+    if (typeof value === 'string') {
+      query.append(key, value);
+    } else if (Array.isArray(value)) {
+      for (const entry of value) {
+        query.append(key, entry);
+      }
+    }
   }
-  
-  return <JoinGroup groupId={groupId} />;
+
+  const search = query.toString();
+  redirect(search ? `${WEB_APP_JOIN_URL}?${search}` : WEB_APP_JOIN_URL);
 }
