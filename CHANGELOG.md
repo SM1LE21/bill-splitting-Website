@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-04 16:40 — Copy corrections for the web launch
+
+- **Removed every "there is no web version" claim.** `/vs-splitwise` said it twice — once visibly and once inside the `FAQPage` JSON-LD that search engines and assistants read — and `/export-expenses-excel` closed on it. The Android concession is unchanged: there is still no Android app, and that still decides a mixed group. Also fixed on `/vs-splitwise`: the platform row, the Splitwise strength, the short answer, and "you want to check balances on a computer" as a reason to choose Splitwise.
+- **Footer names the browser** alongside iOS, the **Roadmap intro** stops promising web access as something 2026 "brings" one card above a Released August 2026 milestone, and the **Web 1.0 release note** now says PDF/CSV export is Premium-gated on the web exactly as on iOS. All of it positions the browser as an option alongside the iOS app, never as the Android answer, and none of it promises a web purchase path (web spec §1, §16.6).
+- **Site-wide JSON-LD:** `operatingSystem` `'iOS'` → `'iOS, Web browser'` with `browserRequirements`, Android deliberately absent. The stale `price: '0'` offer from `BATCH-D-discovery.md` is now an `AggregateOffer` (free through €24.99/year, no offer URL). The typo'd App Store slug from the same list was already fixed here in July.
+- **`/legal` imprint now names `app.expensemate.app`**, matching privacy, terms and cookies, which all enumerate the three surfaces. `npm run lint` and `npm run build` clean, 18 routes, and the emitted HTML — JSON-LD included — carries none of the corrected sentences.
+
 ## 2026-08-04 15:23 — ExpenseMate Web lockstep: header, roadmap, release notes, legal
 
 - **Permanent `Log in` and `Open web app` header entries** pointing at `app.expensemate.app`, on desktop and in the mobile drawer. Without them a visitor who does not own an iPhone had no route to the product from this site. Desktop nav gap drops to `gap-x-6` below `xl` so the three right-hand items still fit at 1024px.
