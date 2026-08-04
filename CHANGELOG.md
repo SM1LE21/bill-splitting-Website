@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-04 14:05 — Universal Links fix and `/join` handoff to the web app
+
+- **AASA `appID` corrected to `87U8WV4Q3F.app.ExpenseMate`.** The bundle ID is `app.ExpenseMate`, verified in `Frontend` (`project.pbxproj:1245`, `DEVELOPMENT_TEAM` at `:1224`, confirmed by `GoogleService-Info.plist`); the lowercase form that shipped was `CFBundleURLName`, not a bundle ID. Apple matches it case-sensitively, so the association never validated and 1.4.2 fell back to `expensemate://`.
+- **`/join` is now a server-side 307** to `https://app.expensemate.app/join`, query string carried through untouched. Nothing is validated here — missing, empty, duplicated and malformed `groupId` values all redirect and the web app owns the invalid-link message. `JoinGroup.tsx` and `AppRedirect.tsx` deleted as orphans.
+- **DEPLOYMENT ORDERING: the redirect must not go live before the web app is live at `app.expensemate.app`**, or every invite link already in users' message threads breaks. It ships in the same release as the web app.
+- `npm run lint` clean, `npm run build` clean (18 routes, `/join` dynamic). Verified against `next start`: 307 + exact `Location` across seven query shapes, and AASA served `200 application/json` with no redirect. **The apex→www 308 remains owner action in Vercel and still blocks Universal Links end-to-end.**
+
 ## 2026-08-03 — iOS 1.5.0 lockstep: release notes date, missing fixes, Premium roadmap card
 
 - 1.5.0 release-notes date was still the `June 2026` placeholder staged back in June; set to `5th August 2026` per owner.
