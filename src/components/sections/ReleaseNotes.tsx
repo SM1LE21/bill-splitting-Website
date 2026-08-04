@@ -14,12 +14,40 @@ interface VersionNote {
 }
 
 // NOTE FOR FUTURE MAINTAINERS / AGENTS:
-// This list is for mobile (iOS/Android) product releases only.
-// Do NOT add entries for website changes, legal/policy updates, footer
-// tweaks, etc., those are internal to the site and not a "release" that
-// users of the ExpenseMate app should see. If you need to communicate a
-// website change, do it elsewhere (commit history, PR description).
+// This list is for ExpenseMate product releases only — the iOS app, the
+// Android app, and the web app at app.expensemate.app.
+// Do NOT add entries for marketing-site changes, legal/policy updates, footer
+// tweaks, etc., those are internal to this site and not a "release" that
+// users of ExpenseMate should see. If you need to communicate a website
+// change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
+  {
+    version: '1.0',
+    date: 'August 2026',
+    platform: 'Web',
+    changes: [
+      {
+        type: 'feature',
+        description: 'ExpenseMate on the web. Sign in at app.expensemate.app and manage your groups, expenses, splits and balances in any browser — on a laptop, a desktop, or a phone. It uses the same account as the iOS app, so anything you add in one is there in the other.'
+      },
+      {
+        type: 'feature',
+        description: 'A dashboard made for a bigger screen: your balance across every group, spending over time, and a category breakdown, all in one place.'
+      },
+      {
+        type: 'feature',
+        description: 'Group reports export as PDF or CSV straight from the browser, with the same periods you get in the app.'
+      },
+      {
+        type: 'improvement',
+        description: 'Group invite links now open the web app for anyone who does not have ExpenseMate installed, so a friend can join a group from whatever device they happen to have.'
+      },
+      {
+        type: 'improvement',
+        description: 'The web app is a companion to the iOS app rather than a replacement for it. Receipt scanning, notifications and Home Screen shortcuts stay on iOS for now, and ExpenseMate Premium is still bought and managed there.'
+      }
+    ]
+  },
   {
     version: '1.5.0',
     date: '5th August 2026',
