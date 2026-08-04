@@ -26,7 +26,7 @@ export default function LegalNotice() {
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Publisher</h2>
             <p className="mt-6">
-              This website (expensemate.app) and the ExpenseMate mobile application are published and operated by:
+              This website (expensemate.app), the ExpenseMate web app (app.expensemate.app) and the ExpenseMate mobile application for iOS are published and operated by:
             </p>
             <div className="mt-6 space-y-1">
               <p className="font-semibold text-gray-900">TK MEDIA S.à r.l.-S</p>
@@ -70,7 +70,7 @@ export default function LegalNotice() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Hosting</h2>
             <p className="mt-6">
-              This website is hosted by <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, United States. See{' '}
+              This website and the ExpenseMate web app are hosted by <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, United States. See{' '}
               <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                 Vercel&apos;s Privacy Policy
               </a>{' '}
