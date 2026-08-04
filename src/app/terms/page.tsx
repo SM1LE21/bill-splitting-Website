@@ -22,14 +22,14 @@ export default function TermsOfService() {
           </div>
 
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Terms of Service</h1>
-          <p className="mt-6 text-xl font-semibold text-gray-900">
-            Last Updated: {POLICY_DATES.TERMS_OF_SERVICE}
+          <p className="mt-6 text-base leading-8">
+            Last updated: {POLICY_DATES.TERMS_OF_SERVICE}
           </p>
 
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
             <p className="mt-6">
-              Welcome to ExpenseMate. These Terms of Service (&quot;Terms&quot;) govern your use of our website located at expensemate.app (the &quot;Website&quot;) and our mobile application (the &quot;App&quot;), together referred to as our &quot;Services.&quot;
+              Welcome to ExpenseMate. These Terms of Service (&quot;Terms&quot;) govern your use of our marketing website at expensemate.app (the &quot;Website&quot;), our web app at app.expensemate.app (the &quot;Web App&quot;), and our mobile application (the &quot;App&quot;), together referred to as our &quot;Services.&quot;
             </p>
             <p className="mt-6">
               Please read these Terms carefully before using our Services. By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Services.
@@ -54,6 +54,9 @@ export default function TermsOfService() {
               <li>Expense history and tracking</li>
               <li>Group expense management</li>
             </ul>
+            <p className="mt-6">
+              <strong>Features vary by platform.</strong> Receipt scanning and data extraction are currently available in the App only. The Web App is a companion to the App rather than a replacement for it, and ExpenseMate Premium is purchased and managed through the App Store in the App — there is no purchase path in the Web App. We may add, change or remove features on any platform.
+            </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. User Accounts</h2>
             <p className="mt-6">
@@ -69,6 +72,16 @@ export default function TermsOfService() {
             <p className="mt-6">
               We reserve the right to disable any user account if, in our opinion, you have violated any provision of these Terms.
             </p>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4a. Deleting Your Account</h2>
+            <p className="mt-6">
+              You can delete your account yourself at any time, without asking us: in the App under <strong>Settings</strong>, or in the Web App under <strong>Settings</strong>. For your protection we may ask you to sign in again first. Three things you should know before you do:
+            </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2">
+              <li><strong>Data you share with a group is anonymised, not erased.</strong> Anything tied only to you is deleted. Expenses, splits and settlements that other members of a shared group depend on remain, with your identity removed, so that their own expense history stays intact and correct. This is explained in section 10 of our <Link href="/privacy" className="text-primary hover:text-primary/80">Privacy Policy</Link>.</li>
+              <li><strong>Deleting your account does not cancel or refund an ExpenseMate Premium subscription.</strong> Apple sells and bills that subscription, not us, and it keeps renewing until you cancel it in the App Store (on iOS: Settings → your name → Subscriptions). <strong>Cancel the subscription first, then delete the account.</strong> Refunds are requested from Apple under its own terms.</li>
+              <li><strong>Deletion is permanent.</strong> We cannot restore a deleted account, and creating a new one will not recover the old one&apos;s data.</li>
+            </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. Intellectual Property</h2>
             <p className="mt-6">
@@ -109,22 +122,17 @@ export default function TermsOfService() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. Data Processing</h2>
             <p className="mt-6">
-              We use various Google Cloud services to process and store your data, including:
+              What we process, where it is stored, which providers are involved and the legal basis for each purpose are set out in full in our <Link href="/privacy" className="text-primary hover:text-primary/80">Privacy Policy</Link>. That is the canonical list; we deliberately do not keep a second one here for it to drift out of step with.
+            </p>
+            <p className="mt-6">
+              Two points belong in these Terms, because they are part of what you are agreeing to:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li>Google Cloud Storage (Buckets) for file storage</li>
-              <li>Firebase Authentication for user authentication</li>
-              <li>Google Cloud Run for hosting our API</li>
-              <li>Google Cloud SQL for database management</li>
+              <li><strong>ExpenseMate is a shared tool, and sharing is the point.</strong> The expenses, amounts, receipt items and display name you add to a group are visible to the other members of that group by design, as described in section 6. Outside that, we do not sell your personal data and we do not share it for advertising. We do use a limited number of service providers — hosting, authentication, receipt OCR, analytics, error reporting and subscription management — who process data on our behalf and on our instructions; each one is named in our Privacy Policy.</li>
+              <li><strong>Receipt images may be processed by Google Gemini and/or OpenAI</strong> for data extraction and analysis. We do not authorise those providers to use your content to train their models.</li>
             </ul>
             <p className="mt-6">
-              We do not share your data with any third parties; it remains accessible only by you and is a key element of the Services&apos; functionality.
-            </p>
-            <p className="mt-6">
-              Additionally, we may process your receipt images using Google Gemini and/or OpenAI services for data extraction and analysis.
-            </p>
-            <p className="mt-6">
-              By using our Services, you consent to this data processing as it is necessary for providing the functionality of the application.
+              We process this data because it is <strong>necessary for the performance of our contract with you</strong> (GDPR Art. 6(1)(b)), and on the other legal bases set out in our Privacy Policy. Where we rely on your consent — analytics, for example — you can withdraw it at any time without losing access to the Services.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Disclaimers</h2>
@@ -171,13 +179,12 @@ export default function TermsOfService() {
               Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.
             </p>
 
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12a. Online Dispute Resolution</h2>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12a. Consumer Dispute Resolution</h2>
             <p className="mt-6">
-              In accordance with Regulation (EU) No 524/2013, the European Commission provides a platform for online dispute resolution (ODR), available at{' '}
-              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                https://ec.europa.eu/consumers/odr
-              </a>
-              . We are not obliged and not willing to participate in dispute-resolution proceedings before a consumer arbitration board, but consumers may still use the ODR platform to raise a complaint.
+              The European Commission&apos;s online dispute resolution (ODR) platform, which used to be available at ec.europa.eu/consumers/odr, was <strong>discontinued on 20 July 2025</strong> and can no longer be used to raise a complaint.
+            </p>
+            <p className="mt-6">
+              If you have a complaint, please contact us first at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a> — we would rather resolve it directly. We are not obliged, and are not willing, to participate in dispute-resolution proceedings before a consumer arbitration board. This does not affect your right to bring a claim before the competent courts, or any mandatory consumer-protection remedy available to you in your country of residence.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">13. Contact Information</h2>
