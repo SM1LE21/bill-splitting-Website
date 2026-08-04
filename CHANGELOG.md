@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-04 15:23 — ExpenseMate Web lockstep: header, roadmap, release notes, legal
+
+- **Permanent `Log in` and `Open web app` header entries** pointing at `app.expensemate.app`, on desktop and in the mobile drawer. Without them a visitor who does not own an iPhone had no route to the product from this site. Desktop nav gap drops to `gap-x-6` below `xl` so the three right-hand items still fit at 1024px.
+- **Roadmap card flipped to Completed** ("Released August 2026", the 1.4.0/1.5.0 treatment) and a **release-notes entry** added — the first non-iOS entry, so the maintainer note now reads "product releases" and still excludes marketing-site changes. Copy follows the owner's positioning: a companion to the iOS app, not an Android version and not a replacement, with no receipt scanning and no web purchase path.
+- **All 18 must-change legal items applied** across privacy, terms and cookies (from `expensemate-web/.vault/website-legal-copy-review.md`), plus S1–S9. Two were wrong before the web app existed: the infrastructure copy named a Cloud SQL database retired in April 2026, and Terms §8 claimed "we do not share your data with any third parties" in a document whose own §6 lists group visibility. **Cloudflare and Sentry are now disclosed**; Sentry is EU-region, so no SCCs. All three dates bumped in `policyDates.ts`.
+- `npm run lint` clean, `npm run build` clean (18 routes). **This branch must not reach `main` until the web app is live at `app.expensemate.app`** — `/join` 307s there, and every invite link in the wild goes through it.
+
 ## 2026-08-04 14:05 — Universal Links fix and `/join` handoff to the web app
 
 - **AASA `appID` corrected to `87U8WV4Q3F.app.ExpenseMate`.** The bundle ID is `app.ExpenseMate`, verified in `Frontend` (`project.pbxproj:1245`, `DEVELOPMENT_TEAM` at `:1224`, confirmed by `GoogleService-Info.plist`); the lowercase form that shipped was `CFBundleURLName`, not a bundle ID. Apple matches it case-sensitively, so the association never validated and 1.4.2 fell back to `expensemate://`.
