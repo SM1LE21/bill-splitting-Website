@@ -29,10 +29,15 @@ export default function PrivacyPolicy() {
           <div className="mt-10 max-w-2xl">
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
             <p className="mt-6">
-              Welcome to ExpenseMate (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website at expensemate.app (regardless of where you visit it from) or use our mobile application, and tell you about your privacy rights and how the law protects you.
+              Welcome to ExpenseMate (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We respect your privacy and are committed to protecting your personal data. This privacy policy tells you how we look after your personal data, what your privacy rights are, and how the law protects you. It applies to all three places you can use ExpenseMate:
             </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2">
+              <li>our <strong>marketing website</strong> at expensemate.app (regardless of where you visit it from);</li>
+              <li>the <strong>ExpenseMate web app</strong> at app.expensemate.app;</li>
+              <li>the <strong>ExpenseMate mobile application</strong> for iOS.</li>
+            </ul>
             <p className="mt-6">
-              This privacy policy applies to both our website and mobile application (collectively referred to as &quot;Services&quot;).
+              We refer to the three together as our &quot;Services&quot;. What we process is not identical across them, so wherever the marketing website, the web app and the mobile app differ — analytics and error reporting in particular — this policy says which one it is describing.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">2. Data Controller</h2>
@@ -65,7 +70,7 @@ export default function PrivacyPolicy() {
               <li><strong>Profile Data</strong> includes your username and password, your preferences, feedback, and survey responses.</li>
               <li><strong>Usage Data</strong> includes information about how you use our Services.</li>
               <li><strong>Image Data</strong> includes photographs of receipts you upload to the application.</li>
-              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with the anonymised purchase identifiers we receive from the App Store. We never receive or store your card or payment details.</li>
+              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with the anonymised purchase identifiers we receive from the App Store. Premium is bought and managed in the iOS app; there is no purchase path in the web app, so this data only ever reaches us through the App Store. We never receive or store your card or payment details.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. How We Collect Your Data</h2>
@@ -75,7 +80,9 @@ export default function PrivacyPolicy() {
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Direct interactions:</strong> You may give us your Identity, Contact, and Financial Data by filling in forms or by corresponding with us through the Services.</li>
               <li><strong>Automated technologies or interactions:</strong> As you interact with our Services, we may automatically collect Technical Data about your equipment, browsing actions, and patterns.</li>
-              <li><strong>Third-party analytics providers:</strong> On our website we use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use our website. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymized metrics such as page views, referrer, device type, and approximate country. In the mobile app we use PostHog to collect product-usage events (for example app opens, receipt scans, and which features you use), linked to your account identifier, so we can understand how the app is used and improve it. This is first-party analytics and is not used to track you across other apps or services.</li>
+              <li><strong>Third-party analytics providers:</strong> On our marketing website we use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use the site. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymised metrics such as page views, referrer, device type, and approximate country. In the <strong>web app</strong> we use PostHog only if you accept analytics in the web app&apos;s own banner — nothing is loaded or sent before you answer it. In the <strong>mobile app</strong> we use PostHog to collect product-usage events (for example app opens, receipt scans, and which features you use) so we can understand how the app is used and improve it. This is first-party analytics and is not used to track you across other apps or services.</li>
+              <li><strong>Error reporting:</strong> When something goes wrong in the web app, an error report is sent to Sentry so we can find and fix it. Those reports carry the error itself and the page it happened on; we configure them to carry no name, email address, expense description or amount.</li>
+              <li><strong>How this is linked to you:</strong> In both the web app and the mobile app, the analytics identifier is your internal ExpenseMate account ID — not your name or email address, but a stable identifier for your account, and the same one our error reports carry. It means your activity on iOS and on the web is counted as one person&apos;s rather than two, and it is why this analytics is linked to you rather than anonymous.</li>
               <li><strong>App Store:</strong> When you buy or manage an ExpenseMate Premium subscription, Apple processes the payment and, via RevenueCat, provides us with your subscription status so we can unlock Premium features for your account.</li>
             </ul>
 
@@ -114,14 +121,24 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (running a secure service)</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Website analytics and product improvement (Google Analytics and PostHog)</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Marketing-website analytics and product improvement, on expensemate.app (Google Analytics and PostHog)</td>
                     <td className="px-3 py-4">Technical, Usage</td>
                     <td className="px-3 py-4">Consent, Art. 6(1)(a)</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">In-app product analytics to understand usage and improve the app (PostHog)</td>
-                    <td className="px-3 py-4">Usage, Technical</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Product analytics in the web app, on app.expensemate.app (PostHog)</td>
+                    <td className="px-3 py-4">Usage, Technical, internal account ID</td>
+                    <td className="px-3 py-4">Consent, Art. 6(1)(a)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Product analytics in the iOS app, to understand usage and improve it (PostHog)</td>
+                    <td className="px-3 py-4">Usage, Technical, internal account ID</td>
                     <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (improving our app)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Detecting and diagnosing errors and crashes in the web app (Sentry)</td>
+                    <td className="px-3 py-4">Technical, Usage, internal account ID</td>
+                    <td className="px-3 py-4">Legitimate interests, Art. 6(1)(f) (keeping the web app working)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Aggregated, cookieless audience measurement (Vercel Analytics)</td>
@@ -157,9 +174,14 @@ export default function PrivacyPolicy() {
                 </thead>
                 <tbody className="divide-y divide-gray-200 text-sm text-gray-600">
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Google LLC (Firebase Authentication, Cloud Storage, Cloud Run, Cloud SQL)</td>
-                    <td className="px-3 py-4">Authentication, file storage, API hosting, database</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Google LLC (Firebase Authentication, Cloud Storage, Cloud Run)</td>
+                    <td className="px-3 py-4">Sign-in, receipt image and file storage, and a compatibility proxy for older app versions</td>
                     <td className="px-3 py-4">EU / United States</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Cloudflare, Inc.</td>
+                    <td className="px-3 py-4">Network routing, TLS termination and protection for our API; every request from the apps to our API passes through it</td>
+                    <td className="px-3 py-4">United States company, global network</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Google LLC (Gemini API)</td>
@@ -173,13 +195,18 @@ export default function PrivacyPolicy() {
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Vercel Inc.</td>
-                    <td className="px-3 py-4">Website hosting and cookieless analytics</td>
+                    <td className="px-3 py-4">Hosting for the marketing website and the web app; cookieless analytics on the marketing website only</td>
                     <td className="px-3 py-4">United States (global edge)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">PostHog Inc.</td>
-                    <td className="px-3 py-4">Website and mobile-app product analytics; optional website session replay only after analytics consent</td>
+                    <td className="px-3 py-4">Product analytics for the marketing website, the web app and the mobile app; optional marketing-website session replay only after analytics consent</td>
                     <td className="px-3 py-4">EU Cloud (Frankfurt) / United States company</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Functional Software, Inc. d/b/a Sentry</td>
+                    <td className="px-3 py-4">Error and crash reporting for the web app</td>
+                    <td className="px-3 py-4">EU region (Frankfurt) / United States company</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Apple Inc.</td>
@@ -197,6 +224,9 @@ export default function PrivacyPolicy() {
             <p className="mt-6">
               Receipt image content is sent to OCR providers only for the time needed to extract the data; we do not authorise them to use your content to train their models. We may additionally disclose personal data where required by law, court order, or a legitimate request from a public authority, or where necessary to protect our rights, the safety of our users, or the integrity of the Services.
             </p>
+            <p className="mt-6">
+              Two points about the last two rows, because they are easy to state loosely. <strong>Cloudflare</strong> routes the traffic between your device and our API rather than storing your expenses: it necessarily sees the connection and its IP address, and it is on the path of every request the apps make. <strong>Sentry&apos;s</strong> ingest endpoint likewise <em>receives</em> your IP address at the network layer, but we configure Sentry not to store it in the error event. Error events do carry your internal ExpenseMate account ID, which is a persistent identifier for your account, so they are personal data even though they contain no name or email address.
+            </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. International Data Transfers</h2>
             <p className="mt-6">
@@ -208,18 +238,24 @@ export default function PrivacyPolicy() {
               <li>For Google services, Google&apos;s published cross-border transfer mechanisms.</li>
             </ul>
             <p className="mt-6">
+              To be precise rather than reassuring: <strong>your account and expense data is stored on a server in Luxembourg</strong> (section 8), our PostHog analytics is on PostHog&apos;s EU Cloud, and our Sentry project is on Sentry&apos;s EU region, so error reports are stored in the EEA. We do not claim that everything is hosted in the EU, because it is not — hosting, OCR and subscription management involve the United States providers listed in section 6, and Cloudflare operates a global network. The Location column in that table is the accurate per-provider answer.
+            </p>
+            <p className="mt-6">
               You may request a copy of the safeguards in place for a given transfer by contacting us at the email address listed in section 2.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. Infrastructure</h2>
             <p className="mt-6">
-              Your data is processed and stored on Google Cloud infrastructure. We specifically use <strong>Google Cloud Storage</strong> for receipt images and files, <strong>Firebase Authentication</strong> for sign-in, <strong>Google Cloud Run</strong> for our API services, and <strong>Google Cloud SQL</strong> for the database.
+              <strong>Your account and expense data is stored in a PostgreSQL database on a server we operate in Luxembourg.</strong> Our API runs on that same server and is reached at api.expensemate.org through a <strong>Cloudflare Tunnel</strong>, so Cloudflare routes and secures every request the apps make; it does not store your expense data. We use <strong>Google Cloud Storage</strong> for receipt images and files and <strong>Firebase Authentication</strong> for sign-in. <strong>Google Cloud Run</strong> now hosts only a compatibility proxy for older versions of the mobile app; it stopped being our API host, and the Google Cloud SQL database was retired, in April 2026.
             </p>
             <p className="mt-6">
-              Our website is hosted on <strong>Vercel</strong>, which also provides cookieless, privacy-first website analytics. Vercel processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics. IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Vercel&apos;s Privacy Policy</a>.
+              Our marketing website at expensemate.app and our web app at app.expensemate.app are both hosted on <strong>Vercel</strong>. On the marketing website, Vercel also provides cookieless, privacy-first analytics: it processes request metadata (such as IP addresses) transiently to derive aggregate country-level statistics, and IP addresses are not stored by Vercel Analytics. For more information, see <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">Vercel&apos;s Privacy Policy</a>.
             </p>
             <p className="mt-6">
-              With your analytics consent, we also use <strong>PostHog</strong> on the website to measure product funnels such as app-store clicks, downloads, and join-link outcomes. We configure PostHog to avoid sending invite group IDs and to disable session replay unless explicitly enabled in deployment settings. In the mobile app, PostHog is used to collect product-usage events tied to your account identifier so we can understand how the app is used and improve it.
+              With your analytics consent, we also use <strong>PostHog</strong> on the marketing website to measure product funnels such as app-store clicks, downloads, and join-link outcomes, and — again only with your consent, given separately in the web app — inside the web app to understand which features are used. We configure PostHog to avoid sending group IDs, expense descriptions or amounts, and session replay is switched off entirely in the web app. In the mobile app, PostHog is used to collect product-usage events tied to your account identifier so we can understand how the app is used and improve it.
+            </p>
+            <p className="mt-6">
+              The web app reports errors to <strong>Sentry</strong>, on Sentry&apos;s EU region, so that crashes we would otherwise never hear about get fixed. We configure it not to store your IP address in the error event and to drop the breadcrumbs that would record what you typed or what the app logged. Reports do carry your internal ExpenseMate account ID, so repeated errors can be recognised as one person&apos;s. Error reporting sets no cookie and is not part of the analytics consent choice — which is why the web app&apos;s banner tells you errors are always reported.
             </p>
             <p className="mt-6">
               ExpenseMate Premium subscriptions are sold and billed by <strong>Apple</strong> through the App Store. We use <strong>RevenueCat</strong> to receive and manage your subscription status so the app can unlock Premium features for your account. We do not receive or store your payment-card details; payment is handled entirely by Apple under its own terms.
@@ -243,7 +279,8 @@ export default function PrivacyPolicy() {
               <li><strong>Receipt images (Image):</strong> kept while linked to an expense; deleted when you delete the expense, the group, or your account.</li>
               <li><strong>Technical and server logs:</strong> typically kept for up to 90 days for security, debugging, and abuse-prevention purposes.</li>
               <li><strong>Google Analytics data:</strong> retained for 14 months by default at the GA4 level.</li>
-              <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings. Website analytics is only collected after analytics consent; in-app product analytics is collected to operate and improve the app.</li>
+              <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings. On the marketing website and in the web app it is only collected after you accept analytics; in the iOS app it is collected to operate and improve the app, and you may object at any time under section 11.</li>
+              <li><strong>Error reports (Sentry):</strong> retained for the retention period configured on our Sentry project, after which the events are deleted automatically. They are kept only to diagnose the error they describe.</li>
               <li><strong>Subscription data:</strong> kept while your account exists and for any period required to meet accounting and tax obligations. Payment and card data are handled by Apple, not by us.</li>
               <li><strong>Accounting and tax records:</strong> retained for 10 years in accordance with Luxembourg accounting law where applicable.</li>
             </ul>
@@ -265,7 +302,7 @@ export default function PrivacyPolicy() {
               <li><strong>Withdraw consent</strong> (Art. 7(3)): where processing is based on consent, withdraw it at any time, without affecting the lawfulness of processing carried out before the withdrawal.</li>
             </ul>
             <p className="mt-6">
-              To exercise any of these rights, contact us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>. We will respond within one month of receiving your request.
+              Two of these you can exercise yourself, without asking us: <strong>delete your account</strong> in the iOS app under Settings, or in the web app under Settings, subject to the anonymisation approach explained in section 10; and <strong>withdraw analytics consent</strong> in the web app under Settings → Privacy, or on this website through the &quot;Cookie Settings&quot; link in the footer. For anything else, or if you would rather we did it, contact us at <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>. We will respond within one month of receiving your request.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. Right to Lodge a Complaint</h2>
@@ -295,10 +332,13 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">15. Cookies and Tracking</h2>
             <p className="mt-6">
-              Our website uses cookies and similar tracking technologies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.
+              Our marketing website uses cookies and similar tracking technologies to distinguish you from other visitors. This helps us to provide you with a good experience when you browse the site and also allows us to improve it. You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
             </p>
             <p className="mt-6">
-              You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
+              The <strong>web app</strong> at app.expensemate.app works differently: it sets essentially no cookies of its own and instead uses your browser&apos;s <strong>local and session storage</strong> to keep you signed in, to remember your analytics choice, and to remember whether you prefer light or dark. Browser cookie settings do not govern that storage — you clear it by clearing site data for app.expensemate.app — and analytics can be switched off at any time in the web app under Settings → Privacy. Because the marketing website and the web app are separate origins, a choice made on one is not carried over to the other.
+            </p>
+            <p className="mt-6">
+              Our <Link href="/cookies" className="text-primary hover:text-primary/80">Cookie Policy</Link> covers both and lists the individual keys.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">16. Changes to the Privacy Policy</h2>
