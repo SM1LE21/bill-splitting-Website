@@ -162,8 +162,8 @@ export default function ExportExpensesExcel() {
             .
           </p>
           <p className="mt-6 text-sm text-gray-500">
-            ExpenseMate is an iPhone app made by TK MEDIA S.à r.l.-S. There is no Android
-            or web version.
+            ExpenseMate is an iPhone app made by TK MEDIA S.à r.l.-S, with a companion web
+            app at app.expensemate.app. There is no Android app.
           </p>
         </div>
       </div>
