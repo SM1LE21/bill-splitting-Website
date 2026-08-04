@@ -83,12 +83,14 @@ const roadmapData = [
   {
     phase: "Q3 2026",
     milestone: "ExpenseMate Web",
-    date: "Target: August 2026",
+    date: "Released August 2026",
     features: [
-      "Desktop-optimized version with full expense management",
-      "Custom dashboards for better overview",
-      "Perfect for laptops & shared desktops"
-    ]
+      "A companion to the iOS app — your groups, expenses and balances in any browser",
+      "A cross-group dashboard, built for a bigger screen",
+      "PDF and CSV reports straight from the browser",
+      "Receipt scanning stays on iOS for now, and Premium is bought in the iOS app"
+    ],
+    status: "completed"
   },
   {
     phase: "Q3 2026",
