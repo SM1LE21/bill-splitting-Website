@@ -36,7 +36,7 @@ const releaseNotes: VersionNote[] = [
       },
       {
         type: 'feature',
-        description: 'Group reports export as PDF or CSV straight from the browser, with the same periods you get in the app.'
+        description: 'Group reports export as PDF or CSV straight from the browser, with the same periods you get in the app. Export is a Premium feature on the web, exactly as it is on iOS.'
       },
       {
         type: 'improvement',
