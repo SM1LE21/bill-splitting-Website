@@ -36,19 +36,27 @@ const application = {
   '@type': 'SoftwareApplication',
   name: 'ExpenseMate',
   applicationCategory: 'FinanceApplication',
-  operatingSystem: 'iOS',
+  // The native app is iOS-only; the web app at app.expensemate.app runs anywhere a
+  // browser does. schema.org takes a comma-separated list here, and "Android" is
+  // deliberately absent — there is no Android app.
+  operatingSystem: 'iOS, Web browser',
+  browserRequirements: 'Requires a modern browser with JavaScript enabled',
   url: SITE_URL,
   description:
     'Snap a photo of your receipt and let ExpenseMate automatically itemise and split expenses with friends, roommates, and travel buddies.',
   image: `${SITE_URL}/images/og-image.jpg`,
   downloadUrl: APP_STORE_URL,
   installUrl: APP_STORE_URL,
-  // Price of the download itself, which is free. Premium is an in-app purchase and is
-  // deliberately not modelled here — an offer price would read as the app's cost.
+  // Free to download, with Premium as an in-app purchase at EUR 2.99/month or
+  // EUR 24.99/year. A bare price of 0 stopped being true when Premium launched, so the
+  // range is modelled instead. No offer URL: Premium is bought in the iOS app and there
+  // is no web purchase path to point at.
   offers: {
-    '@type': 'Offer',
-    price: '0',
+    '@type': 'AggregateOffer',
     priceCurrency: 'EUR',
+    lowPrice: '0',
+    highPrice: '24.99',
+    offerCount: 3,
   },
   publisher: {
     '@id': `${SITE_URL}/#organization`,
