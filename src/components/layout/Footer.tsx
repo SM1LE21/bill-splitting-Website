@@ -88,7 +88,8 @@ export default function Footer({ minimal = false }: FooterProps) {
               <div>
                 <p className="text-sm font-semibold text-gray-900">Get the app</p>
                 <p className="mt-1 text-sm text-gray-600">
-                  ExpenseMate is available on iOS. Android is coming soon.
+                  ExpenseMate is available on iOS, and also in your browser at
+                  app.expensemate.app. Android is coming soon.
                 </p>
               </div>
               <a
