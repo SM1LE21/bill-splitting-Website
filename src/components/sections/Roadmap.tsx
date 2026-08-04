@@ -150,7 +150,7 @@ export default function Roadmap() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            All your expenses, one home. 2026 brings Android support, web access, and powerful new features.
+            All your expenses, one home. Web access is here, Android support is on the way, and there is more to come in 2026.
           </motion.p>
           <motion.div
             className="mt-4"
