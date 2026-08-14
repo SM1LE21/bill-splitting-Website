@@ -105,6 +105,18 @@ const roadmapData = [
     }
   },
   {
+    phase: "Next",
+    milestone: "1.6 — one release across iOS and web",
+    date: "In planning — no date yet",
+    features: [
+      "The web app moves to 1.6 as well, so iOS and web share one version number",
+      "Smarter custom splitting, based on shares",
+      "Refinements to receipt scanning",
+      "Clearer balances",
+      "General polish on both platforms"
+    ]
+  },
+  {
     phase: "Q3 2026",
     milestone: "Personal Space",
     date: "Target: September 2026",
