@@ -89,7 +89,7 @@ const faqs = [
   {
     question: 'Is ExpenseMate free?',
     answer:
-      'Yes. Splitting bills, scanning receipts (30 per month), joining any number of groups and creating up to two of your own are all free. Premium costs €2.99 a month or €24.99 a year and removes those limits, and adds report export and multi-currency conversion.',
+      'Yes. Splitting bills, scanning receipts (30 per month, on the iPhone or in a browser), joining any number of groups and creating up to two of your own are all free. Premium costs €2.99 a month or €24.99 a year and removes those limits, and adds report export and multi-currency conversion. Premium is bought in the iPhone app.',
   },
   {
     question: 'Does Splitwise limit how many expenses you can add?',
@@ -99,12 +99,12 @@ const faqs = [
   {
     question: 'Is receipt scanning free in Splitwise?',
     answer:
-      'No. Splitwise lists receipt scanning and itemisation as Pro features on both its Pro page and its help centre. In ExpenseMate, scanning and itemisation are on the free plan, capped at 30 scans a month.',
+      'No. Splitwise lists receipt scanning and itemisation as Pro features on both its Pro page and its help centre. In ExpenseMate, scanning and itemisation are on the free plan, capped at 30 scans a month, and they work the same way on the iPhone and in a browser at app.expensemate.app.',
   },
   {
     question: 'Can I use ExpenseMate on Android?',
     answer:
-      'There is no Android app. There is a web app at app.expensemate.app that works in any browser, including on Android, but it is a companion to the iPhone app rather than a replacement: it cannot scan receipts, and Premium can only be bought on iPhone. Splitwise has a full Android app, so for a mixed group it is still the practical choice.',
+      'There is no Android app, but you are not shut out. The web app at app.expensemate.app works in any browser, including on Android, and it scans and itemises receipts exactly as the iPhone app does, in English, German, French, Spanish or Portuguese. You can add it to your home screen. It is still a companion to the iPhone app rather than a replacement: there are no push notifications, and Premium can only be bought on the iPhone. Splitwise has a full Android app, so for a mixed group it remains the more practical choice.',
   },
   {
     question: 'Can I export shared expenses to Excel?',
