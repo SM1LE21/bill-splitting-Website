@@ -67,7 +67,7 @@ const releaseNotes: VersionNote[] = [
       },
       {
         type: 'improvement',
-        description: 'The web app is a companion to the iOS app rather than a replacement for it. Receipt scanning, notifications and Home Screen shortcuts stay on iOS for now, and ExpenseMate Premium is still bought and managed there.'
+        description: 'The web app is a companion to the iOS app rather than a replacement for it. Notifications and Home Screen shortcuts stay on iOS for now, and ExpenseMate Premium is still bought and managed there.'
       }
     ]
   },
