@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
-import { CHECKED_ON, SOURCES } from '@/constants/comparisonSources';
+import { CHECKED_ON, PRO_CHECKED_ON, SOURCES } from '@/constants/comparisonSources';
 
 // PUBLISH GATE: noindex until Apple approves iOS 1.5.0. To publish: remove the robots
 // line below and add '/vs-splitwise' to src/app/sitemap.ts. The page is deliberately
@@ -18,13 +18,21 @@ type Row = { feature: string; mate: string; splitwise: string };
 const rows: Row[] = [
   {
     feature: 'Platforms',
-    mate: 'iPhone, plus a companion web app',
+    mate: 'iPhone, plus a web app in any browser. No Android app',
     splitwise: 'iPhone, Android and web',
   },
   { feature: 'Adding expenses on the free plan', mate: 'No daily limit', splitwise: 'Up to 4 per day' },
   { feature: 'Ads', mate: 'None', splitwise: 'Pro removes ads' },
-  { feature: 'Receipt scanning', mate: 'Free — 30 per month', splitwise: 'Pro only' },
-  { feature: 'Receipt itemisation', mate: 'Free', splitwise: 'Pro only' },
+  {
+    feature: 'Receipt scanning',
+    mate: 'Free — 30 per month, on the iPhone and in the browser',
+    splitwise: 'Pro only',
+  },
+  {
+    feature: 'Receipt itemisation',
+    mate: 'Free, on the iPhone and in the browser',
+    splitwise: 'Pro only',
+  },
   { feature: 'Multi-currency conversion', mate: 'Premium', splitwise: 'Pro only' },
   { feature: 'Charts and spending breakdowns', mate: 'Free', splitwise: 'Pro only' },
   { feature: 'Expense search', mate: 'Free, within a group', splitwise: 'Pro only' },
@@ -147,7 +155,10 @@ export default function VsSplitwise() {
 
           <p className="mt-8 text-sm text-gray-500">
             Every claim about Splitwise on this page links to a page Splitwise owns or to
-            Apple. Nothing here is sourced from third-party blogs. Checked {CHECKED_ON}.
+            Apple. Nothing here is sourced from third-party blogs. Splitwise&apos;s Pro
+            feature list and platform line were last re-read on {PRO_CHECKED_ON}; the App
+            Store rating, the purchase tiers and the review sample below are from{' '}
+            {CHECKED_ON}.
           </p>
 
           <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
@@ -292,8 +303,9 @@ export default function VsSplitwise() {
           </ul>
           <p className="mt-6 text-sm text-gray-500">
             ExpenseMate is made by TK MEDIA S.à r.l.-S. Splitwise is a product of Splitwise
-            Inc. and is not affiliated with us. Figures were correct on {CHECKED_ON}; both
-            products change, so check the linked pages before relying on any of it.
+            Inc. and is not affiliated with us. Figures were correct on {CHECKED_ON}, and
+            the Pro feature list on {PRO_CHECKED_ON}; both products change, so check the
+            linked pages before relying on any of it.
           </p>
         </div>
       </div>
