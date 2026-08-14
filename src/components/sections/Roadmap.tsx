@@ -82,7 +82,7 @@ const roadmapData = [
   },
   {
     phase: "Q3 2026",
-    milestone: "ExpenseMate Web",
+    milestone: "ExpenseMate Web v1.1",
     date: "Released August 2026",
     features: [
       "A companion to the iOS app — your groups, expenses and balances in any browser",
@@ -92,7 +92,12 @@ const roadmapData = [
       "PDF and CSV reports straight from the browser",
       "Premium is still bought in the iOS app"
     ],
-    status: "completed"
+    status: "completed",
+    link: {
+      text: "Live now — sign in with the same account you use on your iPhone.",
+      href: "https://app.expensemate.app",
+      label: "Open the web app"
+    }
   },
   {
     phase: "Q3 2026",
@@ -152,7 +157,7 @@ export default function Roadmap() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            All your expenses, one home. Web access is here, Android support is on the way, and there is more to come in 2026.
+            All your expenses, one home. ExpenseMate Web v1.1 is live in any browser, Android support is on the way, and there is more to come in 2026.
           </motion.p>
           <motion.div
             className="mt-4"
@@ -265,6 +270,19 @@ export default function Roadmap() {
                     </li>
                   ))}
                 </ul>
+                {item.link && (
+                  <div className="mt-5">
+                    <p className="text-sm text-gray-600">{item.link.text}</p>
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80"
+                    >
+                      {item.link.label} <span aria-hidden="true" className="ml-1">→</span>
+                    </a>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
