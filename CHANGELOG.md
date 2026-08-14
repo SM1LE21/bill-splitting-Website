@@ -2,6 +2,14 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-14 — Web v1.1 launch lockstep (branch `web-v1-1-lockstep`)
+
+- **Web 1.1 release-notes entry** (14th August 2026, `Web` platform): receipt scanning in the browser — drag, paste, file picker or phone camera — five languages, profile pictures with crop, and an honest closing bullet that keeps notifications, Home Screen shortcuts and the purchase path on iOS. The **Web 1.0** entry above it stopped saying scanning is iOS-only; the **Roadmap** web card gained browser scanning and the five languages. "Companion to the iOS app" is kept everywhere — there is still no web purchase path (web spec §16.6).
+- **`/vs-splitwise` rebuilt around the new story.** Scanning and itemisation are free at ExpenseMate *and now free in the browser*, still Pro-only at Splitwise. The Android concession **stays** but no longer rests on the web app being unable to scan: it now rests on what actually survives — no Play Store listing, no push notifications, no way to pay outside the iPhone app. `it cannot scan receipts` appeared twice, once visibly and once inside the `FAQPage` JSON-LD; both are gone.
+- **Splitwise's claims were re-verified, not assumed.** All ten Pro-only features still read verbatim off `splitwise.com/pro`, and `splitwise.com` still says "Free for iPhone, Android, and web". New `PRO_CHECKED_ON` (14 August 2026) records that; **`CHECKED_ON` deliberately stays 31 July** because the App Store rating, the purchase tiers and the 500-review sample were not re-sampled.
+- **Terms §3 said "Receipt scanning and data extraction are currently available in the App only"** — false as of this launch. Corrected to the iOS-only features that remain, in an isolated commit, with no `policyDates` bump (no term or obligation changed). JSON-LD now declares `inLanguage` for the five locales; it is the only machine-readable description of the product anywhere.
+- `npm run lint` clean, `npm run build` clean, 18 routes. Emitted HTML verified free of every corrected sentence. **Branch only — the owner merges `web-v1-1-lockstep` to `main` to launch.**
+
 ## 2026-08-04 16:40 — Copy corrections for the web launch
 
 - **Removed every "there is no web version" claim.** `/vs-splitwise` said it twice — once visibly and once inside the `FAQPage` JSON-LD that search engines and assistants read — and `/export-expenses-excel` closed on it. The Android concession is unchanged: there is still no Android app, and that still decides a mixed group. Also fixed on `/vs-splitwise`: the platform row, the Splitwise strength, the short answer, and "you want to check balances on a computer" as a reason to choose Splitwise.
