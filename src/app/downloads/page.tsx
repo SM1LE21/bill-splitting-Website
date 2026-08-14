@@ -5,6 +5,8 @@ import { getAvailableVersions, getLatestVersion, Version } from '@/utils/version
 import Layout from '@/components/layout/Layout';
 import TrackedDownloadLink from '@/components/ui/TrackedDownloadLink';
 
+const WEB_APP_URL = 'https://app.expensemate.app';
+
 export const metadata: Metadata = {
   title: 'Downloads - ExpenseMate',
   description: 'Download different versions of ExpenseMate for Android and other platforms.',
@@ -53,6 +55,26 @@ export default async function DownloadsPage() {
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Download ExpenseMate for Android and start splitting bills with friends
             </p>
+          </div>
+
+          <div className="mb-12 rounded-lg border border-primary-200 bg-primary-50 p-6 text-center">
+            <p className="text-base font-semibold text-primary-900">
+              Or use it in your browser
+            </p>
+            <p className="mt-2 text-sm text-primary-800">
+              The Android build below is a closed beta. ExpenseMate Web is live and runs
+              in any Android browser today — the same account, receipt scanning included,
+              nothing to install. It is a companion to the iOS app rather than the native
+              Android app: no push notifications, and Premium is bought in the iOS app.
+            </p>
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900"
+            >
+              Open the web app <span aria-hidden="true" className="ml-1">→</span>
+            </a>
           </div>
 
           {versions.length === 0 ? (
