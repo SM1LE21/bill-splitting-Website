@@ -40,6 +40,10 @@ const releaseNotes: VersionNote[] = [
       },
       {
         type: 'improvement',
+        description: 'Splitting an itemised receipt now works one way: per-person shares. Tap someone\'s name to put them on an item, or use the stepper if they had more than one — two coffees on the same line, say. After a scan everyone starts on one share each, so an even split is already done.'
+      },
+      {
+        type: 'improvement',
         description: 'With scanning on the web, the browser version now does nearly everything the iOS app does. Notifications and Home Screen shortcuts are still iOS features, and ExpenseMate Premium is still bought and managed in the iOS app.'
       }
     ]
