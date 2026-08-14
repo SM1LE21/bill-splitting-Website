@@ -87,8 +87,10 @@ const roadmapData = [
     features: [
       "A companion to the iOS app — your groups, expenses and balances in any browser",
       "A cross-group dashboard, built for a bigger screen",
+      "Receipt scanning in the browser — 30 free scans a month, the same as the app",
+      "Five languages: English, German, French, Spanish and Portuguese",
       "PDF and CSV reports straight from the browser",
-      "Receipt scanning stays on iOS for now, and Premium is bought in the iOS app"
+      "Premium is still bought in the iOS app"
     ],
     status: "completed"
   },
