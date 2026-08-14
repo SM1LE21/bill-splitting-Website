@@ -7,6 +7,7 @@ import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
 import { trackEvent } from '@/utils/analytics';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
+const WEB_APP_URL = 'https://app.expensemate.app';
 
 interface FooterProps {
   minimal?: boolean;
@@ -88,8 +89,16 @@ export default function Footer({ minimal = false }: FooterProps) {
               <div>
                 <p className="text-sm font-semibold text-gray-900">Get the app</p>
                 <p className="mt-1 text-sm text-gray-600">
-                  ExpenseMate is available on iOS, and also in your browser at
-                  app.expensemate.app. Android is coming soon.
+                  ExpenseMate is available on iOS, and also in your browser at{' '}
+                  <a
+                    href={WEB_APP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-primary hover:text-primary/80"
+                  >
+                    app.expensemate.app
+                  </a>
+                  . Android is coming soon.
                 </p>
               </div>
               <a

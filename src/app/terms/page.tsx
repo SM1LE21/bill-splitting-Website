@@ -55,7 +55,7 @@ export default function TermsOfService() {
               <li>Group expense management</li>
             </ul>
             <p className="mt-6">
-              <strong>Features vary by platform.</strong> Receipt scanning and data extraction are currently available in the App only. The Web App is a companion to the App rather than a replacement for it, and ExpenseMate Premium is purchased and managed through the App Store in the App — there is no purchase path in the Web App. We may add, change or remove features on any platform.
+              <strong>Features vary by platform.</strong> Push notifications and Home Screen shortcuts are currently available in the App only. The Web App is a companion to the App rather than a replacement for it, and ExpenseMate Premium is purchased and managed through the App Store in the App — there is no purchase path in the Web App. We may add, change or remove features on any platform.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. User Accounts</h2>

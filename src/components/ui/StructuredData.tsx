@@ -41,6 +41,10 @@ const application = {
   // deliberately absent — there is no Android app.
   operatingSystem: 'iOS, Web browser',
   browserRequirements: 'Requires a modern browser with JavaScript enabled',
+  // Both the iOS app and the web app ship these five. This node is the only
+  // machine-readable description of the product anywhere — app.expensemate.app
+  // publishes no JSON-LD and is noindex — so nothing else states the languages.
+  inLanguage: ['en', 'de', 'fr', 'es', 'pt'],
   url: SITE_URL,
   description:
     'Snap a photo of your receipt and let ExpenseMate automatically itemise and split expenses with friends, roommates, and travel buddies.',

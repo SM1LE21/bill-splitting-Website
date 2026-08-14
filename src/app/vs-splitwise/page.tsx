@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
-import { CHECKED_ON, SOURCES } from '@/constants/comparisonSources';
+import { CHECKED_ON, PRO_CHECKED_ON, SOURCES } from '@/constants/comparisonSources';
 
 // PUBLISH GATE: noindex until Apple approves iOS 1.5.0. To publish: remove the robots
 // line below and add '/vs-splitwise' to src/app/sitemap.ts. The page is deliberately
@@ -18,13 +18,21 @@ type Row = { feature: string; mate: string; splitwise: string };
 const rows: Row[] = [
   {
     feature: 'Platforms',
-    mate: 'iPhone, plus a companion web app',
+    mate: 'iPhone, plus a web app in any browser. No Android app',
     splitwise: 'iPhone, Android and web',
   },
   { feature: 'Adding expenses on the free plan', mate: 'No daily limit', splitwise: 'Up to 4 per day' },
   { feature: 'Ads', mate: 'None', splitwise: 'Pro removes ads' },
-  { feature: 'Receipt scanning', mate: 'Free — 30 per month', splitwise: 'Pro only' },
-  { feature: 'Receipt itemisation', mate: 'Free', splitwise: 'Pro only' },
+  {
+    feature: 'Receipt scanning',
+    mate: 'Free — 30 per month, on the iPhone and in the browser',
+    splitwise: 'Pro only',
+  },
+  {
+    feature: 'Receipt itemisation',
+    mate: 'Free, on the iPhone and in the browser',
+    splitwise: 'Pro only',
+  },
   { feature: 'Multi-currency conversion', mate: 'Premium', splitwise: 'Pro only' },
   { feature: 'Charts and spending breakdowns', mate: 'Free', splitwise: 'Pro only' },
   { feature: 'Expense search', mate: 'Free, within a group', splitwise: 'Pro only' },
@@ -40,7 +48,7 @@ const rows: Row[] = [
 ];
 
 const splitwiseStrengths = [
-  'It has a full Android app. ExpenseMate does not — there is an iPhone app and a companion web app, and nothing on Android. For a group where even one person is not on an iPhone, that decides it.',
+  'It has a full Android app on the Play Store. ExpenseMate does not — there is an iPhone app and a web app that runs in any browser, and nothing native on Android. The web app narrows that gap a long way now that it scans receipts too, and it can be added to an Android home screen, but there is no Play Store listing and no push notifications. For a group where even one person is not on an iPhone, Splitwise is still the lower-friction answer.',
   'It imports transactions from a connected credit or debit card, so expenses can be split from real purchases rather than typed in. ExpenseMate has nothing like it.',
   'It settles up through payment rails — Venmo since 2013, and bank transfers through a Tink/Visa partnership since 2024.',
   'It has expense search, charts and default splits, plus offline mode, recurring expenses and 100+ currencies.',
@@ -48,7 +56,7 @@ const splitwiseStrengths = [
 ];
 
 const limitations = [
-  'The only ExpenseMate app is on iPhone. There is no Android app. There is a web app at app.expensemate.app, but it is a companion to the iPhone app rather than a replacement: it cannot scan receipts, and Premium can only be bought on iPhone.',
+  'The only ExpenseMate app is on iPhone. There is no Android app. The web app at app.expensemate.app runs in any browser and does nearly everything the iPhone app does, receipt scanning included, but it is still a companion rather than a replacement: there are no push notifications, and Premium can only be bought on the iPhone, so a web-only user who wants to lift the free-plan limits has no way to pay.',
   'There is no bank or card import. Expense search works inside a group, but there is no search across all your groups at once.',
   'It is small and young. It is built by one developer, and it has nowhere near the track record Splitwise has.',
   'The free plan lets you create two groups and shows the last 90 days. Joining groups you are invited to is unlimited, but if you organise a lot of separate trips you will hit the group limit.',
@@ -81,7 +89,7 @@ const faqs = [
   {
     question: 'Is ExpenseMate free?',
     answer:
-      'Yes. Splitting bills, scanning receipts (30 per month), joining any number of groups and creating up to two of your own are all free. Premium costs €2.99 a month or €24.99 a year and removes those limits, and adds report export and multi-currency conversion.',
+      'Yes. Splitting bills, scanning receipts (30 per month, on the iPhone or in a browser), joining any number of groups and creating up to two of your own are all free. Premium costs €2.99 a month or €24.99 a year and removes those limits, and adds report export and multi-currency conversion. Premium is bought in the iPhone app.',
   },
   {
     question: 'Does Splitwise limit how many expenses you can add?',
@@ -91,12 +99,12 @@ const faqs = [
   {
     question: 'Is receipt scanning free in Splitwise?',
     answer:
-      'No. Splitwise lists receipt scanning and itemisation as Pro features on both its Pro page and its help centre. In ExpenseMate, scanning and itemisation are on the free plan, capped at 30 scans a month.',
+      'No. Splitwise lists receipt scanning and itemisation as Pro features on both its Pro page and its help centre. In ExpenseMate, scanning and itemisation are on the free plan, capped at 30 scans a month, and they work the same way on the iPhone and in a browser at app.expensemate.app.',
   },
   {
     question: 'Can I use ExpenseMate on Android?',
     answer:
-      'There is no Android app. There is a web app at app.expensemate.app that works in any browser, including on Android, but it is a companion to the iPhone app rather than a replacement: it cannot scan receipts, and Premium can only be bought on iPhone. Splitwise has a full Android app, so for a mixed group it is still the practical choice.',
+      'There is no Android app, but you are not shut out. The web app at app.expensemate.app works in any browser, including on Android, and it scans and itemises receipts exactly as the iPhone app does, in English, German, French, Spanish or Portuguese. You can add it to your home screen. It is still a companion to the iPhone app rather than a replacement: there are no push notifications, and Premium can only be bought on the iPhone. Splitwise has a full Android app, so for a mixed group it remains the more practical choice.',
   },
   {
     question: 'Can I export shared expenses to Excel?',
@@ -131,23 +139,28 @@ export default function VsSplitwise() {
           <div className="mt-8 rounded-2xl border-l-4 border-primary bg-primary/5 p-6">
             <p className="text-lg font-semibold text-gray-900">The short answer</p>
             <p className="mt-3">
-              If anyone in your group uses Android, use Splitwise. The only ExpenseMate
-              app is on iPhone — there is a companion web app, but nothing on Android —
-              and for most groups that settles it on its own.
+              If anyone in your group uses Android, Splitwise is still the safer choice.
+              There is no ExpenseMate app on Android. An Android user is not shut out —
+              the web app at app.expensemate.app runs in any browser, scans receipts, and
+              can be added to a home screen — but there is no Play Store listing and no
+              push notifications, and for a lot of groups that settles it on its own.
             </p>
             <p className="mt-3">
-              If everyone is on an iPhone and what you actually split is itemised receipts
-              — the weekly shop, a big supermarket run, a restaurant bill where nobody had
-              the same thing — ExpenseMate scans and itemises receipts on its free plan,
-              and Splitwise keeps both behind Pro. Splitwise is the broader, older, more
-              widely available product. ExpenseMate is narrower and does receipt splitting
-              without a daily cap or ads.
+              If what you actually split is itemised receipts — the weekly shop, a big
+              supermarket run, a restaurant bill where nobody had the same thing —
+              ExpenseMate scans and itemises them on its free plan, on the iPhone and in
+              the browser alike, and Splitwise keeps both behind Pro. Splitwise is the
+              broader, older, more widely available product. ExpenseMate is narrower and
+              does receipt splitting without a daily cap or ads.
             </p>
           </div>
 
           <p className="mt-8 text-sm text-gray-500">
             Every claim about Splitwise on this page links to a page Splitwise owns or to
-            Apple. Nothing here is sourced from third-party blogs. Checked {CHECKED_ON}.
+            Apple. Nothing here is sourced from third-party blogs. Splitwise&apos;s Pro
+            feature list and platform line were last re-read on {PRO_CHECKED_ON}; the App
+            Store rating, the purchase tiers and the review sample below are from{' '}
+            {CHECKED_ON}.
           </p>
 
           <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
@@ -236,7 +249,7 @@ export default function VsSplitwise() {
             <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900">Choose ExpenseMate</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
-                <li>Everyone is on an iPhone</li>
+                <li>Everyone has an iPhone, or is happy working in a browser</li>
                 <li>You split itemised receipts, not just round totals</li>
                 <li>You add a lot of expenses at once and dislike a daily cap</li>
                 <li>You would rather not see ads</li>
@@ -292,8 +305,9 @@ export default function VsSplitwise() {
           </ul>
           <p className="mt-6 text-sm text-gray-500">
             ExpenseMate is made by TK MEDIA S.à r.l.-S. Splitwise is a product of Splitwise
-            Inc. and is not affiliated with us. Figures were correct on {CHECKED_ON}; both
-            products change, so check the linked pages before relying on any of it.
+            Inc. and is not affiliated with us. Figures were correct on {CHECKED_ON}, and
+            the Pro feature list on {PRO_CHECKED_ON}; both products change, so check the
+            linked pages before relying on any of it.
           </p>
         </div>
       </div>

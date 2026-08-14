@@ -13,7 +13,8 @@ const faqs = [
   {
     question: 'When is the Android version coming?',
     answer:
-      'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time.',
+      'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time. In the meantime you are not shut out: the full ExpenseMate web app runs in any Android browser at app.expensemate.app, receipt scanning included, on the same account. It is a companion to the iPhone app rather than the native Android app — there are no push notifications, and Premium is bought in the iOS app.',
+    link: { href: 'https://app.expensemate.app', label: 'Open the web app' },
   },
   {
     question: 'Are there any new features planned?',
@@ -120,6 +121,16 @@ export default function DeveloperStory() {
                 <p className="mt-3 text-base leading-7 text-gray-600">
                   {faq.answer}
                 </p>
+                {faq.link && (
+                  <a
+                    href={faq.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80"
+                  >
+                    {faq.link.label} <span aria-hidden="true" className="ml-1">→</span>
+                  </a>
+                )}
               </details>
             ))}
           </div>

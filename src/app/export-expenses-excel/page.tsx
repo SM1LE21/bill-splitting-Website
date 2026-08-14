@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const WEB_APP_URL = 'https://app.expensemate.app';
+
 const columns = [
   ['Date', 'When the expense was recorded'],
   ['Type', 'Whether the row is an expense or a settlement'],
@@ -37,12 +39,17 @@ const faqs = [
   {
     question: 'Is exporting free?',
     answer:
-      'Export is part of ExpenseMate Premium, which costs €2.99 a month or €24.99 a year. Splitting bills, scanning receipts and settling up are free.',
+      'Export is part of ExpenseMate Premium, which costs €2.99 a month or €24.99 a year. Splitting bills, scanning receipts and settling up are free. Premium is the same subscription on the iPhone and in the web app, and it is bought and managed in the iOS app.',
+  },
+  {
+    question: 'Can I export from a computer?',
+    answer:
+      'Yes. The ExpenseMate web app at app.expensemate.app does the same export in any browser, with the same periods and the same CSV and PDF files, so you can go straight from the group to your spreadsheet without moving a file off your phone. It is the same Premium subscription and the same all-or-nothing gate as on iOS.',
   },
   {
     question: 'Where does the file go?',
     answer:
-      'The report is generated on your iPhone and handed to the normal iOS share sheet, so you can put it in Files, email it, drop it into a chat, or send it straight to another app. It is not generated on a server.',
+      'On the iPhone the report is generated on the device and handed to the normal iOS share sheet, so you can put it in Files, email it, drop it into a chat, or send it straight to another app. In the browser it is generated in the browser and downloaded to your computer. Either way it is not generated on a server.',
   },
   {
     question: 'Which app opens the CSV?',
@@ -80,7 +87,17 @@ export default function ExportExpensesExcel() {
               ExpenseMate exports any group as a CSV file, which opens straight in Excel,
               Numbers or Google Sheets. Open the group, go to Reports, pick a period, and
               choose CSV. Pick PDF instead if you want something to read or send on rather
-              than something to calculate with. Export is a Premium feature.
+              than something to calculate with. You can do this on the iPhone or in your
+              browser at{' '}
+              <a
+                href={WEB_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                app.expensemate.app
+              </a>
+              . Export is a Premium feature either way.
             </p>
           </div>
 
@@ -95,8 +112,9 @@ export default function ExportExpensesExcel() {
             </li>
             <li>Choose CSV for a spreadsheet, or PDF for a document.</li>
             <li>
-              The iOS share sheet opens. Save it to Files, mail it to yourself, or send it
-              to whoever is doing the maths.
+              On the iPhone the iOS share sheet opens — save it to Files, mail it to
+              yourself, or send it to whoever is doing the maths. In the browser the file
+              downloads to your computer like any other download.
             </li>
           </ol>
 
@@ -163,7 +181,16 @@ export default function ExportExpensesExcel() {
           </p>
           <p className="mt-6 text-sm text-gray-500">
             ExpenseMate is an iPhone app made by TK MEDIA S.à r.l.-S, with a companion web
-            app at app.expensemate.app. There is no Android app.
+            app at{' '}
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              app.expensemate.app
+            </a>
+            . There is no Android app.
           </p>
         </div>
       </div>

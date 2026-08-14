@@ -3,6 +3,13 @@
 // contradict each other. Re-check these before changing the date.
 export const CHECKED_ON = '31 July 2026';
 
+// Splitwise's Pro feature list and its platform line were re-opened and re-read on this
+// date; every Pro-only claim on the comparison page still matched splitwise.com/pro
+// verbatim, and splitwise.com still reads "Free for iPhone, Android, and web".
+// Deliberately a separate date from CHECKED_ON: the App Store rating count, the in-app
+// purchase tiers and the 500-review sample were NOT re-sampled and keep their July date.
+export const PRO_CHECKED_ON = '14 August 2026';
+
 export const SOURCES = [
   {
     label: 'Splitwise — Pro features and pricing page',

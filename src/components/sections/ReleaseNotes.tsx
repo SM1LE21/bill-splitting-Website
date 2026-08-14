@@ -22,6 +22,33 @@ interface VersionNote {
 // change, do it elsewhere (commit history, PR description).
 const releaseNotes: VersionNote[] = [
   {
+    version: '1.1',
+    date: '14th August 2026',
+    platform: 'Web',
+    changes: [
+      {
+        type: 'feature',
+        description: 'Receipt scanning, now in your browser. Drag a photo in, paste one from the clipboard, pick a file, or take a picture with your phone — ExpenseMate reads the receipt and fills in the items, the total and the date, ready to split. Same allowance as the iOS app: 30 scans a month on the free plan, unlimited with Premium.'
+      },
+      {
+        type: 'feature',
+        description: 'Five languages on the web — English, German, French, Spanish and Portuguese, the same five the iOS app speaks. It picks one from your browser settings, and you can change it any time from Settings.'
+      },
+      {
+        type: 'feature',
+        description: 'Profile pictures. Upload a photo, crop it to fit, and it appears next to your name everywhere in the app.'
+      },
+      {
+        type: 'improvement',
+        description: 'Splitting an itemised receipt now works one way: per-person shares. Tap someone\'s name to put them on an item, or use the stepper if they had more than one — two coffees on the same line, say. After a scan everyone starts on one share each, so an even split is already done.'
+      },
+      {
+        type: 'improvement',
+        description: 'With scanning on the web, the browser version now does nearly everything the iOS app does. Notifications and Home Screen shortcuts are still iOS features, and ExpenseMate Premium is still bought and managed in the iOS app.'
+      }
+    ]
+  },
+  {
     version: '1.0',
     date: 'August 2026',
     platform: 'Web',
@@ -44,7 +71,7 @@ const releaseNotes: VersionNote[] = [
       },
       {
         type: 'improvement',
-        description: 'The web app is a companion to the iOS app rather than a replacement for it. Receipt scanning, notifications and Home Screen shortcuts stay on iOS for now, and ExpenseMate Premium is still bought and managed there.'
+        description: 'The web app is a companion to the iOS app rather than a replacement for it. Notifications and Home Screen shortcuts stay on iOS for now, and ExpenseMate Premium is still bought and managed there.'
       }
     ]
   },

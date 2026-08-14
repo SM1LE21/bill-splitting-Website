@@ -39,7 +39,12 @@ const roadmapData = [
       "Feature-parity with current iOS"
     ],
     status: "delayed",
-    note: "Currently in closed beta. Want to test it early? Get in touch."
+    note: "Currently in closed beta. Want to test it early? Get in touch.",
+    link: {
+      text: "Don't want to wait? The full ExpenseMate web app already runs in any Android browser today — same account, receipt scanning included. It is the web app rather than the native Android app: no push notifications, and Premium is still bought in the iOS app.",
+      href: "https://app.expensemate.app",
+      label: "Open the web app on Android"
+    }
   },
   {
     phase: "Q1 2026",
@@ -82,15 +87,34 @@ const roadmapData = [
   },
   {
     phase: "Q3 2026",
-    milestone: "ExpenseMate Web",
+    milestone: "ExpenseMate Web v1.1",
     date: "Released August 2026",
     features: [
       "A companion to the iOS app — your groups, expenses and balances in any browser",
       "A cross-group dashboard, built for a bigger screen",
+      "Receipt scanning in the browser — 30 free scans a month, the same as the app",
+      "Five languages: English, German, French, Spanish and Portuguese",
       "PDF and CSV reports straight from the browser",
-      "Receipt scanning stays on iOS for now, and Premium is bought in the iOS app"
+      "Premium is still bought in the iOS app"
     ],
-    status: "completed"
+    status: "completed",
+    link: {
+      text: "Live now — sign in with the same account you use on your iPhone.",
+      href: "https://app.expensemate.app",
+      label: "Open the web app"
+    }
+  },
+  {
+    phase: "Next",
+    milestone: "1.6 — one release across iOS and web",
+    date: "In planning — no date yet",
+    features: [
+      "The web app moves to 1.6 as well, so iOS and web share one version number",
+      "Smarter custom splitting, based on shares",
+      "Refinements to receipt scanning",
+      "Clearer balances",
+      "General polish on both platforms"
+    ]
   },
   {
     phase: "Q3 2026",
@@ -150,7 +174,7 @@ export default function Roadmap() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            All your expenses, one home. Web access is here, Android support is on the way, and there is more to come in 2026.
+            All your expenses, one home. ExpenseMate Web v1.1 is live in any browser, Android support is on the way, and there is more to come in 2026.
           </motion.p>
           <motion.div
             className="mt-4"
@@ -263,6 +287,19 @@ export default function Roadmap() {
                     </li>
                   ))}
                 </ul>
+                {item.link && (
+                  <div className="mt-5">
+                    <p className="text-sm text-gray-600">{item.link.text}</p>
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80"
+                    >
+                      {item.link.label} <span aria-hidden="true" className="ml-1">→</span>
+                    </a>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
