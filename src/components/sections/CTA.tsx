@@ -6,6 +6,7 @@ import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { trackEvent } from '@/utils/analytics';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
+const WEB_APP_URL = 'https://app.expensemate.app';
 
 export default function CTA() {
   return (
@@ -67,6 +68,25 @@ export default function CTA() {
                 </span>
               </div>
             </div>
+            <p className="mx-auto mt-6 max-w-lg text-sm leading-6 text-gray-400">
+              No iPhone? ExpenseMate Web runs in any browser, Android included.{' '}
+              <a
+                href={WEB_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent('cta_clicked', {
+                    location: 'footer_cta',
+                    destination: 'web_app',
+                    label: 'Open the web app',
+                  });
+                }}
+                className="font-semibold text-white underline underline-offset-4 hover:text-primary"
+              >
+                Open the web app
+              </a>
+              .
+            </p>
           </motion.div>
         </div>
       </div>
