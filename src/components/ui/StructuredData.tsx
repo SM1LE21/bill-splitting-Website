@@ -51,16 +51,17 @@ const application = {
   image: `${SITE_URL}/images/og-image.jpg`,
   downloadUrl: APP_STORE_URL,
   installUrl: APP_STORE_URL,
-  // Free to download, with Premium as an in-app purchase at EUR 2.99/month or
-  // EUR 24.99/year. A bare price of 0 stopped being true when Premium launched, so the
-  // range is modelled instead. No offer URL: Premium is bought in the iOS app and there
-  // is no web purchase path to point at.
+  // Free to use, with Premium at EUR 2.99/month or EUR 24.99/year, VAT included. A bare
+  // price of 0 stopped being true when Premium launched, so the range is modelled
+  // instead. The offer URL is the web checkout — the other way to buy Premium is inside
+  // the iOS app, which has no URL to point at.
   offers: {
     '@type': 'AggregateOffer',
     priceCurrency: 'EUR',
     lowPrice: '0',
     highPrice: '24.99',
     offerCount: 3,
+    url: 'https://app.expensemate.app/upgrade',
   },
   publisher: {
     '@id': `${SITE_URL}/#organization`,
