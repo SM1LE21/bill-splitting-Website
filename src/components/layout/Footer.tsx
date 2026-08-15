@@ -20,6 +20,7 @@ const productLinks: FooterLink[] = [
   { name: 'How it Works', href: '#how-it-works' },
   { name: 'Benefits', href: '#benefits' },
   { name: 'Roadmap', href: '#roadmap' },
+  { name: 'Pricing', href: '/pricing' },
 ];
 
 const resourceLinks: FooterLink[] = [
@@ -70,8 +71,9 @@ export default function Footer({ minimal = false }: FooterProps) {
 
   // Product links point at homepage sections. Off the homepage a bare "#features"
   // resolves against the current path and goes nowhere, so send it home instead.
+  // Real routes stay untouched — prefixing "/pricing" would emit "//pricing".
   const resolvedProductLinks = productLinks.map((link) =>
-    isHome ? link : { ...link, href: `/${link.href}` }
+    isHome || !link.href.startsWith('#') ? link : { ...link, href: `/${link.href}` }
   );
   const trackAppStoreClick = (location: string) => {
     trackEvent('app_store_clicked', {
