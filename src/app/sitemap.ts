@@ -14,6 +14,10 @@ const policyDate = (value: string) => new Date(`${value} UTC`);
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/`, changeFrequency: 'monthly', priority: 1 },
+    // SEO landing pages, published 2026-08-15. No lastModified: their content tracks
+    // Splitwise's own pages and the app's feature set, so no single honest date exists.
+    { url: `${SITE_URL}/vs-splitwise`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/export-expenses-excel`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/release-notes`, changeFrequency: 'monthly', priority: 0.6 },
     {
       url: `${SITE_URL}/privacy`,

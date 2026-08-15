@@ -3,14 +3,15 @@ import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import { CHECKED_ON, PRO_CHECKED_ON, SOURCES } from '@/constants/comparisonSources';
 
-// PUBLISH GATE: noindex until Apple approves iOS 1.5.0. To publish: remove the robots
-// line below and add '/vs-splitwise' to src/app/sitemap.ts. The page is deliberately
-// orphaned — no nav or footer link — so it is reachable by search, not by browsing.
+// PUBLISHED 2026-08-15 by owner decision. The publish gate (noindex until Apple approves
+// iOS 1.5.0) was met on 2026-08-12; the Batch D funnel condition is deliberately waived —
+// analytics arrive later and indexing is not held for them. Listed in src/app/sitemap.ts.
+// Still orphaned on purpose — no nav or footer link — so it is reachable by search, not
+// by browsing.
 export const metadata: Metadata = {
   title: 'ExpenseMate vs Splitwise — an honest comparison',
   description:
     'A sourced side-by-side comparison of ExpenseMate and Splitwise, including what Splitwise does better and where ExpenseMate falls short.',
-  robots: { index: false, follow: false },
 };
 
 type Row = { feature: string; mate: string; splitwise: string };

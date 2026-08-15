@@ -2,14 +2,13 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 
-// PUBLISH GATE: noindex until Apple approves iOS 1.5.0. To publish: remove the robots
-// line below and add '/export-expenses-excel' to src/app/sitemap.ts. Orphaned on
-// purpose — no nav or footer link.
+// PUBLISHED 2026-08-15 by owner decision. The publish gate (noindex until Apple approves
+// iOS 1.5.0) was met on 2026-08-12; the Batch D funnel condition is deliberately waived.
+// Listed in src/app/sitemap.ts. Orphaned on purpose — no nav or footer link.
 export const metadata: Metadata = {
   title: 'Export shared expenses to Excel or CSV — ExpenseMate',
   description:
     'How to export a group of shared expenses from ExpenseMate as a CSV file that opens in Excel, Numbers or Google Sheets, or as a PDF.',
-  robots: { index: false, follow: false },
 };
 
 const WEB_APP_URL = 'https://app.expensemate.app';
