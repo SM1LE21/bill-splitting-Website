@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-08-15 — Web billing: the legal half (on `main`)
+
+- **Terms gained section 4b, "ExpenseMate Premium and Payments".** Two purchase paths and two different sellers: Apple in the iOS app, and **Stripe as merchant of record** for the web checkout — consumer brand **Link**, so the statement line reads `LINK.COM*`, and Stripe charges and remits the VAT. Auto-renewal at the price shown, cancel any time with access to the end of the paid period, cancellation through Link (or the receipt email) for web and Apple's subscription settings for iOS. **EU 14-day withdrawal**: immediate performance is expressly requested, the right lapses once performance begins (Art. 16(m)), statutory and section 10a rights untouched, goodwill requests to support@expensemate.app. **Fair use** for "unlimited receipt scans" — unlimited for a person scanning their own receipts, not a bulk OCR service.
+- **Two now-false sentences corrected in the same pass:** Terms §3 said Premium "is purchased and managed through the App Store in the App — there is no purchase path in the Web App", and the account-deletion bullet named Apple as the only seller.
+- **Privacy discloses Stripe** (Stripe, Inc. / Stripe Payments Europe, Ltd., including Link) as a sub-processor for web purchases: card details go straight to Stripe, we never receive them, and billing country and VAT sit with Stripe. Subscription Data, the collection-method bullet, the infrastructure paragraph and the retention line all say *Apple or Stripe* now. **RevenueCat was already listed** from iOS billing and still covers both paths.
+- `policyDates.ts`: **Terms → August 15, 2026** (owner-approved re-date) and **Privacy → August 15, 2026** (a new sub-processor is a material change; its own commit, so it can be dropped alone). `npm run lint` clean, `npm run build` clean. **The web checkout is not live yet** — this is the legal infrastructure Stripe's account review needs; the selling copy is on `feat/web-billing-launch` and must not be merged until checkout works.
+
 ## 2026-08-14 — Web v1.1 launch content (W8, merged to `main`)
 
 - **The site now names the live version.** The Roadmap intro reads "ExpenseMate Web v1.1 is live in any browser" and the completed web card is titled `ExpenseMate Web v1.1` and **links to `app.expensemate.app`**. The intro carries the version deliberately: completed cards are collapsed behind a toggle, so a version number placed only on the card is invisible in the delivered HTML. The Web 1.1 release-notes entry gained a bullet for **per-person shares on itemised receipts** (owner product decision shipped the same day; the simple/shares toggle is gone, and a scan pre-assigns everyone one share).
