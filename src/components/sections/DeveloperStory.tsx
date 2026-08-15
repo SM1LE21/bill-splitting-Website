@@ -13,7 +13,7 @@ const faqs = [
   {
     question: 'When is the Android version coming?',
     answer:
-      'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time. In the meantime you are not shut out: the full ExpenseMate web app runs in any Android browser at app.expensemate.app, receipt scanning included, on the same account. It is a companion to the iPhone app rather than the native Android app — there are no push notifications, and Premium is bought in the iOS app.',
+      'The Android version is currently in development. As a solo developer, I\'m focusing on delivering a high-quality experience one platform at a time. In the meantime you are not shut out: the full ExpenseMate web app runs in any Android browser at app.expensemate.app, receipt scanning included, on the same account. It is a companion to the iPhone app rather than the native Android app — there are no push notifications and no Home Screen shortcuts. Premium, if you want it, can be bought in the browser too.',
     link: { href: 'https://app.expensemate.app', label: 'Open the web app' },
   },
   {
