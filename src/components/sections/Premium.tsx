@@ -2,16 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CheckIcon } from '@heroicons/react/24/solid';
-
-type Row = { name: string; free: string; premium: string };
-
-const rows: Row[] = [
-  { name: 'Groups', free: 'Up to 2', premium: 'Unlimited' },
-  { name: 'Receipt scans', free: '30 / month', premium: 'Unlimited' },
-  { name: 'Expense history', free: 'Last 90 days', premium: 'Full history' },
-  { name: 'Export reports (PDF & CSV)', free: '—', premium: 'Any period' },
-  { name: 'Multi-currency conversion', free: '—', premium: 'Included' },
-];
+import { PREMIUM_ROWS, upgradeUrl } from '@/constants/premiumPlans';
 
 export default function Premium() {
   return (
@@ -46,6 +37,14 @@ export default function Premium() {
               <span className="text-sm font-medium text-gray-500">/year</span>
             </p>
             <p className="mt-1 text-sm text-gray-500">Just €2.08 / month — best value.</p>
+            <a
+              href={upgradeUrl('annual', 'site-premium')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 block rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary/90"
+            >
+              Get Premium yearly
+            </a>
           </div>
 
           <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
@@ -55,33 +54,46 @@ export default function Premium() {
               <span className="text-sm font-medium text-gray-500">/month</span>
             </p>
             <p className="mt-1 text-sm text-gray-500">Flexible, cancel anytime.</p>
+            <a
+              href={upgradeUrl('monthly', 'site-premium')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 block rounded-full bg-white px-5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-colors hover:bg-gray-50"
+            >
+              Get Premium monthly
+            </a>
           </div>
         </div>
 
-        {/* Free vs Premium comparison */}
+        {/* Free vs Premium comparison. Fixed tracks need ~310px, more than a 360px phone leaves, so it scrolls. */}
         <div className="mx-auto mt-16 max-w-3xl overflow-hidden rounded-3xl border border-gray-200">
-          <div className="grid grid-cols-[1.4fr_1fr_1fr] bg-gray-50 text-sm font-semibold text-gray-900">
-            <div className="px-5 py-4">What you get</div>
-            <div className="px-5 py-4 text-center">Free</div>
-            <div className="px-5 py-4 text-center text-primary">Premium</div>
-          </div>
-          {rows.map((row) => (
-            <div
-              key={row.name}
-              className="grid grid-cols-[1.4fr_1fr_1fr] border-t border-gray-200 text-sm"
-            >
-              <div className="px-5 py-4 font-medium text-gray-900">{row.name}</div>
-              <div className="px-5 py-4 text-center text-gray-500">{row.free}</div>
-              <div className="flex items-center justify-center gap-1 px-5 py-4 text-center font-medium text-gray-900">
-                <CheckIcon className="h-4 w-4 flex-none text-primary" aria-hidden="true" />
-                {row.premium}
+          <div className="overflow-x-auto">
+            <div className="min-w-[22rem]">
+              <div className="grid grid-cols-[1.4fr_1fr_1fr] bg-gray-50 text-sm font-semibold text-gray-900">
+                <div className="px-5 py-4">What you get</div>
+                <div className="px-5 py-4 text-center">Free</div>
+                <div className="px-5 py-4 text-center text-primary">Premium</div>
               </div>
+              {PREMIUM_ROWS.map((row) => (
+                <div
+                  key={row.name}
+                  className="grid grid-cols-[1.4fr_1fr_1fr] border-t border-gray-200 text-sm"
+                >
+                  <div className="px-5 py-4 font-medium text-gray-900">{row.name}</div>
+                  <div className="px-5 py-4 text-center text-gray-500">{row.free}</div>
+                  <div className="flex items-center justify-center gap-1 px-5 py-4 text-center font-medium text-gray-900">
+                    <CheckIcon className="h-4 w-4 flex-none text-primary" aria-hidden="true" />
+                    {row.premium}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-6 text-gray-500">
-          Premium is an in-app purchase, billed through the App Store — cancel anytime. Already using
+          Premium is available in the iOS app, where Apple bills it, or on the web, where Stripe
+          does — same account, same subscription, cancel anytime. Prices include VAT. Already using
           ExpenseMate? As a thank-you, early users keep Premium free — unlimited groups, full
           history, report exports and multi-currency. Receipt scans stay at 30 a month.
         </p>
