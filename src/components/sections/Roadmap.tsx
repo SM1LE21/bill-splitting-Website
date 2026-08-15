@@ -41,7 +41,7 @@ const roadmapData = [
     status: "delayed",
     note: "Currently in closed beta. Want to test it early? Get in touch.",
     link: {
-      text: "Don't want to wait? The full ExpenseMate web app already runs in any Android browser today — same account, receipt scanning included. It is the web app rather than the native Android app: no push notifications, and Premium is still bought in the iOS app.",
+      text: "Don't want to wait? The full ExpenseMate web app already runs in any Android browser today — same account, receipt scanning included, and Premium buyable right there if you want it. It is the web app rather than the native Android app: no push notifications and no Home Screen shortcuts.",
       href: "https://app.expensemate.app",
       label: "Open the web app on Android"
     }
