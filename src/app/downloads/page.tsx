@@ -65,7 +65,8 @@ export default async function DownloadsPage() {
               The Android build below is a closed beta. ExpenseMate Web is live and runs
               in any Android browser today — the same account, receipt scanning included,
               nothing to install. It is a companion to the iOS app rather than the native
-              Android app: no push notifications, and Premium is bought in the iOS app.
+              Android app: no push notifications. Premium, if you want it, can be bought
+              right there in the browser.
             </p>
             <a
               href={WEB_APP_URL}
