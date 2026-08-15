@@ -24,6 +24,8 @@ const productLinks: FooterLink[] = [
 
 const resourceLinks: FooterLink[] = [
   { name: 'Release Notes', href: '/release-notes' },
+  { name: 'ExpenseMate vs Splitwise', href: '/vs-splitwise' },
+  { name: 'Export Expenses to Excel', href: '/export-expenses-excel' },
 ];
 
 const legalLinks: FooterLink[] = [
