@@ -70,7 +70,7 @@ export default function PrivacyPolicy() {
               <li><strong>Profile Data</strong> includes your username and password, your preferences, feedback, and survey responses.</li>
               <li><strong>Usage Data</strong> includes information about how you use our Services.</li>
               <li><strong>Image Data</strong> includes photographs of receipts you upload to the application.</li>
-              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with the anonymised purchase identifiers we receive from the App Store. Premium is bought and managed in the iOS app; there is no purchase path in the web app, so this data only ever reaches us through the App Store. We never receive or store your card or payment details.</li>
+              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with the anonymised purchase identifiers we receive from whoever sold you the subscription — the App Store if you bought it in the iOS app, Stripe if you bought it through our web checkout. We never receive or store your card or payment details: they go directly to Apple or to Stripe, and your billing country and any VAT are handled there too.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. How We Collect Your Data</h2>
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
               <li><strong>Third-party analytics providers:</strong> On our marketing website we use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use the site. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymised metrics such as page views, referrer, device type, and approximate country. In the <strong>web app</strong> we use PostHog only if you accept analytics in the web app&apos;s own banner — nothing is loaded or sent before you answer it. In the <strong>mobile app</strong> we use PostHog to collect product-usage events (for example app opens, receipt scans, and which features you use) so we can understand how the app is used and improve it. This is first-party analytics and is not used to track you across other apps or services.</li>
               <li><strong>Error reporting:</strong> When something goes wrong in the web app, an error report is sent to Sentry so we can find and fix it. Those reports carry the error itself and the page it happened on; we configure them to carry no name, email address, expense description or amount.</li>
               <li><strong>How this is linked to you:</strong> In both the web app and the mobile app, the analytics identifier is your internal ExpenseMate account ID — not your name or email address, but a stable identifier for your account, and the same one our error reports carry. It means your activity on iOS and on the web is counted as one person&apos;s rather than two, and it is why this analytics is linked to you rather than anonymous.</li>
-              <li><strong>App Store:</strong> When you buy or manage an ExpenseMate Premium subscription, Apple processes the payment and, via RevenueCat, provides us with your subscription status so we can unlock Premium features for your account.</li>
+              <li><strong>Buying Premium:</strong> When you buy or manage an ExpenseMate Premium subscription, the payment is processed by <strong>Apple</strong> if you bought it in the iOS app, or by <strong>Stripe</strong> if you bought it through our web checkout. Either way we are told, via RevenueCat, only that your subscription is active and which plan it is, so we can unlock Premium features for your account.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data &amp; Legal Basis</h2>
@@ -214,6 +214,11 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">United States / Ireland</td>
                   </tr>
                   <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Stripe, Inc. / Stripe Payments Europe, Ltd. (including Link)</td>
+                    <td className="px-3 py-4">Payment processing and billing for subscriptions bought through our web checkout; Stripe is the seller of record for those purchases and handles VAT</td>
+                    <td className="px-3 py-4">Ireland / United States</td>
+                  </tr>
+                  <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">RevenueCat, Inc.</td>
                     <td className="px-3 py-4">Subscription status and entitlement management</td>
                     <td className="px-3 py-4">United States</td>
@@ -258,7 +263,7 @@ export default function PrivacyPolicy() {
               The web app reports errors to <strong>Sentry</strong>, on Sentry&apos;s EU region, so that crashes we would otherwise never hear about get fixed. We configure it not to store your IP address in the error event and to drop the breadcrumbs that would record what you typed or what the app logged. Reports do carry your internal ExpenseMate account ID, so repeated errors can be recognised as one person&apos;s. Error reporting sets no cookie and is not part of the analytics consent choice — which is why the web app&apos;s banner tells you errors are always reported.
             </p>
             <p className="mt-6">
-              ExpenseMate Premium subscriptions are sold and billed by <strong>Apple</strong> through the App Store. We use <strong>RevenueCat</strong> to receive and manage your subscription status so the app can unlock Premium features for your account. We do not receive or store your payment-card details; payment is handled entirely by Apple under its own terms.
+              ExpenseMate Premium subscriptions bought in the iOS app are sold and billed by <strong>Apple</strong> through the App Store. Subscriptions bought through our web checkout are sold and billed by <strong>Stripe</strong> as merchant of record — its consumer-facing brand is Link, which is why the charge appears as LINK.COM* on a statement — and Stripe handles the billing country and VAT. We use <strong>RevenueCat</strong> in both cases to receive and manage your subscription status so the app can unlock Premium features for your account. We do not receive or store your payment-card details; the payment itself is handled entirely by Apple or by Stripe under their own terms.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Data Security</h2>
@@ -281,7 +286,7 @@ export default function PrivacyPolicy() {
               <li><strong>Google Analytics data:</strong> retained for 14 months by default at the GA4 level.</li>
               <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings. On the marketing website and in the web app it is only collected after you accept analytics; in the iOS app it is collected to operate and improve the app, and you may object at any time under section 11.</li>
               <li><strong>Error reports (Sentry):</strong> retained for the retention period configured on our Sentry project, after which the events are deleted automatically. They are kept only to diagnose the error they describe.</li>
-              <li><strong>Subscription data:</strong> kept while your account exists and for any period required to meet accounting and tax obligations. Payment and card data are handled by Apple, not by us.</li>
+              <li><strong>Subscription data:</strong> kept while your account exists and for any period required to meet accounting and tax obligations. Payment and card data are handled by Apple or by Stripe, not by us.</li>
               <li><strong>Accounting and tax records:</strong> retained for 10 years in accordance with Luxembourg accounting law where applicable.</li>
             </ul>
             <p className="mt-6">
