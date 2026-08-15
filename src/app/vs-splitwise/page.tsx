@@ -57,7 +57,7 @@ const splitwiseStrengths = [
 ];
 
 const limitations = [
-  'The only ExpenseMate app is on iPhone. There is no Android app. The web app at app.expensemate.app runs in any browser and does nearly everything the iPhone app does, receipt scanning included, but it is still a companion rather than a replacement: there are no push notifications, and Premium can only be bought on the iPhone, so a web-only user who wants to lift the free-plan limits has no way to pay.',
+  'The only ExpenseMate app is on iPhone. There is no Android app. The web app at app.expensemate.app runs in any browser and does nearly everything the iPhone app does, receipt scanning included, but it is still a companion rather than a replacement: there are no push notifications and no Home Screen shortcuts.',
   'There is no bank or card import. Expense search works inside a group, but there is no search across all your groups at once.',
   'It is small and young. It is built by one developer, and it has nowhere near the track record Splitwise has.',
   'The free plan lets you create two groups and shows the last 90 days. Joining groups you are invited to is unlimited, but if you organise a lot of separate trips you will hit the group limit.',
@@ -90,7 +90,7 @@ const faqs = [
   {
     question: 'Is ExpenseMate free?',
     answer:
-      'Yes. Splitting bills, scanning receipts (30 per month, on the iPhone or in a browser), joining any number of groups and creating up to two of your own are all free. Premium costs €2.99 a month or €24.99 a year and removes those limits, and adds report export and multi-currency conversion. Premium is bought in the iPhone app.',
+      'Yes. Splitting bills, scanning receipts (30 per month, on the iPhone or in a browser), joining any number of groups and creating up to two of your own are all free. Premium costs €2.99 a month or €24.99 a year and removes those limits, and adds report export and multi-currency conversion. You can buy Premium in the iPhone app or on the web, and it is the same subscription on the same account either way.',
   },
   {
     question: 'Does Splitwise limit how many expenses you can add?',
@@ -105,7 +105,7 @@ const faqs = [
   {
     question: 'Can I use ExpenseMate on Android?',
     answer:
-      'There is no Android app, but you are not shut out. The web app at app.expensemate.app works in any browser, including on Android, and it scans and itemises receipts exactly as the iPhone app does, in English, German, French, Spanish or Portuguese. You can add it to your home screen. It is still a companion to the iPhone app rather than a replacement: there are no push notifications, and Premium can only be bought on the iPhone. Splitwise has a full Android app, so for a mixed group it remains the more practical choice.',
+      'There is no Android app, but you are not shut out. The web app at app.expensemate.app works in any browser, including on Android, and it scans and itemises receipts exactly as the iPhone app does, in English, German, French, Spanish or Portuguese. You can add it to your home screen, and Premium can be bought in the browser if you want it. It is still a companion to the iPhone app rather than a replacement: there are no push notifications and no Home Screen shortcuts. Splitwise has a full Android app, so for a mixed group it remains the more practical choice.',
   },
   {
     question: 'Can I export shared expenses to Excel?',
