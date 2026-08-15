@@ -106,8 +106,8 @@ const roadmapData = [
   },
   {
     phase: "Next",
-    milestone: "1.6 — one release across iOS and web",
-    date: "In planning — no date yet",
+    milestone: "Version 1.6 Launch — iOS and web",
+    date: "September 2026",
     features: [
       "The web app moves to 1.6 as well, so iOS and web share one version number",
       "Smarter custom splitting, based on shares",
