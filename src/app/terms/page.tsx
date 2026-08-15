@@ -55,7 +55,7 @@ export default function TermsOfService() {
               <li>Group expense management</li>
             </ul>
             <p className="mt-6">
-              <strong>Features vary by platform.</strong> Push notifications and Home Screen shortcuts are currently available in the App only. The Web App is a companion to the App rather than a replacement for it, and ExpenseMate Premium is purchased and managed through the App Store in the App — there is no purchase path in the Web App. We may add, change or remove features on any platform.
+              <strong>Features vary by platform.</strong> Push notifications and Home Screen shortcuts are currently available in the App only. The Web App is a companion to the App rather than a replacement for it. ExpenseMate Premium can be bought either in the App or through our web checkout, as set out in section 4b. We may add, change or remove features on any platform.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. User Accounts</h2>
@@ -79,9 +79,37 @@ export default function TermsOfService() {
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Data you share with a group is anonymised, not erased.</strong> Anything tied only to you is deleted. Expenses, splits and settlements that other members of a shared group depend on remain, with your identity removed, so that their own expense history stays intact and correct. This is explained in section 10 of our <Link href="/privacy" className="text-primary hover:text-primary/80">Privacy Policy</Link>.</li>
-              <li><strong>Deleting your account does not cancel or refund an ExpenseMate Premium subscription.</strong> Apple sells and bills that subscription, not us, and it keeps renewing until you cancel it in the App Store (on iOS: Settings → your name → Subscriptions). <strong>Cancel the subscription first, then delete the account.</strong> Refunds are requested from Apple under its own terms.</li>
+              <li><strong>Deleting your account does not cancel or refund an ExpenseMate Premium subscription.</strong> We are not the seller of that subscription — Apple is if you bought it in the App, Stripe is if you bought it on the web — and it keeps renewing until you cancel it where you bought it (see section 4b). <strong>Cancel the subscription first, then delete the account.</strong> Refunds are requested from Apple or Stripe under their own terms.</li>
               <li><strong>Deletion is permanent.</strong> We cannot restore a deleted account, and creating a new one will not recover the old one&apos;s data.</li>
             </ul>
+
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4b. ExpenseMate Premium and Payments</h2>
+            <p className="mt-6">
+              ExpenseMate is free to use. <strong>ExpenseMate Premium</strong> is an optional subscription that removes the limits of the free plan. It costs <strong>€2.99 per month</strong> or <strong>€24.99 per year</strong>, and those prices <strong>include VAT</strong>. One subscription covers your account wherever you use ExpenseMate: Premium bought on the web works in the App, and Premium bought in the App works in the Web App, as long as you sign in with the same account.
+            </p>
+            <p className="mt-6">
+              There are two places to buy it, and who you are buying from is not the same in both:
+            </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2">
+              <li><strong>In the App (iOS).</strong> <strong>Apple</strong> sells and bills the subscription through the App Store under its own terms, and handles VAT. We never see your payment details.</li>
+              <li><strong>On the web.</strong> Our web checkout at app.expensemate.app is operated by <strong>Stripe</strong>, which sells and bills the subscription as the <strong>merchant of record</strong>: Stripe is the seller for that purchase, takes the payment, and is responsible for charging and remitting VAT. Its consumer-facing brand is <strong>Link</strong>, so the charge shows up on your bank or card statement as <strong>LINK.COM*</strong> rather than as ExpenseMate — that is us, not a duplicate charge. Payment details go to Stripe directly; we never receive or store your card details.</li>
+            </ul>
+            <p className="mt-6">
+              <strong>Renewal and cancellation.</strong> Both plans renew automatically — every month or every year, depending on the plan you chose — at the price shown to you when you subscribed, until you cancel. You can cancel at any time. Cancelling stops the next renewal; your Premium features stay active until the end of the period you have already paid for, and that period is not refunded pro rata. Where you cancel depends on where you bought it:
+            </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2">
+              <li><strong>Bought on the web:</strong> manage or cancel it through Stripe/Link at <a href="https://link.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">link.com</a>, or from the link in the receipt email Stripe sends you for each payment.</li>
+              <li><strong>Bought in the App:</strong> manage or cancel it in Apple&apos;s subscription settings (on iOS: Settings → your name → Subscriptions).</li>
+            </ul>
+            <p className="mt-6">
+              <strong>Your 14-day right of withdrawal, and why it ends early.</strong> As a consumer in the EU you normally have 14 days to withdraw from a contract concluded at a distance. ExpenseMate Premium is a digital service supplied immediately: by subscribing, you <strong>expressly request that we begin providing it straight away</strong>, and you acknowledge that you <strong>lose your right of withdrawal</strong> once we have begun (Directive 2011/83/EU, Art. 16(m), as implemented in Luxembourg law). This does not affect your statutory rights if the service is faulty or is not what was described, and it does not affect the mandatory consumer rights set out in section 10a.
+            </p>
+            <p className="mt-6">
+              If you subscribed by mistake, or something went wrong, write to <a href="mailto:support@expensemate.app" className="text-primary hover:text-primary/80">support@expensemate.app</a>. We look at refund requests on a goodwill basis; for a web purchase Stripe is the seller, so we may have to ask Stripe to issue the refund, and for a purchase in the App the request goes to Apple.
+            </p>
+            <p className="mt-6">
+              <strong>&quot;Unlimited receipt scans&quot; means unlimited normal use.</strong> Premium includes unlimited receipt scanning, and we mean it for anyone scanning their own receipts, however many of those there are. What it is not is a bulk document-processing service: automated, scripted or commercial-volume scanning — scanning on behalf of other people, for instance, or feeding receipts in from another system — is not personal use, and we may rate-limit or suspend it to keep the service working for everyone else. Where we can, we will tell you before we limit anything and give you the chance to put it right.
+            </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. Intellectual Property</h2>
             <p className="mt-6">
