@@ -1,8 +1,8 @@
 import { StarIcon } from '@heroicons/react/24/solid';
 
 const stats = [
-  { value: '400+', label: 'Accounts created' },
-  { value: '500+', label: 'Receipts split' },
+  { value: '500+', label: 'Accounts created' },
+  { value: '5,000+', label: 'Receipt items split' },
 ];
 
 export default function SocialProof() {
