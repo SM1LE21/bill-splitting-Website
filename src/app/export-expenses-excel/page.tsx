@@ -38,7 +38,7 @@ const faqs = [
   {
     question: 'Is exporting free?',
     answer:
-      'Export is part of ExpenseMate Premium, which costs €2.99 a month or €24.99 a year. Splitting bills, scanning receipts and settling up are free. Premium is the same subscription on the iPhone and in the web app, and it is bought and managed in the iOS app.',
+      'Export is part of ExpenseMate Premium, which costs €2.99 a month or €24.99 a year, VAT included. Splitting bills, scanning receipts and settling up are free. Premium is the same subscription on the iPhone and in the web app, and you can buy it in either — in the iOS app, or in the browser.',
   },
   {
     question: 'Can I export from a computer?',
