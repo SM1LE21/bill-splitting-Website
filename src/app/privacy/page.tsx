@@ -214,9 +214,9 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">United States (Standard Contractual Clauses in RevenueCat&apos;s data processing agreement)</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Resend</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Plus Five Five, Inc. d/b/a Resend</td>
                     <td className="px-3 py-4">Delivery of transactional emails, such as the confirmation of a web purchase or of a withdrawal</td>
-                    <td className="px-3 py-4">EU region / United States company</td>
+                    <td className="px-3 py-4">EU region (Ireland) / United States company (Standard Contractual Clauses in Resend&apos;s data processing agreement)</td>
                   </tr>
                 </tbody>
               </table>
