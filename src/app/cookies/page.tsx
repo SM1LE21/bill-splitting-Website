@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { HomeIcon } from '@heroicons/react/24/outline';
-import { POLICY_DATES } from '@/constants/policyDates';
+import { POLICY_DATES, formatPolicyDate } from '@/constants/policyDates';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | ExpenseMate',
@@ -23,7 +23,7 @@ export default function CookiePolicy() {
           
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Cookie Policy</h1>
           <p className="mt-6 text-base leading-8">
-            Last updated: {POLICY_DATES.COOKIE_POLICY}
+            Last updated: {formatPolicyDate(POLICY_DATES.COOKIE_POLICY)}
           </p>
 
           <div className="mt-10 max-w-2xl">

@@ -8,8 +8,8 @@ const SITE_URL = 'https://expensemate.app';
 // lastModified is set only where a real date exists — a build-time date would tell
 // crawlers every page changed on every deploy.
 
-// Parsed as UTC; a bare local-midnight parse emits the previous day east of Greenwich.
-const policyDate = (value: string) => new Date(`${value} UTC`);
+// ISO date-only strings parse as UTC midnight, so no timezone shift.
+const policyDate = (value: string) => new Date(value);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
