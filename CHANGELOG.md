@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-27 — Web billing go-live prep: no buy route on iOS-opened pages (branch `feat/web-billing-launch`)
+
+- `/privacy`, `/terms` and `/join` now carry no price offer or checkout URL. The site-wide JSON-LD `AggregateOffer` was the only leak; `StructuredData` drops it on the paths in `src/constants/iosOpenedPaths.ts`. Built HTML checked: no `/pricing`, no `/upgrade`, no offer on either page; the offer stays on every other page.
+- Roadmap web v1.1 card: "Premium can be bought in the iOS app or in the browser".
+- The "Premium in the browser" release note is drafted in `.vault/STATUS.md` and held until the merge. `npm run lint` clean, `npm run build` clean.
+
 ## 2026-08-15 — Web billing: the selling half (branch `feat/web-billing-launch`, do not merge yet)
 
 - **⚠️ This branch is what starts selling Premium on the web, and `main` auto-deploys.** Checkout is not live — the owner still has Stripe console work to do — so **merging before a purchase completes end to end points every CTA here at a dead end.** The legal half (Terms §4b, Privacy/Stripe) is already on `main` and stands alone; nothing on this branch is needed for Stripe's account review.

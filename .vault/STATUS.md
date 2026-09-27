@@ -6,7 +6,7 @@ type: project
 
 # Website — STATUS
 
-Last reviewed: 2026-08-15
+Last reviewed: 2026-09-27
 
 ## Current focus
 
@@ -21,6 +21,23 @@ Last reviewed: 2026-08-15
 
 ## Recent changes
 
+- 2026-09-27 — **Web billing, go-live prep (WP-W2, branch `feat/web-billing-launch` only).** Plan: `../.vault/briefs/WEB-BILLING-GO-LIVE-plan.md` (D2, D7, D8).
+  - **Pages the iOS app opens carry no buy route.** `/privacy` and `/terms` render `Layout minimal` (no navbar, compact footer with no `Pricing` link) and `/join` is a server 307 with no HTML. The one leak was the site-wide `SoftwareApplication` JSON-LD, whose `AggregateOffer` carries the prices and `app.expensemate.app/upgrade` on every page. `StructuredData` is now a client component and drops `offers` on the paths in `src/constants/iosOpenedPaths.ts`. Verified in the built HTML: no `/pricing`, no `/upgrade`, no offer on either page. **Still on `/terms`: the €2.99 / €24.99 prices in the §4b prose (no link).** D2 says no price on these pages; that prose lives on `main` and is WP-L2's to change.
+  - **Roadmap web v1.1 card:** "Premium is still bought in the iOS app" now reads "Premium can be bought in the iOS app or in the browser" (D7). The Web 1.0 and 1.1 release notes stay as dated history.
+  - **To add at merge: the "Premium in the browser" release note (D8).** Not committed to `ReleaseNotes.tsx`, because the RELEASE-1.6 session edits that file on `main`. At merge, put it at the top of `releaseNotes`. If a Web 1.6 entry already exists by then, add the `changes` item to that entry instead of a new one. Set the date to the day checkout goes live, DD/MM/YYYY.
+    ```ts
+    {
+      version: '1.6',
+      date: 'DD/MM/YYYY',
+      platform: 'Web',
+      changes: [
+        {
+          type: 'feature',
+          description: 'Premium in the browser. You can now buy ExpenseMate Premium on the web at app.expensemate.app, monthly or yearly, and pay by card, Apple Pay, Google Pay or Link. It is the same Premium as in the iOS app: sign in with the same account and it works in both places. You manage or cancel a web subscription at link.com, and one bought in the iOS app stays with Apple.'
+        }
+      ]
+    },
+    ```
 - 2026-08-15 — **Web billing. The legal half is on `main`; the selling half is on `feat/web-billing-launch` and must not be merged yet.** Premium becomes buyable at `app.expensemate.app/upgrade` through RevenueCat, with **Stripe Managed Payments** behind it: **Stripe is the merchant of record**, its consumer brand is **Link**, and the statement line reads `LINK.COM*`. Stripe charges and remits VAT; the €2.99/month and €24.99/year prices are VAT-inclusive.
   - **On `main`, live now: Terms §4b and the Privacy Stripe disclosure.** Stripe's account review needs published terms and a published privacy policy that describe the billing, so these ship before checkout exists. §4b covers the two sellers, auto-renewal, cancel-anytime-to-end-of-period, where each platform is cancelled (Link/receipt email vs Apple's subscription settings), the **EU 14-day withdrawal waiver on immediate performance** (Art. 16(m)), and a **fair-use definition of "unlimited receipt scans"** — which exists because we advertise unlimited scans and one bulk-OCR user could otherwise hold us to it. Privacy adds **Stripe (incl. Link)** as a sub-processor; **RevenueCat was already listed** and needed no change. `policyDates.ts`: Terms **and** Privacy both re-dated to **August 15, 2026**.
   - **`feat/web-billing-launch` carries everything a visitor could act on**: a new quiet `/pricing` page (in `sitemap.ts`, FAQPage JSON-LD, `?ref=site-pricing`), upgrade CTAs on the homepage Premium cards (`?ref=site-premium`), a `Pricing` footer entry, the JSON-LD offer `url`, and the reworded "Premium is bought in the iOS app" claims. **Merging it before checkout works sells something that cannot be bought.** No navbar entry — owner decision, keep it quiet.
