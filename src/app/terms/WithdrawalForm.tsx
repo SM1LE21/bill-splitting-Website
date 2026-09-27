@@ -2,7 +2,7 @@
 export default function WithdrawalForm() {
   return (
     <>
-      <h2 id="withdrawal-form" className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Annex: Model Withdrawal Form</h2>
+      <h2 id="withdrawal-form" className="mt-16 scroll-mt-28 text-2xl font-bold tracking-tight text-gray-900">Annex: Model Withdrawal Form</h2>
       <p className="mt-6">
         (Complete and return this form only if you wish to withdraw from the contract.)
       </p>
