@@ -95,7 +95,7 @@ const roadmapData = [
       "Receipt scanning in the browser — 30 free scans a month, the same as the app",
       "Five languages: English, German, French, Spanish and Portuguese",
       "PDF and CSV reports straight from the browser",
-      "Premium is still bought in the iOS app"
+      "Premium can be bought in the iOS app or in the browser"
     ],
     status: "completed",
     link: {
