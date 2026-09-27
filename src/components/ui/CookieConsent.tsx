@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import InternalLink from '@/components/ui/InternalLink';
 import { getCookieConsent, setCookieConsent } from '@/utils/cookieConsent';
 
 export default function CookieConsent() {
@@ -60,13 +60,13 @@ export default function CookieConsent() {
             <h3 className="text-base font-semibold text-gray-900">Cookie Consent</h3>
             <p className="mt-1 text-sm text-gray-600">
               We use Google Analytics and PostHog cookies to analyze our traffic and improve your experience. By clicking &quot;Accept All&quot;, you consent to those analytics cookies. Vercel Analytics is always active and cookieless. Read our{' '}
-              <Link href="/privacy" className="font-medium text-primary hover:text-primary/80">
+              <InternalLink href="/privacy" className="font-medium text-primary hover:text-primary/80">
                 Privacy Policy
-              </Link>{' '}
+              </InternalLink>{' '}
               and{' '}
-              <Link href="/cookies" className="font-medium text-primary hover:text-primary/80">
+              <InternalLink href="/cookies" className="font-medium text-primary hover:text-primary/80">
                 Cookie Policy
-              </Link>{' '}
+              </InternalLink>{' '}
               to learn more.
             </p>
           </div>
