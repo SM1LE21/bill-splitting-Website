@@ -5,7 +5,7 @@ import CookieConsentWrapper from "@/components/ui/CookieConsentWrapper";
 import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 import PostHogAnalytics from "@/components/ui/PostHogAnalytics";
 import StructuredData from "@/components/ui/StructuredData";
-import { Analytics } from '@vercel/analytics/next';
+import VercelAnalytics from "@/components/ui/VercelAnalytics";
 
 // Root layout: App-wide HTML structure
 const inter = Inter({
@@ -65,7 +65,7 @@ export default function RootLayout({
         <PostHogAnalytics />
         {children}
         <CookieConsentWrapper />
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
