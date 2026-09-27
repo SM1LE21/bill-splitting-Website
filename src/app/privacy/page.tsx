@@ -70,7 +70,7 @@ export default function PrivacyPolicy() {
               <li><strong>Profile Data</strong> includes your username and password, your preferences, feedback, and survey responses.</li>
               <li><strong>Usage Data</strong> includes information about how you use our Services.</li>
               <li><strong>Image Data</strong> includes photographs of receipts you upload to the application.</li>
-              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with the anonymised purchase identifiers we receive from whoever sold you the subscription — the App Store if you bought it in the iOS app, Stripe if you bought it through our web checkout. We never receive or store your card or payment details: they go directly to Apple or to Stripe, and your billing country and any VAT are handled there too.</li>
+              <li><strong>Subscription Data</strong> includes your ExpenseMate Premium subscription status, plan, and renewal or expiry dates, together with pseudonymous purchase identifiers: from the App Store if you bought it in the iOS app, or from Link (Stripe) if you bought it on the web. For a web purchase it also includes the order data Stripe shares with us: your name, email, billing country or address, plan, amounts, and the card brand and last four digits. We never receive your full card details.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4. How We Collect Your Data</h2>
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
               <li><strong>Third-party analytics providers:</strong> On our marketing website we use Google Analytics and PostHog (with your consent) and Vercel Analytics (cookieless, always active) to understand how visitors use the site. Vercel Analytics does not store personal data or set cookies, it collects only aggregated, anonymised metrics such as page views, referrer, device type, and approximate country. In the <strong>web app</strong> we use PostHog only if you accept analytics in the web app&apos;s own banner — nothing is loaded or sent before you answer it. In the <strong>mobile app</strong> we use PostHog to collect product-usage events (for example app opens, receipt scans, and which features you use) so we can understand how the app is used and improve it. This is first-party analytics and is not used to track you across other apps or services.</li>
               <li><strong>Error reporting:</strong> When something goes wrong in the web app, an error report is sent to Sentry so we can find and fix it. Those reports carry the error itself and the page it happened on; we configure them to carry no name, email address, expense description or amount.</li>
               <li><strong>How this is linked to you:</strong> In both the web app and the mobile app, the analytics identifier is your internal ExpenseMate account ID — not your name or email address, but a stable identifier for your account, and the same one our error reports carry. It means your activity on iOS and on the web is counted as one person&apos;s rather than two, and it is why this analytics is linked to you rather than anonymous.</li>
-              <li><strong>Buying Premium:</strong> When you buy or manage an ExpenseMate Premium subscription, the payment is processed by <strong>Apple</strong> if you bought it in the iOS app, or by <strong>Stripe</strong> if you bought it through our web checkout. Either way we are told, via RevenueCat, only that your subscription is active and which plan it is, so we can unlock Premium features for your account.</li>
+              <li><strong>Buying Premium:</strong> When you buy or manage an ExpenseMate Premium subscription, the payment is processed by <strong>Apple</strong> if you bought it in the iOS app, or by <strong>Link (Stripe)</strong> if you bought it on the web. When you open the web checkout, we send <strong>RevenueCat</strong> your internal ExpenseMate account ID and your email address, so the purchase is linked to your account. After a purchase we are told, via RevenueCat, that your subscription is active and which plan it is, so we can unlock Premium features for your account. For a web purchase, Stripe also shares the order data listed in section 3.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. How We Use Your Data &amp; Legal Basis</h2>
@@ -106,9 +106,9 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Managing your ExpenseMate Premium subscription and unlocking paid features</td>
-                    <td className="px-3 py-4">Subscription, Identity</td>
-                    <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b)</td>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Managing your ExpenseMate Premium subscription, unlocking paid features, and sending purchase and withdrawal emails</td>
+                    <td className="px-3 py-4">Subscription, Identity, Contact</td>
+                    <td className="px-3 py-4">Performance of a contract, Art. 6(1)(b), and legal obligation, Art. 6(1)(c) (consumer-law confirmations)</td>
                   </tr>
                   <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">Processing receipt images to extract items and amounts (AI-assisted OCR)</td>
@@ -161,7 +161,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. Recipients and Sub-Processors</h2>
             <p className="mt-6">
-              We do not sell your personal data. We share it only with a limited number of service providers (processors under GDPR Art. 28) who process it on our behalf and under our instructions in order to operate the Services:
+              We do not sell your personal data. We share it only with a limited number of service providers (processors under GDPR Art. 28) who process it on our behalf and under our instructions in order to operate the Services. Apple and Stripe are not in this table: for purchases they act as independent controllers, as explained below it.
             </p>
             <div className="mt-4 overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-300">
@@ -209,19 +209,14 @@ export default function PrivacyPolicy() {
                     <td className="px-3 py-4">EU region (Frankfurt) / United States company</td>
                   </tr>
                   <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Apple Inc.</td>
-                    <td className="px-3 py-4">App Store subscription billing and management</td>
-                    <td className="px-3 py-4">United States / Ireland</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 pl-4 pr-3 sm:pl-0">Stripe, Inc. / Stripe Payments Europe, Ltd. (including Link)</td>
-                    <td className="px-3 py-4">Payment processing and billing for subscriptions bought through our web checkout; Stripe is the seller of record for those purchases and handles VAT</td>
-                    <td className="px-3 py-4">Ireland / United States</td>
-                  </tr>
-                  <tr>
                     <td className="py-4 pl-4 pr-3 sm:pl-0">RevenueCat, Inc.</td>
-                    <td className="px-3 py-4">Subscription status and entitlement management</td>
-                    <td className="px-3 py-4">United States</td>
+                    <td className="px-3 py-4">Subscription status and entitlement management; opening the web checkout with your internal account ID and email address</td>
+                    <td className="px-3 py-4">United States (Standard Contractual Clauses in RevenueCat&apos;s data processing agreement)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 pl-4 pr-3 sm:pl-0">Resend</td>
+                    <td className="px-3 py-4">Delivery of transactional emails, such as the confirmation of a web purchase or of a withdrawal</td>
+                    <td className="px-3 py-4">EU region / United States company</td>
                   </tr>
                 </tbody>
               </table>
@@ -230,7 +225,10 @@ export default function PrivacyPolicy() {
               Receipt image content is sent to OCR providers only for the time needed to extract the data; we do not authorise them to use your content to train their models. We may additionally disclose personal data where required by law, court order, or a legitimate request from a public authority, or where necessary to protect our rights, the safety of our users, or the integrity of the Services.
             </p>
             <p className="mt-6">
-              Two points about the last two rows, because they are easy to state loosely. <strong>Cloudflare</strong> routes the traffic between your device and our API rather than storing your expenses: it necessarily sees the connection and its IP address, and it is on the path of every request the apps make. <strong>Sentry&apos;s</strong> ingest endpoint likewise <em>receives</em> your IP address at the network layer, but we configure Sentry not to store it in the error event. Error events do carry your internal ExpenseMate account ID, which is a persistent identifier for your account, so they are personal data even though they contain no name or email address.
+              <strong>Independent controllers.</strong> Apple (App Store purchases) and Stripe, through Sold through Link, LLC and Stripe Technology Europe, Ltd. (web purchases and your Link account), process your payment, tax and fraud data as controllers under their own privacy policies (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">apple.com/legal/privacy</a>, <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">stripe.com/privacy</a>). They are not our processors. Stripe shares order data with us: your name, email, billing country or address, plan, amounts, and the card brand and last four digits. Apple tells us, via RevenueCat, only that a subscription exists, its plan and dates, and pseudonymous purchase identifiers. Requests about the data Apple or Stripe hold go to them; requests about the data we hold come to us.
+            </p>
+            <p className="mt-6">
+              Two points about Cloudflare and Sentry, because they are easy to state loosely. <strong>Cloudflare</strong> routes the traffic between your device and our API rather than storing your expenses: it necessarily sees the connection and its IP address, and it is on the path of every request the apps make. <strong>Sentry&apos;s</strong> ingest endpoint likewise <em>receives</em> your IP address at the network layer, but we configure Sentry not to store it in the error event. Error events do carry your internal ExpenseMate account ID, which is a persistent identifier for your account, so they are personal data even though they contain no name or email address.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. International Data Transfers</h2>
@@ -263,7 +261,7 @@ export default function PrivacyPolicy() {
               The web app reports errors to <strong>Sentry</strong>, on Sentry&apos;s EU region, so that crashes we would otherwise never hear about get fixed. We configure it not to store your IP address in the error event and to drop the breadcrumbs that would record what you typed or what the app logged. Reports do carry your internal ExpenseMate account ID, so repeated errors can be recognised as one person&apos;s. Error reporting sets no cookie and is not part of the analytics consent choice — which is why the web app&apos;s banner tells you errors are always reported.
             </p>
             <p className="mt-6">
-              ExpenseMate Premium subscriptions bought in the iOS app are sold and billed by <strong>Apple</strong> through the App Store. Subscriptions bought through our web checkout are sold and billed by <strong>Stripe</strong> as merchant of record — its consumer-facing brand is Link, which is why the charge appears as LINK.COM* on a statement — and Stripe handles the billing country and VAT. We use <strong>RevenueCat</strong> in both cases to receive and manage your subscription status so the app can unlock Premium features for your account. We do not receive or store your payment-card details; the payment itself is handled entirely by Apple or by Stripe under their own terms.
+              ExpenseMate Premium subscriptions bought in the iOS app are sold and billed by <strong>Apple</strong> through the App Store. Subscriptions bought on the web are sold by us, and <strong>Sold through Link, LLC</strong>, a Stripe company (brand Link), is the merchant of record: it takes the payment and handles the billing country and VAT, which is why the charge appears as LINK.COM* on a statement. We use <strong>RevenueCat</strong> in both cases to receive and manage your subscription status so the app can unlock Premium features for your account. We never receive your full card details; the payment itself is handled by Apple or by Link under their own terms.
             </p>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. Data Security</h2>
@@ -286,7 +284,7 @@ export default function PrivacyPolicy() {
               <li><strong>Google Analytics data:</strong> retained for 14 months by default at the GA4 level.</li>
               <li><strong>PostHog analytics data:</strong> retained according to the PostHog project retention settings. On the marketing website and in the web app it is only collected after you accept analytics; in the iOS app it is collected to operate and improve the app, and you may object at any time under section 11.</li>
               <li><strong>Error reports (Sentry):</strong> retained for the retention period configured on our Sentry project, after which the events are deleted automatically. They are kept only to diagnose the error they describe.</li>
-              <li><strong>Subscription data:</strong> kept while your account exists and for any period required to meet accounting and tax obligations. Payment and card data are handled by Apple or by Stripe, not by us.</li>
+              <li><strong>Subscription data:</strong> kept while your account exists and for any period required to meet accounting and tax obligations, including the order data Stripe shares with us for web purchases. Full card details are handled by Apple or by Link (Stripe), not by us.</li>
               <li><strong>Accounting and tax records:</strong> retained for 10 years in accordance with Luxembourg accounting law where applicable.</li>
             </ul>
             <p className="mt-6">

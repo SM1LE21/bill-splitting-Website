@@ -1,6 +1,6 @@
 // ISO dates (YYYY-MM-DD); pages show them as DD/MM/YYYY through formatPolicyDate.
 export const POLICY_DATES = {
-  PRIVACY_POLICY: '2026-08-15',
+  PRIVACY_POLICY: '2026-09-27',
   COOKIE_POLICY: '2026-08-04',
   TERMS_OF_SERVICE: '2026-09-27'
 } as const;
