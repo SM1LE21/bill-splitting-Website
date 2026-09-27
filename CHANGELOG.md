@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-27 21:40 — 1.6: /join handoff fixes (analytics privacy, Android order)
+
+- **No `groupId` reaches analytics.** Google Analytics no longer renders on `/join` (its consent-mode default still sent cookieless pings with the full URL), and a new client `VercelAnalytics` wrapper strips `groupId` from every page URL via `beforeSend`. The invite id works as a join capability, so it stays out of both tools.
+- **Only iOS leads with the app button.** Android and desktop now get "Continue in the browser" first, with the app button kept second for test-APK users; the body copy says "ExpenseMate app" instead of "iPhone app".
+- `joinLinks.ts` reuses `createAppSchemeLink` / `createDeepLink` from `deviceUtils` and drops the unused `groupId` field (same URLs as before); comments cut to one line. `npm run lint` and `npm run build` clean; `next start` checks for GA, button order and every query variant all pass.
+
 ## 2026-09-27 21:29 — 1.6: `/join` handoff page replaces the 307 (S-JOIN)
 
 - **`expensemate.app/join` now renders a page instead of 307ing to `app.expensemate.app/join`.** Three options, no automatic redirect or timer: "Open in the ExpenseMate app" (`expensemate://join?groupId=…`), "Continue in the browser" (the full query carried to the web app), and "Download on the App Store". Phones get the app button first; desktops get the browser button first.
