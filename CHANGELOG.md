@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-27 22:30 — Web billing legal fixes (WP-L2, on `main`)
+
+- **Terms 4b:** we sell web Premium and Sold through Link, LLC (Stripe, brand Link) is merchant of record; checkout hosted by Stripe; Link's terms and 60-day refund policy linked. No prices on the page ("the price shown before you pay, VAT included").
+- **The Art. 16(m) waiver is gone.** Web buyers get a full 14-day withdrawal right with a full refund (Settings "Withdraw from contract here", support@expensemate.app, or Link), plus the EU model withdrawal form as an annex. App Store purchases go through Apple.
+- **Privacy:** Apple and Stripe moved from the processor table to independent controllers, with the order data Stripe shares; RevenueCat gets our account ID and email at checkout (SCCs in its DPA); Resend (EU region) added as processor; "anonymised" purchase identifiers now "pseudonymous".
+- **Legal Notice** shows VAT number LU37487810 under the franchise regime. Policy dates are stored ISO and shown DD/MM/YYYY; Terms and Privacy re-dated to 27/09/2026.
+
 ## 2026-09-27 21:53 — 1.6: links on /join leave with a full page load (S-JOIN-FIX)
 
 - **Closes the last way a `groupId` could reach Google Analytics.** The minimal footer links on `/join` were `next/link`: a tap navigated client-side, GA mounted with the invite URL in history, and Back let GA4 enhanced measurement record `/join?groupId=…`. They are now plain anchors with `rel="noreferrer"` (full page load, and the invite URL no longer becomes the next page's referrer), via a new `src/components/ui/InternalLink.tsx` that keeps `next/link` on every other route.
