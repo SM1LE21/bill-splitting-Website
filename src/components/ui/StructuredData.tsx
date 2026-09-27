@@ -1,3 +1,8 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import { isIosOpenedPath } from '@/constants/iosOpenedPaths';
+
 const SITE_URL = 'https://expensemate.app';
 // ID-only form: canonical, region-neutral (Apple geo-redirects), and immune to slug drift.
 const APP_STORE_URL = 'https://apps.apple.com/app/id6745098337';
@@ -69,6 +74,12 @@ const application = {
 };
 
 export default function StructuredData() {
+  // The offer carries prices and the checkout URL, so pages the iOS app opens drop it
+  // (JSON.stringify leaves out undefined keys).
+  const applicationNode = isIosOpenedPath(usePathname())
+    ? { ...application, offers: undefined }
+    : application;
+
   return (
     <>
       <script
@@ -81,7 +92,7 @@ export default function StructuredData() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(application) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(applicationNode) }}
       />
     </>
   );
