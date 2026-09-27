@@ -2,6 +2,11 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-28 00:41 — WP-L6 fix round (branch `feat/web-billing-launch`)
+
+- STATUS: the `/terms` price note is marked resolved (WP-L2 removed the prices; the built `/terms` has no 2.99 or 24.99), and a new bullet lists what the launch merge changes on the five legal pages compared with live `main`.
+- The `IOS_OPENED_PATHS` comment is one line, as the code rules require. No code change. Lint clean.
+
 ## 2026-09-28 00:36 — Pages the iOS app reaches show legal links only (WP-L6, branch `feat/web-billing-launch`)
 
 - Merged `main` into the branch: the 1.6 `/join` handoff page and the WP-L2/L2b Terms, Privacy and Legal Notice edits.
