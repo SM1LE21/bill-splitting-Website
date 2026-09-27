@@ -6,7 +6,7 @@ type: project
 
 # Website — STATUS
 
-Last reviewed: 2026-08-15
+Last reviewed: 2026-09-27
 
 ## Current focus
 
@@ -21,6 +21,7 @@ Last reviewed: 2026-08-15
 
 ## Recent changes
 
+- 2026-09-27 — **1.6 S-JOIN: `/join` is a handoff page again, not a 307.** `expensemate.app/join?groupId=…` renders three options (Open in the ExpenseMate app via `expensemate://join`, Continue in the browser to `app.expensemate.app/join` with the full query, Download on the App Store) plus the `apple-itunes-app` Smart App Banner. No automatic redirect or timer. `groupId` must be exactly one UUID to reach the app scheme or the banner; anything else still renders 200 with browser + App Store only. Universal Links unchanged: the apex AASA (`/join*`) opens iOS 1.5.0+ directly, so the page is seen only without the app or when a link opens in-browser. The web side of the 1.6 plan adds an AASA on `app.expensemate.app` (W-AASA, separate package). Route rules: `src/app/join/AGENTS.md`.
 - 2026-08-15 — **Web billing. The legal half is on `main`; the selling half is on `feat/web-billing-launch` and must not be merged yet.** Premium becomes buyable at `app.expensemate.app/upgrade` through RevenueCat, with **Stripe Managed Payments** behind it: **Stripe is the merchant of record**, its consumer brand is **Link**, and the statement line reads `LINK.COM*`. Stripe charges and remits VAT; the €2.99/month and €24.99/year prices are VAT-inclusive.
   - **On `main`, live now: Terms §4b and the Privacy Stripe disclosure.** Stripe's account review needs published terms and a published privacy policy that describe the billing, so these ship before checkout exists. §4b covers the two sellers, auto-renewal, cancel-anytime-to-end-of-period, where each platform is cancelled (Link/receipt email vs Apple's subscription settings), the **EU 14-day withdrawal waiver on immediate performance** (Art. 16(m)), and a **fair-use definition of "unlimited receipt scans"** — which exists because we advertise unlimited scans and one bulk-OCR user could otherwise hold us to it. Privacy adds **Stripe (incl. Link)** as a sub-processor; **RevenueCat was already listed** and needed no change. `policyDates.ts`: Terms **and** Privacy both re-dated to **August 15, 2026**.
   - **`feat/web-billing-launch` carries everything a visitor could act on**: a new quiet `/pricing` page (in `sitemap.ts`, FAQPage JSON-LD, `?ref=site-pricing`), upgrade CTAs on the homepage Premium cards (`?ref=site-premium`), a `Pricing` footer entry, the JSON-LD offer `url`, and the reworded "Premium is bought in the iOS app" claims. **Merging it before checkout works sells something that cannot be bought.** No navbar entry — owner decision, keep it quiet.
@@ -89,7 +90,7 @@ Last reviewed: 2026-08-15
 
 - Build the first PostHog dashboard: traffic by path/referrer/device, App Store click funnel, download clicks by version, join-link validity, app-open fallback rate, and top UTM sources.
 - Create saved PostHog funnels for `page_viewed -> cta_clicked -> app_store_clicked` and `/downloads page_viewed -> download_clicked`, with breakdowns by `device_type`, `referrer_host`, and UTM properties.
-- **The `join_page_viewed -> app_open_attempted -> app_open_failed` funnel is dead as of 2026-08-04** and should not be built. `/join` no longer renders anything, so none of those three events can fire from this site; the event names remain declared in `src/utils/analytics.ts` but are unreachable. Join-flow analytics move to the web app in its Phase 5. Decide there whether `join_page_viewed` keeps its name for continuity with the historical series — and keep the rule that no `groupId` value is ever sent as an event property.
+- **The `join_page_viewed -> app_open_attempted -> app_open_failed` funnel is dead as of 2026-08-04** and should not be built. (2026-09-27, 1.6: `/join` renders a server-only handoff page again but still fires none of these events; wiring them would need a small client component, not done.) `/join` no longer renders anything, so none of those three events can fire from this site; the event names remain declared in `src/utils/analytics.ts` but are unreachable. Join-flow analytics move to the web app in its Phase 5. Decide there whether `join_page_viewed` keeps its name for continuity with the historical series — and keep the rule that no `groupId` value is ever sent as an event property.
 - Keep PostHog session replay disabled by default unless `NEXT_PUBLIC_POSTHOG_SESSION_REPLAY=true` is intentionally set in deployment. If replay is enabled, treat it as a privacy/product decision even though text/attributes are masked.
 - Roadmap card flip + 1.4.0 release notes done on 2026-05-05. Still open: consider whether `ProductFlow` should grow a fourth phone for Group Reports (per ADR 0005, this is a single-file extension).
 - When Android hits the Play Store: swap the Roadmap card status off "delayed", re-enable the Google Play CTA in `CTA.tsx` (currently a disabled visual), and decide whether `ReleaseNotes.tsx` should track Android entries (currently iOS-only by convention — see `feedback_release_notes_scope` memory).
