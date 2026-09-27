@@ -15,11 +15,7 @@ const PRIMARY =
 const SECONDARY =
   'inline-flex w-full items-center justify-center gap-x-2 rounded-full border border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 hover:border-primary hover:text-primary transition-colors';
 
-/**
- * Offers the three ways into an invite. It never navigates on its own: a custom-scheme
- * redirect on a device without the app shows a browser error (see expensemate-web
- * src/components/join/open-in-app.tsx).
- */
+// Offers app / browser / App Store; never navigates on its own (see expensemate-web open-in-app.tsx).
 export default function JoinHandoff({ links, preferApp }: JoinHandoffProps) {
   const { appSchemeUrl, webAppUrl } = links;
   const appFirst = Boolean(appSchemeUrl) && preferApp;
