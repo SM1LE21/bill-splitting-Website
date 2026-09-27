@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-27 21:29 — 1.6: `/join` handoff page replaces the 307 (S-JOIN)
+
+- **`expensemate.app/join` now renders a page instead of 307ing to `app.expensemate.app/join`.** Three options, no automatic redirect or timer: "Open in the ExpenseMate app" (`expensemate://join?groupId=…`), "Continue in the browser" (the full query carried to the web app), and "Download on the App Store". Phones get the app button first; desktops get the browser button first.
+- **Apple Smart App Banner** on the page (`apple-itunes-app`, `app-id=6745098337`, `app-argument` = the https invite URL), so iOS Safari offers Open or Get.
+- `groupId` is validated (exactly one UUID) before it reaches the app scheme or the banner; an invalid or missing one still renders a 200 page with only the browser and App Store options, and the web app shows the invalid-link message. AASA and www/apex handling untouched.
+- New `src/utils/joinLinks.ts` and `src/components/sections/JoinHandoff.tsx`; route `AGENTS.md` rewritten. `npm run lint` clean, `npm run build` clean (18 routes); seven query variants checked against `next start`, all 200.
+
 ## 2026-08-15 — Web billing: the legal half (on `main`)
 
 - **Terms gained section 4b, "ExpenseMate Premium and Payments".** Two purchase paths and two different sellers: Apple in the iOS app, and **Stripe as merchant of record** for the web checkout — consumer brand **Link**, so the statement line reads `LINK.COM*`, and Stripe charges and remits the VAT. Auto-renewal at the price shown, cancel any time with access to the end of the paid period, cancellation through Link (or the receipt email) for web and Apple's subscription settings for iOS. **EU 14-day withdrawal**: immediate performance is expressly requested, the right lapses once performance begins (Art. 16(m)), statutory and section 10a rights untouched, goodwill requests to support@expensemate.app. **Fair use** for "unlimited receipt scans" — unlimited for a person scanning their own receipts, not a bulk OCR service.
