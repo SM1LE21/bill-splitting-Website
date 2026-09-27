@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
-import { HomeIcon } from '@heroicons/react/24/outline';
 import { POLICY_DATES, formatPolicyDate } from '@/constants/policyDates';
 import WithdrawalForm from './WithdrawalForm';
 
@@ -15,13 +14,6 @@ export default function TermsOfService() {
     <Layout minimal>
       <div className="bg-white px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-          <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
-              <HomeIcon className="h-5 w-5 mr-1" aria-hidden="true" />
-              Back to ExpenseMate
-            </Link>
-          </div>
-
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Terms of Service</h1>
           <p className="mt-6 text-base leading-8">
             Last updated: {formatPolicyDate(POLICY_DATES.TERMS_OF_SERVICE)}
