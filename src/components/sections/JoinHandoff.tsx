@@ -6,7 +6,7 @@ import { APP_STORE_URL } from '@/utils/joinLinks';
 
 interface JoinHandoffProps {
   links: JoinLinks;
-  /** Phones get the app first; desktops get the browser first. */
+  /** iOS gets the app first; Android and desktop get the browser first. */
   preferApp: boolean;
 }
 
@@ -48,7 +48,7 @@ export default function JoinHandoff({ links, preferApp }: JoinHandoffProps) {
         </h1>
         <p className="mt-4 text-base leading-7 text-gray-600">
           {appSchemeUrl
-            ? 'Open the invite in the iPhone app, or join in your browser. Both use the same account.'
+            ? 'Open the invite in the ExpenseMate app, or join in your browser. Both use the same account.'
             : 'Continue in the browser to open this invite.'}
         </p>
 
