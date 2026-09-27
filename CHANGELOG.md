@@ -8,6 +8,7 @@ Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 - **The Art. 16(m) waiver is gone.** Web buyers get a full 14-day withdrawal right with a full refund (Settings "Withdraw from contract here", support@expensemate.app, or Link), plus the EU model withdrawal form as an annex. App Store purchases go through Apple.
 - **Privacy:** Apple and Stripe moved from the processor table to independent controllers, with the order data Stripe shares; RevenueCat gets our account ID and email at checkout (SCCs in its DPA); Resend (EU region) added as processor; "anonymised" purchase identifiers now "pseudonymous".
 - **Legal Notice** shows VAT number LU37487810 under the franchise regime. Policy dates are stored ISO and shown DD/MM/YYYY; Terms and Privacy re-dated to 27/09/2026.
+- **Privacy section 7** now names email delivery (Resend) among the United States-linked providers. The Resend entity and safeguard stay open in `.vault/QUESTIONS.md`.
 
 ## 2026-09-27 21:53 — 1.6: links on /join leave with a full page load (S-JOIN-FIX)
 
