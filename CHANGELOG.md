@@ -2,6 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-28 00:36 — Pages the iOS app reaches show legal links only (WP-L6, branch `feat/web-billing-launch`)
+
+- Merged `main` into the branch: the 1.6 `/join` handoff page and the WP-L2/L2b Terms, Privacy and Legal Notice edits.
+- On `/privacy`, `/terms`, `/join`, `/legal` and `/cookies` the compact footer shows only Privacy Policy, Terms of Service, Cookie Policy, Legal Notice and Cookie Settings. Home and Release Notes stay in the compact footer of `/release-notes`, `/downloads` and the 404 page.
+- The "Back to ExpenseMate" link is gone from the four policy pages, and `/legal` and `/cookies` joined `IOS_OPENED_PATHS`, so their JSON-LD carries no offer either.
+- Lint and build clean. Checked against `next start`: none of the five pages links to `/`, `/pricing`, `/release-notes`, `/upgrade` or `pay.rev.cat`; no JSON-LD offer; no price on `/terms`; `id="withdrawal"` present.
+
 ## 2026-09-28 00:09 — Terms anchors clear the navbar, Terms and Privacy re-dated (WP-L2b fixes)
 
 - **`/terms#withdrawal` and `#withdrawal-form`** now stop below the fixed navbar (`scroll-mt-28`), so the "Your 14-day right of withdrawal" lead-in is visible on arrival.
