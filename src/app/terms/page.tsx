@@ -3,6 +3,7 @@ import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import { POLICY_DATES, formatPolicyDate } from '@/constants/policyDates';
+import WithdrawalForm from './WithdrawalForm';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | ExpenseMate',
@@ -79,33 +80,39 @@ export default function TermsOfService() {
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>Data you share with a group is anonymised, not erased.</strong> Anything tied only to you is deleted. Expenses, splits and settlements that other members of a shared group depend on remain, with your identity removed, so that their own expense history stays intact and correct. This is explained in section 10 of our <Link href="/privacy" className="text-primary hover:text-primary/80">Privacy Policy</Link>.</li>
-              <li><strong>Deleting your account does not cancel or refund an ExpenseMate Premium subscription.</strong> We are not the seller of that subscription — Apple is if you bought it in the App, Stripe is if you bought it on the web — and it keeps renewing until you cancel it where you bought it (see section 4b). <strong>Cancel the subscription first, then delete the account.</strong> Refunds are requested from Apple or Stripe under their own terms.</li>
+              <li><strong>Deleting your account does not cancel or refund an ExpenseMate Premium subscription.</strong> Apple handles billing if you bought it in the App, and Link (Stripe) handles billing if you bought it on the web. The subscription keeps renewing until you cancel it where you bought it (see section 4b). <strong>Cancel the subscription first, then delete the account.</strong> Section 4b also explains withdrawal and refunds.</li>
               <li><strong>Deletion is permanent.</strong> We cannot restore a deleted account, and creating a new one will not recover the old one&apos;s data.</li>
             </ul>
 
             <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">4b. ExpenseMate Premium and Payments</h2>
             <p className="mt-6">
-              ExpenseMate is free to use. <strong>ExpenseMate Premium</strong> is an optional subscription that removes the limits of the free plan. It costs <strong>€2.99 per month</strong> or <strong>€24.99 per year</strong>, and those prices <strong>include VAT</strong>. One subscription covers your account wherever you use ExpenseMate: Premium bought on the web works in the App, and Premium bought in the App works in the Web App, as long as you sign in with the same account.
+              ExpenseMate is free to use. <strong>ExpenseMate Premium</strong> is an optional subscription that removes the limits of the free plan. It renews monthly or yearly, depending on the plan you choose, at the price shown before you pay, <strong>VAT included</strong>. One subscription covers your account wherever you use ExpenseMate: Premium bought on the web works in the App, and Premium bought in the App works in the Web App, as long as you sign in with the same account.
             </p>
             <p className="mt-6">
               There are two places to buy it, and who you are buying from is not the same in both:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
               <li><strong>In the App (iOS).</strong> <strong>Apple</strong> sells and bills the subscription through the App Store under its own terms, and handles VAT. We never see your payment details.</li>
-              <li><strong>On the web.</strong> Our web checkout at app.expensemate.app is operated by <strong>Stripe</strong>, which sells and bills the subscription as the <strong>merchant of record</strong>: Stripe is the seller for that purchase, takes the payment, and is responsible for charging and remitting VAT. Its consumer-facing brand is <strong>Link</strong>, so the charge shows up on your bank or card statement as <strong>LINK.COM*</strong> rather than as ExpenseMate — that is us, not a duplicate charge. Payment details go to Stripe directly; we never receive or store your card details.</li>
+              <li><strong>On the web.</strong> We sell the subscription, and payment is handled by <strong>Sold through Link, LLC</strong>, a Stripe company (brand <strong>Link</strong>), as <strong>merchant of record</strong>. Link takes the payment, charges and pays the VAT, and sends your receipt and invoice in its own name, so your statement shows <strong>LINK.COM*</strong>. The checkout page is hosted by Stripe. Link&apos;s own terms apply to the payment (<a href="https://link.com/terms" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">link.com/terms</a>), and Link may refund a web purchase within 60 days under its refund policy. We never receive your full card details.</li>
             </ul>
             <p className="mt-6">
               <strong>Renewal and cancellation.</strong> Both plans renew automatically — every month or every year, depending on the plan you chose — at the price shown to you when you subscribed, until you cancel. You can cancel at any time. Cancelling stops the next renewal; your Premium features stay active until the end of the period you have already paid for, and that period is not refunded pro rata. Where you cancel depends on where you bought it:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>Bought on the web:</strong> manage or cancel it through Stripe/Link at <a href="https://link.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">link.com</a>, or from the link in the receipt email Stripe sends you for each payment.</li>
+              <li><strong>Bought on the web:</strong> manage or cancel it through Link at <a href="https://link.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">link.com</a>, or from the link in the receipt email Link sends you for each payment.</li>
               <li><strong>Bought in the App:</strong> manage or cancel it in Apple&apos;s subscription settings (on iOS: Settings → your name → Subscriptions).</li>
             </ul>
             <p className="mt-6">
-              <strong>Your 14-day right of withdrawal, and why it ends early.</strong> As a consumer in the EU you normally have 14 days to withdraw from a contract concluded at a distance. ExpenseMate Premium is a digital service supplied immediately: by subscribing, you <strong>expressly request that we begin providing it straight away</strong>, and you acknowledge that you <strong>lose your right of withdrawal</strong> once we have begun (Directive 2011/83/EU, Art. 16(m), as implemented in Luxembourg law). This does not affect your statutory rights if the service is faulty or is not what was described, and it does not affect the mandatory consumer rights set out in section 10a.
+              <strong>Your 14-day right of withdrawal.</strong> If you bought Premium on the web, you can withdraw within 14 days of subscribing without giving a reason. Premium starts as soon as you pay, and you still get the full amount back if you withdraw. To withdraw, use <strong>&quot;Withdraw from contract here&quot;</strong> in the Web App under <strong>Settings</strong>, email <a href="mailto:support@expensemate.app" className="text-primary hover:text-primary/80">support@expensemate.app</a>, or ask Link. A clear statement is enough; you can use the <a href="#withdrawal-form" className="text-primary hover:text-primary/80">model withdrawal form</a> at the end of these Terms, but you do not have to. You meet the deadline if you send your withdrawal before the 14 days end.
             </p>
             <p className="mt-6">
-              If you subscribed by mistake, or something went wrong, write to <a href="mailto:support@expensemate.app" className="text-primary hover:text-primary/80">support@expensemate.app</a>. We look at refund requests on a goodwill basis; for a web purchase Stripe is the seller, so we may have to ask Stripe to issue the refund, and for a purchase in the App the request goes to Apple.
+              If you withdraw, we refund everything you paid for the subscription within 14 days of hearing from you, to the payment method you used, at no cost to you. Your Premium features end when the refund is made. None of this affects your statutory rights if the service is faulty or is not what was described, or the mandatory consumer rights set out in section 10a.
+            </p>
+            <p className="mt-6">
+              For purchases in the App, withdrawal and refunds go through Apple under Apple&apos;s terms, at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">reportaproblem.apple.com</a>. We cannot cancel or refund an App Store purchase ourselves.
+            </p>
+            <p className="mt-6">
+              If you subscribed by mistake or something went wrong after the 14 days, write to <a href="mailto:support@expensemate.app" className="text-primary hover:text-primary/80">support@expensemate.app</a>. We look at refund requests on a goodwill basis. For a web purchase you can also ask Link for a refund at <a href="https://support.link.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">support.link.com</a>.
             </p>
             <p className="mt-6">
               <strong>&quot;Unlimited receipt scans&quot; means unlimited normal use.</strong> Premium includes unlimited receipt scanning, and we mean it for anyone scanning their own receipts, however many of those there are. What it is not is a bulk document-processing service: automated, scripted or commercial-volume scanning — scanning on behalf of other people, for instance, or feeding receipts in from another system — is not personal use, and we may rate-limit or suspend it to keep the service working for everyone else. Where we can, we will tell you before we limit anything and give you the chance to put it right.
@@ -156,7 +163,7 @@ export default function TermsOfService() {
               Two points belong in these Terms, because they are part of what you are agreeing to:
             </p>
             <ul className="mt-4 list-disc pl-5 space-y-2">
-              <li><strong>ExpenseMate is a shared tool, and sharing is the point.</strong> The expenses, amounts, receipt items and display name you add to a group are visible to the other members of that group by design, as described in section 6. Outside that, we do not sell your personal data and we do not share it for advertising. We do use a limited number of service providers — hosting, authentication, receipt OCR, analytics, error reporting and subscription management — who process data on our behalf and on our instructions; each one is named in our Privacy Policy.</li>
+              <li><strong>ExpenseMate is a shared tool, and sharing is the point.</strong> The expenses, amounts, receipt items and display name you add to a group are visible to the other members of that group by design, as described in section 6. Outside that, we do not sell your personal data and we do not share it for advertising. We do use a limited number of service providers — hosting, authentication, receipt OCR, analytics, error reporting, email delivery and subscription management — who process data on our behalf and on our instructions; each one is named in our Privacy Policy.</li>
               <li><strong>Receipt images may be processed by Google Gemini and/or OpenAI</strong> for data extraction and analysis. We do not authorise those providers to use your content to train their models.</li>
             </ul>
             <p className="mt-6">
@@ -222,6 +229,8 @@ export default function TermsOfService() {
             <p className="mt-4 pl-4">
               Email: <a href="mailto:contact@tkmedia.lu" className="text-primary hover:text-primary/80">contact@tkmedia.lu</a>
             </p>
+
+            <WithdrawalForm />
           </div>
         </div>
       </div>
