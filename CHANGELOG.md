@@ -2,6 +2,12 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-27 21:53 — 1.6: links on /join leave with a full page load (S-JOIN-FIX)
+
+- **Closes the last way a `groupId` could reach Google Analytics.** The minimal footer links on `/join` were `next/link`: a tap navigated client-side, GA mounted with the invite URL in history, and Back let GA4 enhanced measurement record `/join?groupId=…`. They are now plain anchors with `rel="noreferrer"` (full page load, and the invite URL no longer becomes the next page's referrer), via a new `src/components/ui/InternalLink.tsx` that keeps `next/link` on every other route.
+- Same fix for the cookie banner's Privacy/Cookie Policy links, which also render on `/join`; the handoff page's App Store link is a plain anchor too. Looks unchanged.
+- Route `AGENTS.md` and `.vault/STATUS.md` state the rule; the stale "307" line in STATUS is corrected. Lint and build clean; `next start` shows plain anchors and no gtag on `/join`.
+
 ## 2026-09-27 21:46 — 1.6: /join docs corrections
 
 - The route `AGENTS.md`, `.vault/STATUS.md` and `.vault/QUESTIONS.md` now state the iPad User-Agent gap (iPadOS sends a Mac UA, so iPads usually get the browser-first order), the GA client-navigation caveat (GA is skipped only when `/join` is the entry page, so nothing may `<Link>` to it internally) and the actual robots behaviour (`/join` disallowed for `*` since 1db2c8b). Docs only; no code changed.
