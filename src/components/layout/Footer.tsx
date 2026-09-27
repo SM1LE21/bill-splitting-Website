@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaApple } from 'react-icons/fa';
 import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
+import InternalLink from '@/components/ui/InternalLink';
 import { trackEvent } from '@/utils/analytics';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
@@ -185,13 +186,13 @@ export default function Footer({ minimal = false }: FooterProps) {
               aria-label="Footer compact"
             >
               {minimalLinks.map((link) => (
-                <Link
+                <InternalLink
                   key={link.name}
                   href={link.href}
                   className="text-xs leading-5 text-gray-500 hover:text-gray-900 whitespace-nowrap"
                 >
                   {link.name}
-                </Link>
+                </InternalLink>
               ))}
               <CookieSettingsButton className="text-xs leading-5 text-gray-500 hover:text-gray-900 whitespace-nowrap cursor-pointer" />
             </nav>
