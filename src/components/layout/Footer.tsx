@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { FaApple } from 'react-icons/fa';
 import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
 import InternalLink from '@/components/ui/InternalLink';
+import { isIosOpenedPath } from '@/constants/iosOpenedPaths';
 import { trackEvent } from '@/utils/analytics';
 
 const APP_STORE_URL = 'https://apps.apple.com/lu/app/exepensemate/id6745098337';
@@ -40,10 +41,7 @@ const legalLinks: FooterLink[] = [
 const minimalLinks: FooterLink[] = [
   { name: 'Home', href: '/' },
   { name: 'Release Notes', href: '/release-notes' },
-  { name: 'Privacy Policy', href: '/privacy' },
-  { name: 'Terms of Service', href: '/terms' },
-  { name: 'Cookie Policy', href: '/cookies' },
-  { name: 'Legal Notice', href: '/legal' },
+  ...legalLinks,
 ];
 
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
@@ -68,7 +66,10 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
 
 export default function Footer({ minimal = false }: FooterProps) {
   const currentYear = new Date().getFullYear();
-  const isHome = usePathname() === '/';
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  // Pages the iOS app opens get legal links only, so no tap leads to the marketing site or /pricing.
+  const compactLinks = isIosOpenedPath(pathname) ? legalLinks : minimalLinks;
 
   // Product links point at homepage sections. Off the homepage a bare "#features"
   // resolves against the current path and goes nowhere, so send it home instead.
@@ -187,7 +188,7 @@ export default function Footer({ minimal = false }: FooterProps) {
               className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3"
               aria-label="Footer compact"
             >
-              {minimalLinks.map((link) => (
+              {compactLinks.map((link) => (
                 <InternalLink
                   key={link.name}
                   href={link.href}
