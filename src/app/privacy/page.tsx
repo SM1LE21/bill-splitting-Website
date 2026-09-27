@@ -241,7 +241,7 @@ export default function PrivacyPolicy() {
               <li>For Google services, Google&apos;s published cross-border transfer mechanisms.</li>
             </ul>
             <p className="mt-6">
-              To be precise rather than reassuring: <strong>your account and expense data is stored on a server in Luxembourg</strong> (section 8), our PostHog analytics is on PostHog&apos;s EU Cloud, and our Sentry project is on Sentry&apos;s EU region, so error reports are stored in the EEA. We do not claim that everything is hosted in the EU, because it is not — hosting, OCR and subscription management involve the United States providers listed in section 6, and Cloudflare operates a global network. The Location column in that table is the accurate per-provider answer.
+              To be precise rather than reassuring: <strong>your account and expense data is stored on a server in Luxembourg</strong> (section 8), our PostHog analytics is on PostHog&apos;s EU Cloud, and our Sentry project is on Sentry&apos;s EU region, so error reports are stored in the EEA. We do not claim that everything is hosted in the EU, because it is not — hosting, OCR, subscription management and email delivery involve the United States providers listed in section 6, and Cloudflare operates a global network. The Location column in that table is the accurate per-provider answer.
             </p>
             <p className="mt-6">
               You may request a copy of the safeguards in place for a given transfer by contacting us at the email address listed in section 2.
