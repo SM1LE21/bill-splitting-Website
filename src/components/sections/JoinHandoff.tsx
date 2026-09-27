@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import { FaApple } from 'react-icons/fa';
 import type { JoinLinks } from '@/utils/joinLinks';
@@ -59,7 +58,7 @@ export default function JoinHandoff({ links, preferApp }: JoinHandoffProps) {
           </p>
         )}
 
-        <Link
+        <a
           href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -67,7 +66,7 @@ export default function JoinHandoff({ links, preferApp }: JoinHandoffProps) {
         >
           <FaApple className="h-5 w-5" aria-hidden />
           Download on the App Store <span aria-hidden="true">→</span>
-        </Link>
+        </a>
       </div>
     </div>
   );
