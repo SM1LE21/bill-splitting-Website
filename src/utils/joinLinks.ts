@@ -1,16 +1,13 @@
-import { isValidUUID } from '@/utils/deviceUtils';
+import { createAppSchemeLink, createDeepLink, isValidUUID } from '@/utils/deviceUtils';
 
 export const APP_STORE_ID = '6745098337';
 export const APP_STORE_URL = `https://apps.apple.com/app/id${APP_STORE_ID}`;
 
-const APEX_JOIN_URL = 'https://expensemate.app/join';
 const WEB_APP_JOIN_URL = 'https://app.expensemate.app/join';
 
 export type JoinSearchParams = Record<string, string | string[] | undefined>;
 
 export type JoinLinks = {
-  /** The groupId, only when it is exactly one well-formed UUID. */
-  groupId: string | null;
   /** `expensemate://join?groupId=…`, only for a valid groupId. */
   appSchemeUrl: string | null;
   /** The canonical https invite URL, used as the smart banner's app-argument. */
@@ -35,12 +32,10 @@ export function buildJoinLinks(searchParams: JoinSearchParams = {}): JoinLinks {
   const ids = query.getAll('groupId');
   const groupId = ids.length === 1 && isValidUUID(ids[0]) ? ids[0] : null;
   const search = query.toString();
-  const groupQuery = groupId ? `groupId=${groupId}` : null;
 
   return {
-    groupId,
-    appSchemeUrl: groupQuery ? `expensemate://join?${groupQuery}` : null,
-    appArgumentUrl: groupQuery ? `${APEX_JOIN_URL}?${groupQuery}` : null,
+    appSchemeUrl: groupId ? createAppSchemeLink(groupId) : null,
+    appArgumentUrl: groupId ? createDeepLink(groupId) : null,
     webAppUrl: search ? `${WEB_APP_JOIN_URL}?${search}` : WEB_APP_JOIN_URL,
   };
 }
