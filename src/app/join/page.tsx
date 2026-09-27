@@ -23,10 +23,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   };
 }
 
-/**
- * Handoff page for invite links. On iOS with the app installed this never renders:
- * Universal Links (the apex AASA, `/join*`) open the app directly.
- */
+// Handoff page for invite links; with the app installed on iOS, Universal Links open the app before this renders.
 export default async function JoinPage({ searchParams }: PageProps) {
   const links = buildJoinLinks(searchParams ? await searchParams : undefined);
   const preferApp = IOS_UA.test((await headers()).get('user-agent') ?? '');
