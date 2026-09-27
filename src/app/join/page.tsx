@@ -8,7 +8,7 @@ type PageProps = {
   searchParams?: Promise<JoinSearchParams>;
 };
 
-const MOBILE_UA = /iphone|ipad|ipod|android/i;
+const IOS_UA = /iphone|ipad|ipod/i;
 
 // Smart App Banner: iOS Safari offers "Open" (installed) or "Get", carrying the invite URL.
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
@@ -29,7 +29,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
  */
 export default async function JoinPage({ searchParams }: PageProps) {
   const links = buildJoinLinks(searchParams ? await searchParams : undefined);
-  const preferApp = MOBILE_UA.test((await headers()).get('user-agent') ?? '');
+  const preferApp = IOS_UA.test((await headers()).get('user-agent') ?? '');
 
   return (
     <Layout minimal>
