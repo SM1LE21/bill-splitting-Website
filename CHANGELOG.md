@@ -2,7 +2,7 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
-## 2026-09-27 22:05 — 1.6: /join docs corrections
+## 2026-09-27 21:46 — 1.6: /join docs corrections
 
 - The route `AGENTS.md`, `.vault/STATUS.md` and `.vault/QUESTIONS.md` now state the iPad User-Agent gap (iPadOS sends a Mac UA, so iPads usually get the browser-first order), the GA client-navigation caveat (GA is skipped only when `/join` is the entry page, so nothing may `<Link>` to it internally) and the actual robots behaviour (`/join` disallowed for `*` since 1db2c8b). Docs only; no code changed.
 
