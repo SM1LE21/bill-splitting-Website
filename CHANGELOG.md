@@ -2,6 +2,10 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-27 22:05 — 1.6: /join docs corrections
+
+- The route `AGENTS.md`, `.vault/STATUS.md` and `.vault/QUESTIONS.md` now state the iPad User-Agent gap (iPadOS sends a Mac UA, so iPads usually get the browser-first order), the GA client-navigation caveat (GA is skipped only when `/join` is the entry page, so nothing may `<Link>` to it internally) and the actual robots behaviour (`/join` disallowed for `*` since 1db2c8b). Docs only; no code changed.
+
 ## 2026-09-27 21:40 — 1.6: /join handoff fixes (analytics privacy, Android order)
 
 - **No `groupId` reaches analytics.** Google Analytics no longer renders on `/join` (its consent-mode default still sent cookieless pings with the full URL), and a new client `VercelAnalytics` wrapper strips `groupId` from every page URL via `beforeSend`. The invite id works as a join capability, so it stays out of both tools.
