@@ -2,7 +2,13 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
-## 2026-09-28 — Terms withdrawal anchor and Privacy Resend entity (WP-L2b)
+## 2026-09-28 00:09 — Terms anchors clear the navbar, Terms and Privacy re-dated (WP-L2b fixes)
+
+- **`/terms#withdrawal` and `#withdrawal-form`** now stop below the fixed navbar (`scroll-mt-28`), so the "Your 14-day right of withdrawal" lead-in is visible on arrival.
+- **Terms goodwill paragraph** now starts "after those 18 days", matching the 18-day acceptance sentence above it.
+- **Terms and Privacy re-dated to 28/09/2026** for the 18-day promise and the new Resend transfer disclosure. Lint and build clean.
+
+## 2026-09-28 00:03 — Terms withdrawal anchor and Privacy Resend entity (WP-L2b)
 
 - **`/terms#withdrawal`** now lands on the 14-day withdrawal paragraph in section 4b, which the web app's `/upgrade` page links to. One sentence added: we accept a withdrawal sent up to 18 days after subscribing. The 14-day legal wording is unchanged.
 - **Privacy section 6:** the Resend row names the contracting entity, Plus Five Five, Inc. d/b/a Resend, with EU region (Ireland) and Standard Contractual Clauses in Resend's DPA, as read on resend.com/legal on 28/09/2026.
