@@ -12,6 +12,7 @@ Instructions for work inside `Website/src/app/join/` (the `/join` handoff page f
   - **Download on the App Store** → `https://apps.apple.com/app/id6745098337`
   - the Apple Smart App Banner: `<meta name="apple-itunes-app" content="app-id=6745098337, app-argument=https://expensemate.app/join?groupId=<uuid>">` (no `app-argument` for an invalid `groupId`).
 - iOS (`iphone|ipad|ipod` in the User-Agent) sees the app button first and filled; Android and desktop see the browser button first. Android has no store app, so the web app is its path; the app button stays as the second option for test-APK users. Same options either way.
+- iPadOS 13+ Safari sends a desktop Macintosh User-Agent by default, so iPads usually get the browser-first order; both buttons and the Smart App Banner still show.
 
 Related files outside this folder:
 
@@ -35,8 +36,8 @@ Related files outside this folder:
 - **No automatic redirect, no timer, no auto-opening the custom scheme.** A custom-scheme navigation on a device without the app shows a browser error. The page offers; it never acts.
 - **The page renders for every input and never 500s.** Missing, empty, duplicated and malformed `groupId` values render the page without the app button; "Continue in the browser" still carries the query, and the web app shows the one copy of the "invite link isn't valid" message.
 - The app-scheme URL and the banner's `app-argument` only ever carry a validated UUID. The browser link carries the whole query, re-encoded through `URLSearchParams` (both `string | string[]` shapes).
-- `noindex`; `/join` is also disallowed for all crawlers (`*` and the assistant crawlers) in `robots.ts`, so the noindex is belt-and-braces.
-- **No `groupId` reaches analytics.** The invite URL works as a join capability (any logged-in user can `POST /groups/join` with it). Google Analytics does not render on `/join` (`src/components/ui/GoogleAnalytics.tsx`), and Vercel Analytics strips `groupId` from every page URL before sending (`src/components/ui/VercelAnalytics.tsx`).
+- `/join` is disallowed for all crawlers (`*` and the assistant crawlers) in `robots.ts`, unchanged since commit 1db2c8b, so compliant crawlers never fetch it; the page `noindex` only matters for a crawler that ignores robots.txt.
+- **No `groupId` reaches analytics.** The invite URL works as a join capability (any logged-in user can `POST /groups/join` with it). Google Analytics is not loaded when /join is the entry page (`src/components/ui/GoogleAnalytics.tsx`), and Vercel Analytics strips `groupId` from every page URL (`src/components/ui/VercelAnalytics.tsx`). GA does not cover a client-side navigation to /join after gtag has loaded on another page (GA4 enhanced measurement would record the URL), so no internal `<Link>` may point to /join; if one is ever needed, use a plain `<a>` (full page load).
 
 ## How To Verify Changes
 
