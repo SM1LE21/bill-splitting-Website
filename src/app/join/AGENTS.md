@@ -2,52 +2,58 @@
 
 ## Scope
 
-Instructions for work inside `Website/src/app/join/` (the `/join` redirect to the web app).
+Instructions for work inside `Website/src/app/join/` (the `/join` handoff page for invite links).
 
 ## What Lives Here
 
-- `page.tsx` — a server component that issues a **307 to `https://app.expensemate.app/join`**, carrying the query string through untouched. It renders nothing.
-
-**There is no join UI on the marketing site any more.** As of 2026-08-04 (web build spec §14.1) the join experience is implemented **once**, in the web app at `app.expensemate.app`. `JoinGroup.tsx` and `AppRedirect.tsx` were deleted with this change; do not recreate them here.
+- `page.tsx` — a server component that renders a **handoff page** (since 1.6, 2026-09-27; from 2026-08-04 to then it was a 307 to the web app). It offers three ways into an invite and never navigates on its own:
+  - **Open in the ExpenseMate app** → `expensemate://join?groupId=<uuid>` (only when `groupId` is exactly one valid UUID)
+  - **Continue in the browser** → `https://app.expensemate.app/join?<the full query, re-encoded>`
+  - **Download on the App Store** → `https://apps.apple.com/app/id6745098337`
+  - the Apple Smart App Banner: `<meta name="apple-itunes-app" content="app-id=6745098337, app-argument=https://expensemate.app/join?groupId=<uuid>">` (no `app-argument` for an invalid `groupId`).
+- Phones (`iphone|ipad|ipod|android` in the User-Agent) see the app button first and filled; everyone else sees the browser button first. Same options either way.
 
 Related files outside this folder:
 
+- `Website/src/components/sections/JoinHandoff.tsx` — the page body.
+- `Website/src/utils/joinLinks.ts` — builds every outgoing URL from the query; the App Store id lives here.
 - `Website/public/.well-known/apple-app-site-association` — the Universal Links association. `appID` is `87U8WV4Q3F.app.ExpenseMate` (**case-sensitive**; the lowercase `app.expensemate` that shipped until 2026-08-04 is why 1.4.2 fell back to the custom scheme).
 - `Website/next.config.ts` — serves that file as `application/json`.
-- `Website/src/utils/deviceUtils.ts` — link generation and UUID helpers. Its redirect helpers no longer have a caller on this route.
+- `expensemate-web/src/app/join/` and `src/components/join/open-in-app.tsx` — the web join flow; it owns every "invite link isn't valid" state.
 - Mobile deep-link parsers:
   - `Frontend/BillSplitApp/Utilities/DeepLinkManager.swift`
   - `reactNativeApp/src/services/deepLinkHandler.ts`
 
 ## Primary Responsibilities
 
-- Forward `/join` to the web app without altering the query.
-- Stay out of the way of Universal Links: on iOS with the app installed this request is never issued.
+- Give a visitor without the app, or whose link opened in a browser, a clear choice: app, App Store, or web.
+- Stay out of the way of Universal Links: on iOS 1.5.0+ with the app installed this request is never issued.
 
 ## Key Invariants / Do Not Break
 
 - **The query parameter name is `groupId` and the public path is `/join`.** The invite URL `https://expensemate.app/join?groupId=<UUID>` is built at `Frontend/.../ShareMenuView.swift:93`/`:105` and `SettingsView.swift:73`, shipped in iOS 1.4.2 and 1.5.0, and is already sitting in users' message threads. It is a **query parameter, not a path segment**. Changing the format breaks links in the wild.
-- **The redirect is 307, not 308.** Permanent redirects get cached by browsers and would be painful to undo.
-- **Nothing is validated here.** Missing, empty, duplicated and malformed `groupId` values all redirect; the web app owns the "invite link isn't valid" message so there is exactly one copy of it. This route must never 500 on a bad link.
-- Handle both `searchParams` shapes (`string | string[]`); an array appends each entry.
-- **DEPLOYMENT ORDERING (binding):** this redirect must not be live before the web app is live at `app.expensemate.app`. Shipping it early breaks every invite link in the wild. See `.vault/STATUS.md`.
+- **No automatic redirect, no timer, no auto-opening the custom scheme.** A custom-scheme navigation on a device without the app shows a browser error. The page offers; it never acts.
+- **The page renders for every input and never 500s.** Missing, empty, duplicated and malformed `groupId` values render the page without the app button; "Continue in the browser" still carries the query, and the web app shows the one copy of the "invite link isn't valid" message.
+- The app-scheme URL and the banner's `app-argument` only ever carry a validated UUID. The browser link carries the whole query, re-encoded through `URLSearchParams` (both `string | string[]` shapes).
+- `noindex`; `/join` is also disallowed for assistant crawlers in `robots.ts`.
 
 ## How To Verify Changes
 
-- `npm run build`, then `npx next start` and check the status line and `Location` header:
-  - `curl -sSI 'http://localhost:3000/join?groupId=<uuid>'` → `307` + `location: https://app.expensemate.app/join?groupId=<uuid>`
-  - repeat with no query, `?groupId=`, a non-UUID, and a duplicated `groupId` — all must be 307, never 500.
+- `npm run lint`, `npm run build`, then `npx next start` and check:
+  - `curl -s 'http://localhost:3000/join?groupId=<uuid>'` → `200`, contains `expensemate://join?groupId=<uuid>`, `https://app.expensemate.app/join?groupId=<uuid>` and the `apple-itunes-app` meta with the `app-argument`.
+  - repeat with no query, `?groupId=`, a non-UUID, and a duplicated `groupId`: all `200`, no `expensemate://` link, never 500.
+  - send an iPhone User-Agent (`-A 'Mozilla/5.0 (iPhone; ...)'`) and check the app button comes first.
 - `curl -sSI http://localhost:3000/.well-known/apple-app-site-association` → `200`, `content-type: application/json`, **no redirect**.
 - Compare the path/query contract with `Frontend/BillSplitApp/Utilities/DeepLinkManager.swift` and `reactNativeApp/src/services/deepLinkHandler.ts`.
 
 ## When To Coordinate With Other Folders
 
-- Coordinate with `expensemate-web/src/app/join/` — it is the other half of this flow and owns every user-visible state.
+- Coordinate with `expensemate-web/src/app/join/`: it owns the web join flow and every invalid-link state.
 - Coordinate with both mobile clients before changing the `/join` path or `groupId` behaviour.
 
 ## Common Mistakes / Gotchas
 
-- Rebuilding a join UI here. There is one, in the web app.
-- Making the redirect permanent (308), or validating `groupId` and returning a 404 for a bad one.
+- Re-adding a redirect, or a timer that fires the custom scheme.
+- Validating `groupId` and returning a 404 for a bad one.
 - Editing the AASA `appID` case. It must match `PRODUCT_BUNDLE_IDENTIFIER` exactly: `app.ExpenseMate`.
-- Assuming a Universal Link survives this redirect — **it does not**. iOS only hands off the *tapped* URL, which is why the association on the apex domain has to be correct and un-redirected.
+- Assuming a Universal Link survives a redirect. **It does not**: iOS only hands off the *tapped* URL, which is why the association on the apex domain has to be correct and un-redirected.
