@@ -2,13 +2,18 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-28 — Terms withdrawal anchor and Privacy Resend entity (WP-L2b)
+
+- **`/terms#withdrawal`** now lands on the 14-day withdrawal paragraph in section 4b, which the web app's `/upgrade` page links to. One sentence added: we accept a withdrawal sent up to 18 days after subscribing. The 14-day legal wording is unchanged.
+- **Privacy section 6:** the Resend row names the contracting entity, Plus Five Five, Inc. d/b/a Resend, with EU region (Ireland) and Standard Contractual Clauses in Resend's DPA, as read on resend.com/legal on 28/09/2026.
+- Housekeeping: the 2026-09-27 WP-L2 entry folded to four bullets. Lint and build clean; the built `/terms` carries `id="withdrawal"`.
+
 ## 2026-09-27 22:30 — Web billing legal fixes (WP-L2, on `main`)
 
 - **Terms 4b:** we sell web Premium and Sold through Link, LLC (Stripe, brand Link) is merchant of record; checkout hosted by Stripe; Link's terms and 60-day refund policy linked. No prices on the page ("the price shown before you pay, VAT included").
 - **The Art. 16(m) waiver is gone.** Web buyers get a full 14-day withdrawal right with a full refund (Settings "Withdraw from contract here", support@expensemate.app, or Link), plus the EU model withdrawal form as an annex. App Store purchases go through Apple.
-- **Privacy:** Apple and Stripe moved from the processor table to independent controllers, with the order data Stripe shares; RevenueCat gets our account ID and email at checkout (SCCs in its DPA); Resend (EU region) added as processor; "anonymised" purchase identifiers now "pseudonymous".
+- **Privacy:** Apple and Stripe moved from the processor table to independent controllers, with the order data Stripe shares; RevenueCat gets our account ID and email at checkout (SCCs in its DPA); Resend (EU region) added as processor and named in section 7 among the United States-linked providers; "anonymised" purchase identifiers now "pseudonymous".
 - **Legal Notice** shows VAT number LU37487810 under the franchise regime. Policy dates are stored ISO and shown DD/MM/YYYY; Terms and Privacy re-dated to 27/09/2026.
-- **Privacy section 7** now names email delivery (Resend) among the United States-linked providers. The Resend entity and safeguard stay open in `.vault/QUESTIONS.md`.
 
 ## 2026-09-27 21:53 — 1.6: links on /join leave with a full page load (S-JOIN-FIX)
 
