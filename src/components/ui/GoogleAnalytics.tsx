@@ -1,6 +1,7 @@
 'use client';
 
 import Script from 'next/script';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { getCookieConsent } from '@/utils/cookieConsent';
 
@@ -18,6 +19,8 @@ declare global {
 }
 
 export default function GoogleAnalytics() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const updateConsent = () => {
       const { consent } = getCookieConsent();
@@ -35,6 +38,9 @@ export default function GoogleAnalytics() {
     window.addEventListener('cookieConsentChanged', updateConsent);
     return () => window.removeEventListener('cookieConsentChanged', updateConsent);
   }, []);
+
+  // Invite URLs carry a groupId that works as a join capability; keep it out of GA.
+  if (pathname?.startsWith('/join')) return null;
 
   return (
     <>
