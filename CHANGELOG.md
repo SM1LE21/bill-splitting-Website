@@ -2,6 +2,48 @@
 
 Entries follow the convention defined in `AGENTS.md`. Newest at the top.
 
+## 2026-09-28 00:09 — Terms anchors clear the navbar, Terms and Privacy re-dated (WP-L2b fixes)
+
+- **`/terms#withdrawal` and `#withdrawal-form`** now stop below the fixed navbar (`scroll-mt-28`), so the "Your 14-day right of withdrawal" lead-in is visible on arrival.
+- **Terms goodwill paragraph** now starts "after those 18 days", matching the 18-day acceptance sentence above it.
+- **Terms and Privacy re-dated to 28/09/2026** for the 18-day promise and the new Resend transfer disclosure. Lint and build clean.
+
+## 2026-09-28 00:03 — Terms withdrawal anchor and Privacy Resend entity (WP-L2b)
+
+- **`/terms#withdrawal`** now lands on the 14-day withdrawal paragraph in section 4b, which the web app's `/upgrade` page links to. One sentence added: we accept a withdrawal sent up to 18 days after subscribing. The 14-day legal wording is unchanged.
+- **Privacy section 6:** the Resend row names the contracting entity, Plus Five Five, Inc. d/b/a Resend, with EU region (Ireland) and Standard Contractual Clauses in Resend's DPA, as read on resend.com/legal on 28/09/2026.
+- Housekeeping: the 2026-09-27 WP-L2 entry folded to four bullets. Lint and build clean; the built `/terms` carries `id="withdrawal"`.
+
+## 2026-09-27 22:30 — Web billing legal fixes (WP-L2, on `main`)
+
+- **Terms 4b:** we sell web Premium and Sold through Link, LLC (Stripe, brand Link) is merchant of record; checkout hosted by Stripe; Link's terms and 60-day refund policy linked. No prices on the page ("the price shown before you pay, VAT included").
+- **The Art. 16(m) waiver is gone.** Web buyers get a full 14-day withdrawal right with a full refund (Settings "Withdraw from contract here", support@expensemate.app, or Link), plus the EU model withdrawal form as an annex. App Store purchases go through Apple.
+- **Privacy:** Apple and Stripe moved from the processor table to independent controllers, with the order data Stripe shares; RevenueCat gets our account ID and email at checkout (SCCs in its DPA); Resend (EU region) added as processor and named in section 7 among the United States-linked providers; "anonymised" purchase identifiers now "pseudonymous".
+- **Legal Notice** shows VAT number LU37487810 under the franchise regime. Policy dates are stored ISO and shown DD/MM/YYYY; Terms and Privacy re-dated to 27/09/2026.
+
+## 2026-09-27 21:53 — 1.6: links on /join leave with a full page load (S-JOIN-FIX)
+
+- **Closes the last way a `groupId` could reach Google Analytics.** The minimal footer links on `/join` were `next/link`: a tap navigated client-side, GA mounted with the invite URL in history, and Back let GA4 enhanced measurement record `/join?groupId=…`. They are now plain anchors with `rel="noreferrer"` (full page load, and the invite URL no longer becomes the next page's referrer), via a new `src/components/ui/InternalLink.tsx` that keeps `next/link` on every other route.
+- Same fix for the cookie banner's Privacy/Cookie Policy links, which also render on `/join`; the handoff page's App Store link is a plain anchor too. Looks unchanged.
+- Route `AGENTS.md` and `.vault/STATUS.md` state the rule; the stale "307" line in STATUS is corrected. Lint and build clean; `next start` shows plain anchors and no gtag on `/join`.
+
+## 2026-09-27 21:46 — 1.6: /join docs corrections
+
+- The route `AGENTS.md`, `.vault/STATUS.md` and `.vault/QUESTIONS.md` now state the iPad User-Agent gap (iPadOS sends a Mac UA, so iPads usually get the browser-first order), the GA client-navigation caveat (GA is skipped only when `/join` is the entry page, so nothing may `<Link>` to it internally) and the actual robots behaviour (`/join` disallowed for `*` since 1db2c8b). Docs only; no code changed.
+
+## 2026-09-27 21:40 — 1.6: /join handoff fixes (analytics privacy, Android order)
+
+- **No `groupId` reaches analytics.** Google Analytics no longer renders on `/join` (its consent-mode default still sent cookieless pings with the full URL), and a new client `VercelAnalytics` wrapper strips `groupId` from every page URL via `beforeSend`. The invite id works as a join capability, so it stays out of both tools.
+- **Only iOS leads with the app button.** Android and desktop now get "Continue in the browser" first, with the app button kept second for test-APK users; the body copy says "ExpenseMate app" instead of "iPhone app".
+- `joinLinks.ts` reuses `createAppSchemeLink` / `createDeepLink` from `deviceUtils` and drops the unused `groupId` field (same URLs as before); comments cut to one line. `npm run lint` and `npm run build` clean; `next start` checks for GA, button order and every query variant all pass.
+
+## 2026-09-27 21:29 — 1.6: `/join` handoff page replaces the 307 (S-JOIN)
+
+- **`expensemate.app/join` now renders a page instead of 307ing to `app.expensemate.app/join`.** Three options, no automatic redirect or timer: "Open in the ExpenseMate app" (`expensemate://join?groupId=…`), "Continue in the browser" (the full query carried to the web app), and "Download on the App Store". Phones get the app button first; desktops get the browser button first.
+- **Apple Smart App Banner** on the page (`apple-itunes-app`, `app-id=6745098337`, `app-argument` = the https invite URL), so iOS Safari offers Open or Get.
+- `groupId` is validated (exactly one UUID) before it reaches the app scheme or the banner; an invalid or missing one still renders a 200 page with only the browser and App Store options, and the web app shows the invalid-link message. AASA and www/apex handling untouched.
+- New `src/utils/joinLinks.ts` and `src/components/sections/JoinHandoff.tsx`; route `AGENTS.md` rewritten. `npm run lint` clean, `npm run build` clean (18 routes); seven query variants checked against `next start`, all 200.
+
 ## 2026-09-27 — Web billing go-live prep: no buy route on iOS-opened pages (branch `feat/web-billing-launch`)
 
 - `/privacy`, `/terms` and `/join` now carry no price offer or checkout URL. The site-wide JSON-LD `AggregateOffer` was the only leak; `StructuredData` drops it on the paths in `src/constants/iosOpenedPaths.ts`. Built HTML checked: no `/pricing`, no `/upgrade`, no offer on either page; the offer stays on every other page.

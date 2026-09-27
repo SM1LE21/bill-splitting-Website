@@ -51,7 +51,7 @@ export default function LegalNotice() {
 
               <dt className="font-medium text-gray-900">VAT</dt>
               <dd className="sm:col-span-2">
-                Franchise de TVA regime (Art. 57 Loi TVA, Luxembourg), no VAT is charged. VAT identification number pending attribution.
+                Franchise regime (Art. 57 LTVA): no VAT charged on our own invoices. VAT number LU37487810.
               </dd>
             </dl>
 

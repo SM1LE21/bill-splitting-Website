@@ -1,44 +1,36 @@
-import { redirect } from 'next/navigation';
-
-// The join experience is implemented once, in the web app — not split across two codebases.
-const WEB_APP_JOIN_URL = 'https://app.expensemate.app/join';
-
-type SearchParamsType = {
-  groupId?: string | string[];
-  // Allows additional query parameters without using `any`
-  [key: string]: string | string[] | undefined;
-};
+import type { Metadata } from 'next';
+import { headers } from 'next/headers';
+import Layout from '@/components/layout/Layout';
+import JoinHandoff from '@/components/sections/JoinHandoff';
+import { APP_STORE_ID, buildJoinLinks, type JoinSearchParams } from '@/utils/joinLinks';
 
 type PageProps = {
-  params?: Promise<Record<string, string>>;
-  searchParams?: Promise<SearchParamsType>;
+  searchParams?: Promise<JoinSearchParams>;
 };
 
-/**
- * Server-side 307 to the web app, carrying the query string through untouched.
- *
- * On iOS with the app installed this never runs: Universal Links resolve the AASA
- * association for the tapped URL and open the app without issuing the request. The
- * redirect is the path for Android, desktop, and iPhones without the app.
- *
- * Nothing is validated here. An absent or malformed `groupId` still redirects, and the
- * web app renders the "this invite link isn't valid" state — one implementation of that
- * message, not two.
- */
+const IOS_UA = /iphone|ipad|ipod/i;
+
+// Smart App Banner: iOS Safari offers "Open" (installed) or "Get", carrying the invite URL.
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const { appArgumentUrl } = buildJoinLinks(searchParams ? await searchParams : undefined);
+  return {
+    title: 'Join a group | ExpenseMate',
+    description: 'Open this ExpenseMate group invite in the app or in your browser.',
+    robots: 'noindex',
+    itunes: appArgumentUrl
+      ? { appId: APP_STORE_ID, appArgument: appArgumentUrl }
+      : { appId: APP_STORE_ID },
+  };
+}
+
+// Handoff page for invite links; with the app installed on iOS, Universal Links open the app before this renders.
 export default async function JoinPage({ searchParams }: PageProps) {
-  const resolvedSearchParams = searchParams ? await searchParams : undefined;
-  const query = new URLSearchParams();
+  const links = buildJoinLinks(searchParams ? await searchParams : undefined);
+  const preferApp = IOS_UA.test((await headers()).get('user-agent') ?? '');
 
-  for (const [key, value] of Object.entries(resolvedSearchParams ?? {})) {
-    if (typeof value === 'string') {
-      query.append(key, value);
-    } else if (Array.isArray(value)) {
-      for (const entry of value) {
-        query.append(key, entry);
-      }
-    }
-  }
-
-  const search = query.toString();
-  redirect(search ? `${WEB_APP_JOIN_URL}?${search}` : WEB_APP_JOIN_URL);
+  return (
+    <Layout minimal>
+      <JoinHandoff links={links} preferApp={preferApp} />
+    </Layout>
+  );
 }
